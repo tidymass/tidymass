@@ -1,0 +1,9 @@
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+README.Rmd
+demo_data
+logo.txt
+manuscript
+summary
+tidymass.Rproj

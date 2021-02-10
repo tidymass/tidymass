@@ -1,0 +1,115 @@
+destination: docs
+
+url: https://jaspershen.github.io/tidymass/
+
+home:
+  strip_header: false
+  title: tidymass package
+  links:
+  - text: Find me
+    href: https://shenxt.info/
+
+development:
+  mode: auto
+  version_label: danger
+  version_tooltip: "Under development"
+
+template:
+  params:
+    docsearch:
+      api_key: 21ff2860978c5d2ceb7d4150364070ff
+      index_name: tidymass
+    bootswatch: flatly
+    ganalytics: UA-000000-01
+
+reference:
+  - title: Database construction
+    desc: Construct in-house or public MS2 spectra database.
+    contents:
+    - databaseConstruction
+    - rtCor4database
+    - get_ms2_spectrum
+    
+  - title: Metabolite identification
+    desc: Metabolite identification based on MS1 and MS2 databases.
+    contents:
+    - which_has_identification
+    - trans_to_new_style
+    - ms2plot
+    - identify_single_peak
+    - identify_metabolites_params
+    - identify_metabolites
+    - identify_metabolites_all
+    - get_parameters
+    - get_ms2_spectrum_from_object
+    - get_identification_table
+    - get_iden_info
+    - filter_identification
+    
+  - title: Data
+    desc: Some data embed in tidymass
+    contents:
+    - hilic.pos
+    - hilic.neg
+    - rp.pos
+    - rp.neg
+    - msDatabase_rplc0.0.2
+    - msDatabase_hilic0.0.2
+    - annotate_result
+
+  - title: Other functions
+    desc: Other usefull functions in tidymass
+    contents:
+    - readMGF
+    - readMSP
+    - readMZXML
+    - tidymass
+
+navbar:
+  title: "sparklyr"
+  # type: inverse
+  structure:
+    left: [home, references, articles, news]
+    right: [github, twitter]
+  components:
+    articles:
+      text: Help documents
+      menu:
+      - text: "Brief introduction"
+      - text: Brief introduction
+        href: articles/tidymass.html
+      - text: "Database construction"
+      - text: Database construction
+        href: articles/database_construction.html
+      - text: Public databases for tidymass
+        href: articles/public_databases.html
+      - text: -------
+      - text: "Metabolite identification"
+      - text: Metabolite identification using MS1 database
+        href: articles/metabolite_annotation_using_MS1.html
+      - text: Metabolite identification using MS2 database
+        href: articles/metabolite_annotation_using_MS2.html
+      - text: Metabolite identification using multiple databases
+        href: articles/multiple_databases.html
+      - text: Identify single peak  
+        href: articles/identify_single_peak.html
+      - text: -------
+      - text: "Others"
+      - text: Other usefull tools
+        href: articles/other_tools.html
+      - text: Test
+        href: https://www.tidyverse.org/blog/2018/12/readxl-1-2-0/
+    twitter:
+      icon: "fab fa-twitter fa-lg"
+      href: https://twitter.com/JasperShen1990
+    news:
+      text: News
+      menu:
+      - text: "Blog posts"
+      - text: "Version 0.4.0"
+        href: articles/tidymass.html
+      - text: "------------------"
+      - text: "Change log"
+        href: news/index.html
+toc:
+  depth: 3
