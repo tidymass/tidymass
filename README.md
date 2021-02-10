@@ -73,7 +73,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### metPath <a href="https://jaspershen.github.io/metpath/" target="_blank"><img src="man/figures/metPath_logo.png" align="left" alt="" width="120" /></a>
+### metPath <a href="https://jaspershen.github.io/metpath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
