@@ -89,6 +89,14 @@ Now, `tidymass` contains several packages:
 
 <br>
 
+### tinyTools <a href="https://jaspershen.github.io/tinyTools/" target="_blank"><img src="man/figures/tinyTools_logo.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`tinyTools` is a collection of useful tiny tools.
+
+<br>
+
 ## Need help?
 
 If you have any questions about `tidymass`, please don’t hesitate to

@@ -7,3 +7,5 @@ logo.txt
 manuscript
 summary
 tidymass.Rproj
+^.*\.Rproj$
+^\.Rproj\.user$
