@@ -18,8 +18,7 @@
 #' (i.e. just check this package, not its dependencies).
 #' The value "soft" means the same as TRUE, "hard" means the same as NA.
 #' @param demo_data Install demo_data package or not.
-#' @param ... Other parameters from devtools::install_github() or devtools::install_git().
-#' @importFrom magrittr %>% 
+#' @param ... Other parameters from devtools::install_github() or devtools::install_git()
 #' @importFrom devtools install_github
 #' @importFrom devtools install_git
 #' @export

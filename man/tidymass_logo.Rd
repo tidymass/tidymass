@@ -15,10 +15,9 @@ A ASCII log of tidymass
 }
 \description{
 The tidymass logo, using ASCII or Unicode characters
-\lifecycle{maturing}
 }
 \examples{
-tidymass()
+tidymass_logo()
 }
 \author{
 Xiaotao Shen

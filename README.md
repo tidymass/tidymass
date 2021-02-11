@@ -49,7 +49,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### MetNormalizer <a href="https://jaspershen.github.io/metnormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
+### MetNormalizer <a href="https://jaspershen.github.io/MetNormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -78,6 +78,14 @@ Now, `tidymass` contains several packages:
 <br>
 
 `metPath` is used for pathway enrichment analysis.
+
+<br>
+
+### featureGSEA <a href="https://jaspershen.github.io/featureGSEA/" target="_blank"><img src="man/figures/featureGSEA.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`featureGSEA` is used for GSEA from metabolic feature without annotation.
 
 <br>
 

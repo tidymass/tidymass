@@ -11,7 +11,6 @@ A ASCII log of tidymass
 }
 \description{
 Show the base information of tidymass pacakge.
-\lifecycle{maturing}
 }
 \examples{
 tidymass()

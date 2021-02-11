@@ -34,7 +34,7 @@ The value "soft" means the same as TRUE, "hard" means the same as NA.}
 
 \item{demo_data}{Install demo_data package or not.}
 
-\item{...}{Other parameters from devtools::install_github() or devtools::install_git().}
+\item{...}{Other parameters from devtools::install_github() or devtools::install_git()}
 }
 \description{
 Install all packages in tidymass.

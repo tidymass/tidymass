@@ -1,6 +1,5 @@
 #' @title Show the logo tidymass.
 #' @description The tidymass logo, using ASCII or Unicode characters
-#' \lifecycle{maturing}
 #' @author Xiaotao Shen
 #' \email{shenxt@@stanford.edu}
 #' @param unicode Whether to use Unicode symbols. Default is `TRUE`
@@ -8,7 +7,7 @@
 #' @return A ASCII log of tidymass
 #' @export
 #' @examples 
-#' tidymass()
+#' tidymass_logo()
 
 
 ##https://onlineasciitools.com/convert-text-to-ascii-art

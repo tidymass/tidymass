@@ -1,6 +1,5 @@
 #' @title Show the base information of tidymass pacakge
 #' @description Show the base information of tidymass pacakge.
-#' \lifecycle{maturing}
 #' @author Xiaotao Shen
 #' \email{shenxt@@stanford.edu}
 #' @return A ASCII log of tidymass
