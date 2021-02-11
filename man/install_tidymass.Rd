@@ -10,6 +10,7 @@ install_tidymass(
   upgrade = "never",
   dependencies = NA,
   demo_data = TRUE,
+  which_package = c("all", "metID", "metflow2", "lipidflow"),
   ...
 )
 }
@@ -33,6 +34,8 @@ and is the default. FALSE is shorthand for no dependencies
 The value "soft" means the same as TRUE, "hard" means the same as NA.}
 
 \item{demo_data}{Install demo_data package or not.}
+
+\item{which_package}{What packages you want to install? Default is all. You can set it as a character vector.}
 
 \item{...}{Other parameters from devtools::install_github() or devtools::install_git()}
 }
