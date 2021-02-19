@@ -4,7 +4,7 @@ url: https://jaspershen.github.io/tidymass/
 
 home:
   strip_header: false
-  title: tidymass package
+  title: tidymass
   links:
   - text: Find me
     href: https://shenxt.info/
