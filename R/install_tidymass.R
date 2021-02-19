@@ -80,13 +80,6 @@ install_tidymass <-
         )
       }
       
-      devtools::install_github(
-        repo = "jaspershen/sxtTools",
-        force = force,
-        upgrade = upgrade,
-        dependencies = dependencies,
-        ...
-      )
       ##demoData
       if (demo_data) {
         devtools::install_github(
@@ -143,14 +136,6 @@ install_tidymass <-
           ...
         )
       }
-      
-      devtools::install_git(
-        url = "https://gitee.com/jaspershen/sxtTools",
-        dependencies = dependencies,
-        force = force,
-        upgrade = upgrade,
-        ...
-      )
       
       if (demo_data) {
         devtools::install_git(

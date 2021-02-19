@@ -27,9 +27,9 @@ reference:
     desc: Functions in tidymas
     contents:
     - install_tidymass
-    - logo
     - tidymass_logo
-    - tidymass
+    - tidymass_conflicts
+    - tidymass_packages
 
 navbar:
   title: "sparklyr"

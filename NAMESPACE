@@ -3,7 +3,6 @@
 S3method(print,tidymass_conflicts)
 S3method(print,tidymass_logo)
 export(install_tidymass)
-export(tidymass)
 export(tidymass_conflicts)
 export(tidymass_logo)
 export(tidymass_packages)
