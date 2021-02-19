@@ -2,7 +2,7 @@ pandoc: 2.11.2
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-02-11T08:03Z
+last_built: 2021-02-19T16:14Z
 urls:
   reference: https://jaspershen.github.io/tidymass//reference
   article: https://jaspershen.github.io/tidymass//articles

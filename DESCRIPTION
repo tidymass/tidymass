@@ -37,4 +37,14 @@ Imports:
     crayon,
     devtools,
     purrr,
-    stringr
+    stringr,
+    glue (>= 1.4.2),
+    metflow2 (>= 0.1.1),
+    metID (>= 0.4.1),
+    tinyTools (>= 0.1.2),
+    sxtTools (>= 0.99.1)
+Remotes:  
+    jaspershen/metflow2,
+    jaspershen/metID,
+    jaspershen/tinyTools,
+    jaspershen/sxtTools
