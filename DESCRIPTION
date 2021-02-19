@@ -43,7 +43,9 @@ Imports:
     metID (>= 0.4.1),
     tinyTools (>= 0.1.2),
     sxtTools (>= 0.99.1),
-    cli
+    cli,
+    magrittr,
+    rstudioapi
 Remotes: 
     jaspershen/metflow2,
     jaspershen/metID,
