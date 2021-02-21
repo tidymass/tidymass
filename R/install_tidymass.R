@@ -35,10 +35,33 @@ install_tidymass <-
     from = match.arg(from)
     which_package = match.arg(which_package)
     which_package = stringr::str_to_lower(which_package)
+    
+    ##detach packages
+    if("metID" %in% search()){
+      detach("package:metID")
+    }
+    
+    if("metflow2" %in% search()){
+      detach("package:metflow2")
+    }
+    
+    if("lipidflow" %in% search()){
+      detach("package:lipidflow")
+    }
+    
+    if("tinyTools" %in% search()){
+      detach("package:tinyTools")
+    }
+    
+    if("demoData" %in% search()){
+      detach("package:demoData")
+    }
+    
     if (from == "github") {
       ##metID
       if (any(which_package == "all") |
           any(which_package == "metid")) {
+        ###detach pacakge
         devtools::install_github(
           repo = "jaspershen/metID",
           force = force,
@@ -46,7 +69,6 @@ install_tidymass <-
           dependencies = dependencies,
           ...
         )
-        
         devtools::install_github(
           repo = "jaspershen/tinyTools",
           force = force,
