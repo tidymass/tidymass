@@ -35,7 +35,7 @@ navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, references, articles, news]
+    left: [home, references, articles, news, contact]
     right: [github, twitter]
   components:
     articles:
@@ -67,6 +67,9 @@ navbar:
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/JasperShen1990
+    contact:
+      text: Contact us
+      href: articles/contact_us.html
     news:
       text: News
       menu:

@@ -30,7 +30,7 @@ install_tidymass <-
            upgrade = "never",
            dependencies = NA,
            demo_data = TRUE,
-           which_package = c("all", "metID", "metflow2", "lipidflow"),
+           which_package = c("all", "metID", "metflow2", "lipidflow", "demoData", "metPath"),
            ...) {
     from = match.arg(from)
     which_package = match.arg(which_package)

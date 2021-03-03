@@ -44,8 +44,15 @@ Imports:
     tinyTools (>= 0.1.2),
     cli,
     magrittr,
-    rstudioapi
+    rstudioapi,
+    htmltools,
+    leaflet,
+    htmlwidgets
 Remotes: 
     jaspershen/metflow2,
     jaspershen/metID,
     jaspershen/tinyTools
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

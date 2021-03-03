@@ -1,0 +1,67 @@
+---
+title: "Contact us"
+# author:
+# - name: Xiaotao Shen PhD (https://www.shenxt.info/)
+# - affiliation: School of Medicine, Stanford University
+date: "Created on 2021-02-28 and updated on `r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    toc: false
+  pdf_document:
+    toc: false
+pkgdown:
+  as_is: false
+vignette: >
+  %\VignetteIndexEntry{contact_us}
+  %\VignettePackage{metID}
+  % \VignetteEngine{knitr::rmarkdown}
+  % \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  # fig.width = 7, 
+  # fig.height = 5,
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+```
+
+<!-- <img src="../man/figures/adaflow_logo.png" align="middle" alt="" width="120" /> -->
+
+## If you have any quesitons, please contact me.
+
+---
+
+<i class="fa fa-weixin"></i> [shenxt1990](https://www.shenxt.info/files/wechat_QR.jpg)
+
+<i class="fa fa-envelope"></i> shenxt@stanford.edu
+
+<i class="fa fa-twitter"></i> [Twitter](https://twitter.com/JasperShen1990)
+
+<i class="fa fa-map-marker-alt"></i> [M339, Alway Buidling, Cooper Lane, Palo Alto, CA 94304](https://www.google.com/maps/place/Alway+Building/@37.4322345,-122.1770883,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa4d335c3be37:0x9057931f3b312c29!8m2!3d37.4322345!4d-122.1748996)
+
+---
+
+```{r, echo=FALSE}
+# set seed for reproducible widget id
+if (requireNamespace("htmltools", quietly = TRUE)) {
+  htmlwidgets::setWidgetIdSeed(42)
+}
+library(leaflet)
+leaflet::leaflet(width = "100%") %>%
+  leaflet::addTiles() %>%
+ leaflet::addMarkers(
+    lng = -122.174878,
+    lat = 37.432402,
+    popup = "Stanford Medicine"
+  )
+```
+
+
+
