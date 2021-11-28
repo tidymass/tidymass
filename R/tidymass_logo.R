@@ -64,7 +64,7 @@ print.tidymass_logo <- function(x, ...) {
 packageStartupMessage(
   crayon::red(
     "tidymass,
-More information can be found at https://jaspershen.github.io/tidymass/
+More information can be found at https://tidymass.github.io/tidymass/
 If you use tidymass in you publication, please cite this publication:
 Metabolic reaction network-based recursive metabolite annotation for untargeted metabolomics.
 Authors: Xiaotao Shen (shenxt1990@outlook.com)

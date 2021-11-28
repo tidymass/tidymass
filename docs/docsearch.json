@@ -2,21 +2,21 @@
   "index_name": "tidymass",
   "start_urls": [
     {
-      "url": "https://jaspershen.github.io/tidymass//index.html",
+      "url": "https://tidymass.github.io/tidymass//index.html",
       "selectors_key": "homepage",
       "tags": [
         "homepage"
       ]
     },
     {
-      "url": "https://jaspershen.github.io/tidymass//reference",
+      "url": "https://tidymass.github.io/tidymass//reference",
       "selectors_key": "reference",
       "tags": [
         "reference"
       ]
     },
     {
-      "url": "https://jaspershen.github.io/tidymass//articles",
+      "url": "https://tidymass.github.io/tidymass//articles",
       "selectors_key": "articles",
       "tags": [
         "articles"
@@ -30,7 +30,7 @@
     "/articles/index.html"
   ],
   "sitemap_urls": [
-    "https://jaspershen.github.io/tidymass//sitemap.xml"
+    "https://tidymass.github.io/tidymass//sitemap.xml"
   ],
   "selectors": {
     "homepage": {

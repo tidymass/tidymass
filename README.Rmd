@@ -28,7 +28,7 @@ library("badger")
 ```{r, echo = FALSE, results='asis'}
 cat(
 	badge_cran_release("tidymass", "green"),
-	badge_code_size(ref = "jaspershen/tidymass"),
+	badge_code_size(ref = "tidymass/tidymass"),
 	badge_dependencies(),
 	badge_lifecycle()
 	# badge_cran_download("badger", "grand-total", "green"),
@@ -46,13 +46,13 @@ cat(
 
 ## Installation
 
-You can install `tidymass` from [Github](https://github.com/jaspershen/tidymass).
+You can install `tidymass` from [Github](https://github.com/tidymass/tidymass).
 
 ```{r, eval=FALSE}
 if(!require(devtools)){
 install.packages("devtools")
 }
-devtools::install_github("jaspershen/tidymass")
+devtools::install_github("tidymass/tidymass")
 ```
 
 Then you can use `install_tidymass()` to install all the packages in `tidymass`.

@@ -55,7 +55,7 @@
 <meta property="og:title" content="Conflicts between the tidymass and other packages — tidymass_conflicts" />
 <meta property="og:description" content="This function lists all the conflicts between packages in the tidymass
 and other packages that you have loaded." />
-<meta property="og:image" content="https://jaspershen.github.io/tidymass/logo.png" />
+<meta property="og:image" content="https://tidymass.github.io/tidymass/logo.png" />
 
 
 
@@ -176,7 +176,7 @@ and other packages that you have loaded." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/jaspershen/tidymass/">
+  <a href="https://github.com/tidymass/tidymass/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -207,7 +207,7 @@ and other packages that you have loaded." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Conflicts between the tidymass and other packages</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jaspershen/tidymass/blob/master/R/conflicts.R'><code>R/conflicts.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/tidymass/tidymass/blob/master/R/conflicts.R'><code>R/conflicts.R</code></a></small>
     <div class="hidden name"><code>tidymass_conflicts.Rd</code></div>
     </div>
 
@@ -227,9 +227,10 @@ make the base equivalents generic, so shouldn't negatively affect any
 existing code.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>tidymass_conflicts</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; ── <span style='font-weight: bold;'>Conflicts</span><span> ─────────────────────────────────────────── tidymass_conflicts() ──
-#&gt; </span><span style='color: #BB0000;'>x</span><span> </span><span style='color: #0000BB;'>metflow2</span><span>::</span><span style='color: #00BB00;'>get_parameters()</span><span> masks </span><span style='color: #0000BB;'>metID</span><span>::get_parameters()</div></span></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>tidymass_conflicts</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> ── <span style='font-weight: bold;'>Conflicts</span> ─────────────────────────────────────────── tidymass_conflicts() ──</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BB0000;'>x</span> <span style='color: #0000BB;'>metflow2</span>::<span style='color: #00BB00;'>get_parameters()</span> masks <span style='color: #0000BB;'>metID</span>::get_parameters()</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -3,7 +3,7 @@
 # tidymass <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
 [![](https://www.r-pkg.org/badges/version/tidymass?color=green)](https://cran.r-project.org/package=tidymass)
-[![](https://img.shields.io/github/languages/code-size/jaspershen/tidymass.svg)](https://github.com/jaspershen/tidymass)
+[![](https://img.shields.io/github/languages/code-size/tidymass/tidymass.svg)](https://github.com/tidymass/tidymass)
 [![Dependencies](https://tinyverse.netlify.com/badge/tidymass)](https://cran.r-project.org/package=tidymass)
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
@@ -17,13 +17,13 @@ processing, analysis.
 ## Installation
 
 You can install `tidymass` from
-[Github](https://github.com/jaspershen/tidymass).
+[Github](https://github.com/tidymass/tidymass).
 
 ``` r
 if(!require(devtools)){
 install.packages("devtools")
 }
-devtools::install_github("jaspershen/tidymass")
+devtools::install_github("tidymass/tidymass")
 ```
 
 Then you can use `install_tidymass()` to install all the packages in
@@ -41,7 +41,7 @@ tidymass::install_tidymass(from = "github", force = FALSE)
 
 Now, `tidymass` contains several packages:
 
-### metflow2 <a href="https://jaspershen.github.io/metflow2/" target="_blank"><img src="man/figures/metflow2_logo.png" align="left" alt="" width="120" /></a>
+### metflow2 <a href="https://tidymass.github.io/metflow2/" target="_blank"><img src="man/figures/metflow2_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -49,7 +49,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### MetNormalizer <a href="https://jaspershen.github.io/MetNormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
+### MetNormalizer <a href="https://tidymass.github.io/MetNormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -57,7 +57,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### metID <a href="https://jaspershen.github.io/metID/" target="_blank"><img src="man/figures/metID_logo.png" align="left" alt="" width="120" /></a>
+### metID <a href="https://tidymass.github.io/metID/" target="_blank"><img src="man/figures/metID_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -65,7 +65,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### lipidflow <a href="https://jaspershen.github.io/lipidflow/" target="_blank"><img src="man/figures/lipidflow_logo.png" align="left" alt="" width="120" /></a>
+### lipidflow <a href="https://tidymass.github.io/lipidflow/" target="_blank"><img src="man/figures/lipidflow_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -73,7 +73,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### metPath <a href="https://jaspershen.github.io/metPath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
+### metPath <a href="https://tidymass.github.io/metPath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -81,7 +81,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### featureGSEA <a href="https://jaspershen.github.io/featureGSEA/" target="_blank"><img src="man/figures/featureGSEA.png" align="left" alt="" width="120" /></a>
+### featureGSEA <a href="https://tidymass.github.io/featureGSEA/" target="_blank"><img src="man/figures/featureGSEA.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -89,7 +89,7 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### tinyTools <a href="https://jaspershen.github.io/tinyTools/" target="_blank"><img src="man/figures/tinyTools_logo.png" align="left" alt="" width="120" /></a>
+### tinyTools <a href="https://tidymass.github.io/tinyTools/" target="_blank"><img src="man/figures/tinyTools_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 

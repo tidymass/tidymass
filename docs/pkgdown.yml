@@ -4,8 +4,8 @@ pkgdown_sha: ~
 articles:
   contact_us: contact_us.html
   tidymass: tidymass.html
-last_built: 2021-03-03T21:50Z
+last_built: 2021-11-28T07:14Z
 urls:
-  reference: https://jaspershen.github.io/tidymass//reference
-  article: https://jaspershen.github.io/tidymass//articles
+  reference: https://tidymass.github.io/tidymass//reference
+  article: https://tidymass.github.io/tidymass//articles
 

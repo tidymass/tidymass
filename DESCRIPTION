@@ -25,8 +25,8 @@ Authors@R: c(
            )
 Description: The 'tidymass' package is a collection of several packages for Mass Spectrometry data processing and analysis, now it contains metID, metflow2, metDNA ,metPath, and lipidflow.
 License: MIT + file LICENSE
-URL: https://github.com/jaspershen/tidymass
-BugReports: https://github.com/jaspershen/tidymass/issues
+URL: https://github.com/tidymass/tidymass
+BugReports: https://github.com/tidymass/tidymass/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

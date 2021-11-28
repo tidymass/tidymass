@@ -63,14 +63,14 @@ install_tidymass <-
           any(which_package == "metid")) {
         ###detach pacakge
         devtools::install_github(
-          repo = "jaspershen/metID",
+          repo = "tidymass/metID",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
           ...
         )
         devtools::install_github(
-          repo = "jaspershen/tinyTools",
+          repo = "tidymass/tinyTools",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
@@ -82,7 +82,7 @@ install_tidymass <-
       if (any(which_package == "all") |
           any(which_package == "metflow2")) {
         devtools::install_github(
-          repo = "jaspershen/metflow2",
+          repo = "tidymass/metflow2",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
@@ -94,7 +94,7 @@ install_tidymass <-
       if (any(which_package == "all") |
           any(which_package == "lipidflow")) {
         devtools::install_github(
-          repo = "jaspershen/lipidflow",
+          repo = "tidymass/lipidflow",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
@@ -105,7 +105,7 @@ install_tidymass <-
       ##demoData
       if (demo_data) {
         devtools::install_github(
-          repo = "jaspershen/demoData",
+          repo = "tidymass/demoData",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
@@ -119,7 +119,7 @@ install_tidymass <-
       if (any(which_package == "all") |
           any(which_package == "metid")) {
         devtools::install_git(
-          url = "https://gitee.com/jaspershen/metID",
+          url = "https://gitee.com/tidymass/metID",
           dependencies = dependencies,
           force = force,
           upgrade = upgrade,
@@ -127,7 +127,7 @@ install_tidymass <-
         )
         
         devtools::install_github(
-          repo = "https://gitee.com/jaspershen/tinyTools",
+          repo = "https://gitee.com/tidymass/tinyTools",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
@@ -139,7 +139,7 @@ install_tidymass <-
       if (any(which_package == "all") |
           any(which_package == "metflow2")) {
         devtools::install_git(
-          url = "https://gitee.com/jaspershen/metflow2",
+          url = "https://gitee.com/tidymass/metflow2",
           dependencies = dependencies,
           force = force,
           upgrade = upgrade,
@@ -151,7 +151,7 @@ install_tidymass <-
       if (any(which_package == "all") |
           any(which_package == "lipidflow")) {
         devtools::install_git(
-          url = "https://gitee.com/jaspershen/lipidflow",
+          url = "https://gitee.com/tidymass/lipidflow",
           dependencies = dependencies,
           force = force,
           upgrade = upgrade,
@@ -161,7 +161,7 @@ install_tidymass <-
       
       if (demo_data) {
         devtools::install_git(
-          url = "https://gitee.com/jaspershen/demoData",
+          url = "https://gitee.com/tidymass/demoData",
           dependencies = dependencies,
           force = force,
           upgrade = upgrade,
