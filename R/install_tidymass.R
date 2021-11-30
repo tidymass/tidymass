@@ -30,7 +30,7 @@ install_tidymass <-
            upgrade = "never",
            dependencies = NA,
            demo_data = TRUE,
-           which_package = c("all", "metID", "metflow2", "lipidflow", "demoData", "metPath"),
+           which_package = c("all", "metID", "lipidflow", "demoData", "metPath"),
            ...) {
     from = match.arg(from)
     which_package = match.arg(which_package)
@@ -49,8 +49,8 @@ install_tidymass <-
       detach("package:lipidflow")
     }
     
-    if("tinyTools" %in% search()){
-      detach("package:tinyTools")
+    if("tinytools" %in% search()){
+      detach("package:tinytools")
     }
     
     if("demoData" %in% search()){
@@ -62,27 +62,15 @@ install_tidymass <-
       if (any(which_package == "all") |
           any(which_package == "metid")) {
         ###detach pacakge
+        # devtools::install_github(
+        #   repo = "tidymass/metID",
+        #   force = force,
+        #   upgrade = upgrade,
+        #   dependencies = dependencies,
+        #   ...
+        # )
         devtools::install_github(
-          repo = "tidymass/metID",
-          force = force,
-          upgrade = upgrade,
-          dependencies = dependencies,
-          ...
-        )
-        devtools::install_github(
-          repo = "tidymass/tinyTools",
-          force = force,
-          upgrade = upgrade,
-          dependencies = dependencies,
-          ...
-        )
-      }
-      
-      ##metflow2
-      if (any(which_package == "all") |
-          any(which_package == "metflow2")) {
-        devtools::install_github(
-          repo = "tidymass/metflow2",
+          repo = "tidymass/tinytools",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
@@ -90,17 +78,29 @@ install_tidymass <-
         )
       }
       
-      ##lipidflow
-      if (any(which_package == "all") |
-          any(which_package == "lipidflow")) {
-        devtools::install_github(
-          repo = "tidymass/lipidflow",
-          force = force,
-          upgrade = upgrade,
-          dependencies = dependencies,
-          ...
-        )
-      }
+      # ##metflow2
+      # if (any(which_package == "all") |
+      #     any(which_package == "metflow2")) {
+      #   devtools::install_github(
+      #     repo = "tidymass/metflow2",
+      #     force = force,
+      #     upgrade = upgrade,
+      #     dependencies = dependencies,
+      #     ...
+      #   )
+      # }
+      
+      # ##lipidflow
+      # if (any(which_package == "all") |
+      #     any(which_package == "lipidflow")) {
+      #   devtools::install_github(
+      #     repo = "tidymass/lipidflow",
+      #     force = force,
+      #     upgrade = upgrade,
+      #     dependencies = dependencies,
+      #     ...
+      #   )
+      # }
       
       ##demoData
       if (demo_data) {
@@ -127,7 +127,7 @@ install_tidymass <-
         )
         
         devtools::install_github(
-          repo = "https://gitee.com/tidymass/tinyTools",
+          repo = "https://gitee.com/tidymass/tinytools",
           force = force,
           upgrade = upgrade,
           dependencies = dependencies,
@@ -135,29 +135,29 @@ install_tidymass <-
         )
       }
       
-      ##metID
-      if (any(which_package == "all") |
-          any(which_package == "metflow2")) {
-        devtools::install_git(
-          url = "https://gitee.com/tidymass/metflow2",
-          dependencies = dependencies,
-          force = force,
-          upgrade = upgrade,
-          ...
-        )
-      }
+      # ##metID
+      # if (any(which_package == "all") |
+      #     any(which_package == "metflow2")) {
+      #   devtools::install_git(
+      #     url = "https://gitee.com/tidymass/metflow2",
+      #     dependencies = dependencies,
+      #     force = force,
+      #     upgrade = upgrade,
+      #     ...
+      #   )
+      # }
       
-      ##lipidflow
-      if (any(which_package == "all") |
-          any(which_package == "lipidflow")) {
-        devtools::install_git(
-          url = "https://gitee.com/tidymass/lipidflow",
-          dependencies = dependencies,
-          force = force,
-          upgrade = upgrade,
-          ...
-        )
-      }
+      # ##lipidflow
+      # if (any(which_package == "all") |
+      #     any(which_package == "lipidflow")) {
+      #   devtools::install_git(
+      #     url = "https://gitee.com/tidymass/lipidflow",
+      #     dependencies = dependencies,
+      #     force = force,
+      #     upgrade = upgrade,
+      #     ...
+      #   )
+      # }
       
       if (demo_data) {
         devtools::install_git(

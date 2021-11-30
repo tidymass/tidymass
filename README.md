@@ -9,10 +9,8 @@
 
 ## About
 
-`tidymass` is a collections of R packages for mass spectrometry data
+`tidymass` is a collections of R packages for Mass Spectrometry data
 processing, analysis.
-
-<img src="man/figures/workflow_tidymass.jpg" align="middle" alt="" width = "80%"/>
 
 ## Installation
 
@@ -39,29 +37,45 @@ tidymass::install_tidymass(from = "github", force = FALSE)
 
 ## Usage
 
-Now, `tidymass` contains several packages:
+Now, `tidymass` contains several packages listed below:
 
-### metflow2 <a href="https://tidymass.github.io/metflow2/" target="_blank"><img src="man/figures/metflow2_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`metflow2` is a R package which is used for untargeted metabolomics data processing and analysis.  
+### massdataset <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="man/figures/massdataset_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-### MetNormalizer <a href="https://tidymass.github.io/MetNormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
+`massdataset` is a R package which is used organize metabolomics data to a `tidymass-class` object which can be processed by all the `tidymass` packages.
 
 <br>
 
-`MetNormalizer` is used for metabolomics data normalization and integration based on SVM.
+### massprocesser <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="man/figures/massprocesser_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-### metID <a href="https://tidymass.github.io/metID/" target="_blank"><img src="man/figures/metID_logo.png" align="left" alt="" width="120" /></a>
+`massprocesser` is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.
 
 <br>
 
-`metID` is used metabolite database construction and metabolite annotation.
+### masscleaner <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="man/figures/masscleaner_logo.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`masscleaner` is a R package which is used for metabolomics data cleaning.
+
+<br>
+
+### metnormalizer <a href="https://tidymass.github.io/MetNormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`metnormalizer` is used for metabolomics data normalization and integration based on SVM.
+
+<br>
+
+### metid <a href="https://tidymass.github.io/metID/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`metid` is used metabolite database construction and metabolite annotation.
 
 <br>
 
@@ -73,27 +87,27 @@ Now, `tidymass` contains several packages:
 
 <br>
 
-### metPath <a href="https://tidymass.github.io/metPath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
+### metpath <a href="https://tidymass.github.io/metPath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`metPath` is used for pathway enrichment analysis.
+`metpath` is used for pathway enrichment analysis.
 
 <br>
 
-### featureGSEA <a href="https://tidymass.github.io/featureGSEA/" target="_blank"><img src="man/figures/featureGSEA.png" align="left" alt="" width="120" /></a>
+### featuremsea <a href="https://tidymass.github.io/featuremsea/" target="_blank"><img src="man/figures/featuremsea.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`featureGSEA` is used for GSEA from metabolic feature without annotation.
+`featuremsea` is used for GSEA from metabolic feature without annotation.
 
 <br>
 
-### tinyTools <a href="https://tidymass.github.io/tinyTools/" target="_blank"><img src="man/figures/tinyTools_logo.png" align="left" alt="" width="120" /></a>
+### tinytools <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="man/figures/tinytools_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`tinyTools` is a collection of useful tiny tools.
+`tinytools` is a collection of useful tiny tools for mass spectrometry data processing.
 
 <br>
 

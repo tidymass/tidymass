@@ -10,7 +10,7 @@ install_tidymass(
   upgrade = "never",
   dependencies = NA,
   demo_data = TRUE,
-  which_package = c("all", "metID", "metflow2", "lipidflow", "demoData", "metPath"),
+  which_package = c("all", "metID", "lipidflow", "demoData", "metPath"),
   ...
 )
 }

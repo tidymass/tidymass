@@ -9,18 +9,6 @@ Authors@R: c(
            comment = c(ORCID = "0000-0002-9608-9964")),
         person(given = "Chuchu",
            family = "Wang",
-           role = c("ctb")),
-        person(given = "Si",
-           family = "Wu",
-           role = c("ctb")),
-           person(given = "Hanyah",
-           family = "Zackriah",
-           role = c("ctb")),
-           person(given = "Liang",
-           family = "Liang",
-           role = c("ctb")),
-           person(given = "Songjie",
-           family = "Chen",
            role = c("ctb"))
            )
 Description: The 'tidymass' package is a collection of several packages for Mass Spectrometry data processing and analysis, now it contains metID, metflow2, metDNA ,metPath, and lipidflow.
@@ -39,9 +27,7 @@ Imports:
     purrr,
     stringr,
     glue (>= 1.4.2),
-    metflow2 (>= 0.1.1),
-    metID (>= 0.4.1),
-    tinyTools (>= 0.1.2),
+    tinytools (>= 0.1.2),
     cli,
     magrittr,
     rstudioapi,
@@ -49,9 +35,7 @@ Imports:
     leaflet,
     htmlwidgets
 Remotes: 
-    jaspershen/metflow2,
-    jaspershen/metID,
-    jaspershen/tinyTools
+    tidymass/tinytools
 Suggests: 
     knitr,
     rmarkdown

@@ -72,17 +72,17 @@
     <li class="divider">
     <li class="dropdown-header">metflow2</li>
     <li>
-      <a href="https://jaspershen.github.io/metflow2/">Mass spectrometry raw data processing and data cleaning</a>
+      <a href="https://tidymass.github.io/metflow2/">Mass spectrometry raw data processing and data cleaning</a>
     </li>
     <li class="divider">
     <li class="dropdown-header">MetNormalizer</li>
     <li>
-      <a href="https://jaspershen.github.io/MetNormalizer/">Metabolomimcs data normalization</a>
+      <a href="https://tidymass.github.io/MetNormalizer/">Metabolomimcs data normalization</a>
     </li>
     <li class="divider">
     <li class="dropdown-header">metID</li>
     <li>
-      <a href="https://jaspershen.github.io/metID/">Database construction and metabolite annotation</a>
+      <a href="https://tidymass.github.io/metID/">Database construction and metabolite annotation</a>
     </li>
     <li class="divider">
     <li class="dropdown-header">MetDNA</li>
@@ -92,7 +92,7 @@
     <li class="divider">
     <li class="dropdown-header">lipidflow</li>
     <li>
-      <a href="https://jaspershen.github.io/lipidflow/">Absolute quantification for lipidomics</a>
+      <a href="https://tidymass.github.io/lipidflow/">Absolute quantification for lipidomics</a>
     </li>
   </ul>
 </li>
@@ -162,8 +162,7 @@
 <div id="about" class="section level2">
 <h2 class="hasAnchor">
 <a href="#about" class="anchor"></a>About</h2>
-<p><code>tidymass</code> is a collections of R packages for mass spectrometry data processing, analysis.</p>
-<p><img src="reference/figures/workflow_tidymass.jpg" align="middle" alt="" width="80%"></p>
+<p><code>tidymass</code> is a collections of R packages for Mass Spectrometry data processing, analysis.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -183,29 +182,45 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>Now, <code>tidymass</code> contains several packages:</p>
-<div id="metflow2-" class="section level3">
+<p>Now, <code>tidymass</code> contains several packages listed below:</p>
+<div id="massdataset-" class="section level3">
 <h3 class="hasAnchor">
-<a href="#metflow2-" class="anchor"></a>metflow2 <a href="https://tidymass.github.io/metflow2/" target="_blank"><img src="reference/figures/metflow2_logo.png" align="left" alt="" width="120"></a>
+<a href="#massdataset-" class="anchor"></a>massdataset <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="reference/figures/massdataset_logo.png" align="left" alt="" width="120"></a>
 </h3>
 <p><br></p>
-<p><code>metflow2</code> is a R package which is used for untargeted metabolomics data processing and analysis.</p>
+<p><code>massdataset</code> is a R package which is used organize metabolomics data to a <code>tidymass-class</code> object which can be processed by all the <code>tidymass</code> packages.</p>
+<p><br></p>
+</div>
+<div id="massprocesser-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#massprocesser-" class="anchor"></a>massprocesser <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="reference/figures/massprocesser_logo.png" align="left" alt="" width="120"></a>
+</h3>
+<p><br></p>
+<p><code>massprocesser</code> is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.</p>
+<p><br></p>
+</div>
+<div id="masscleaner-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#masscleaner-" class="anchor"></a>masscleaner <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="reference/figures/masscleaner_logo.png" align="left" alt="" width="120"></a>
+</h3>
+<p><br></p>
+<p><code>masscleaner</code> is a R package which is used for metabolomics data cleaning.</p>
 <p><br></p>
 </div>
 <div id="metnormalizer-" class="section level3">
 <h3 class="hasAnchor">
-<a href="#metnormalizer-" class="anchor"></a>MetNormalizer <a href="https://tidymass.github.io/MetNormalizer/" target="_blank"><img src="reference/figures/metnormalizer_logo.png" align="left" alt="" width="120"></a>
+<a href="#metnormalizer-" class="anchor"></a>metnormalizer <a href="https://tidymass.github.io/MetNormalizer/" target="_blank"><img src="reference/figures/metnormalizer_logo.png" align="left" alt="" width="120"></a>
 </h3>
 <p><br></p>
-<p><code>MetNormalizer</code> is used for metabolomics data normalization and integration based on SVM.</p>
+<p><code>metnormalizer</code> is used for metabolomics data normalization and integration based on SVM.</p>
 <p><br></p>
 </div>
 <div id="metid-" class="section level3">
 <h3 class="hasAnchor">
-<a href="#metid-" class="anchor"></a>metID <a href="https://tidymass.github.io/metID/" target="_blank"><img src="reference/figures/metID_logo.png" align="left" alt="" width="120"></a>
+<a href="#metid-" class="anchor"></a>metid <a href="https://tidymass.github.io/metID/" target="_blank"><img src="reference/figures/metid_logo.png" align="left" alt="" width="120"></a>
 </h3>
 <p><br></p>
-<p><code>metID</code> is used metabolite database construction and metabolite annotation.</p>
+<p><code>metid</code> is used metabolite database construction and metabolite annotation.</p>
 <p><br></p>
 </div>
 <div id="lipidflow-" class="section level3">
@@ -218,26 +233,26 @@
 </div>
 <div id="metpath-" class="section level3">
 <h3 class="hasAnchor">
-<a href="#metpath-" class="anchor"></a>metPath <a href="https://tidymass.github.io/metPath/" target="_blank"><img src="reference/figures/metpath_logo.png" align="left" alt="" width="120"></a>
+<a href="#metpath-" class="anchor"></a>metpath <a href="https://tidymass.github.io/metPath/" target="_blank"><img src="reference/figures/metpath_logo.png" align="left" alt="" width="120"></a>
 </h3>
 <p><br></p>
-<p><code>metPath</code> is used for pathway enrichment analysis.</p>
+<p><code>metpath</code> is used for pathway enrichment analysis.</p>
 <p><br></p>
 </div>
-<div id="featuregsea-" class="section level3">
+<div id="featuremsea-" class="section level3">
 <h3 class="hasAnchor">
-<a href="#featuregsea-" class="anchor"></a>featureGSEA <a href="https://tidymass.github.io/featureGSEA/" target="_blank"><img src="reference/figures/featureGSEA.png" align="left" alt="" width="120"></a>
+<a href="#featuremsea-" class="anchor"></a>featuremsea <a href="https://tidymass.github.io/featuremsea/" target="_blank"><img src="reference/figures/featuremsea.png" align="left" alt="" width="120"></a>
 </h3>
 <p><br></p>
-<p><code>featureGSEA</code> is used for GSEA from metabolic feature without annotation.</p>
+<p><code>featuremsea</code> is used for GSEA from metabolic feature without annotation.</p>
 <p><br></p>
 </div>
 <div id="tinytools-" class="section level3">
 <h3 class="hasAnchor">
-<a href="#tinytools-" class="anchor"></a>tinyTools <a href="https://tidymass.github.io/tinyTools/" target="_blank"><img src="reference/figures/tinyTools_logo.png" align="left" alt="" width="120"></a>
+<a href="#tinytools-" class="anchor"></a>tinytools <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="reference/figures/tinytools_logo.png" align="left" alt="" width="120"></a>
 </h3>
 <p><br></p>
-<p><code>tinyTools</code> is a collection of useful tiny tools.</p>
+<p><code>tinytools</code> is a collection of useful tiny tools for mass spectrometry data processing.</p>
 <p><br></p>
 </div>
 </div>
@@ -268,7 +283,7 @@
 </li>
 <li>Report a bug at <br><a href="https://github.com/tidymass/tidymass/issues">https://​github.com/​tidymass/​tidymass/​issues</a>
 </li>
-<li>Find me at <br><a href="https://shenxt.info/">https://​shenxt.info/​</a>
+<li>Find me at <br><a href="https://www.shenxt.info/">https://​www.shenxt.info/​</a>
 </li>
 </ul>
 </div>

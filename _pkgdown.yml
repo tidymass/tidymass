@@ -7,7 +7,7 @@ home:
   title: tidymass
   links:
   - text: Find me
-    href: https://shenxt.info/
+    href: https://www.shenxt.info/
 
 development:
   mode: auto
@@ -47,15 +47,15 @@ navbar:
       - text: --------
       - text: "metflow2"
       - text: Mass spectrometry raw data processing and data cleaning
-        href: https://jaspershen.github.io/metflow2/
+        href: https://tidymass.github.io/metflow2/
       - text: --------
       - text: "MetNormalizer"
       - text: Metabolomimcs data normalization
-        href: https://jaspershen.github.io/MetNormalizer/
+        href: https://tidymass.github.io/MetNormalizer/
       - text: --------
       - text: "metID"
       - text: Database construction and metabolite annotation
-        href: https://jaspershen.github.io/metID/
+        href: https://tidymass.github.io/metID/
       - text: --------
       - text: "MetDNA"
       - text: Metabolite identification and Dysregulated Network Analysis
@@ -63,7 +63,7 @@ navbar:
       - text: --------
       - text: "lipidflow"
       - text: Absolute quantification for lipidomics
-        href: https://jaspershen.github.io/lipidflow/
+        href: https://tidymass.github.io/lipidflow/
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/JasperShen1990
