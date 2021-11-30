@@ -71,11 +71,11 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### metid <a href="https://tidymass.github.io/metID/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
+### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`metid` is used metabolite database construction and metabolite annotation.
+`metid` is used for metabolite database construction and metabolite annotation.
 
 <br>
 
