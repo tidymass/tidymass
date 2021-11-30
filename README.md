@@ -71,9 +71,7 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
-
-### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
+### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/lipidflow_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
