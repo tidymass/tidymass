@@ -67,9 +67,11 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-`metnormalizer` is used for metabolomics data normalization and integration based on SVM.
+`metnormalizer` is used for metabolomics data normalization and integration based on SVM. Now it is integrated into `masscleaner`.
 
 <br>
+
+### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
 
 ### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
 
