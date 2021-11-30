@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   contact_us: contact_us.html
   tidymass: tidymass.html
-last_built: 2021-11-30T16:00Z
+last_built: 2021-11-30T16:04Z
 urls:
   reference: https://tidymass.github.io/tidymass//reference
   article: https://tidymass.github.io/tidymass//articles
