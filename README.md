@@ -80,7 +80,7 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo.png" align="left" alt="" width="120" /></a>
+### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo2.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -120,7 +120,7 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### tinytools <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="man/figures/tinytools_logo.png" align="left" alt="" width="120" /></a>
+### tinytools <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="man/figures/tinytools_logo2.png" align="left" alt="" width="120" /></a>
 
 <br>
 
