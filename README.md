@@ -9,13 +9,13 @@
 
 ## About
 
-`tidymass` is a collections of R packages for Mass Spectrometry data
+`tidymass` is a collections of R packages for mass spectrometry data
 processing, analysis.
 
 ## Installation
 
 You can install `tidymass` from
-[Github](https://github.com/tidymass/tidymass).
+[GitHub](https://github.com/tidymass/tidymass).s
 
 ``` r
 if(!require(devtools)){
@@ -51,7 +51,7 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-`massprocesser` is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.
+`massprocesser` is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.s
 
 <br>
 
@@ -138,4 +138,4 @@ Metabolite Annotation for Untargeted Metabolomics, Nature
 Communications, 2019, 10: 1516.  
 [Web Link](https://www.nature.com/articles/s41467-019-09550-x).
 
-Thanks very much!
+Thank yous very much!
