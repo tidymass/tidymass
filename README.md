@@ -15,7 +15,7 @@ processing, analysis.
 ## Installation
 
 You can install `tidymass` from
-[GitHub](https://github.com/tidymass/tidymass).s
+[GitHub](https://github.com/tidymass/tidymass).
 
 ``` r
 if(!require(devtools)){
@@ -63,6 +63,15 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
+
+### massqc <a href="https://tidymass.github.io/massqc/" target="_blank"><img src="man/figures/massqc_logo.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`massqc` is used for data quality assessment.
+
+<br>
+
 ### metnormalizer <a href="https://tidymass.github.io/MetNormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
@@ -79,7 +88,15 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### lipidflow <a href="https://tidymass.github.io/lipidflow/" target="_blank"><img src="man/figures/lipidflow_logo.png" align="left" alt="" width="120" /></a>
+### massstat <a href="https://tidymass.github.io/massstat/" target="_blank"><img src="man/figures/massstat_logo.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`massstat` is used for statistical analysis.
+
+<br>
+
+### lipidflow <a href="https://jaspershen.github.io/lipidflow/" target="_blank"><img src="man/figures/lipidflow_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -87,7 +104,7 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### metpath <a href="https://tidymass.github.io/metPath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
+### metpath <a href="https://tidymass.github.io/metpath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -95,7 +112,7 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### featuremsea <a href="https://tidymass.github.io/featuremsea/" target="_blank"><img src="man/figures/featuremsea.png" align="left" alt="" width="120" /></a>
+### featuremsea <a href="https://jaspershen.github.io/featuremsea/" target="_blank"><img src="man/figures/featuremsea.png" align="left" alt="" width="120" /></a>
 
 <br>
 

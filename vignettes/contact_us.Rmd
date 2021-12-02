@@ -32,7 +32,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!-- <img src="../man/figures/adaflow_logo.png" align="middle" alt="" width="120" /> -->
+<!-- <img src="../man/figures/tidymass_logo.png" align="middle" alt="" width="120" /> -->
 
 ## If you have any quesitons, please contact me.
 
