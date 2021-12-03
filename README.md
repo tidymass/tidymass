@@ -72,14 +72,6 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### metnormalizer <a href="https://tidymass.github.io/MetNormalizer/" target="_blank"><img src="man/figures/metnormalizer_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`metnormalizer` is used for metabolomics data normalization and integration based on SVM. Now it is integrated into `masscleaner`.
-
-<br>
-
 ### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo2.png" align="left" alt="" width="120" /></a>
 
 <br>
@@ -96,27 +88,11 @@ Now, `tidymass` contains several packages listed below:
 
 <br>
 
-### lipidflow <a href="https://jaspershen.github.io/lipidflow/" target="_blank"><img src="man/figures/lipidflow_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`lipidflow` is used absolute quantification for lipidomics data.
-
-<br>
-
 ### metpath <a href="https://tidymass.github.io/metpath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
 `metpath` is used for pathway enrichment analysis.
-
-<br>
-
-### featuremsea <a href="https://jaspershen.github.io/featuremsea/" target="_blank"><img src="man/figures/featuremsea.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`featuremsea` is used for GSEA from metabolic feature without annotation.
 
 <br>
 
