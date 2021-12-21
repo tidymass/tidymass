@@ -41,29 +41,10 @@ navbar:
     articles:
       text: Help documents
       menu:
-      - text: "metflow"
-      - text: Web Server for Metabolomics Data Cleaning and Differential Metabolite Discovery
-        href: http://metflow.zhulab.cn/
       - text: --------
-      - text: "metflow2"
-      - text: Mass spectrometry raw data processing and data cleaning
-        href: https://tidymass.github.io/metflow2/
-      - text: --------
-      - text: "MetNormalizer"
-      - text: Metabolomimcs data normalization
-        href: https://tidymass.github.io/MetNormalizer/
-      - text: --------
-      - text: "metID"
+      - text: "metid"
       - text: Database construction and metabolite annotation
-        href: https://tidymass.github.io/metID/
-      - text: --------
-      - text: "MetDNA"
-      - text: Metabolite identification and Dysregulated Network Analysis
-        href: http://metdna.zhulab.cn/
-      - text: --------
-      - text: "lipidflow"
-      - text: Absolute quantification for lipidomics
-        href: https://tidymass.github.io/lipidflow/
+        href: https://tidymass.github.io/metid/
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/JasperShen1990
@@ -75,7 +56,7 @@ navbar:
       menu:
       - text: "Blog posts"
       - text: "Version 0.4.0"
-        href: articles/tidymass.html
+        href: articles/version0.4.0.html
       - text: "------------------"
       - text: "Change log"
         href: news/index.html
