@@ -1,35 +1,45 @@
-core <- c("tinytools")
+core <-
+  c(
+    "tinytools"
+  )
 
-core_unloaded <- function() {
+tidymass_core_unloaded <- function() {
   search <- paste0("package:", core)
   core[!search %in% search()]
 }
 
 # Attach the package from the same package library it was
 same_library <- function(pkg) {
-  loc <- if (pkg %in% loadedNamespaces()) dirname(getNamespaceInfo(pkg, "path"))
-  do.call(
-    "library",
-    list(pkg, lib.loc = loc, character.only = TRUE, warn.conflicts = FALSE)
-  )
+  loc <-
+    if (pkg %in% loadedNamespaces())
+      dirname(getNamespaceInfo(pkg, "path"))
+  do.call("library",
+          list(
+            pkg,
+            lib.loc = loc,
+            character.only = TRUE,
+            warn.conflicts = FALSE
+          ))
 }
 
 tidymass_attach <- function() {
-  to_load <- core_unloaded()
+  to_load <- tidymass_core_unloaded()
   if (length(to_load) == 0)
     return(invisible())
   
-  msg(
-    cli::rule(
-      left = crayon::bold("Attaching packages"),
-      right = paste0("tidymass ", package_version("tidymass"))
-    ),
-    startup = TRUE
-  )
+  msg(cli::rule(
+    left = crayon::bold("Attaching packages"),
+    right = paste0("tidymass ", tidymass_package_version("tidymass"))
+  ),
+  startup = TRUE)
   
-  versions <- vapply(to_load, package_version, character(1))
+  versions <-
+    vapply(to_load, tidymass_package_version, character(1))
   packages <- paste0(
-    crayon::green(cli::symbol$tick), " ", crayon::blue(format(to_load)), " ",
+    crayon::green(cli::symbol$tick),
+    " ",
+    crayon::blue(format(to_load)),
+    " ",
     crayon::col_align(versions, max(crayon::col_nchar(versions)))
   )
   
@@ -41,18 +51,37 @@ tidymass_attach <- function() {
   
   msg(paste(info, collapse = "\n"), startup = TRUE)
   
-  suppressPackageStartupMessages(
-    lapply(to_load, same_library)
-  )
+  suppressPackageStartupMessages(lapply(to_load, same_library))
   
   invisible()
 }
 
-package_version <- function(x) {
+tidymass_package_version <- function(x) {
   version <- as.character(unclass(utils::packageVersion(x))[[1]])
   
   if (length(version) > 3) {
-    version[4:length(version)] <- crayon::red(as.character(version[4:length(version)]))
+    version[4:length(version)] <-
+      crayon::red(as.character(version[4:length(version)]))
   }
   paste0(version, collapse = ".")
+}
+
+
+.onAttach <- function(...) {
+  needed <- core[!is_attached(core)]
+  if (length(needed) == 0)
+    return()
+  
+  crayon::num_colors(TRUE)
+  tidymass_attach()
+  
+  if (!"package:conflicted" %in% search()) {
+    x <- tidymass_conflicts()
+    msg(tidymass_conflict_message(x), startup = TRUE)
+  }
+  
+}
+
+is_attached <- function(x) {
+  paste0("package:", x) %in% search()
 }

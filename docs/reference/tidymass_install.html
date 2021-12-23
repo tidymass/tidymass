@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Show the base information of tidymass pacakge — tidymass • tidymass</title>
+<title>tidymass_install — tidymass_install • tidymass</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -52,9 +52,9 @@
 
 
 
-<meta property="og:title" content="Show the base information of tidymass pacakge — tidymass" />
-<meta property="og:description" content="Show the base information of tidymass pacakge." />
-<meta property="og:image" content="https://jaspershen.github.io/tidymass/logo.png" />
+<meta property="og:title" content="tidymass_install — tidymass_install" />
+<meta property="og:description" content="Install all packages in tidymass." />
+<meta property="og:image" content="https://tidymass.github.io/tidymass/logo.png" />
 
 
 
@@ -115,34 +115,10 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">metflow</li>
-    <li>
-      <a href="http://metflow.zhulab.cn/">Web Server for Metabolomics Data Cleaning and Differential Metabolite Discovery</a>
-    </li>
     <li class="divider"></li>
-    <li class="dropdown-header">metflow2</li>
+    <li class="dropdown-header">metid</li>
     <li>
-      <a href="https://jaspershen.github.io/metflow2/">Mass spectrometry raw data processing and data cleaning</a>
-    </li>
-    <li class="divider"></li>
-    <li class="dropdown-header">MetNormalizer</li>
-    <li>
-      <a href="https://jaspershen.github.io/MetNormalizer/">Metabolomimcs data normalization</a>
-    </li>
-    <li class="divider"></li>
-    <li class="dropdown-header">metID</li>
-    <li>
-      <a href="https://jaspershen.github.io/metID/">Database construction and metabolite annotation</a>
-    </li>
-    <li class="divider"></li>
-    <li class="dropdown-header">MetDNA</li>
-    <li>
-      <a href="http://metdna.zhulab.cn/">Metabolite identification and Dysregulated Network Analysis</a>
-    </li>
-    <li class="divider"></li>
-    <li class="dropdown-header">lipidflow</li>
-    <li>
-      <a href="https://jaspershen.github.io/lipidflow/">Absolute quantification for lipidomics</a>
+      <a href="https://tidymass.github.io/metid/">Database construction and metabolite annotation</a>
     </li>
   </ul>
 </li>
@@ -155,7 +131,7 @@
   <ul class="dropdown-menu" role="menu">
     <li class="dropdown-header">Blog posts</li>
     <li>
-      <a href="../articles/tidymass.html">Version 0.4.0</a>
+      <a href="../articles/version0.4.0.html">Version 0.4.0</a>
     </li>
     <li class="divider"></li>
     <li>
@@ -164,12 +140,15 @@
   </ul>
 </li>
 <li>
+  <a href="../articles/contact_us.html">Contact us</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/jaspershen/tidymass/">
+  <a href="https://github.com/tidymass/tidymass/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -199,39 +178,75 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Show the base information of tidymass pacakge</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jaspershen/tidymass/blob/master/R/tidymass.R'><code>R/tidymass.R</code></a></small>
-    <div class="hidden name"><code>tidymass.Rd</code></div>
+    <h1>tidymass_install</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tidymass/tidymass/blob/master/R/tidymass_install.R'><code>R/tidymass_install.R</code></a></small>
+    <div class="hidden name"><code>tidymass_install.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Show the base information of tidymass pacakge.</p>
+    <p>Install all packages in tidymass.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tidymass</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>tidymass_install</span><span class='op'>(</span>
+  from <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"github"</span>, <span class='st'>"gitee"</span><span class='op'>)</span>,
+  force <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  upgrade <span class='op'>=</span> <span class='st'>"never"</span>,
+  dependencies <span class='op'>=</span> <span class='cn'>NA</span>,
+  demo_data <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  which_package <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"all"</span>, <span class='st'>"massdataset"</span>, <span class='st'>"massprocesser"</span>, <span class='st'>"masscleaner"</span>, <span class='st'>"massqc"</span>,
+    <span class='st'>"metid"</span>, <span class='st'>"massstat"</span>, <span class='st'>"metpath"</span>, <span class='st'>"tinytools"</span><span class='op'>)</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>from</th>
+      <td><p>From github or gitee, if you are in China, try to set this as "gitee".</p></td>
+    </tr>
+    <tr>
+      <th>force</th>
+      <td><p>Force installation, even if the remote state has not changed since the previous install.</p></td>
+    </tr>
+    <tr>
+      <th>upgrade</th>
+      <td><p>One of "default", "ask", "always", or "never".
+"default" respects the value of the R_REMOTES_UPGRADE environment variable if set,
+and falls back to "ask" if unset. "ask" prompts the user for which out of date
+packages to upgrade. For non-interactive sessions "ask" is equivalent to "always".
+TRUE and FALSE are also accepted and correspond to "always" and "never" respectively.</p></td>
+    </tr>
+    <tr>
+      <th>dependencies</th>
+      <td><p>Which dependencies do you want to check? Can be a character vector
+(selecting from "Depends", "Imports", "LinkingTo", "Suggests", or "Enhances"),
+or a logical vector.TRUE is shorthand for "Depends", "Imports", "LinkingTo"
+and "Suggests". NA is shorthand for "Depends", "Imports" and "LinkingTo"
+and is the default. FALSE is shorthand for no dependencies
+(i.e. just check this package, not its dependencies).
+The value "soft" means the same as TRUE, "hard" means the same as NA.</p></td>
+    </tr>
+    <tr>
+      <th>demo_data</th>
+      <td><p>Install demo_data package or not.</p></td>
+    </tr>
+    <tr>
+      <th>which_package</th>
+      <td><p>What packages you want to install? Default is all.
+You can set it as a character vector.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Other parameters from devtools::install_github() or devtools::install_git()</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A ASCII log of tidymass</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Xiaotao Shen
 <a href='mailto:shenxt@stanford.edu'>shenxt@stanford.edu</a></p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>tidymass</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #BB0000;'>Thank you for using tidymass!
-#&gt; Version 0.0.1 (20210210)
-#&gt; More information can be found at https://jaspershen.github.io/tidymass/
-#&gt;   _   _     _                               </span><span>
-#&gt; </span><span style='color: #BB0000;'> | | (_)   | |                              </span><span>
-#&gt; </span><span style='color: #BB0000;'> | |_ _  __| |_   _ _ __ ___   __ _ ___ ___ </span><span>
-#&gt; </span><span style='color: #BB0000;'> | __| |/ _` | | | | '_ ` _ \ / _` / __/ __|</span><span>
-#&gt; </span><span style='color: #BB0000;'> | |_| | (_| | |_| | | | | | | (_| \__ \__ \</span><span>
-#&gt; </span><span style='color: #BB0000;'>  \__|_|\__,_|\__, |_| |_| |_|\__,_|___/___/</span><span>
-#&gt; </span><span style='color: #BB0000;'>               __/ |                        </span><span>
-#&gt; </span><span style='color: #BB0000;'>              |___/                         </span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

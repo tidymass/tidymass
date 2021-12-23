@@ -27,7 +27,7 @@ Imports:
     purrr,
     stringr,
     glue (>= 1.4.2),
-    tinytools (>= 0.1.2),
+    tinytools,
     cli,
     magrittr,
     rstudioapi,
@@ -35,6 +35,12 @@ Imports:
     leaflet,
     htmlwidgets
 Remotes: 
+    tidymass/massprocesser,
+    tidymass/masscleaner,
+    tidymass/massqc,
+    tidymass/metid,
+    tidymass/massstat,
+    tidymass/metpath,
     tidymass/tinytools
 Suggests: 
     knitr,

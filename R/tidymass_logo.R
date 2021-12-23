@@ -65,8 +65,6 @@ packageStartupMessage(
   crayon::red(
     "tidymass,
 More information can be found at https://tidymass.github.io/tidymass/
-If you use tidymass in you publication, please cite this publication:
-Metabolic reaction network-based recursive metabolite annotation for untargeted metabolomics.
 Authors: Xiaotao Shen (shenxt1990@outlook.com)
 Maintainer: Xiaotao Shen.
 Version 0.0.1 (2021-11-27)"

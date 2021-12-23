@@ -14,7 +14,7 @@ pkgdown:
   as_is: false
 vignette: >
   %\VignetteIndexEntry{contact_us}
-  %\VignettePackage{metID}
+  %\VignettePackage{tidymass}
   % \VignetteEngine{knitr::rmarkdown}
   % \usepackage[utf8]{inputenc}
   %\VignetteEncoding{UTF-8}

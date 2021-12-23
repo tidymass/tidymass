@@ -1,5 +1,5 @@
 ##------------------------------------------------------------------------------
-#' @title install_tidymass
+#' @title tidymass_install
 #' @description Install all packages in tidymass.
 #' @author Xiaotao Shen
 #' \email{shenxt@@stanford.edu}
@@ -18,57 +18,156 @@
 #' (i.e. just check this package, not its dependencies).
 #' The value "soft" means the same as TRUE, "hard" means the same as NA.
 #' @param demo_data Install demo_data package or not.
-#' @param which_package What packages you want to install? Default is all. You can set it as a character vector.
+#' @param which_package What packages you want to install? Default is all. 
+#' You can set it as a character vector.
 #' @param ... Other parameters from devtools::install_github() or devtools::install_git()
 #' @importFrom devtools install_github
 #' @importFrom devtools install_git
 #' @export
 
-install_tidymass <-
+tidymass_install <-
   function(from = c("github", "gitee"),
            force = FALSE,
            upgrade = "never",
            dependencies = NA,
            demo_data = TRUE,
-           which_package = c("all", "metID", "lipidflow", "demoData", "metPath"),
+           which_package = c(
+             "all",
+             "massdataset",
+             "massprocesser",
+             "masscleaner",
+             "massqc",
+             "metid",
+             "massstat",
+             "metpath",
+             "tinytools"
+           ),
            ...) {
     from = match.arg(from)
     which_package = match.arg(which_package)
     which_package = stringr::str_to_lower(which_package)
     
     ##detach packages
-    if("metID" %in% search()){
-      detach("package:metID")
+    if ("massdataset" %in% search()) {
+      detach("package:massdataset")
     }
     
-    if("metflow2" %in% search()){
-      detach("package:metflow2")
+    if ("massprocesser" %in% search()) {
+      detach("package:massprocesser")
     }
     
-    if("lipidflow" %in% search()){
-      detach("package:lipidflow")
+    if ("masscleaner" %in% search()) {
+      detach("package:masscleaner")
     }
     
-    if("tinytools" %in% search()){
+    if ("massqc" %in% search()) {
+      detach("package:massqc")
+    }
+    
+    if ("metid" %in% search()) {
+      detach("package:metid")
+    }
+    
+    if ("massstat" %in% search()) {
+      detach("package:massstat")
+    }
+    
+    if ("metpath" %in% search()) {
+      detach("package:metpath")
+    }
+    
+    if ("tinytools" %in% search()) {
       detach("package:tinytools")
     }
     
-    if("demoData" %in% search()){
-      detach("package:demoData")
-    }
-    
     if (from == "github") {
-      ##metID
+      ##massdataset
+      if (any(which_package == "all") |
+          any(which_package == "massdataset")) {
+        devtools::install_github(
+          repo = "tidymass/massdataset",
+          force = force,
+          upgrade = upgrade,
+          dependencies = dependencies,
+          ...
+        )
+      }
+      
+      ##massprocesser
+      if (any(which_package == "all") |
+          any(which_package == "massprocesser")) {
+        devtools::install_github(
+          repo = "tidymass/massprocesser",
+          force = force,
+          upgrade = upgrade,
+          dependencies = dependencies,
+          ...
+        )
+      }
+      
+      ##masscleaner
+      if (any(which_package == "all") |
+          any(which_package == "masscleaner")) {
+        devtools::install_github(
+          repo = "tidymass/masscleaner",
+          force = force,
+          upgrade = upgrade,
+          dependencies = dependencies,
+          ...
+        )
+      }
+      
+      ##massqc
+      if (any(which_package == "all") |
+          any(which_package == "massqc")) {
+        devtools::install_github(
+          repo = "tidymass/massqc",
+          force = force,
+          upgrade = upgrade,
+          dependencies = dependencies,
+          ...
+        )
+      }
+      
+      ##metid
       if (any(which_package == "all") |
           any(which_package == "metid")) {
-        ###detach pacakge
-        # devtools::install_github(
-        #   repo = "tidymass/metID",
-        #   force = force,
-        #   upgrade = upgrade,
-        #   dependencies = dependencies,
-        #   ...
-        # )
+        devtools::install_github(
+          repo = "tidymass/metid",
+          force = force,
+          upgrade = upgrade,
+          dependencies = dependencies,
+          ...
+        )
+      }
+      
+      ##massstat
+      if (any(which_package == "all") |
+          any(which_package == "massstat")) {
+        devtools::install_github(
+          repo = "tidymass/massstat",
+          force = force,
+          upgrade = upgrade,
+          dependencies = dependencies,
+          ...
+        )
+      }
+      
+      ##metpath
+      if (any(which_package == "all") |
+          any(which_package == "metpath")) {
+        devtools::install_github(
+          repo = "tidymass/metpath",
+          force = force,
+          upgrade = upgrade,
+          dependencies = dependencies,
+          ...
+        )
+      }
+      
+      ##tinytools
+      if (any(which_package == "all") |
+          any(which_package == "tinytools")) {
         devtools::install_github(
           repo = "tidymass/tinytools",
           force = force,
@@ -78,95 +177,8 @@ install_tidymass <-
         )
       }
       
-      # ##metflow2
-      # if (any(which_package == "all") |
-      #     any(which_package == "metflow2")) {
-      #   devtools::install_github(
-      #     repo = "tidymass/metflow2",
-      #     force = force,
-      #     upgrade = upgrade,
-      #     dependencies = dependencies,
-      #     ...
-      #   )
-      # }
-      
-      # ##lipidflow
-      # if (any(which_package == "all") |
-      #     any(which_package == "lipidflow")) {
-      #   devtools::install_github(
-      #     repo = "tidymass/lipidflow",
-      #     force = force,
-      #     upgrade = upgrade,
-      #     dependencies = dependencies,
-      #     ...
-      #   )
-      # }
-      
-      ##demoData
-      if (demo_data) {
-        devtools::install_github(
-          repo = "tidymass/demoData",
-          force = force,
-          upgrade = upgrade,
-          dependencies = dependencies,
-          ...
-        )
-      }
     }
-    
     if (from == "gitee") {
-      ##metID
-      if (any(which_package == "all") |
-          any(which_package == "metid")) {
-        devtools::install_git(
-          url = "https://gitee.com/tidymass/metID",
-          dependencies = dependencies,
-          force = force,
-          upgrade = upgrade,
-          ...
-        )
-        
-        devtools::install_github(
-          repo = "https://gitee.com/tidymass/tinytools",
-          force = force,
-          upgrade = upgrade,
-          dependencies = dependencies,
-          ...
-        )
-      }
-      
-      # ##metID
-      # if (any(which_package == "all") |
-      #     any(which_package == "metflow2")) {
-      #   devtools::install_git(
-      #     url = "https://gitee.com/tidymass/metflow2",
-      #     dependencies = dependencies,
-      #     force = force,
-      #     upgrade = upgrade,
-      #     ...
-      #   )
-      # }
-      
-      # ##lipidflow
-      # if (any(which_package == "all") |
-      #     any(which_package == "lipidflow")) {
-      #   devtools::install_git(
-      #     url = "https://gitee.com/tidymass/lipidflow",
-      #     dependencies = dependencies,
-      #     force = force,
-      #     upgrade = upgrade,
-      #     ...
-      #   )
-      # }
-      
-      if (demo_data) {
-        devtools::install_git(
-          url = "https://gitee.com/tidymass/demoData",
-          dependencies = dependencies,
-          force = force,
-          upgrade = upgrade,
-          ...
-        )
-      }
+      stop("gitee is not supported now.\n")
     }
   }
