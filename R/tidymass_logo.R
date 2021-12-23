@@ -13,6 +13,15 @@
 ##https://onlineasciitools.com/convert-text-to-ascii-art
 
 tidymass_logo <- function(unicode = l10n_info()$`UTF-8`) {
+  
+  cat(crayon::green("Thank you for using tidymass!\n"))
+  cat(crayon::green("Version 0.0.1 (2021-12-22)\n"))
+  cat(
+    crayon::green(
+      "More information can be found at https://tidymass.github.io/tidymass/\n"
+    )
+  )
+  
   logo =
     c(
       "0 __  _    __   1    2           3  4 ",
@@ -60,22 +69,4 @@ print.tidymass_logo <- function(x, ...) {
 }
 
 
-
-packageStartupMessage(
-  crayon::red(
-    "tidymass,
-More information can be found at https://tidymass.github.io/tidymass/
-Authors: Xiaotao Shen (shenxt1990@outlook.com)
-Maintainer: Xiaotao Shen.
-Version 0.0.1 (2021-11-27)"
-  ),
-cat(crayon::red(
-  c(
-    "  _   _     _                               ", " | | (_)   | |                              ",
-    " | |_ _  __| |_   _ _ __ ___   __ _ ___ ___ ", " | __| |/ _` | | | | '_ ` _ \\ / _` / __/ __|",
-    " | |_| | (_| | |_| | | | | | | (_| \\__ \\__ \\", "  \\__|_|\\__,_|\\__, |_| |_| |_|\\__,_|___/___/",
-    "               __/ |                        ", "              |___/                         "
-  )
-), sep = "\n")
-)
 

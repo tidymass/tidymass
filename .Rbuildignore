@@ -9,3 +9,10 @@ summary
 tidymass.Rproj
 ^.*\.Rproj$
 ^\.Rproj\.user$
+vignettes/*_cache
+vignettes/*.png
+vignettes/example
+vignettes/demo_data
+
+
+man/figures
