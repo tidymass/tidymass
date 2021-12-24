@@ -4,12 +4,19 @@ url: https://tidymass.github.io/tidymass/
 
 home:
   strip_header: false
-  sidebar:
-    structure: [links, license, community, citation, authors, dev]
   title: tidymass
   links:
-  - text: Find me
-    href: https://www.shenxt.info/
+      - text: <i class="fa fa-home"></i> Browse source code
+        href: https://github.com/tidymass/tidymass
+      - text: <i class="fa fa-bug"></i> Report a bug
+        href: https://github.com/tidymass/tidymass/issues
+      - text: <i class="fa fa-home"></i> Find me
+        href: https://www.shenxt.info/
+      - text: <i class="fa fa-laptop-code"></i> More software
+        href: articles/more_software.html
+
+sidebar:
+  structure: [links, license, community, citation, authors, dev]
 
 development:
   mode: auto
@@ -41,11 +48,12 @@ navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, articles, reference, news, contact]
+    left: [home, articles, news, contact, questions, more_sofware]
     right: [github, twitter]
   components:
     articles:
-      text: Help documents
+      text: Tutorial
+      icon: fa-folder-open
       menu:
       - text: --------
       - text: "metid"
@@ -56,9 +64,25 @@ navbar:
       href: https://twitter.com/xiaotaoshen1990
     contact:
       text: Contact us
+      icon: fa-paper-plane
       href: articles/contact_us.html
+    questions:
+      text: FAQ
+      icon: fa-question-circle
+      href: articles/faq.html
+    more_sofware:
+      text: More software
+      icon: fa-laptop-code
+      menu:
+      - text: "MetNormalizer"
+      - text: Database normalization
+        href: https://jaspershen.github.io/MetNormalizer/
+      - text: "lipidflow"
+      - text: Absolute quantification for lipidomics data
+        href: https://jaspershen.github.io/lipidflow/
     news:
       text: News
+      icon: fa-rss
       menu:
       - text: "Blog posts"
       - text: "Version 0.4.0"
@@ -69,10 +93,17 @@ navbar:
         
 footer:
   structure: 
-    left: developed_by
-    right: [contact]
+    left: [package, developed_by, from, more_sofware]
+    right: [contact, email, wechat, website, twitter, address]
   components:
-    contact: Contact us **shenxt1990@outlook.com**
+    from: <br> from <i class="fa fa-university"></i> Stanford University <br> <i class="fa fa-clinic-medical"></i>School of Medicine <br> <i class="fa fa-dna"></i> Genetics Department
+    more_sofware: <br> <i class="fa fa-laptop-code"></i> [More softare](https://www.shenxt.info/files/wechat_QR.jpg)
+    contact: <b>Contact Us:</b> <br>
+    email: <i class="fa fa-envelope"></i> shenxt1990@outlook.com <br>
+    wechat: <i class="fa fa-weixin"></i>  [shenxt1990](https://www.shenxt.info/files/wechat_QR.jpg) <br>
+    website: <i class="fa fa-home"></i> [shenxt.info](https://www.shenxt.info) <br>
+    twitter: <i class="fa fa-twitter"></i> [Twitter](https://twitter.com/xiaotaoshen1990) <br>
+    address: <i class="fa fa-map-marker-alt"></i> [BMI building](https://goo.gl/maps/WLps4yacxfRfyAxTA)
         
 toc:
   depth: 3

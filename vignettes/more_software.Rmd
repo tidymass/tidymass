@@ -1,0 +1,34 @@
+---
+title: "More software"
+author:
+- name: Xiaotao Shen (https://www.shenxt.info/)
+date: "Created on 2021-12-24 and updated on `r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    toc: no
+  pdf_document:
+    toc: no
+vignette: >
+  %\VignetteIndexEntry{more_software}
+  %\VignettePackage{massqc}
+  % \VignetteEngine{knitr::rmarkdown}
+  % \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+```
+
+# **Data preparation**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+```
+
