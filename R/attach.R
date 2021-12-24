@@ -1,6 +1,14 @@
 core <-
-  c(
-    "tinytools"
+  c("massdataset",
+    "massprocesser",
+    "masscleaner",
+    "massqc",
+    "massstat",
+    "metpath",
+    "metid",
+    "tinytools",
+    "dplyr",
+    "ggplot2"
   )
 
 tidymass_core_unloaded <- function() {

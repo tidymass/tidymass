@@ -5,7 +5,6 @@
 \title{tidymass_install}
 \usage{
 tidymass_install(
-  from = c("github", "gitee"),
   force = FALSE,
   upgrade = "never",
   dependencies = NA,
@@ -16,8 +15,6 @@ tidymass_install(
 )
 }
 \arguments{
-\item{from}{From github or gitee, if you are in China, try to set this as "gitee".}
-
 \item{force}{Force installation, even if the remote state has not changed since the previous install.}
 
 \item{upgrade}{One of "default", "ask", "always", or "never".
@@ -46,5 +43,5 @@ Install all packages in tidymass.
 }
 \author{
 Xiaotao Shen
-\email{shenxt@stanford.edu}
+\email{shenxt1990@outlook.com}
 }

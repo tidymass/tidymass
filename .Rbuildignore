@@ -13,6 +13,7 @@ vignettes/*_cache
 vignettes/*.png
 vignettes/example
 vignettes/demo_data
+vignettes/
 
 
 man/figures

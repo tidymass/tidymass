@@ -5,13 +5,16 @@ Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",
            role = c("aut", "cre"),
-           email = "shenxt@stanford.edu",
+           email = "shenxt1990@outlook.com",
            comment = c(ORCID = "0000-0002-9608-9964")),
+        person(given = "Hong",
+           family = "Yan",
+           role = c("ctb")),           
         person(given = "Chuchu",
            family = "Wang",
            role = c("ctb"))
            )
-Description: The 'tidymass' package is a collection of several packages for Mass Spectrometry data processing and analysis, now it contains metID, metflow2, metDNA ,metPath, and lipidflow.
+Description: The 'tidymass' package is a collection of several packages for Mass Spectrometry data processing and analysis. The 'tidymass' is a set of packages that work in harmony because they share common data representations and 'API' design. This package is designed to make it easy to install and load multiple 'tidymass' packages in a single step. Learn more about the 'tidymass' at <https://tidymass.github.io/tidymass/>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -25,14 +28,25 @@ Imports:
     purrr,
     stringr,
     glue (>= 1.4.2),
-    tinytools,
     cli,
     magrittr,
     rstudioapi,
     htmltools,
     leaflet,
-    htmlwidgets
+    htmlwidgets,
+    massdataset,
+    massprocesser,
+    masscleaner,
+    massqc,
+    metid,
+    massstat,
+    metpath,
+    tinytools,
+    dplyr,
+    rlang,
+    tibble
 Remotes: 
+    tidymass/massdataset,
     tidymass/massprocesser,
     tidymass/masscleaner,
     tidymass/massqc,

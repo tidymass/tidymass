@@ -40,6 +40,9 @@
     <loc>https://tidymass.github.io/tidymass/reference/tidymass_conflicts.html</loc>
   </url>
   <url>
+    <loc>https://tidymass.github.io/tidymass/reference/tidymass_deps.html</loc>
+  </url>
+  <url>
     <loc>https://tidymass.github.io/tidymass/reference/tidymass_install.html</loc>
   </url>
   <url>
@@ -47,5 +50,11 @@
   </url>
   <url>
     <loc>https://tidymass.github.io/tidymass/reference/tidymass_packages.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/tidymass_sitrep.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/tidymass_update.html</loc>
   </url>
 </urlset>

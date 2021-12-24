@@ -58,12 +58,12 @@ and other packages that you have loaded."><meta property="og:image" content="htt
   </a>
 </li>
 <li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--more-software">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--more">
     <span class="fa fa-laptop-code"></span>
      
-    More software
+    More
   </a>
-  <div class="dropdown-menu" aria-labelledby="dropdown--more-software">
+  <div class="dropdown-menu" aria-labelledby="dropdown--more">
     <h6 class="dropdown-header" data-toc-skip>MetNormalizer</h6>
     <a class="external-link dropdown-item" href="https://jaspershen.github.io/MetNormalizer/">Database normalization</a>
     <h6 class="dropdown-header" data-toc-skip>lipidflow</h6>
@@ -118,7 +118,20 @@ existing code.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">tidymass_conflicts</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ── <span style="font-weight: bold;">Conflicts</span> ─────────────────────────────────────────── tidymass_conflicts() ──</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">massdataset</span>::<span style="color: #00BB00;">apply()</span>     masks <span style="color: #0000BB;">base</span>::apply()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">collect()</span>         masks <span style="color: #0000BB;">xcms</span>::collect()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">colnames()</span>    masks <span style="color: #0000BB;">BiocGenerics</span>::colnames(), <span style="color: #0000BB;">massdataset</span>::colnames(), <span style="color: #0000BB;">base</span>::colnames()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">combine()</span>         masks <span style="color: #0000BB;">MSnbase</span>::combine(), <span style="color: #0000BB;">Biobase</span>::combine(), <span style="color: #0000BB;">BiocGenerics</span>::combine()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span>          masks <span style="color: #0000BB;">metpath</span>::filter(), <span style="color: #0000BB;">massdataset</span>::filter(), <span style="color: #0000BB;">stats</span>::filter()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">first()</span>           masks <span style="color: #0000BB;">S4Vectors</span>::first()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">groups()</span>          masks <span style="color: #0000BB;">xcms</span>::groups()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">intersect()</span>   masks <span style="color: #0000BB;">BiocGenerics</span>::intersect(), <span style="color: #0000BB;">massdataset</span>::intersect(), <span style="color: #0000BB;">base</span>::intersect()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>             masks <span style="color: #0000BB;">stats</span>::lag()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">mz_rt_match()</span> masks <span style="color: #0000BB;">massdataset</span>::mz_rt_match()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">rename()</span>          masks <span style="color: #0000BB;">S4Vectors</span>::rename(), <span style="color: #0000BB;">massdataset</span>::rename()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">rownames()</span>    masks <span style="color: #0000BB;">BiocGenerics</span>::rownames(), <span style="color: #0000BB;">massdataset</span>::rownames(), <span style="color: #0000BB;">base</span>::rownames()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">MSnbase</span>::<span style="color: #00BB00;">scale()</span>         masks <span style="color: #0000BB;">massdataset</span>::scale(), <span style="color: #0000BB;">base</span>::scale()</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

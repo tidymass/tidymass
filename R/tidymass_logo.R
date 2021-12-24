@@ -1,11 +1,14 @@
 #' @title Show the logo tidymass.
 #' @description The tidymass logo, using ASCII or Unicode characters
 #' @author Xiaotao Shen
-#' \email{shenxt@@stanford.edu}
+#' \email{shenxt1990@@outlook.com}
 #' @param unicode Whether to use Unicode symbols. Default is `TRUE`
 #' on UTF-8 platforms.
 #' @return A ASCII log of tidymass
 #' @export
+#' @importFrom dplyr filter
+#' @importFrom tibble tibble
+#' @importFrom rlang is_installed
 #' @examples 
 #' tidymass_logo()
 
