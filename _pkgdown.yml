@@ -48,7 +48,7 @@ navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, articles, news, contact, questions, more_sofware]
+    left: [home, articles, news, questions, more_sofware]
     right: [github, twitter]
   components:
     articles:
@@ -62,6 +62,9 @@ navbar:
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990
+    github:
+      icon: fa-github
+      href: https://github.com/tidymass/tidymass
     contact:
       text: Contact us
       icon: fa-paper-plane
@@ -71,7 +74,7 @@ navbar:
       icon: fa-question-circle
       href: articles/faq.html
     more_sofware:
-      text: More software
+      text: More
       icon: fa-laptop-code
       menu:
       - text: "MetNormalizer"
@@ -81,7 +84,7 @@ navbar:
       - text: Absolute quantification for lipidomics data
         href: https://jaspershen.github.io/lipidflow/
     news:
-      text: News
+      text: News & Blog
       icon: fa-rss
       menu:
       - text: "Blog posts"

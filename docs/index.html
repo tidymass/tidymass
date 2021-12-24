@@ -60,24 +60,17 @@
   </div>
 </li>
 <li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--news">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--news-amp-blog">
     <span class="fa fa-rss"></span>
      
-    News
+    News &amp; Blog
   </a>
-  <div class="dropdown-menu" aria-labelledby="dropdown--news">
+  <div class="dropdown-menu" aria-labelledby="dropdown--news-amp-blog">
     <h6 class="dropdown-header" data-toc-skip>Blog posts</h6>
     <a class="dropdown-item" href="articles/version0.4.0.html">Version 0.4.0</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="news/index.html">Change log</a>
   </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="articles/contact_us.html">
-    <span class="fa fa-paper-plane"></span>
-     
-    Contact us
-  </a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="articles/faq.html">
@@ -87,12 +80,12 @@
   </a>
 </li>
 <li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--more-software">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--more">
     <span class="fa fa-laptop-code"></span>
      
-    More software
+    More
   </a>
-  <div class="dropdown-menu" aria-labelledby="dropdown--more-software">
+  <div class="dropdown-menu" aria-labelledby="dropdown--more">
     <h6 class="dropdown-header" data-toc-skip>MetNormalizer</h6>
     <a class="external-link dropdown-item" href="https://jaspershen.github.io/MetNormalizer/">Database normalization</a>
     <h6 class="dropdown-header" data-toc-skip>lipidflow</h6>
@@ -105,6 +98,12 @@
 </form>
 
       <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/tidymass/tidymass">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
 <li class="nav-item">
   <a class="external-link nav-link" href="https://twitter.com/xiaotaoshen1990">
     <span class="fab fa fab fa-twitter fa-lg"></span>
@@ -120,25 +119,25 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="tidymass-">
-<code>tidymass</code> <a class="anchor" aria-label="anchor" href="#tidymass-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="tidymass-r-packages-for-ms-data-processing-and-analysis-">
+<code>tidymass</code>: R packages for MS data processing and analysis <a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis-"></a>
 </h1>
 </div>
 
 <p><br></p>
-<h2 style="color:red;" id="tidymass--1">
+<h2 style="color:red;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--1">
 <i class="fas fa-info-circle"> About
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--1"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--1"></a>
 </h2>
 <hr>
 <p>The <code>tidymass</code> is a collection of R packages designed for MS-based untargeted metabolomics data processing. All packages share an underlying design philosophy, grammar, and data structures.</p>
 <p><code>Tidymass</code> is a comprehensive computational framework for MS-based untargeted metabolomics data processing and analysis, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis).</p>
-<p><img src="reference/figures/tidymass_all_packages.png" align="middle" alt="" width="80%"></p>
-<h2 style="color:red;" id="tidymass--2">
+<p><img src="reference/figures/tidymass_all_packages.png" align="middle" alt="" width="100%"></p>
+<h2 style="color:red;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--2">
 <i class="fas fa-cloud-download-alt"> Installation
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--2"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--2"></a>
 </h2>
 <hr>
 <p>You can install <code>tidymass</code> from <a href="https://github.com/tidymass/tidymass" class="external-link">GitHub</a>.</p>
@@ -149,92 +148,92 @@
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tidymass"</span><span class="op">)</span></code></pre></div>
 <p>Then you can use <code><a href="reference/tidymass_install.html">tidymass_install()</a></code> to install all the packages in <code>tidymass</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">tidymass</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidymass/tidymass" class="external-link">tidymass</a></span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tidymass</span><span class="fu">::</span><span class="fu"><a href="reference/tidymass_install.html">tidymass_install</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"github"</span>, force <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
-<h2 style="color:red;" id="tidymass--3">
+<h2 style="color:red;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--3">
 <i class="fas fa-code-branch"> Packages
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--3"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--3"></a>
 </h2>
 <hr>
 <p>Now, <code>tidymass</code> contains 8 packages, which are listed below:</p>
-<h3 style="color:#e474ac;" id="tidymass--4">
+<h3 style="color:#e474ac;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--4">
 <i class="fas fa-code"> massdataset
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--4"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--4"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massdataset/" target="_blank" class="external-link"><img src="reference/figures/massdataset_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massdataset</code> is used organize metabolomics experiment data into a <code>mass_dataset</code> class object, that can be processed by all the <code>tidymass</code> packages.</p>
 <p><br></p>
-<h3 style="color:#f4ac64;" id="tidymass--5">
+<h3 style="color:#f4ac64;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--5">
 <i class="fas fa-code"> massprocesser
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--5"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--5"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massprocesser/" target="_blank" class="external-link"><img src="reference/figures/massprocesser_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massprocesser</code> is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.</p>
 <p><br></p>
-<h3 style="color:#2098b8;" id="tidymass--6">
+<h3 style="color:#2098b8;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--6">
 <i class="fas fa-code"> masscleaner
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--6"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--6"></a>
 </h3>
 <p><a href="https://tidymass.github.io/masscleaner/" target="_blank" class="external-link"><img src="reference/figures/masscleaner_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>masscleaner</code> is a R package which is used for metabolomics data cleaning.</p>
 <p><br><br></p>
-<h3 style="color:#abcc2c;" id="tidymass--7">
+<h3 style="color:#abcc2c;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--7">
 <i class="fas fa-code"> massqc
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--7"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--7"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massqc/" target="_blank" class="external-link"><img src="reference/figures/massqc_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massqc</code> is used for data quality assessment and control.</p>
 <p><br><br></p>
-<h3 style="color:#2ca4e4;" id="tidymass--8">
+<h3 style="color:#2ca4e4;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--8">
 <i class="fas fa-code"> metid
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--8"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--8"></a>
 </h3>
 <p><a href="https://tidymass.github.io/metid/" target="_blank" class="external-link"><img src="reference/figures/metid_logo2.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>metid</code> is used for metabolite database construction and metabolite annotation.</p>
 <p><br><br></p>
-<h3 style="color:#dce45c;" id="tidymass--9">
+<h3 style="color:#dce45c;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--9">
 <i class="fas fa-code"> massstat
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--9"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--9"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massstat/" target="_blank" class="external-link"><img src="reference/figures/massstat_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massstat</code> is used for statistical analysis.</p>
 <p><br><br></p>
-<h3 style="color:#ccac9c;" id="tidymass--10">
+<h3 style="color:#ccac9c;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--10">
 <i class="fas fa-code"> metpath
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--10"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--10"></a>
 </h3>
 <p><a href="https://tidymass.github.io/metpath/" target="_blank" class="external-link"><img src="reference/figures/metpath_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>metpath</code> is used for pathway enrichment analysis.</p>
 <p><br><br></p>
-<h3 style="color:#ec1c04;" id="tidymass--11">
+<h3 style="color:#ec1c04;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--11">
 <i class="fas fa-code"> tinytools
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--11"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--11"></a>
 </h3>
 <p><a href="https://tidymass.github.io/tinytools/" target="_blank" class="external-link"><img src="reference/figures/tinytools_logo2.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>tinytools</code> is a collection of useful tiny tools for mass spectrometry data processing and analysis.</p>
 <p><br></p>
-<h2 style="color:red;" id="tidymass--12">
+<h2 style="color:red;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--12">
 <i class="fas fa-question-circle"> Need help?
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--12"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--12"></a>
 </h2>
 <hr>
 <p>If you have any questions about <code>tidymass</code>, please don’t hesitate to email me (<a href="mailto:shenxt@stanford.edu" class="email">shenxt@stanford.edu</a>) or reach out me via the social medias below.</p>
@@ -242,10 +241,10 @@
 <p><i class="fa fa-envelope"></i> <a href="mailto:shenxt@stanford.edu" class="email">shenxt@stanford.edu</a></p>
 <p><i class="fa fa-twitter"></i> <a href="https://twitter.com/xiaotaoshen1990" class="external-link">Twitter</a></p>
 <p><i class="fa fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Alway+Building/@37.4322345,-122.1770883,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa4d335c3be37:0x9057931f3b312c29!8m2!3d37.4322345!4d-122.1748996" class="external-link">M339, Alway Buidling, Cooper Lane, Palo Alto, CA 94304</a></p>
-<h2 style="color:red;" id="tidymass--13">
+<h2 style="color:red;" id="tidymass-r-packages-for-ms-data-processing-and-analysis--13">
 <i class="fas fa-location-arrow"> Citation
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass--13"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-ms-data-processing-and-analysis--13"></a>
 </h2>
 <hr>
 <p>If you use tidymass in you publications, please cite this publication:</p>
