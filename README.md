@@ -1,18 +1,25 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tidymass <img src="man/figures/logo.png" align="right" alt="" width="120" />
+# `tidymass` <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
 [![](https://www.r-pkg.org/badges/version/tidymass?color=green)](https://cran.r-project.org/package=tidymass)
 [![](https://img.shields.io/github/languages/code-size/tidymass/tidymass.svg)](https://github.com/tidymass/tidymass)
 [![Dependencies](https://tinyverse.netlify.com/badge/tidymass)](https://cran.r-project.org/package=tidymass)
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-## About
+<br>
 
-`tidymass` is a collections of R packages for mass spectrometry data
-processing, analysis.
+<h2 style="color:red;"><i class="fas fa-info-circle"> About</h2>
 
-## Installation
+---
+
+The `tidymass` is a collection of R packages designed for MS-based untargeted metabolomics data processing. All packages share an underlying design philosophy, grammar, and data structures.
+
+`Tidymass` is a comprehensive computational framework for MS-based untargeted metabolomics data processing and analysis, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis).
+
+<h2 style="color:red;"><i class="fas fa-cloud-download-alt"> Installation</h2>
+
+---
 
 You can install `tidymass` from
 [GitHub](https://github.com/tidymass/tidymass).
@@ -24,7 +31,7 @@ install.packages("devtools")
 devtools::install_github("tidymass/tidymass")
 ```
 
-Then you can use `install_tidymass()` to install all the packages in
+Then you can use `tidymass_install()` to install all the packages in
 `tidymass`.
 
 ``` r
@@ -32,98 +39,107 @@ library(tidymass)
 ```
 
 ``` r
-tidymass::install_tidymass(from = "github", force = FALSE)
+tidymass::tidymass_install(from = "github", force = FALSE)
 ```
 
-## Usage
+<h2 style="color:red;"><i class="fas fa-code-branch"> Packages</h2>
 
-Now, `tidymass` contains several packages listed below:
+---
 
-### massdataset <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="man/figures/massdataset_logo.png" align="left" alt="" width="120" /></a>
+Now, `tidymass` contains 8 packages, which are listed below:
 
-<br>
-
-`massdataset` is a R package which is used organize metabolomics data to a `tidymass-class` object which can be processed by all the `tidymass` packages.
+<h3 style="color:#e474ac;"><i class="fas fa-code"> massdataset</h3> <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="man/figures/massdataset_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-### massprocesser <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="man/figures/massprocesser_logo.png" align="left" alt="" width="120" /></a>
+`massdataset` is used organize metabolomics experiment data into a `mass_dataset` class object, that can be processed by all the `tidymass` packages.
 
 <br>
 
-`massprocesser` is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.s
+<h3 style="color:#f4ac64;"><i class="fas fa-code"> massprocesser</h3> <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="man/figures/massprocesser_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-### masscleaner <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="man/figures/masscleaner_logo.png" align="left" alt="" width="120" /></a>
+`massprocesser` is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.
+
+<br>
+
+<h3 style="color:#2098b8;"><i class="fas fa-code"> masscleaner</h3> <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="man/figures/masscleaner_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
 `masscleaner` is a R package which is used for metabolomics data cleaning.
 
 <br>
+<br>
 
-
-### massqc <a href="https://tidymass.github.io/massqc/" target="_blank"><img src="man/figures/massqc_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#abcc2c;"><i class="fas fa-code"> massqc</h3> <a href="https://tidymass.github.io/massqc/" target="_blank"><img src="man/figures/massqc_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`massqc` is used for data quality assessment.
+`massqc` is used for data quality assessment and control.
 
 <br>
+<br>
 
-### metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo2.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#2ca4e4;"><i class="fas fa-code"> metid</h3> <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo2.png" align="left" alt="" width="120" /></a>
 
 <br>
 
 `metid` is used for metabolite database construction and metabolite annotation.
 
 <br>
+<br>
 
-### massstat <a href="https://tidymass.github.io/massstat/" target="_blank"><img src="man/figures/massstat_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#dce45c;"><i class="fas fa-code"> massstat</h3> <a href="https://tidymass.github.io/massstat/" target="_blank"><img src="man/figures/massstat_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
 `massstat` is used for statistical analysis.
 
 <br>
+<br>
 
-### metpath <a href="https://tidymass.github.io/metpath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#ccac9c;"><i class="fas fa-code"> metpath</h3> <a href="https://tidymass.github.io/metpath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
+
 
 <br>
 
 `metpath` is used for pathway enrichment analysis.
 
 <br>
+<br>
 
-### tinytools <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="man/figures/tinytools_logo2.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#ec1c04;"><i class="fas fa-code"> tinytools</h3> <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="man/figures/tinytools_logo2.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`tinytools` is a collection of useful tiny tools for mass spectrometry data processing.
+`tinytools` is a collection of useful tiny tools for mass spectrometry data processing and analysis.
 
 <br>
 
-## Need help?
+<h2 style="color:red;"><i class="fas fa-question-circle"> Need help?</h2>
+
+---
 
 If you have any questions about `tidymass`, please don’t hesitate to
 email me (<shenxt@stanford.edu>) or reach out me via the social medias below.
 
-<i class="fa fa-weixin"></i>
-[shenxt1990](https://www.shenxt.info/files/wechat_QR.jpg)
+<i class="fa fa-weixin"></i>  [shenxt1990](https://www.shenxt.info/files/wechat_QR.jpg)
 
-<i class="fa fa-envelope"></i> <shenxt@stanford.edu>
+<i class="fa fa-envelope"></i>  <shenxt@stanford.edu>
 
-<i class="fa fa-twitter"></i>
-[Twitter](https://twitter.com/JasperShen1990)
+<i class="fa fa-twitter"></i>  [Twitter](https://twitter.com/xiaotaoshen1990)
 
-<i class="fa fa-map-marker-alt"></i> [M339, Alway Buidling, Cooper Lane,
+<i class="fa fa-map-marker-alt"></i>  [M339, Alway Buidling, Cooper Lane,
 Palo Alto, CA
 94304](https://www.google.com/maps/place/Alway+Building/@37.4322345,-122.1770883,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa4d335c3be37:0x9057931f3b312c29!8m2!3d37.4322345!4d-122.1748996)
 
-## Citation
+<h2 style="color:red;"><i class="fas fa-location-arrow"> Citation</h2>
 
-If you use tidymass in you publication, please cite this publication:
+---
+
+If you use tidymass in you publications, please cite this publication:
 
 X. Shen, R. Wang, X. Xiong, Y. Yin, Y. Cai, Z. Ma, N. Liu, and Z.-J.
 Zhu\* (Corresponding Author), Metabolic Reaction Network-based Recursive
@@ -131,4 +147,4 @@ Metabolite Annotation for Untargeted Metabolomics, Nature
 Communications, 2019, 10: 1516.  
 [Web Link](https://www.nature.com/articles/s41467-019-09550-x).
 
-Thank yous very much!
+Thank you very much!

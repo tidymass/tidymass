@@ -1,12 +1,12 @@
 pandoc: 2.11.4
-pkgdown: 1.6.1
+pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   contact_us: contact_us.html
   tidymass_install: tidymass_install.html
   version0.4.0: version0.4.0.html
-last_built: 2021-12-23T05:27Z
+last_built: 2021-12-24T08:39Z
 urls:
-  reference: https://tidymass.github.io/tidymass//reference
-  article: https://tidymass.github.io/tidymass//articles
+  reference: https://tidymass.github.io/tidymass/reference
+  article: https://tidymass.github.io/tidymass/articles
 

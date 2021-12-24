@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tidymass.github.io/tidymass//index.html</loc>
+    <loc>https://tidymass.github.io/tidymass/404.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass//reference/tidymass_conflicts.html</loc>
+    <loc>https://tidymass.github.io/tidymass/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass//reference/tidymass_install.html</loc>
+    <loc>https://tidymass.github.io/tidymass/articles/contact_us.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass//reference/tidymass_logo.html</loc>
+    <loc>https://tidymass.github.io/tidymass/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass//reference/tidymass_packages.html</loc>
+    <loc>https://tidymass.github.io/tidymass/articles/tidymass_install.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass//articles/contact_us.html</loc>
+    <loc>https://tidymass.github.io/tidymass/articles/version0.4.0.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass//articles/tidymass_install.html</loc>
+    <loc>https://tidymass.github.io/tidymass/authors.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass//articles/version0.4.0.html</loc>
+    <loc>https://tidymass.github.io/tidymass/index.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/tidymass_conflicts.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/tidymass_install.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/tidymass_logo.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/tidymass_packages.html</loc>
   </url>
 </urlset>

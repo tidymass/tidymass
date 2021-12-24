@@ -4,6 +4,8 @@ url: https://tidymass.github.io/tidymass/
 
 home:
   strip_header: false
+  sidebar:
+    structure: [links, license, community, citation, authors, dev]
   title: tidymass
   links:
   - text: Find me
@@ -15,18 +17,22 @@ development:
   version_tooltip: "Under development"
 
 template:
+  bootstrap: 5
+  bslib:
+    primary: "#06ACB2"
+  bootswatch: superhero
+  theme: arrow-dark
   params:
     docsearch:
       api_key: 21ff2860978c5d2ceb7d4150364070ff
       index_name: tidymass
-    bootswatch: flatly
     ganalytics: UA-000000-01
 
 reference:
   - title: Functions
     desc: Functions in tidymas
     contents:
-    - install_tidymass
+    - tidymass_install
     - tidymass_logo
     - tidymass_conflicts
     - tidymass_packages
@@ -35,7 +41,7 @@ navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, references, articles, news, contact]
+    left: [home, articles, reference, news, contact]
     right: [github, twitter]
   components:
     articles:
@@ -47,7 +53,7 @@ navbar:
         href: https://tidymass.github.io/metid/
     twitter:
       icon: "fab fa-twitter fa-lg"
-      href: https://twitter.com/JasperShen1990
+      href: https://twitter.com/xiaotaoshen1990
     contact:
       text: Contact us
       href: articles/contact_us.html
@@ -60,5 +66,13 @@ navbar:
       - text: "------------------"
       - text: "Change log"
         href: news/index.html
+        
+footer:
+  structure: 
+    left: developed_by
+    right: [contact]
+  components:
+    contact: Contact us **shenxt1990@outlook.com**
+        
 toc:
   depth: 3

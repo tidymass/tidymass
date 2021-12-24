@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="The tidymass package is a collection of several packages for Mass Spectrometry data processing and analysis, now it contains metID, metflow2, metDNA ,metPath, and lipidflow.">
 <title>tidymass • tidymass</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -12,14 +13,11 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><!-- docsearch --><script src="docsearch.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous">
-<link href="docsearch.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="tidymass">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="tidymass">
 <meta property="og:description" content="The tidymass package is a collection of several packages for Mass Spectrometry data processing and analysis, now it contains metID, metflow2, metDNA ,metPath, and lipidflow.">
 <meta property="og:image" content="https://tidymass.github.io/tidymass/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -33,280 +31,267 @@
   gtag('config', 'UA-000000-01');
 </script>
 </head>
-<body data-spy="scroll" data-target="#toc">
-    <div class="container template-home">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">tidymass</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Under development">0.0.1</span>
-      </span>
-    </div>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+    
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Help documents
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li class="divider">
-    <li class="dropdown-header">metid</li>
-    <li>
-      <a href="https://tidymass.github.io/metid/">Database construction and metabolite annotation</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    News
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li class="dropdown-header">Blog posts</li>
-    <li>
-      <a href="articles/version0.4.0.html">Version 0.4.0</a>
-    </li>
-    <li class="divider">
-    <li>
-      <a href="news/index.html">Change log</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="articles/contact_us.html">Contact us</a>
-</li>
-<li>
-  <a href="reference/index.html">Reference</a>
-</li>
-      </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/tidymass/tidymass/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://twitter.com/JasperShen1990">
-    <span class="fab fa-twitter fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
-        <div class="form-group">
-          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-</div>
-      </form>
-      
-    </div>
-<!--/.nav-collapse -->
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark"><div class="container">
+    
+    <a class="navbar-brand me-2" href="index.html">tidymass</a>
+
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.0.1</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-2">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-help-documents">Help documents</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-help-documents">
+    <h6 class="dropdown-header" data-toc-skip>metid</h6>
+    <a class="external-link dropdown-item" href="https://tidymass.github.io/metid/">Database construction and metabolite annotation</a>
   </div>
-<!--/.container -->
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="reference/index.html">Reference</a>
+</li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-news">News</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-news">
+    <h6 class="dropdown-header" data-toc-skip>Blog posts</h6>
+    <a class="dropdown-item" href="articles/version0.4.0.html">Version 0.4.0</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="news/index.html">Change log</a>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="articles/contact_us.html">Contact us</a>
+</li>
+      </ul>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/tidymass/tidymass/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://twitter.com/xiaotaoshen1990">
+    <span class="fab fa fab fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
-<!--/.navbar -->
 
-      
-
-      </header><div class="row">
-  <div class="contents col-md-9">
-<div id="tidymass-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#tidymass-" class="anchor"></a>tidymass <img src="reference/figures/logo.png" align="right" alt="" width="120">
-</h1></div>
-
-<div id="about" class="section level2">
-<h2 class="hasAnchor">
-<a href="#about" class="anchor"></a>About</h2>
-<p><code>tidymass</code> is a collections of R packages for mass spectrometry data processing, analysis.</p>
+    
+  </div>
+</nav><div class="container template-home">
+<div class="row">
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header">
+<img src="logo.png" class="logo" alt=""><h1 id="tidymass-">
+<code>tidymass</code> <a class="anchor" aria-label="anchor" href="#tidymass-"></a>
+</h1>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install <code>tidymass</code> from <a href="https://github.com/tidymass/tidymass">GitHub</a>.</p>
+
+<p><br></p>
+<h2 style="color:red;" id="tidymass--1">
+<i class="fas fa-info-circle"> About
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--1"></a>
+</h2>
+<hr>
+<p>The <code>tidymass</code> is a collection of R packages designed for MS-based untargeted metabolomics data processing. All packages share an underlying design philosophy, grammar, and data structures.</p>
+<p><code>Tidymass</code> is a comprehensive computational framework for MS-based untargeted metabolomics data processing and analysis, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis).</p>
+<h2 style="color:red;" id="tidymass--2">
+<i class="fas fa-cloud-download-alt"> Installation
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--2"></a>
+</h2>
+<hr>
+<p>You can install <code>tidymass</code> from <a href="https://github.com/tidymass/tidymass" class="external-link">GitHub</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
 <span class="op">}</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tidymass"</span><span class="op">)</span></code></pre></div>
-<p>Then you can use <code>install_tidymass()</code> to install all the packages in <code>tidymass</code>.</p>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tidymass"</span><span class="op">)</span></code></pre></div>
+<p>Then you can use <code><a href="reference/tidymass_install.html">tidymass_install()</a></code> to install all the packages in <code>tidymass</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidymass/tidymass">tidymass</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidymass/tidymass" class="external-link">tidymass</a></span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">tidymass</span><span class="fu">::</span><span class="fu">install_tidymass</span><span class="op">(</span>from <span class="op">=</span> <span class="st">"github"</span>, force <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
-<p>Now, <code>tidymass</code> contains several packages listed below:</p>
-<div id="massdataset-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#massdataset-" class="anchor"></a>massdataset <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="reference/figures/massdataset_logo.png" align="left" alt="" width="120"></a>
+<code class="sourceCode R"><span class="fu">tidymass</span><span class="fu">::</span><span class="fu"><a href="reference/tidymass_install.html">tidymass_install</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"github"</span>, force <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<h2 style="color:red;" id="tidymass--3">
+<i class="fas fa-code-branch"> Packages
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--3"></a>
+</h2>
+<hr>
+<p>Now, <code>tidymass</code> contains 8 packages, which are listed below:</p>
+<h3 style="color:#e474ac;" id="tidymass--4">
+<i class="fas fa-code"> massdataset
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--4"></a>
 </h3>
+<p><a href="https://tidymass.github.io/massdataset/" target="_blank" class="external-link"><img src="reference/figures/massdataset_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
-<p><code>massdataset</code> is a R package which is used organize metabolomics data to a <code>tidymass-class</code> object which can be processed by all the <code>tidymass</code> packages.</p>
+<p><code>massdataset</code> is used organize metabolomics experiment data into a <code>mass_dataset</code> class object, that can be processed by all the <code>tidymass</code> packages.</p>
 <p><br></p>
-</div>
-<div id="massprocesser-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#massprocesser-" class="anchor"></a>massprocesser <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="reference/figures/massprocesser_logo.png" align="left" alt="" width="120"></a>
+<h3 style="color:#f4ac64;" id="tidymass--5">
+<i class="fas fa-code"> massprocesser
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--5"></a>
 </h3>
+<p><a href="https://tidymass.github.io/massprocesser/" target="_blank" class="external-link"><img src="reference/figures/massprocesser_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
-<p><code>massprocesser</code> is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.s</p>
+<p><code>massprocesser</code> is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.</p>
 <p><br></p>
-</div>
-<div id="masscleaner-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#masscleaner-" class="anchor"></a>masscleaner <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="reference/figures/masscleaner_logo.png" align="left" alt="" width="120"></a>
+<h3 style="color:#2098b8;" id="tidymass--6">
+<i class="fas fa-code"> masscleaner
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--6"></a>
 </h3>
+<p><a href="https://tidymass.github.io/masscleaner/" target="_blank" class="external-link"><img src="reference/figures/masscleaner_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>masscleaner</code> is a R package which is used for metabolomics data cleaning.</p>
-<p><br></p>
-</div>
-<div id="massqc-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#massqc-" class="anchor"></a>massqc <a href="https://tidymass.github.io/massqc/" target="_blank"><img src="reference/figures/massqc_logo.png" align="left" alt="" width="120"></a>
+<p><br><br></p>
+<h3 style="color:#abcc2c;" id="tidymass--7">
+<i class="fas fa-code"> massqc
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--7"></a>
 </h3>
+<p><a href="https://tidymass.github.io/massqc/" target="_blank" class="external-link"><img src="reference/figures/massqc_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
-<p><code>massqc</code> is used for data quality assessment.</p>
-<p><br></p>
-</div>
-<div id="metid-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#metid-" class="anchor"></a>metid <a href="https://tidymass.github.io/metid/" target="_blank"><img src="reference/figures/metid_logo2.png" align="left" alt="" width="120"></a>
+<p><code>massqc</code> is used for data quality assessment and control.</p>
+<p><br><br></p>
+<h3 style="color:#2ca4e4;" id="tidymass--8">
+<i class="fas fa-code"> metid
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--8"></a>
 </h3>
+<p><a href="https://tidymass.github.io/metid/" target="_blank" class="external-link"><img src="reference/figures/metid_logo2.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>metid</code> is used for metabolite database construction and metabolite annotation.</p>
-<p><br></p>
-</div>
-<div id="massstat-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#massstat-" class="anchor"></a>massstat <a href="https://tidymass.github.io/massstat/" target="_blank"><img src="reference/figures/massstat_logo.png" align="left" alt="" width="120"></a>
+<p><br><br></p>
+<h3 style="color:#dce45c;" id="tidymass--9">
+<i class="fas fa-code"> massstat
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--9"></a>
 </h3>
+<p><a href="https://tidymass.github.io/massstat/" target="_blank" class="external-link"><img src="reference/figures/massstat_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massstat</code> is used for statistical analysis.</p>
-<p><br></p>
-</div>
-<div id="metpath-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#metpath-" class="anchor"></a>metpath <a href="https://tidymass.github.io/metpath/" target="_blank"><img src="reference/figures/metpath_logo.png" align="left" alt="" width="120"></a>
+<p><br><br></p>
+<h3 style="color:#ccac9c;" id="tidymass--10">
+<i class="fas fa-code"> metpath
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--10"></a>
 </h3>
+<p><a href="https://tidymass.github.io/metpath/" target="_blank" class="external-link"><img src="reference/figures/metpath_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>metpath</code> is used for pathway enrichment analysis.</p>
-<p><br></p>
-</div>
-<div id="tinytools-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#tinytools-" class="anchor"></a>tinytools <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="reference/figures/tinytools_logo2.png" align="left" alt="" width="120"></a>
+<p><br><br></p>
+<h3 style="color:#ec1c04;" id="tidymass--11">
+<i class="fas fa-code"> tinytools
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--11"></a>
 </h3>
+<p><a href="https://tidymass.github.io/tinytools/" target="_blank" class="external-link"><img src="reference/figures/tinytools_logo2.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
-<p><code>tinytools</code> is a collection of useful tiny tools for mass spectrometry data processing.</p>
+<p><code>tinytools</code> is a collection of useful tiny tools for mass spectrometry data processing and analysis.</p>
 <p><br></p>
-</div>
-</div>
-<div id="need-help" class="section level2">
-<h2 class="hasAnchor">
-<a href="#need-help" class="anchor"></a>Need help?</h2>
+<h2 style="color:red;" id="tidymass--12">
+<i class="fas fa-question-circle"> Need help?
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--12"></a>
+</h2>
+<hr>
 <p>If you have any questions about <code>tidymass</code>, please don’t hesitate to email me (<a href="mailto:shenxt@stanford.edu" class="email">shenxt@stanford.edu</a>) or reach out me via the social medias below.</p>
-<p><i class="fa fa-weixin"></i> <a href="https://www.shenxt.info/files/wechat_QR.jpg">shenxt1990</a></p>
+<p><i class="fa fa-weixin"></i> <a href="https://www.shenxt.info/files/wechat_QR.jpg" class="external-link">shenxt1990</a></p>
 <p><i class="fa fa-envelope"></i> <a href="mailto:shenxt@stanford.edu" class="email">shenxt@stanford.edu</a></p>
-<p><i class="fa fa-twitter"></i> <a href="https://twitter.com/JasperShen1990">Twitter</a></p>
-<p><i class="fa fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Alway+Building/@37.4322345,-122.1770883,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa4d335c3be37:0x9057931f3b312c29!8m2!3d37.4322345!4d-122.1748996">M339, Alway Buidling, Cooper Lane, Palo Alto, CA 94304</a></p>
+<p><i class="fa fa-twitter"></i> <a href="https://twitter.com/xiaotaoshen1990" class="external-link">Twitter</a></p>
+<p><i class="fa fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Alway+Building/@37.4322345,-122.1770883,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa4d335c3be37:0x9057931f3b312c29!8m2!3d37.4322345!4d-122.1748996" class="external-link">M339, Alway Buidling, Cooper Lane, Palo Alto, CA 94304</a></p>
+<h2 style="color:red;" id="tidymass--13">
+<i class="fas fa-location-arrow"> Citation
+</i>
+<a class="anchor" aria-label="anchor" href="#tidymass--13"></a>
+</h2>
+<hr>
+<p>If you use tidymass in you publications, please cite this publication:</p>
+<p>X. Shen, R. Wang, X. Xiong, Y. Yin, Y. Cai, Z. Ma, N. Liu, and Z.-J. Zhu* (Corresponding Author), Metabolic Reaction Network-based Recursive Metabolite Annotation for Untargeted Metabolomics, Nature Communications, 2019, 10: 1516.<br><a href="https://www.nature.com/articles/s41467-019-09550-x" class="external-link">Web Link</a>.</p>
+<p>Thank you very much!</p>
 </div>
-<div id="citation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citation" class="anchor"></a>Citation</h2>
-<p>If you use tidymass in you publication, please cite this publication:</p>
-<p>X. Shen, R. Wang, X. Xiong, Y. Yin, Y. Cai, Z. Ma, N. Liu, and Z.-J. Zhu* (Corresponding Author), Metabolic Reaction Network-based Recursive Metabolite Annotation for Untargeted Metabolomics, Nature Communications, 2019, 10: 1516.<br><a href="https://www.nature.com/articles/s41467-019-09550-x">Web Link</a>.</p>
-<p>Thank yous very much!</p>
-</div>
-</div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="links">
-<h2>Links</h2>
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/tidymass/tidymass/">https://​github.com/​tidymass/​tidymass/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/tidymass/tidymass/issues">https://​github.com/​tidymass/​tidymass/​issues</a>
-</li>
-<li>Find me at <br><a href="https://www.shenxt.info/">https://​www.shenxt.info/​</a>
-</li>
+<li><a href="https://github.com/tidymass/tidymass/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/tidymass/tidymass/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://www.shenxt.info/" class="external-link">Find me</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing tidymass</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Xiaotao Shen <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9608-9964" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li>Xiaotao Shen <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9608-9964" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=tidymass"><img src="https://www.r-pkg.org/badges/version/tidymass?color=green"></a></li>
-<li><a href="https://github.com/tidymass/tidymass"><img src="https://img.shields.io/github/languages/code-size/tidymass/tidymass.svg"></a></li>
-<li><a href="https://cran.r-project.org/package=tidymass"><img src="https://tinyverse.netlify.com/badge/tidymass" alt="Dependencies"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></a></li>
+<li><a href="https://cran.r-project.org/package=tidymass" class="external-link"><img src="https://www.r-pkg.org/badges/version/tidymass?color=green"></a></li>
+<li><a href="https://github.com/tidymass/tidymass" class="external-link"><img src="https://img.shields.io/github/languages/code-size/tidymass/tidymass.svg"></a></li>
+<li><a href="https://cran.r-project.org/package=tidymass" class="external-link"><img src="https://tinyverse.netlify.com/badge/tidymass" alt="Dependencies"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></a></li>
 </ul>
 </div>
-</div>
-</div>
 
-
-      <footer><div class="copyright">
-  <p>Developed by Xiaotao Shen.</p>
+  </aside>
 </div>
 
-<div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+
+    <footer><div class="pkgdown-footer-left">
+  <p></p>
+<p>Developed by Xiaotao Shen.</p>
 </div>
 
-      </footer>
+<div class="pkgdown-footer-right">
+  <p></p>
+<p>Contact us <strong><a href="mailto:shenxt1990@outlook.com" class="email">shenxt1990@outlook.com</a></strong></p>
+</div>
+
+    </footer>
 </div>
 
   
-<script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.js" integrity="sha256-GKvGqXDznoRYHCwKXGnuchvKSwmx9SRMrZOTh2g4Sb0=" crossorigin="anonymous"></script><script>
-  docsearch({
-    
-    
-    apiKey: '21ff2860978c5d2ceb7d4150364070ff',
-    indexName: 'tidymass',
-    inputSelector: 'input#search-input.form-control',
-    transformData: function(hits) {
-      return hits.map(function (hit) {
-        hit.url = updateHitURL(hit);
-        return hit;
-      });
-    }
-  });
-</script>
-</body>
+
+  
+
+  </body>
 </html>
