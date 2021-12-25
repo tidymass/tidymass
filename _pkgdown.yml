@@ -56,6 +56,10 @@ navbar:
       icon: fa-folder-open
       menu:
       - text: --------
+      - text: "Install"
+      - text: Install tidymass and all the packages in it 
+        href: articles/tidymass_install.html
+      - text: --------
       - text: "metid"
       - text: Database construction and metabolite annotation
         href: https://tidymass.github.io/metid/
