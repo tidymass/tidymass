@@ -34,6 +34,8 @@ Imports:
     htmltools,
     leaflet,
     htmlwidgets,
+    tinytools,
+    demodata,
     massdataset,
     massprocesser,
     masscleaner,
@@ -41,19 +43,19 @@ Imports:
     metid,
     massstat,
     metpath,
-    tinytools,
     dplyr,
     rlang,
     tibble
 Remotes: 
+    tidymass/tinytools,
+    tidymass/demodata,
     tidymass/massdataset,
     tidymass/massprocesser,
     tidymass/masscleaner,
     tidymass/massqc,
     tidymass/metid,
     tidymass/massstat,
-    tidymass/metpath,
-    tidymass/tinytools
+    tidymass/metpath
 Suggests: 
     knitr,
     rmarkdown
