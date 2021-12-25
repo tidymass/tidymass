@@ -27,6 +27,18 @@ knitr::opts_chunk$set(
 )
 ```
 
+# **Install tidymass**
+
+You can just use the `devtools` or `remote` to install `tidymass`. 
+
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+if(!require(devtools)){
+install.packages("devtools")
+}
+devtools::install_github("tidymass/tidymass")
+```
+
 # **Data preparation**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}

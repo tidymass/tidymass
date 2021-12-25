@@ -34,28 +34,11 @@ Imports:
     htmltools,
     leaflet,
     htmlwidgets,
-    tinytools,
-    demodata,
-    massdataset,
-    massprocesser,
-    masscleaner,
-    massqc,
-    metid,
-    massstat,
-    metpath,
     dplyr,
     rlang,
-    tibble
-Remotes: 
-    tidymass/tinytools,
-    tidymass/demodata,
-    tidymass/massdataset,
-    tidymass/massprocesser,
-    tidymass/masscleaner,
-    tidymass/massqc,
-    tidymass/metid,
-    tidymass/massstat,
-    tidymass/metpath
+    tibble,
+    cluster,
+    class
 Suggests: 
     knitr,
     rmarkdown
