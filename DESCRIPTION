@@ -38,8 +38,27 @@ Imports:
     rlang,
     tibble,
     cluster,
-    class
+    class,
+    tinytools,
+    demodata,
+    massdataset,
+    metid,
+    massprocesser,
+    masscleaner,
+    massstat,
+    massqc,
+    metpath
 Suggests: 
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Remotes: 
+    tidymass/tinytools,
+    tidymass/demodata,
+    tidymass/massdataset,
+    tidymass/metid,
+    tidymass/massprocesser,
+    tidymass/masscleaner,
+    tidymass/massstat,
+    tidymass/massqc,
+    tidymass/metpath
