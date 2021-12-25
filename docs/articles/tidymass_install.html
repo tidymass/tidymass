@@ -125,7 +125,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Install tidymass and all the packages in it</h1>
                         <h4 data-toc-skip class="author">Xiaotao Shen (<a href="https://www.shenxt.info/" class="external-link uri">https://www.shenxt.info/</a>)</h4>
                         
-            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2021-12-24</h4>
+            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2021-12-25</h4>
       
       
       <div class="d-none name"><code>tidymass_install.Rmd</code></div>
@@ -134,15 +134,39 @@
     
     
 <div class="section level2">
+<h2 id="uninstall-tidytools-and-metid">
+<strong>Uninstall tidyTools and metID</strong><a class="anchor" aria-label="anchor" href="#uninstall-tidytools-and-metid"></a>
+</h2>
+<p><code>tinyTools</code> has been renamed as <code>tinytools</code> and <code>metID</code> has been renamed as <code>metid</code>. So please uninstall them before you install <code>tidymass</code>. <strong>And don’t use them any more.</strong></p>
+<ol style="list-style-type: decimal">
+<li>detach them by:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/detach.html" class="external-link">detach</a></span><span class="op">(</span><span class="st">"package:tinyTools"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/detach.html" class="external-link">detach</a></span><span class="op">(</span><span class="st">"package:metID"</span><span class="op">)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Remove them by:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"tinyTools"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"metID"</span><span class="op">)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Restart your R session.</li>
+</ol>
+<blockquote>
+<p>If there are errors, ignore them.</p>
+</blockquote>
+</div>
+<div class="section level2">
 <h2 id="install-tidymass-from-github">
 <strong>Install tidymass from github</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-from-github"></a>
 </h2>
 <p>You can just use the <code>devtools</code> or <code>remote</code> to install <code>tidymass</code>.</p>
 <p>Please update <code>devtools</code> first and then restart your r session.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></code></pre></div>
 <p>Then install <code>tidymass</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tidymass"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>In the installation, it will ask if you want to update some packages for few times, just enter <code>enter</code> key to skip it.</p>
 <p>If there is a error like below:</p>
@@ -151,14 +175,14 @@
 <ol style="list-style-type: decimal">
 <li>In you R console, type this code:</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/github-token.html" class="external-link">create_github_token</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>It will open a page in browser, and create a “New personal access token” and copy it.</p>
 <p><img src="../reference/figures/Screen%20Shot%202021-12-24%20at%209.28.18%20PM.png"></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Then type this code:</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">edit_r_environ</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>and then add one line like below:</p>
 <pre><code><span class="va">GITHUB_PAT</span><span class="op">=</span><span class="va">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</span></code></pre>
@@ -172,7 +196,7 @@
 <strong>Install tidymass packages one by one</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-packages-one-by-one"></a>
 </h2>
 <p>If you use the windoes os and the dependencies can not be installed, try to install all the <code>tidymass</code> packages one by one.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tinytools"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massdataset"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/demodata"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
@@ -183,6 +207,21 @@
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/metid"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/metpath"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><a href="shenxt1990@outlook.com">Let me know if you have any questions</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="frequently-asked-questions">
+<strong>Frequently Asked Questions</strong><a class="anchor" aria-label="anchor" href="#frequently-asked-questions"></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Can not install dependent packages <code>raster</code> and <code>Cario</code>
+</li>
+</ol>
+<p><code>raster</code> is a package in <a href="https://cran.r-project.org/web/packages/raster/index.html" class="external-link">CRAN</a>, try to install it first and then install <code>tidymass</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"raster"</span><span class="op">)</span></code></pre></div>
+<p><code>Cario</code> is a package in <a href="https://cran.r-project.org/web/packages/Cairo/index.html" class="external-link">CRAN</a>, try to install it first and then install <code>tidymass</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"Cairo"</span><span class="op">)</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

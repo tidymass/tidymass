@@ -27,6 +27,28 @@ knitr::opts_chunk$set(
 )
 ```
 
+## **Uninstall tidyTools and metID**
+
+`tinyTools` has been renamed as `tinytools` and `metID` has been renamed as `metid`. So please uninstall them before you install `tidymass`. **And don't use them any more.**
+
+1. detach them by:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+detach("package:tinyTools")
+detach("package:metID")
+```
+
+2. Remove them by:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remove.packages(pkgs = "tinyTools")
+remove.packages(pkgs = "metID")
+```
+
+3. Restart your R session. 
+
+> If there are errors, ignore them.
+
 ## **Install tidymass from github**
 
 You can just use the `devtools` or `remote` to install `tidymass`. 
@@ -96,3 +118,23 @@ devtools::install_github("tidymass/metpath", dependencies = TRUE)
 ```
 
 [Let me know if you have any questions](shenxt1990@outlook.com).
+
+
+## **Frequently Asked Questions**
+
+1. Can not install dependent packages `raster` and `Cario`
+
+`raster` is a package in [CRAN](https://cran.r-project.org/web/packages/raster/index.html), try to install it first and then install `tidymass`.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+install.packages("raster")
+```
+
+
+`Cario` is a package in [CRAN](https://cran.r-project.org/web/packages/Cairo/index.html), try to install it first and then install `tidymass`.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+install.packages("Cairo")
+```
+
+
