@@ -40,8 +40,8 @@ Imports:
     cluster,
     class,
     tinytools,
-    demodata,
     massdataset,
+    demodata,
     metid,
     massprocesser,
     masscleaner,
@@ -54,8 +54,8 @@ Suggests:
 VignetteBuilder: knitr
 Remotes: 
     tidymass/tinytools,
-    tidymass/demodata,
     tidymass/massdataset,
+    tidymass/demodata,
     tidymass/metid,
     tidymass/massprocesser,
     tidymass/masscleaner,

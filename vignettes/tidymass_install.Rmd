@@ -1,5 +1,5 @@
 ---
-title: "Install all the packages in tidymass"
+title: "Install tidymass and all the packages in it"
 author:
 - name: Xiaotao Shen (https://www.shenxt.info/)
 date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# **Install tidymass**
+# **Install tidymass from github**
 
 You can just use the `devtools` or `remote` to install `tidymass`. 
 
