@@ -38,7 +38,8 @@ tidymass_install <-
              "metid",
              "massstat",
              "metpath",
-             "tinytools"
+             "tinytools",
+             "demodata"
            ),
            ...) {
     which_package = match.arg(which_package)
@@ -77,6 +78,18 @@ tidymass_install <-
       detach("package:tinytools")
     }
     
+    ##tinytools
+    if (any(which_package == "all") |
+        any(which_package == "tinytools")) {
+      devtools::install_github(
+        repo = "tidymass/tinytools",
+        force = force,
+        upgrade = upgrade,
+        dependencies = TRUE,
+        ...
+      )
+    }
+    
     ##massdataset
     if (any(which_package == "all") |
         any(which_package == "massdataset")) {
@@ -84,7 +97,19 @@ tidymass_install <-
         repo = "tidymass/massdataset",
         force = force,
         upgrade = upgrade,
-        dependencies = dependencies,
+        dependencies = TRUE,
+        ...
+      )
+    }
+    
+    ##massdataset
+    if (any(which_package == "all") |
+        any(which_package == "demodata")) {
+      devtools::install_github(
+        repo = "tidymass/demodata",
+        force = force,
+        upgrade = upgrade,
+        dependencies = TRUE,
         ...
       )
     }
@@ -96,7 +121,7 @@ tidymass_install <-
         repo = "tidymass/massprocesser",
         force = force,
         upgrade = upgrade,
-        dependencies = dependencies,
+        dependencies = TRUE,
         ...
       )
     }
@@ -108,7 +133,7 @@ tidymass_install <-
         repo = "tidymass/masscleaner",
         force = force,
         upgrade = upgrade,
-        dependencies = dependencies,
+        dependencies = TRUE,
         ...
       )
     }
@@ -120,7 +145,7 @@ tidymass_install <-
         repo = "tidymass/massqc",
         force = force,
         upgrade = upgrade,
-        dependencies = dependencies,
+        dependencies = TRUE,
         ...
       )
     }
@@ -132,7 +157,7 @@ tidymass_install <-
         repo = "tidymass/metid",
         force = force,
         upgrade = upgrade,
-        dependencies = dependencies,
+        dependencies = TRUE,
         ...
       )
     }
@@ -144,7 +169,7 @@ tidymass_install <-
         repo = "tidymass/massstat",
         force = force,
         upgrade = upgrade,
-        dependencies = dependencies,
+        dependencies = TRUE,
         ...
       )
     }
@@ -156,19 +181,7 @@ tidymass_install <-
         repo = "tidymass/metpath",
         force = force,
         upgrade = upgrade,
-        dependencies = dependencies,
-        ...
-      )
-    }
-    
-    ##tinytools
-    if (any(which_package == "all") |
-        any(which_package == "tinytools")) {
-      devtools::install_github(
-        repo = "tidymass/tinytools",
-        force = force,
-        upgrade = upgrade,
-        dependencies = dependencies,
+        dependencies = TRUE,
         ...
       )
     }

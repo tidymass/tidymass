@@ -42,12 +42,12 @@ Imports:
     tinytools,
     massdataset,
     demodata,
-    metid,
     massprocesser,
     masscleaner,
     massstat,
-    massqc,
-    metpath
+    metpath,
+    metid,
+    massqc
 Suggests: 
     knitr,
     rmarkdown
@@ -56,9 +56,9 @@ Remotes:
     tidymass/tinytools,
     tidymass/massdataset,
     tidymass/demodata,
-    tidymass/metid,
     tidymass/massprocesser,
     tidymass/masscleaner,
     tidymass/massstat,
-    tidymass/massqc,
-    tidymass/metpath
+    tidymass/metpath,
+    tidymass/metid,
+    tidymass/massqc

@@ -10,7 +10,7 @@ tidymass_install(
   dependencies = NA,
   demo_data = TRUE,
   which_package = c("all", "massdataset", "massprocesser", "masscleaner", "massqc",
-    "metid", "massstat", "metpath", "tinytools"),
+    "metid", "massstat", "metpath", "tinytools", "demodata"),
   ...
 )
 }
