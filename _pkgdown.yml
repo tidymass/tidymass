@@ -59,6 +59,28 @@ navbar:
       - text: "Install"
       - text: Install tidymass and all the packages in it 
         href: articles/tidymass_install.html
+      - text: "Demo data"
+      - text: Download demo data
+        href: articles/demo_data.html
+      - text: Prepare data for raw data processing
+        href: articles/data_preparation.html
+      - text: "Raw data processing"
+      - text: Convert raw data to mzXML 
+        href: articles/data_convert.html
+      - text: Raw data processing
+        href: articles/raw_data_processing.html
+      - text: --------
+      - text: "Data cleaning"
+      - text: Import data
+        href: articles/import_data.html
+      - text: Explore data
+        href: articles/explore_data.html
+      - text: Data cleaning
+        href: articles/data_cleaning.html
+      - text: --------
+      - text: "Statistical analysis"
+      - text: Statistical analysis
+        href: articles/statistical_analysis.html
       - text: --------
       - text: "metid"
       - text: Database construction and metabolite annotation

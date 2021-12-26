@@ -3,11 +3,16 @@ pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   contact_us: contact_us.html
+  data_cleaning: data_cleaning.html
+  data_convert: data_convert.html
+  data_preparation: data_preparation.html
+  demo_data: demo_data.html
   faq: faq.html
   more_software: more_software.html
+  raw_data_processing: raw_data_processing.html
   tidymass_install: tidymass_install.html
   version0.4.0: version0.4.0.html
-last_built: 2021-12-25T19:22Z
+last_built: 2021-12-26T08:05Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles

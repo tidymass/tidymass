@@ -10,6 +10,18 @@
     <loc>https://tidymass.github.io/tidymass/articles/contact_us.html</loc>
   </url>
   <url>
+    <loc>https://tidymass.github.io/tidymass/articles/data_cleaning.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/articles/data_convert.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/articles/data_preparation.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/articles/demo_data.html</loc>
+  </url>
+  <url>
     <loc>https://tidymass.github.io/tidymass/articles/faq.html</loc>
   </url>
   <url>
@@ -17,6 +29,9 @@
   </url>
   <url>
     <loc>https://tidymass.github.io/tidymass/articles/more_software.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/articles/raw_data_processing.html</loc>
   </url>
   <url>
     <loc>https://tidymass.github.io/tidymass/articles/tidymass_install.html</loc>
