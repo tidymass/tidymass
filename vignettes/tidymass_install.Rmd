@@ -137,4 +137,10 @@ install.packages("raster")
 install.packages("Cairo")
 ```
 
+## **Session information**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```
+
 
