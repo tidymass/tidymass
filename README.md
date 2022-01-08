@@ -50,9 +50,17 @@ tidymass::tidymass_install(from = "github", force = FALSE)
 
 ---
 
-Now, `tidymass` contains 8 packages, which are listed below:
+Now, `tidymass` contains 9 packages, which are listed below:
 
-<h3 style="color:#e474ac;"><i class="fas fa-code"> massdataset</h3> <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="man/figures/massdataset_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#b45c6c;"><i class="fas fa-code"> massConverter</h3> <a href="https://tidymass.github.io/massconverter/" target="_blank"><img src="man/figures/massconverter_logo.png" align="left" alt="" width="120" /></a>
+
+<br>
+
+`massconverter` is used to convert mass spectrometry raw data to other format data (mzXML, mxML, etc.).
+
+<br>
+
+<h3 style="color:#e474ac;"><i class="fas fa-code"> massDataset</h3> <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="man/figures/massdataset_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -60,24 +68,24 @@ Now, `tidymass` contains 8 packages, which are listed below:
 
 <br>
 
-<h3 style="color:#f4ac64;"><i class="fas fa-code"> massprocesser</h3> <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="man/figures/massprocesser_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#f4ac64;"><i class="fas fa-code"> massProcesser</h3> <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="man/figures/massprocesser_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`massprocesser` is a R package which is used for mass spectrometry based untargeted metabolomics raw data processing.
+`massprocesser` is used for LC-MS based untargeted metabolomics raw data processing.
 
 <br>
 
-<h3 style="color:#2098b8;"><i class="fas fa-code"> masscleaner</h3> <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="man/figures/masscleaner_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#2098b8;"><i class="fas fa-code"> massCleaner</h3> <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="man/figures/masscleaner_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`masscleaner` is a R package which is used for metabolomics data cleaning.
+`masscleaner` is used for data cleaning of metabolomics.
 
 <br>
 <br>
 
-<h3 style="color:#abcc2c;"><i class="fas fa-code"> massqc</h3> <a href="https://tidymass.github.io/massqc/" target="_blank"><img src="man/figures/massqc_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#abcc2c;"><i class="fas fa-code"> massQC</h3> <a href="https://tidymass.github.io/massqc/" target="_blank"><img src="man/figures/massqc_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -86,7 +94,7 @@ Now, `tidymass` contains 8 packages, which are listed below:
 <br>
 <br>
 
-<h3 style="color:#2ca4e4;"><i class="fas fa-code"> metid</h3> <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo2.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#2ca4e4;"><i class="fas fa-code"> metID</h3> <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo2.png" align="left" alt="" width="120" /></a>
 
 <br>
 
@@ -95,11 +103,11 @@ Now, `tidymass` contains 8 packages, which are listed below:
 <br>
 <br>
 
-<h3 style="color:#dce45c;"><i class="fas fa-code"> massstat</h3> <a href="https://tidymass.github.io/massstat/" target="_blank"><img src="man/figures/massstat_logo.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#dce45c;"><i class="fas fa-code"> massStat</h3> <a href="https://tidymass.github.io/massstat/" target="_blank"><img src="man/figures/massstat_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`massstat` is used for statistical analysis.
+`massstat` is used for statistical analysis of untargeted metabolomics.
 
 <br>
 <br>
@@ -109,7 +117,7 @@ Now, `tidymass` contains 8 packages, which are listed below:
 
 <br>
 
-`metpath` is used for pathway enrichment analysis.
+`metpath` is used for pathway enrichment analysis of metabolomics data.
 
 <br>
 <br>

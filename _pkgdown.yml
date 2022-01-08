@@ -56,7 +56,7 @@ navbar:
       icon: fa-folder-open
       menu:
       - text: --------
-      - text: "Install"
+      - text: "Installation"
       - text: Install tidymass and all the packages in it 
         href: articles/tidymass_install.html
       - text: "Demo data"
