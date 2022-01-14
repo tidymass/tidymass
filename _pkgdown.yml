@@ -62,10 +62,8 @@ navbar:
       - text: "Demo data"
       - text: Download demo data
         href: articles/demo_data.html
-      - text: Prepare data for raw data processing
-        href: articles/data_preparation.html
       - text: "Raw data processing"
-      - text: Convert raw data to mzXML 
+      - text: Convert raw data to mzXML/mgf 
         href: articles/data_convert.html
       - text: Raw data processing
         href: articles/raw_data_processing.html

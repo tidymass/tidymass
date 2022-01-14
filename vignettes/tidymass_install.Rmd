@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## **Uninstall tidyTools and metID**
+## **Uninstall `tidyTools` and `metID`**
 
 `tinyTools` has been renamed as `tinytools` and `metID` has been renamed as `metid`. So please uninstall them before you install `tidymass`. **And don't use them any more.**
 
@@ -49,7 +49,7 @@ remove.packages(pkgs = "metID")
 
 > If there are errors, ignore them.
 
-## **Install tidymass from github**
+## **Install `tidymass` from github**
 
 You can just use the `devtools` or `remote` to install `tidymass`. 
 
@@ -83,7 +83,7 @@ usethis::create_github_token()
 
 It will open a page in browser, and create a "New personal access token" and copy it.
 
-![](../man/figures/Screen Shot 2021-12-24 at 9.28.18 PM.png)
+![](figures/Screen-Shot-2021-12-24-at-9.28.18-PM.png)
 
 2. Then type this code:
 

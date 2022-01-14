@@ -17,3 +17,14 @@ vignettes/
 
 
 man/figures
+vignettes/figures/
+vignettes/figures
+
+vignettes/mzxml_ms2_data/
+vignettes/mzxml_ms2_data
+
+vignettes/mzxml_ms1_data/
+vignettes/mzxml_ms1_data
+
+vignettes/sample_info/
+vignettes/sample_info
