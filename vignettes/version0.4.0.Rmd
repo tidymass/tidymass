@@ -17,3 +17,10 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(tidymass)
 ```
+
+
+# **Session information**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

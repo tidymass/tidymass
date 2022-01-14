@@ -6,7 +6,7 @@ core <-
     "massstat",
     "metpath",
     "metid",
-    "tinytools",
+    "masstools",
     "dplyr",
     "ggplot2"
   )

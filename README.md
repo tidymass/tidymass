@@ -122,11 +122,11 @@ Now, `tidymass` contains 9 packages, which are listed below:
 <br>
 <br>
 
-<h3 style="color:#ec1c04;"><i class="fas fa-code"> tinTtools</h3> <a href="https://tidymass.github.io/tinytools/" target="_blank"><img src="man/figures/tinytools_logo2.png" align="left" alt="" width="120" /></a>
+<h3 style="color:#ec1c04;"><i class="fas fa-code"> massTools</h3> <a href="https://tidymass.github.io/masstools/" target="_blank"><img src="man/figures/masstools_logo.png" align="left" alt="" width="120" /></a>
 
 <br>
 
-`tinytools` is a collection of useful tiny tools for mass spectrometry data processing and analysis.
+`masstools` is a collection of useful tiny tools for mass spectrometry data processing and analysis.
 
 <br>
 

@@ -27,114 +27,53 @@ knitr::opts_chunk$set(
 )
 ```
 
-## **Uninstall tidyTools and metID**
+# **Data preparation**
 
-`tinyTools` has been renamed as `tinytools` and `metID` has been renamed as `metid`. So please uninstall them before you install `tidymass`. **And don't use them any more.**
+Download the demo data and [refer this article](https://tidymass.github.io/tidymass/articles/demo_data.html).
 
-1. detach them by:
+![](figures/Screen-Shot-2022-01-13-at-10.33.07-PM.png)
+
+# **Positive mode**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+library(massprocesser)
+```
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+massprocesser::process_data(
+  path = "mzxml_ms1_data/POS",
+  polarity = "positive",
+  ppm = 10,
+  peakwidth = c(10, 60),
+  threads = 4,
+  output_tic = TRUE,
+  output_bpc = TRUE,
+  output_rt_correction_plot = TRUE,
+  min_fraction = 0.5,
+  group_for_figure = "QC"
+)
+```
+
+# **Negative mode**
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-detach("package:tinyTools")
-detach("package:metID")
+massprocesser::process_data(
+  path = "mzxml_ms1_data/NEG",
+  polarity = "negative",
+  ppm = 10,
+  peakwidth = c(10, 60),
+  threads = 4,
+  output_tic = TRUE,
+  output_bpc = TRUE,
+  output_rt_correction_plot = TRUE,
+  min_fraction = 0.5,
+  group_for_figure = "QC"
+)
 ```
 
-2. Remove them by:
+# **Results**
 
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-remove.packages(pkgs = "tinyTools")
-remove.packages(pkgs = "metID")
+# **Session information**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
 ```
-
-3. Restart your R session. 
-
-> If there are errors, ignore them.
-
-## **Install tidymass from github**
-
-You can just use the `devtools` or `remote` to install `tidymass`. 
-
-Please update `devtools` first and then restart your r session.
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-install.packages("devtools")
-```
-
-Then install `tidymass`:
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-devtools::install_github("tidymass/tidymass", dependencies = TRUE)
-```
-
-In the installation, it will ask if you want to update some packages for few times, just enter `enter` key to skip it.
-
-If there is a error like below:
-
-```
-Error: Failed to install 'tidymass' from GitHub: HTTP error 403. API rate limit exceeded for 171.66.10.237. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)
-```
-
-Try to resolve it by:
-
-1. In you R console, type this code:
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-usethis::create_github_token()
-```
-
-It will open a page in browser, and create a "New personal access token" and copy it.
-
-![](../man/figures/Screen Shot 2021-12-24 at 9.28.18 PM.png)
-
-2. Then type this code:
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-usethis::edit_r_environ()
-```
-
-and then add one line like below:
-
-```
-GITHUB_PAT=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
-```
-> The `GITHUB_PAT` should be yours that is created in step 1.
-
-And then restart R session and try again.
-
-
-## **Install tidymass packages one by one**
-
-If you use the windoes os and the dependencies can not be installed, try to install all the `tidymass` packages one by one.
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-devtools::install_github("tidymass/tinytools", dependencies = TRUE)
-devtools::install_github("tidymass/massdataset", dependencies = TRUE)
-devtools::install_github("tidymass/demodata", dependencies = TRUE)
-devtools::install_github("tidymass/massqc", dependencies = TRUE)
-devtools::install_github("tidymass/massprocesser", dependencies = TRUE)
-devtools::install_github("tidymass/masscleaner", dependencies = TRUE)
-devtools::install_github("tidymass/massstat", dependencies = TRUE)
-devtools::install_github("tidymass/metid", dependencies = TRUE)
-devtools::install_github("tidymass/metpath", dependencies = TRUE)
-```
-
-[Let me know if you have any questions](shenxt1990@outlook.com).
-
-
-## **Frequently Asked Questions**
-
-1. Can not install dependent packages `raster` and `Cario`
-
-`raster` is a package in [CRAN](https://cran.r-project.org/web/packages/raster/index.html), try to install it first and then install `tidymass`.
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-install.packages("raster")
-```
-
-
-`Cario` is a package in [CRAN](https://cran.r-project.org/web/packages/Cairo/index.html), try to install it first and then install `tidymass`.
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-install.packages("Cairo")
-```
-
-

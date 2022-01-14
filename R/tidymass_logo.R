@@ -9,17 +9,23 @@
 #' @importFrom dplyr filter
 #' @importFrom tibble tibble
 #' @importFrom rlang is_installed
-#' @examples 
+#' @import massconverter
+#' @import massdataset
+#' @import massprocesser
+#' @import masscleaner
+#' @import massqc
+#' @import metid
+#' @import massstat
+#' @import metpath
+#' @import masstools
+#' @examples
 #' tidymass_logo()
-
-
 ##https://onlineasciitools.com/convert-text-to-ascii-art
 
 tidymass_logo <- function(unicode = l10n_info()$`UTF-8`) {
-  
-  cat(crayon::green("Thank you for using tidymass!\n"))
-  cat(crayon::green("Version 0.0.1 (2021-12-22)\n"))
-  cat(
+  message(crayon::green("Thank you for using tidymass!\n"))
+  message(crayon::green("Version 0.0.1 (2021-12-22)\n"))
+  message(
     crayon::green(
       "More information can be found at https://tidymass.github.io/tidymass/\n"
     )
@@ -28,10 +34,14 @@ tidymass_logo <- function(unicode = l10n_info()$`UTF-8`) {
   logo =
     c(
       "0 __  _    __   1    2           3  4 ",
-      "  _   _     _                               ", " | | (_)   | |                              ",
-      " | |_ _  __| |_   _ _ __ ___   __ _ ___ ___ ", " | __| |/ _` | | | | '_ ` _ \\ / _` / __/ __|",
-      " | |_| | (_| | |_| | | | | | | (_| \\__ \\__ \\", "  \\__|_|\\__,_|\\__, |_| |_| |_|\\__,_|___/___/",
-      "               __/ |                        ", "              |___/                         ",
+      "  _   _     _                               ",
+      " | | (_)   | |                              ",
+      " | |_ _  __| |_   _ _ __ ___   __ _ ___ ___ ",
+      " | __| |/ _` | | | | '_ ` _ \\ / _` / __/ __|",
+      " | |_| | (_| | |_| | | | | | | (_| \\__ \\__ \\",
+      "  \\__|_|\\__,_|\\__, |_| |_| |_|\\__,_|___/___/",
+      "               __/ |                        ",
+      "              |___/                         ",
       "     5  6 /___/      7      8       9 "
     )
   
@@ -70,6 +80,3 @@ print.tidymass_logo <- function(x, ...) {
   cat(x, ..., sep = "\n")
   invisible(x)
 }
-
-
-

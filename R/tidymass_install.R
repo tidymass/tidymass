@@ -31,6 +31,7 @@ tidymass_install <-
            demo_data = TRUE,
            which_package = c(
              "all",
+             "massconverter",
              "massdataset",
              "massprocesser",
              "masscleaner",
@@ -38,14 +39,19 @@ tidymass_install <-
              "metid",
              "massstat",
              "metpath",
-             "tinytools",
-             "demodata"
+             "masstools"
+             # "demodata"
            ),
            ...) {
     which_package = match.arg(which_package)
     which_package = stringr::str_to_lower(which_package)
     
     ##detach packages
+    
+    if ("massconverter" %in% search()) {
+      detach("package:massconverter")
+    }
+    
     if ("massdataset" %in% search()) {
       detach("package:massdataset")
     }
@@ -74,15 +80,27 @@ tidymass_install <-
       detach("package:metpath")
     }
     
-    if ("tinytools" %in% search()) {
-      detach("package:tinytools")
+    if ("masstools" %in% search()) {
+      detach("package:masstools")
+    }
+
+    ##massconverter
+    if (any(which_package == "all") |
+        any(which_package == "massconverter")) {
+      devtools::install_github(
+        repo = "tidymass/massconverter",
+        force = force,
+        upgrade = upgrade,
+        dependencies = TRUE,
+        ...
+      )
     }
     
-    ##tinytools
+    ##masstools
     if (any(which_package == "all") |
-        any(which_package == "tinytools")) {
+        any(which_package == "masstools")) {
       devtools::install_github(
-        repo = "tidymass/tinytools",
+        repo = "tidymass/masstools",
         force = force,
         upgrade = upgrade,
         dependencies = TRUE,
@@ -103,16 +121,16 @@ tidymass_install <-
     }
     
     ##massdataset
-    if (any(which_package == "all") |
-        any(which_package == "demodata")) {
-      devtools::install_github(
-        repo = "tidymass/demodata",
-        force = force,
-        upgrade = upgrade,
-        dependencies = TRUE,
-        ...
-      )
-    }
+    # if (any(which_package == "all") |
+    #     any(which_package == "demodata")) {
+    #   devtools::install_github(
+    #     repo = "tidymass/demodata",
+    #     force = force,
+    #     upgrade = upgrade,
+    #     dependencies = TRUE,
+    #     ...
+    #   )
+    # }
     
     ##massprocesser
     if (any(which_package == "all") |

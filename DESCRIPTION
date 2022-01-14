@@ -19,29 +19,23 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Depends: 
-    R (>= 3.2)
+    R (>= 4.2)
 Imports: 
     crayon,
     devtools,
     purrr,
     stringr,
-    glue (>= 1.4.2),
     cli,
     magrittr,
     rstudioapi,
-    htmltools,
-    leaflet,
-    htmlwidgets,
     dplyr,
     rlang,
     tibble,
-    cluster,
-    class,
-    tinytools,
+    massconverter,
+    masstools,
     massdataset,
-    demodata,
     massprocesser,
     masscleaner,
     massstat,
@@ -53,9 +47,9 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Remotes: 
-    tidymass/tinytools,
+    tidymass/massconverter,
+    tidymass/masstools,
     tidymass/massdataset,
-    tidymass/demodata,
     tidymass/massprocesser,
     tidymass/masscleaner,
     tidymass/massstat,
