@@ -1,5 +1,5 @@
 ---
-title: "Install tidymass and all the packages in it"
+title: "Install tidymass"
 author:
 - name: Xiaotao Shen (https://www.shenxt.info/)
 date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
@@ -27,7 +27,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-## **Uninstall `tidyTools` and `metID`**
+---
+
+# **Uninstall `tidyTools` and `metID`**
+
+---
 
 `tinyTools` has been renamed as `tinytools` and `metID` has been renamed as `metid`. So please uninstall them before you install `tidymass`. **And don't use them any more.**
 
@@ -49,7 +53,7 @@ remove.packages(pkgs = "metID")
 
 > If there are errors, ignore them.
 
-## **Install `tidymass` from github**
+# **Install `tidymass` from github**
 
 You can just use the `devtools` or `remote` to install `tidymass`. 
 
@@ -100,8 +104,11 @@ GITHUB_PAT=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
 
 And then restart R session and try again.
 
+---
 
-## **Install tidymass packages one by one**
+# **Install tidymass packages one by one**
+
+---
 
 If you use the windoes os and the dependencies can not be installed, try to install all the `tidymass` packages one by one.
 
@@ -119,8 +126,11 @@ devtools::install_github("tidymass/metpath", dependencies = TRUE)
 
 [Let me know if you have any questions](shenxt1990@outlook.com).
 
+---
 
-## **Frequently Asked Questions**
+# **Frequently Asked Questions**
+
+---
 
 1. Can not install dependent packages `raster` and `Cario`
 
@@ -137,7 +147,30 @@ install.packages("raster")
 install.packages("Cairo")
 ```
 
-## **Session information**
+2. Error when install `massprocesser`
+
+The error is:
+
+```
+Error: .onLoad failed in loadNamespace() for 'affy', details:
+  call: assign(".affyInternalEnv", .affyInternalEnv, envir = topenv(parent.frame()))
+  error: cannot add binding of '.affyInternalEnv' to the base environment
+Execution halted
+ERROR: lazy loading failed for package 'massprocesser'
+* removing 'D:/R_packages/R4.0/library/massprocesser'
+```
+
+Just try to restart R and install `affy`.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+BiocManager::install("affy")
+```
+
+---
+
+# **Session information**
+
+---
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 sessionInfo()
