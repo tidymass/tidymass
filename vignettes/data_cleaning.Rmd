@@ -11,7 +11,7 @@ output:
     toc: no
 vignette: >
   %\VignetteIndexEntry{data_cleaning}
-  %\VignettePackage{massqc}
+  %\VignettePackage{tidymass}
   % \VignetteEngine{knitr::rmarkdown}
   % \usepackage[utf8]{inputenc}
   %\VignetteEncoding{UTF-8}

@@ -1,0 +1,287 @@
+---
+title: "Explore data"
+author:
+- name: Xiaotao Shen (https://www.shenxt.info/)
+date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+  pdf_document:
+    toc: no
+vignette: >
+  %\VignetteIndexEntry{explore_data}
+  %\VignettePackage{tidymass}
+  % \VignetteEngine{knitr::rmarkdown}
+  % \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+```
+
+
+***
+
+## **Data preparation**
+
+After the [`raw data processing`](https://tidymass.github.io/tidymass/articles/raw_data_processing.html), peak tables for positive and negative mode will be generated. 
+
+Next, we need to get the peak table and sample information and organize them as `mass_dataset` class objects.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+library(massdataset)
+library(tidyverse)
+```
+
+### Positive mode
+
+Load `object`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("mzxml_ms1_data/POS/Result/object")
+object_pos = object
+object_pos
+```
+
+Read sample information.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+sample_info_pos = readr::read_csv("sample_info/sample_info_pos.csv")
+head(sample_info_pos)
+```
+
+Add `sample_info_pos` to `object_pos`
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos %>% 
+  extract_sample_info() %>% 
+  head()
+
+object_pos <- 
+  object_pos %>% 
+  activate_mass_dataset(what = "sample_info") %>%
+  dplyr::select(-c("group", "class", "injection.order"))
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos =
+  object_pos %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  left_join(sample_info_pos,
+            by = "sample_id")
+
+object_pos %>% 
+  extract_sample_info() %>% 
+  head()
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos
+dim(object_pos)
+object_pos %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(class)
+
+object_pos %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(group)
+
+object_pos %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(batch)
+```
+
+So for positive mode, we have 259 samples and 10149 variables. 220 subject samples and 39 QC samples. 110 control samples and 110 case samples. Two batches in total, 112 samples in batch 1 and 147 in batch 2.
+
+Next, we can get the peak distributation plot of positive mode.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos %>%
+  `+`(1) %>% 
+  log(10) %>%
+  show_mz_rt_plot() +
+  scale_size_continuous(range = c(0.01, 2))
+```
+
+We can explore the missing values in positive mode data.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object = object_pos)
+```
+
+785821 mvs in total.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object = object_pos, by = "sample") %>% 
+  head()
+```
+
+Missing value number in each sample.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object = object_pos, by = "variable") %>% 
+  head()
+```
+
+Missing value number in each variable.
+
+
+We can use the figure to show the missing value information.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_missing_values(object = object_pos, show_column_names = FALSE, percentage = TRUE)
+```
+
+
+Show the mvs in samples
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_sample_missing_values(object = object_pos, percentage = TRUE)
+```
+
+Show the mvs in variables
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_variable_missing_values(object = object_pos, 
+                             percentage = TRUE, 
+                             show_x_text = FALSE, 
+                             show_x_ticks = FALSE) +
+  scale_size_continuous(range = c(0.01, 1))
+```
+
+
+
+### Negative mode
+
+Load `object`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("mzxml_ms1_data/NEG/Result/object")
+object_neg = object
+object_neg
+```
+
+Read sample information.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+sample_info_neg = readr::read_csv("sample_info/sample_info_neg.csv")
+head(sample_info_neg)
+```
+
+Add `sample_info_neg` to `object_neg`
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg %>% 
+  extract_sample_info() %>% 
+  head()
+
+object_neg <- 
+  object_neg %>% 
+  activate_mass_dataset(what = "sample_info") %>%
+  dplyr::select(-c("group", "class", "injection.order"))
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg =
+  object_neg %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  left_join(sample_info_neg,
+            by = "sample_id")
+
+object_neg %>% 
+  extract_sample_info() %>% 
+  head()
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg
+dim(object_neg)
+object_neg %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(class)
+
+object_neg %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(group)
+
+object_neg %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(batch)
+```
+
+So for negative mode, we have 259 samples and 8804 variables. 220 subject samples and 39 QC samples. 110 control samples and 110 case samples. Two batches in total, 112 samples in batch 1 and 147 in batch 2.
+
+Next, we can get the peak distributation plot of negative mode.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg %>%
+  `+`(1) %>% 
+  log(10) %>%
+  show_mz_rt_plot() +
+  scale_size_continuous(range = c(0.01, 2))
+```
+
+We can explore the missing values in negitive mode data.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object = object_neg)
+```
+
+748253 mvs in total.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object = object_neg, by = "sample") %>% 
+  head()
+```
+
+Missing value number in each sample.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object = object_neg, by = "variable") %>% 
+  head()
+```
+
+Missing value number in each variable.
+
+
+We can use the figure to show the missing value information.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_missing_values(object = object_neg, show_column_names = FALSE, percentage = TRUE)
+```
+
+
+Show the mvs in samples
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_sample_missing_values(object = object_neg, percentage = TRUE)
+```
+
+Show the mvs in variables
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_variable_missing_values(object = object_neg, 
+                             percentage = TRUE, 
+                             show_x_text = FALSE, 
+                             show_x_ticks = FALSE) +
+  scale_size_continuous(range = c(0.01, 1))
+```
+
+
+## Conclusion
+
+So from those exploration, we have a brief summary of our data. Next, we will use [`masscleaner` pacakge](https://tidymass.github.io/masscleaner/) to do the data cleaning of data.
+
+## **Session information**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

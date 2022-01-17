@@ -63,7 +63,7 @@ navbar:
         href: articles/data_convert.html
       - text: "Raw data processing"
         href: articles/raw_data_processing.html
-      - text: "Explore data""
+      - text: "Explore data"
         href: articles/explore_data.html
       - text: "Data cleaning"
         href: articles/data_cleaning.html

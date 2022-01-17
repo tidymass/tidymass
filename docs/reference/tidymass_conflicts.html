@@ -33,24 +33,14 @@ and other packages that you have loaded."><meta property="og:image" content="htt
     Tutorial
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdown--tutorial">
-    <h6 class="dropdown-header" data-toc-skip>Installation</h6>
-    <a class="dropdown-item" href="../articles/tidymass_install.html">Install tidymass</a>
-    <h6 class="dropdown-header" data-toc-skip>Demo data</h6>
+    <a class="dropdown-item" href="../articles/tidymass_install.html">Install tidymass </a>
     <a class="dropdown-item" href="../articles/demo_data.html">Download demo data</a>
-    <h6 class="dropdown-header" data-toc-skip>Raw data processing</h6>
     <a class="dropdown-item" href="../articles/data_convert.html">Convert raw data to mzXML/mgf</a>
     <a class="dropdown-item" href="../articles/raw_data_processing.html">Raw data processing</a>
-    <div class="dropdown-divider"></div>
-    <h6 class="dropdown-header" data-toc-skip>Data cleaning</h6>
-    <a class="dropdown-item" href="../articles/import_data.html">Import data</a>
     <a class="dropdown-item" href="../articles/explore_data.html">Explore data</a>
     <a class="dropdown-item" href="../articles/data_cleaning.html">Data cleaning</a>
-    <div class="dropdown-divider"></div>
-    <h6 class="dropdown-header" data-toc-skip>Statistical analysis</h6>
+    <a class="dropdown-item" href="../articles/metabolite_annotation.html">Metabolite annotation</a>
     <a class="dropdown-item" href="../articles/statistical_analysis.html">Statistical analysis</a>
-    <div class="dropdown-divider"></div>
-    <h6 class="dropdown-header" data-toc-skip>metid</h6>
-    <a class="external-link dropdown-item" href="https://tidymass.github.io/metid/">Database construction and metabolite annotation</a>
   </div>
 </li>
 <li class="nav-item dropdown">
@@ -135,19 +125,13 @@ existing code.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">tidymass_conflicts</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ── <span style="font-weight: bold;">Conflicts</span> ─────────────────────────────────────────── tidymass_conflicts() ──</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">massdataset</span>::<span style="color: #00BB00;">apply()</span>           masks <span style="color: #0000BB;">base</span>::apply()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">colMeans()</span>       masks <span style="color: #0000BB;">massdataset</span>::colMeans(), <span style="color: #0000BB;">base</span>::colMeans()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">colSums()</span>        masks <span style="color: #0000BB;">massdataset</span>::colSums(), <span style="color: #0000BB;">base</span>::colSums()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">collect()</span>               masks <span style="color: #0000BB;">xcms</span>::collect()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">colnames()</span>          masks <span style="color: #0000BB;">BiocGenerics</span>::colnames(), <span style="color: #0000BB;">massdataset</span>::colnames(), <span style="color: #0000BB;">base</span>::colnames()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">combine()</span>               masks <span style="color: #0000BB;">MSnbase</span>::combine(), <span style="color: #0000BB;">Biobase</span>::combine(), <span style="color: #0000BB;">BiocGenerics</span>::combine()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span>                masks <span style="color: #0000BB;">metpath</span>::filter(), <span style="color: #0000BB;">massdataset</span>::filter(), <span style="color: #0000BB;">stats</span>::filter()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">first()</span>                 masks <span style="color: #0000BB;">S4Vectors</span>::first()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">getDP()</span>             masks <span style="color: #0000BB;">tinytools</span>::getDP()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">get_os()</span>            masks <span style="color: #0000BB;">tinytools</span>::get_os()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">groups()</span>                masks <span style="color: #0000BB;">xcms</span>::groups()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">head()</span>              masks <span style="color: #0000BB;">massdataset</span>::head(), <span style="color: #0000BB;">utils</span>::head()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">intersect()</span>         masks <span style="color: #0000BB;">BiocGenerics</span>::intersect(), <span style="color: #0000BB;">massdataset</span>::intersect(), <span style="color: #0000BB;">base</span>::intersect()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">keep_one()</span>          masks <span style="color: #0000BB;">tinytools</span>::keep_one()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>                   masks <span style="color: #0000BB;">stats</span>::lag()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">ms2Match()</span>          masks <span style="color: #0000BB;">tinytools</span>::ms2Match()</span>
@@ -157,13 +141,8 @@ existing code.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">read_mgf()</span>          masks <span style="color: #0000BB;">metid</span>::read_mgf(), <span style="color: #0000BB;">tinytools</span>::read_mgf()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">removeNoise()</span>       masks <span style="color: #0000BB;">tinytools</span>::removeNoise()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">rename()</span>                masks <span style="color: #0000BB;">S4Vectors</span>::rename(), <span style="color: #0000BB;">massdataset</span>::rename()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">rowMeans()</span>       masks <span style="color: #0000BB;">massdataset</span>::rowMeans(), <span style="color: #0000BB;">base</span>::rowMeans()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">rowSums()</span>        masks <span style="color: #0000BB;">massdataset</span>::rowSums(), <span style="color: #0000BB;">base</span>::rowSums()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">rownames()</span>          masks <span style="color: #0000BB;">BiocGenerics</span>::rownames(), <span style="color: #0000BB;">massdataset</span>::rownames(), <span style="color: #0000BB;">base</span>::rownames()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">MSnbase</span>::<span style="color: #00BB00;">scale()</span>               masks <span style="color: #0000BB;">massdataset</span>::scale(), <span style="color: #0000BB;">base</span>::scale()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">setwd_project()</span>     masks <span style="color: #0000BB;">tinytools</span>::setwd_project()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">split_formula()</span>     masks <span style="color: #0000BB;">tinytools</span>::split_formula()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">tail()</span>              masks <span style="color: #0000BB;">massdataset</span>::tail(), <span style="color: #0000BB;">utils</span>::tail()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">trans_ID()</span>          masks <span style="color: #0000BB;">tinytools</span>::trans_ID()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">trans_id_database()</span> masks <span style="color: #0000BB;">tinytools</span>::trans_id_database()</span>
 </code></pre></div>
