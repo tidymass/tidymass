@@ -27,9 +27,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-## **Uninstall tidyTools and metID**
+## **Data preparation**
 
-`tinyTools` has been renamed as `tinytools` and `metID` has been renamed as `metid`. So please uninstall them before you install `tidymass`. **And don't use them any more.**
+We just use the 
 
 1. detach them by:
 

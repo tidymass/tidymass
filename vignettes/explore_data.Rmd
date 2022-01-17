@@ -83,6 +83,14 @@ object_pos %>%
   head()
 ```
 
+Save the `object_pos` in a new folder named as `data_cleaning`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+dir.create("data_cleaning/POS", showWarnings = FALSE, recursive = TRUE)
+save(object_pos, file = "data_cleaning/POS/object_pos")
+```
+
+
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_pos
 dim(object_pos)
@@ -200,6 +208,14 @@ object_neg %>%
   extract_sample_info() %>% 
   head()
 ```
+
+Save the `object_neg` in a new folder named as `data_cleaning`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+dir.create("data_cleaning/NEG", showWarnings = FALSE, recursive = TRUE)
+save(object_neg, file = "data_cleaning/NEG/object_neg")
+```
+
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg
