@@ -128,7 +128,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Data cleaning</h1>
                         <h4 data-toc-skip class="author">Xiaotao Shen (<a href="https://www.shenxt.info/" class="external-link uri">https://www.shenxt.info/</a>)</h4>
                         
-            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-16</h4>
+            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-17</h4>
       
       
       <div class="d-none name"><code>data_cleaning.Rmd</code></div>
@@ -140,97 +140,121 @@
 <h2 id="data-preparation">
 <strong>Data preparation</strong><a class="anchor" aria-label="anchor" href="#data-preparation"></a>
 </h2>
-<p>We just</p>
-<ol style="list-style-type: decimal">
-<li>detach them by:</li>
-</ol>
+<p>We just use the dataset which are from <a href="https://tidymass.github.io/tidymass/articles/explore_data.html">this step</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/detach.html" class="external-link">detach</a></span><span class="op">(</span><span class="st">"package:tinyTools"</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/detach.html" class="external-link">detach</a></span><span class="op">(</span><span class="st">"package:metID"</span><span class="op">)</span></code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li>Remove them by:</li>
-</ol>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">tidymass</span><span class="op">)</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Attaching packages</span> ──────────────────────────────────────── tidymass 0.0.1 ──</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">massdataset  </span> 0.99.1     <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">metpath      </span> 0.0.1 </span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">massprocesser</span> 0.9.2      <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">metid        </span> 1.1.0 </span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">masscleaner  </span> 0.9.2      <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">masstools    </span> 0.99.1</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">massqc       </span> 0.0.1      <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">dplyr        </span> 1.0.7 </span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">massstat     </span> 0.0.1      <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">ggplot2      </span> 3.3.5</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ─────────────────────────────────────────── tidymass_conflicts() ──</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">collect()</span>               masks <span style="color: #0000BB;">xcms</span>::collect()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">combine()</span>               masks <span style="color: #0000BB;">MSnbase</span>::combine(), <span style="color: #0000BB;">Biobase</span>::combine(), <span style="color: #0000BB;">BiocGenerics</span>::combine()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span>                masks <span style="color: #0000BB;">metpath</span>::filter(), <span style="color: #0000BB;">massdataset</span>::filter(), <span style="color: #0000BB;">stats</span>::filter()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">first()</span>                 masks <span style="color: #0000BB;">S4Vectors</span>::first()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">get_os()</span>            masks <span style="color: #0000BB;">tinytools</span>::get_os()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">getDP()</span>             masks <span style="color: #0000BB;">tinytools</span>::getDP()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">groups()</span>                masks <span style="color: #0000BB;">xcms</span>::groups()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">keep_one()</span>          masks <span style="color: #0000BB;">tinytools</span>::keep_one()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>                   masks <span style="color: #0000BB;">stats</span>::lag()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">ms2_plot()</span>          masks <span style="color: #0000BB;">tinytools</span>::ms2_plot()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">ms2Match()</span>          masks <span style="color: #0000BB;">tinytools</span>::ms2Match()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">mz_rt_match()</span>       masks <span style="color: #0000BB;">tinytools</span>::mz_rt_match(), <span style="color: #0000BB;">massdataset</span>::mz_rt_match()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">name_duplicated()</span>   masks <span style="color: #0000BB;">tinytools</span>::name_duplicated()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">read_mgf()</span>          masks <span style="color: #0000BB;">metid</span>::read_mgf(), <span style="color: #0000BB;">tinytools</span>::read_mgf()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">removeNoise()</span>       masks <span style="color: #0000BB;">tinytools</span>::removeNoise()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">rename()</span>                masks <span style="color: #0000BB;">S4Vectors</span>::rename(), <span style="color: #0000BB;">massdataset</span>::rename()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">setwd_project()</span>     masks <span style="color: #0000BB;">tinytools</span>::setwd_project()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">split_formula()</span>     masks <span style="color: #0000BB;">tinytools</span>::split_formula()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">trans_ID()</span>          masks <span style="color: #0000BB;">tinytools</span>::trans_ID()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">masstools</span>::<span style="color: #00BB00;">trans_id_database()</span> masks <span style="color: #0000BB;">tinytools</span>::trans_id_database()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"data_cleaning/POS/object_pos"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"data_cleaning/NEG/object_neg"</span><span class="op">)</span></code></pre></div>
+<p>Change batch to character.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"tinyTools"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"metID"</span><span class="op">)</span></code></pre></div>
-<ol start="3" style="list-style-type: decimal">
-<li>Restart your R session.</li>
-</ol>
-<blockquote>
-<p>If there are errors, ignore them.</p>
-</blockquote>
-</div>
-<div class="section level2">
-<h2 id="install-tidymass-from-github">
-<strong>Install tidymass from github</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-from-github"></a>
-</h2>
-<p>You can just use the <code>devtools</code> or <code>remote</code> to install <code>tidymass</code>.</p>
-<p>Please update <code>devtools</code> first and then restart your r session.</p>
+<code class="sourceCode R"><span class="va">object_pos</span> <span class="op">&lt;-</span> 
+  <span class="va">object_pos</span> <span class="op">%&gt;%</span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>batch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">batch</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">object_neg</span> <span class="op">&lt;-</span> 
+  <span class="va">object_neg</span> <span class="op">%&gt;%</span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>batch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">batch</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></code></pre></div>
-<p>Then install <code>tidymass</code>:</p>
+<code class="sourceCode R"><span class="va">object_pos</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 10149 x 259 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 10149 x 3 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 3 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 0 variables x 0 MS2 spectra]</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; create_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:19:04</span>
+<span class="co">#&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>        Package Function.used                Time</span>
+<span class="co">#&gt; 1 massprocesser  process_data 2022-01-16 16:18:43</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tidymass"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<p>In the installation, it will ask if you want to update some packages for few times, just enter <code>enter</code> key to skip it.</p>
-<p>If there is a error like below:</p>
-<pre><code>Error: Failed to install 'tidymass' from GitHub: HTTP error 403. API rate limit exceeded for 171.66.10.237. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)</code></pre>
-<p>Try to resolve it by:</p>
-<ol style="list-style-type: decimal">
-<li>In you R console, type this code:</li>
-</ol>
+<code class="sourceCode R"><span class="va">object_neg</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 8804 x 259 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 8804 x 3 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 3 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 0 variables x 0 MS2 spectra]</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; create_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:20:02</span>
+<span class="co">#&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>        Package Function.used                Time</span>
+<span class="co">#&gt; 1 massprocesser  process_data 2022-01-16 16:19:48</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="data-quality-assessment-before-data-cleaning">Data quality assessment before data cleaning<a class="anchor" aria-label="anchor" href="#data-quality-assessment-before-data-cleaning"></a>
+</h2>
+<p>Here, we can use the <code>massqc</code> package to <a href="https://tidymass.github.io/massqc/" class="external-link">assess the data quality</a>.</p>
+<p>We can just use the <code>massqc_report()</code> function to get a html format quality assessment report.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">massqc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massqc/man/massqc_report.html" class="external-link">massqc_report</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, 
+                      path <span class="op">=</span> <span class="st">"data_cleaning/POS/data_quality_before_data_cleaning"</span><span class="op">)</span></code></pre></div>
+<p>A html format report and pdf figures will be placed in the folder <code>data_cleaning/POS/data_quality_before_data_cleaning/Report</code>.</p>
+<p><img src="figures/Screen-Shot-3.png"></p>
+<p>The html report is below:</p>
+<p><img src="figures/Screen-Shot-6.png"></p>
+<p>Negative mode.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/github-token.html" class="external-link">create_github_token</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>It will open a page in browser, and create a “New personal access token” and copy it.</p>
-<p><img src="../reference/figures/Screen%20Shot%202021-12-24%20at%209.28.18%20PM.png"></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Then type this code:</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">edit_r_environ</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>and then add one line like below:</p>
-<pre><code><span class="va">GITHUB_PAT</span><span class="op">=</span><span class="va">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</span></code></pre>
-<blockquote>
-<p>The <code>GITHUB_PAT</code> should be yours that is created in step 1.</p>
-</blockquote>
-<p>And then restart R session and try again.</p>
+<code class="sourceCode R"><span class="fu">massqc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massqc/man/massqc_report.html" class="external-link">massqc_report</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, 
+                      path <span class="op">=</span> <span class="st">"data_cleaning/NEG/data_quality_before_data_cleaning"</span><span class="op">)</span></code></pre></div>
+<p>The PCA score plot is used to show the batch effect of positive and negative dataset.</p>
+<p>Positive mode:</p>
+<p><img src="figures/Screen-Shot-4.png"> Negative mode:</p>
+<p><img src="figures/Screen-Shot-5.png"></p>
+<p>We can see that no matter in positive and negative mode, batch effect is serious.</p>
 </div>
 <div class="section level2">
-<h2 id="install-tidymass-packages-one-by-one">
-<strong>Install tidymass packages one by one</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-packages-one-by-one"></a>
-</h2>
-<p>If you use the windoes os and the dependencies can not be installed, try to install all the <code>tidymass</code> packages one by one.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tinytools"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massdataset"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/demodata"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massqc"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massprocesser"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/masscleaner"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massstat"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/metid"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/metpath"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<p><a href="shenxt1990@outlook.com">Let me know if you have any questions</a>.</p>
-</div>
-<div class="section level2">
-<h2 id="frequently-asked-questions">
-<strong>Frequently Asked Questions</strong><a class="anchor" aria-label="anchor" href="#frequently-asked-questions"></a>
-</h2>
-<ol style="list-style-type: decimal">
-<li>Can not install dependent packages <code>raster</code> and <code>Cario</code>
-</li>
-</ol>
-<p><code>raster</code> is a package in <a href="https://cran.r-project.org/web/packages/raster/index.html" class="external-link">CRAN</a>, try to install it first and then install <code>tidymass</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"raster"</span><span class="op">)</span></code></pre></div>
-<p><code>Cario</code> is a package in <a href="https://cran.r-project.org/web/packages/Cairo/index.html" class="external-link">CRAN</a>, try to install it first and then install <code>tidymass</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"Cairo"</span><span class="op">)</span></code></pre></div>
-</div>
-<div class="section level1">
-<h1 id="session-information">
+<h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
-</h1>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+</h2>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; R Under development (unstable) (2022-01-11 r81473)</span>
 <span class="co">#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
@@ -244,17 +268,107 @@
 <span class="co">#&gt; [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; attached base packages:</span>
-<span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span class="co">#&gt; [1] stats4    stats     graphics  grDevices utils     datasets  methods  </span>
+<span class="co">#&gt; [8] base     </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; other attached packages:</span>
+<span class="co">#&gt;  [1] knitr_1.37           masstools_0.99.1     dplyr_1.0.7         </span>
+<span class="co">#&gt;  [4] metid_1.1.0          metpath_0.0.1        massstat_0.0.1      </span>
+<span class="co">#&gt;  [7] ggfortify_0.4.14     ggplot2_3.3.5        massqc_0.0.1        </span>
+<span class="co">#&gt; [10] masscleaner_0.9.2    xcms_3.17.1          MSnbase_2.21.3      </span>
+<span class="co">#&gt; [13] ProtGenerics_1.27.2  S4Vectors_0.33.10    mzR_2.29.1          </span>
+<span class="co">#&gt; [16] Rcpp_1.0.7           Biobase_2.55.0       BiocGenerics_0.41.2 </span>
+<span class="co">#&gt; [19] BiocParallel_1.29.10 massprocesser_0.9.2  magrittr_2.0.1      </span>
+<span class="co">#&gt; [22] tinytools_0.9.1      massdataset_0.99.1   tidymass_0.0.1      </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
-<span class="co">#&gt;  [1] rprojroot_2.0.2   digest_0.6.29     crayon_1.4.2      R6_2.5.1         </span>
-<span class="co">#&gt;  [5] jsonlite_1.7.2    magrittr_2.0.1    evaluate_0.14     stringi_1.7.6    </span>
-<span class="co">#&gt;  [9] rlang_0.4.12      cachem_1.0.6      fs_1.5.2          jquerylib_0.1.4  </span>
-<span class="co">#&gt; [13] bslib_0.3.1       ragg_1.2.1        rmarkdown_2.11    pkgdown_2.0.1    </span>
-<span class="co">#&gt; [17] textshaping_0.3.6 desc_1.4.0        tools_4.2.0       stringr_1.4.0    </span>
-<span class="co">#&gt; [21] purrr_0.3.4       yaml_2.2.1        xfun_0.29         fastmap_1.1.0    </span>
-<span class="co">#&gt; [25] compiler_4.2.0    systemfonts_1.0.3 memoise_2.0.1     htmltools_0.5.2  </span>
-<span class="co">#&gt; [29] knitr_1.37        sass_0.4.0</span></code></pre></div>
+<span class="co">#&gt;   [1] utf8_1.2.2                  robust_0.6-1               </span>
+<span class="co">#&gt;   [3] tidyselect_1.1.1            htmlwidgets_1.5.4          </span>
+<span class="co">#&gt;   [5] grid_4.2.0                  devtools_2.4.3             </span>
+<span class="co">#&gt;   [7] munsell_0.5.0               codetools_0.2-18           </span>
+<span class="co">#&gt;   [9] ragg_1.2.1                  preprocessCore_1.57.0      </span>
+<span class="co">#&gt;  [11] future_1.23.0               withr_2.4.3                </span>
+<span class="co">#&gt;  [13] colorspace_2.0-2            rstudioapi_0.13            </span>
+<span class="co">#&gt;  [15] robustbase_0.93-8           listenv_0.8.0              </span>
+<span class="co">#&gt;  [17] mzID_1.33.0                 MatrixGenerics_1.7.0       </span>
+<span class="co">#&gt;  [19] GenomeInfoDbData_1.2.7      polyclip_1.10-0            </span>
+<span class="co">#&gt;  [21] farver_2.1.0                rprojroot_2.0.2            </span>
+<span class="co">#&gt;  [23] parallelly_1.30.0           vctrs_0.3.8                </span>
+<span class="co">#&gt;  [25] generics_0.1.1              xfun_0.29                  </span>
+<span class="co">#&gt;  [27] itertools_0.1-3             randomForest_4.6-14        </span>
+<span class="co">#&gt;  [29] R6_2.5.1                    doParallel_1.0.16          </span>
+<span class="co">#&gt;  [31] GenomeInfoDb_1.31.1         graphlayouts_0.8.0         </span>
+<span class="co">#&gt;  [33] clue_0.3-60                 MsCoreUtils_1.7.1          </span>
+<span class="co">#&gt;  [35] bitops_1.0-7                cachem_1.0.6               </span>
+<span class="co">#&gt;  [37] gridGraphics_0.5-1          DelayedArray_0.21.2        </span>
+<span class="co">#&gt;  [39] assertthat_0.2.1            scales_1.1.1               </span>
+<span class="co">#&gt;  [41] ggraph_2.0.5                gtable_0.3.0               </span>
+<span class="co">#&gt;  [43] globals_0.14.0              affy_1.73.0                </span>
+<span class="co">#&gt;  [45] processx_3.5.2              tidygraph_1.2.0            </span>
+<span class="co">#&gt;  [47] rlang_0.4.12                clisymbols_1.2.0           </span>
+<span class="co">#&gt;  [49] systemfonts_1.0.3           GlobalOptions_0.1.2        </span>
+<span class="co">#&gt;  [51] lazyeval_0.2.2              impute_1.69.0              </span>
+<span class="co">#&gt;  [53] broom_0.7.11                BiocManager_1.30.16        </span>
+<span class="co">#&gt;  [55] yaml_2.2.1                  modelr_0.1.8               </span>
+<span class="co">#&gt;  [57] crosstalk_1.2.0             backports_1.4.1            </span>
+<span class="co">#&gt;  [59] MassSpecWavelet_1.61.0      tools_4.2.0                </span>
+<span class="co">#&gt;  [61] usethis_2.1.5               ggplotify_0.1.0            </span>
+<span class="co">#&gt;  [63] affyio_1.65.0               ellipsis_0.3.2             </span>
+<span class="co">#&gt;  [65] jquerylib_0.1.4             RColorBrewer_1.1-2         </span>
+<span class="co">#&gt;  [67] proxy_0.4-26                sessioninfo_1.2.2          </span>
+<span class="co">#&gt;  [69] plyr_1.8.6                  zlibbioc_1.41.0            </span>
+<span class="co">#&gt;  [71] purrr_0.3.4                 RCurl_1.98-1.5             </span>
+<span class="co">#&gt;  [73] ps_1.6.0                    prettyunits_1.1.1          </span>
+<span class="co">#&gt;  [75] viridis_0.6.2               pbapply_1.5-0              </span>
+<span class="co">#&gt;  [77] GetoptLong_1.0.5            SummarizedExperiment_1.25.3</span>
+<span class="co">#&gt;  [79] haven_2.4.3                 ggrepel_0.9.1              </span>
+<span class="co">#&gt;  [81] cluster_2.1.2               fs_1.5.2                   </span>
+<span class="co">#&gt;  [83] furrr_0.2.3                 data.table_1.14.2          </span>
+<span class="co">#&gt;  [85] openxlsx_4.2.5              circlize_0.4.14            </span>
+<span class="co">#&gt;  [87] reprex_2.0.1                RANN_2.6.1                 </span>
+<span class="co">#&gt;  [89] mvtnorm_1.1-2               pcaMethods_1.87.0          </span>
+<span class="co">#&gt;  [91] matrixStats_0.61.0          pkgload_1.2.4              </span>
+<span class="co">#&gt;  [93] hms_1.1.1                   patchwork_1.1.1            </span>
+<span class="co">#&gt;  [95] evaluate_0.14               XML_3.99-0.8               </span>
+<span class="co">#&gt;  [97] leaflet_2.0.4.1             readxl_1.3.1               </span>
+<span class="co">#&gt;  [99] gridExtra_2.3               IRanges_2.29.1             </span>
+<span class="co">#&gt; [101] shape_1.4.6                 testthat_3.1.1             </span>
+<span class="co">#&gt; [103] compiler_4.2.0              tibble_3.1.6               </span>
+<span class="co">#&gt; [105] ncdf4_1.17                  crayon_1.4.2               </span>
+<span class="co">#&gt; [107] htmltools_0.5.2             pcaPP_1.9-74               </span>
+<span class="co">#&gt; [109] tzdb_0.2.0                  rrcov_1.6-0                </span>
+<span class="co">#&gt; [111] tidyr_1.1.4                 lubridate_1.8.0            </span>
+<span class="co">#&gt; [113] DBI_1.1.2                   tweenr_1.0.2               </span>
+<span class="co">#&gt; [115] dbplyr_2.1.1                ComplexHeatmap_2.11.0      </span>
+<span class="co">#&gt; [117] MASS_7.3-55                 MsFeatures_1.3.0           </span>
+<span class="co">#&gt; [119] Matrix_1.4-0                readr_2.1.1                </span>
+<span class="co">#&gt; [121] cli_3.1.0                   vsn_3.63.0                 </span>
+<span class="co">#&gt; [123] igraph_1.2.6                parallel_4.2.0             </span>
+<span class="co">#&gt; [125] fit.models_0.64             GenomicRanges_1.47.6       </span>
+<span class="co">#&gt; [127] forcats_0.5.1               pkgconfig_2.0.3            </span>
+<span class="co">#&gt; [129] pkgdown_2.0.1               plotly_4.10.0              </span>
+<span class="co">#&gt; [131] MALDIquant_1.21             xml2_1.3.3                 </span>
+<span class="co">#&gt; [133] foreach_1.5.1               ggcorrplot_0.1.3           </span>
+<span class="co">#&gt; [135] missForest_1.4              bslib_0.3.1                </span>
+<span class="co">#&gt; [137] XVector_0.35.0              rvest_1.0.2                </span>
+<span class="co">#&gt; [139] yulab.utils_0.0.4           stringr_1.4.0              </span>
+<span class="co">#&gt; [141] callr_3.7.0                 digest_0.6.29              </span>
+<span class="co">#&gt; [143] Biostrings_2.63.1           rmarkdown_2.11             </span>
+<span class="co">#&gt; [145] cellranger_1.1.0            rjson_0.2.21               </span>
+<span class="co">#&gt; [147] lifecycle_1.0.1             jsonlite_1.7.2             </span>
+<span class="co">#&gt; [149] desc_1.4.0                  viridisLite_0.4.0          </span>
+<span class="co">#&gt; [151] limma_3.51.2                fansi_1.0.0                </span>
+<span class="co">#&gt; [153] pillar_1.6.4                ggsci_2.9                  </span>
+<span class="co">#&gt; [155] lattice_0.20-45             KEGGREST_1.35.0            </span>
+<span class="co">#&gt; [157] fastmap_1.1.0               httr_1.4.2                 </span>
+<span class="co">#&gt; [159] DEoptimR_1.0-10             pkgbuild_1.3.1             </span>
+<span class="co">#&gt; [161] glue_1.6.0                  remotes_2.4.2              </span>
+<span class="co">#&gt; [163] zip_2.2.0                   png_0.1-7                  </span>
+<span class="co">#&gt; [165] iterators_1.0.13            pander_0.6.4               </span>
+<span class="co">#&gt; [167] ggforce_0.3.3               class_7.3-20               </span>
+<span class="co">#&gt; [169] stringi_1.7.6               sass_0.4.0                 </span>
+<span class="co">#&gt; [171] textshaping_0.3.6           memoise_2.0.1              </span>
+<span class="co">#&gt; [173] tidyverse_1.3.1             e1071_1.7-9</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

@@ -31,11 +31,24 @@ knitr::opts_chunk$set(
 
 We just use the dataset which are from [this step](https://tidymass.github.io/tidymass/articles/explore_data.html).
 
-
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 library(tidymass)
 load("data_cleaning/POS/object_pos")
 load("data_cleaning/NEG/object_neg")
+```
+
+Change batch to character.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos <- 
+  object_pos %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::mutate(batch = as.character(batch))
+
+object_neg <- 
+  object_neg %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::mutate(batch = as.character(batch))
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -48,13 +61,42 @@ object_neg
 
 ## Data quality assessment before data cleaning
 
-Here, we can use the `massqc` pacakge to [assess the data quality](https://tidymass.github.io/massqc/).
+Here, we can use the `massqc` package to [assess the data quality](https://tidymass.github.io/massqc/).
 
 We can just use the `massqc_report()` function to get a html format quality assessment report.
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-massqc::massqc_report(object = object_pos, path = "data_cleaning/POS/data_quality")
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+massqc::massqc_report(object = object_pos, 
+                      path = "data_cleaning/POS/data_quality_before_data_cleaning")
 ```
+
+A html format report and pdf figures will be placed in the folder `data_cleaning/POS/data_quality_before_data_cleaning/Report`.
+
+![](figures/Screen-Shot-3.png)
+
+The html report is below:
+
+![](figures/Screen-Shot-6.png)
+
+Negative mode.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+massqc::massqc_report(object = object_neg, 
+                      path = "data_cleaning/NEG/data_quality_before_data_cleaning")
+```
+
+
+The PCA score plot is used to show the batch effect of positive and negative dataset.
+
+Positive mode:
+
+![](figures/Screen-Shot-4.png)
+Negative mode:
+
+![](figures/Screen-Shot-5.png)
+
+We can see that no matter in positive and negative mode, batch effect is serious.
+
 
 ## **Session information**
 
