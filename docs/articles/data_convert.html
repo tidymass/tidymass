@@ -56,7 +56,7 @@
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdown--tutorial">
     <h6 class="dropdown-header" data-toc-skip>Installation</h6>
-    <a class="dropdown-item" href="../articles/tidymass_install.html">Install tidymass and all the packages in it</a>
+    <a class="dropdown-item" href="../articles/tidymass_install.html">Install tidymass</a>
     <h6 class="dropdown-header" data-toc-skip>Demo data</h6>
     <a class="dropdown-item" href="../articles/demo_data.html">Download demo data</a>
     <h6 class="dropdown-header" data-toc-skip>Raw data processing</h6>
@@ -138,7 +138,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Convert raw data to mzXML/mgf</h1>
                         <h4 data-toc-skip class="author">Xiaotao Shen (<a href="https://www.shenxt.info/" class="external-link uri">https://www.shenxt.info/</a>)</h4>
                         
-            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-14</h4>
+            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-16</h4>
       
       
       <div class="d-none name"><code>data_convert.Rmd</code></div>
@@ -147,55 +147,55 @@
     
     
 <hr>
-<div class="section level1">
-<h1 id="data-preparation">
+<div class="section level2">
+<h2 id="data-preparation">
 <strong>Data preparation</strong><a class="anchor" aria-label="anchor" href="#data-preparation"></a>
-</h1>
+</h2>
 <hr>
 <p>Please place the raw data in one folder according to MS1 and MS2.</p>
 <hr>
 </div>
-<div class="section level1">
-<h1 id="proteowizard">
-<strong>Proteowizard</strong><a class="anchor" aria-label="anchor" href="#proteowizard"></a>
-</h1>
-<hr>
 <div class="section level2">
-<h2 id="convert-ms1-data-to-mzxml-format-data">Convert MS1 data to <code>mzXML</code> format data<a class="anchor" aria-label="anchor" href="#convert-ms1-data-to-mzxml-format-data"></a>
+<h2 id="proteowizard">
+<strong>Proteowizard</strong><a class="anchor" aria-label="anchor" href="#proteowizard"></a>
 </h2>
+<hr>
+<div class="section level4">
+<h4 id="convert-ms1-data-to-mzxml-format-data">Convert MS1 data to <code>mzXML</code> format data<a class="anchor" aria-label="anchor" href="#convert-ms1-data-to-mzxml-format-data"></a>
+</h4>
 <p>Just convert data into <code>mzXML</code> format data according to the parameters below:</p>
 <p><img src="../reference/figures/Screen%20Shot%202022-01-13%20at%2012.06.14%20AM.png"></p>
 </div>
-<div class="section level2">
-<h2 id="convert-ms2-data-to-mzxml-or-mgf-format-data">Convert MS2 data to <code>mzXML</code> or <code>mgf</code> format data<a class="anchor" aria-label="anchor" href="#convert-ms2-data-to-mzxml-or-mgf-format-data"></a>
-</h2>
+<div class="section level4">
+<h4 id="convert-ms2-data-to-mzxml-or-mgf-format-data">Convert MS2 data to <code>mzXML</code> or <code>mgf</code> format data<a class="anchor" aria-label="anchor" href="#convert-ms2-data-to-mzxml-or-mgf-format-data"></a>
+</h4>
 <p>Just convert data into <code>mzXML</code> or <code>mgf</code> format data according to the parameters below:</p>
 <p><img src="../reference/figures/Screen%20Shot%202022-01-13%20at%2012.09.12%20AM.png"></p>
 <hr>
 </div>
 </div>
-<div class="section level1">
-<h1 id="convert-data-using-massconverter">
+<div class="section level2">
+<h2 id="convert-data-using-massconverter">
 <strong>Convert data using <code>massconverter</code></strong><a class="anchor" aria-label="anchor" href="#convert-data-using-massconverter"></a>
-</h1>
+</h2>
 <hr>
 <p><code>massconverter</code> is a pacakge in <code>tidymass</code> which can be used to convert mass spectrometry raw data based on docker image of pwid. See more information <a href="https://tidymass.github.io/massconverter/" class="external-link">here</a>.</p>
-<div class="section level2">
-<h2 id="convert-data-to-mzxml-format-data">Convert data to <code>mzXML</code> format data<a class="anchor" aria-label="anchor" href="#convert-data-to-mzxml-format-data"></a>
-</h2>
+<div class="section level4">
+<h4 id="convert-data-to-mzxml-format-data">Convert data to <code>mzXML</code> format data<a class="anchor" aria-label="anchor" href="#convert-data-to-mzxml-format-data"></a>
+</h4>
 <p>We use the demo data to show how to use <code>massconverter</code>.</p>
 <p>Download the data and put them your working directory and uncompress it.</p>
 </div>
-<div class="section level2">
-<h2 id="convert-data-to-mgf-format-data">Convert data to <code>mgf</code> format data<a class="anchor" aria-label="anchor" href="#convert-data-to-mgf-format-data"></a>
-</h2>
+<div class="section level4">
+<h4 id="convert-data-to-mgf-format-data">Convert data to <code>mgf</code> format data<a class="anchor" aria-label="anchor" href="#convert-data-to-mgf-format-data"></a>
+</h4>
 <hr>
 </div>
 </div>
-<div class="section level1">
-<h1 id="session-information">
+<div class="section level2">
+<h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
-</h1>
+</h2>
 <hr>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>

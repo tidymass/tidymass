@@ -55,34 +55,22 @@ navbar:
       text: Tutorial
       icon: fa-folder-open
       menu:
-      - text: --------
-      - text: "Installation"
-      - text: Install tidymass and all the packages in it 
+      - text: "Install tidymass "
         href: articles/tidymass_install.html
-      - text: "Demo data"
-      - text: Download demo data
+      - text: "Download demo data"
         href: articles/demo_data.html
-      - text: "Raw data processing"
-      - text: Convert raw data to mzXML/mgf 
+      - text: "Convert raw data to mzXML/mgf"
         href: articles/data_convert.html
-      - text: Raw data processing
+      - text: "Raw data processing"
         href: articles/raw_data_processing.html
-      - text: --------
-      - text: "Data cleaning"
-      - text: Import data
-        href: articles/import_data.html
-      - text: Explore data
+      - text: "Explore data""
         href: articles/explore_data.html
-      - text: Data cleaning
+      - text: "Data cleaning"
         href: articles/data_cleaning.html
-      - text: --------
+      - text: "Metabolite annotation"
+        href: articles/metabolite_annotation.html
       - text: "Statistical analysis"
-      - text: Statistical analysis
         href: articles/statistical_analysis.html
-      - text: --------
-      - text: "metid"
-      - text: Database construction and metabolite annotation
-        href: https://tidymass.github.io/metid/
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990
@@ -133,4 +121,4 @@ footer:
     address: <i class="fa fa-map-marker-alt"></i> [BMI building](https://goo.gl/maps/WLps4yacxfRfyAxTA)
         
 toc:
-  depth: 3
+  depth: 4

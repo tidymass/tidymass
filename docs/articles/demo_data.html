@@ -56,7 +56,7 @@
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdown--tutorial">
     <h6 class="dropdown-header" data-toc-skip>Installation</h6>
-    <a class="dropdown-item" href="../articles/tidymass_install.html">Install tidymass and all the packages in it</a>
+    <a class="dropdown-item" href="../articles/tidymass_install.html">Install tidymass</a>
     <h6 class="dropdown-header" data-toc-skip>Demo data</h6>
     <a class="dropdown-item" href="../articles/demo_data.html">Download demo data</a>
     <h6 class="dropdown-header" data-toc-skip>Raw data processing</h6>
@@ -138,7 +138,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Download demo data</h1>
                         <h4 data-toc-skip class="author">Xiaotao Shen (<a href="https://www.shenxt.info/" class="external-link uri">https://www.shenxt.info/</a>)</h4>
                         
-            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-14</h4>
+            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-16</h4>
       
       
       <div class="d-none name"><code>demo_data.Rmd</code></div>
@@ -147,51 +147,51 @@
     
     
 <hr>
-<div class="section level1">
-<h1 id="introduction">
+<div class="section level2">
+<h2 id="introduction">
 <strong>Introduction</strong><a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h1>
+</h2>
 <hr>
-<p>The demo data for tidymass is untargeted metabolomics by RPLC-QEplus (Thermo).</p>
+<p>The demo data for tidymass is untargeted metabolomics by RPLC-QEplus (Thermo). 259 samples in total.</p>
 <ul>
-<li><p>Samples: 110 blood samples.</p></li>
-<li>
+<li><p>Subject samples: 2200 blood samples. 110 control samples and 110 case samples.</p></li>
+<li><p>QC samples: 39</p></li>
 </ul>
 <hr>
 </div>
-<div class="section level1">
-<h1 id="download-demo-data">
-<strong>Download demo data</strong><a class="anchor" aria-label="anchor" href="#download-demo-data"></a>
-</h1>
-<hr>
 <div class="section level2">
-<h2 id="ms1-mzxml-data">MS1 mzXML data<a class="anchor" aria-label="anchor" href="#ms1-mzxml-data"></a>
+<h2 id="download-demo-data">
+<strong>Download demo data</strong><a class="anchor" aria-label="anchor" href="#download-demo-data"></a>
 </h2>
+<hr>
+<div class="section level4">
+<h4 id="ms1-mzxml-data">MS1 mzXML data<a class="anchor" aria-label="anchor" href="#ms1-mzxml-data"></a>
+</h4>
 <p><a href="https://drive.google.com/file/d/1KUk0-PA77zV3UJsuUTEuAK6462yze8mm/view?usp=sharing" class="external-link">Download link</a>.</p>
 <p>Download and uncompress:</p>
 <p><img src="figures/Screen-Shot-2022-01-13-at-10.33.07-PM.png"></p>
 </div>
-<div class="section level2">
-<h2 id="ms2-mzxml-data">MS2 mzXML data<a class="anchor" aria-label="anchor" href="#ms2-mzxml-data"></a>
-</h2>
+<div class="section level4">
+<h4 id="ms2-mzxml-data">MS2 mzXML data<a class="anchor" aria-label="anchor" href="#ms2-mzxml-data"></a>
+</h4>
 <p><a href="https://drive.google.com/file/d/1FY3x7q5i1g3oSLaVej__ZaZ4XSX-mWBQ/view?usp=sharing" class="external-link">Download link</a></p>
 <p>Download and uncompress:</p>
 <p><img src="figures/Screen-Shot-2022-01-13-at-10.34.18-PM.png"></p>
 </div>
-<div class="section level2">
-<h2 id="sample-information">Sample information<a class="anchor" aria-label="anchor" href="#sample-information"></a>
-</h2>
+<div class="section level4">
+<h4 id="sample-information">Sample information<a class="anchor" aria-label="anchor" href="#sample-information"></a>
+</h4>
 <ul>
 <li><a href="https://drive.google.com/file/d/1yyJeOMUhuMSTmPWfzKuFTCRfZ3zdhO6q/view?usp=sharing" class="external-link">Download link</a></li>
 </ul>
 <p>Download and uncompress:</p>
 <p><img src="figures/Screen%20Shot-2022-01-13-at-10.35.54-PM.png"></p>
-<div class="section level3">
-<h3 id="sample_info_pos">
+<div class="section level6">
+<h6 id="sample_info_pos">
 <code>sample_info_pos</code><a class="anchor" aria-label="anchor" href="#sample_info_pos"></a>
-</h3>
+</h6>
 <p><code>sample_info_pos</code> is like below:</p>
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; overflow-x: scroll; width:100%; ">
 <table class="table table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;">
@@ -5398,12 +5398,12 @@ Control
 </table>
 </div>
 </div>
-<div class="section level3">
-<h3 id="sample_info_neg">
+<div class="section level6">
+<h6 id="sample_info_neg">
 <code>sample_info_neg</code><a class="anchor" aria-label="anchor" href="#sample_info_neg"></a>
-</h3>
+</h6>
 <p><code>sample_info_neg</code> is like below:</p>
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; overflow-x: scroll; width:100%; ">
 <table class="table table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;">
@@ -10613,10 +10613,10 @@ Control
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="session-information">
+<div class="section level2">
+<h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
-</h1>
+</h2>
 <hr>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>

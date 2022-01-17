@@ -6,7 +6,7 @@ date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
 output:
   html_document:
     df_print: paged
-    toc: no
+    toc: yes
   pdf_document:
     toc: no
 vignette: >

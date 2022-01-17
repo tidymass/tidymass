@@ -6,7 +6,7 @@ date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
 output:
   html_document:
     df_print: paged
-    toc: no
+    toc: yes
   pdf_document:
     toc: no
 vignette: >
@@ -27,52 +27,109 @@ knitr::opts_chunk$set(
 )
 ```
 
-# **Data preparation**
+
+***
+
+## **Data preparation**
 
 Download the demo data and [refer this article](https://tidymass.github.io/tidymass/articles/demo_data.html).
 
+We have positive and negative mode. For each mode, we have control, case and QC groups. Control group have 110 samples, and case group have 110 samples as well.
+
 ![](figures/Screen-Shot-2022-01-13-at-10.33.07-PM.png)
 
-# **Positive mode**
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+## **Positive mode**
+
+`massprocesser` package is used to do the raw data processing. Please refer this [website](file:///Users/xiaotaoshen/tidymass/massprocesser/docs/index.html).
+
+#### Code
+
+The code used to do raw data processing.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 library(massprocesser)
 ```
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-massprocesser::process_data(
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+process_data(
   path = "mzxml_ms1_data/POS",
   polarity = "positive",
   ppm = 10,
   peakwidth = c(10, 60),
   threads = 4,
-  output_tic = TRUE,
-  output_bpc = TRUE,
-  output_rt_correction_plot = TRUE,
+  output_tic = FALSE,
+  output_bpc = FALSE,
+  output_rt_correction_plot = FALSE,
   min_fraction = 0.5,
   group_for_figure = "QC"
 )
 ```
 
-# **Negative mode**
+#### Results
 
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+All the results will be placed in the folder `"mzxml_ms1_data/POS/Result"`. More information about that can be found [here](https://tidymass.github.io/massprocesser/articles/raw_data_processing.html).
+
+![](figures/Screen-Shot-2.png)
+
+You can just load the `object`, which is a `mass_class` class dataset.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+library(massdataset)
+load("mzxml_ms1_data/POS/Result/object")
+object
+```
+
+We can see that there are 10149 metabolic features in positive mode.
+
+![](figures/Screen-Shot.png)
+
+You can use the `plot_adjusted_rt()` function to get the interactive plot.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("mzxml_ms1_data/POS/Result/intermediate_data/xdata2")
+####set the group_for_figure if you want to show specific groups. And set it as "all" if you want to show all samples.
+plot = 
+massprocesser::plot_adjusted_rt(object = xdata2, 
+                 group_for_figure = "QC", 
+                 interactive = TRUE)
+plot
+```
+
+## **Negative mode**
+
+The processing of negative mode is same with positive mode data.
+
+#### Code
+
+Same with positive mode, change `polarity` to `negative`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 massprocesser::process_data(
   path = "mzxml_ms1_data/NEG",
   polarity = "negative",
   ppm = 10,
   peakwidth = c(10, 60),
   threads = 4,
-  output_tic = TRUE,
-  output_bpc = TRUE,
-  output_rt_correction_plot = TRUE,
+  output_tic = FALSE,
+  output_bpc = FALSE,
+  output_rt_correction_plot = FALSE,
   min_fraction = 0.5,
   group_for_figure = "QC"
 )
 ```
 
-# **Results**
+#### Results
 
-# **Session information**
+Same with positive mode.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("mzxml_ms1_data/NEG/Result/object")
+object
+```
+
+We can see that there are 8804 metabolic features in positive mode.
+
+## **Session information**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 sessionInfo()

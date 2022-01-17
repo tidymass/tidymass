@@ -6,7 +6,7 @@ date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
 output:
   html_document:
     df_print: paged
-    toc: no
+    toc: yes
   pdf_document:
     toc: no
 vignette: >
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 
 ---
 
-# **Data preparation**
+## **Data preparation**
 
 ---
 
@@ -37,18 +37,18 @@ Please place the raw data in one folder according to MS1 and MS2.
 
 ---
 
-# **Proteowizard**
+## **Proteowizard**
 
 ---
 
-## Convert MS1 data to `mzXML` format data
+#### Convert MS1 data to `mzXML` format data
 
 Just convert data into `mzXML` format data according to the parameters below:
 
 ![](../man/figures/Screen Shot 2022-01-13 at 12.06.14 AM.png)
 
 
-## Convert MS2 data to `mzXML` or `mgf` format data
+#### Convert MS2 data to `mzXML` or `mgf` format data
 
 Just convert data into `mzXML` or `mgf` format data according to the parameters below:
 
@@ -56,23 +56,23 @@ Just convert data into `mzXML` or `mgf` format data according to the parameters 
 
 ---
 
-# **Convert data using `massconverter`**
+## **Convert data using `massconverter`**
 
 ---
 
 `massconverter` is a pacakge in `tidymass` which can be used to convert mass spectrometry raw data based on docker image of pwid. See more information [here](https://tidymass.github.io/massconverter/).
 
-## Convert data to `mzXML` format data
+#### Convert data to `mzXML` format data
 
 We use the demo data to show how to use `massconverter`.
 
 Download the data and put them your working directory and uncompress it.
 
-## Convert data to `mgf` format data
+#### Convert data to `mgf` format data
 
 ---
 
-# **Session information**
+## **Session information**
 
 ---
 

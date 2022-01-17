@@ -6,7 +6,7 @@ date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
 output:
   html_document:
     df_print: paged
-    toc: no
+    toc: yes
   pdf_document:
     toc: no
 vignette: >
@@ -29,23 +29,23 @@ knitr::opts_chunk$set(
 
 ---
 
-# **Introduction**
+## **Introduction**
 
 ---
 
-The demo data for tidymass is untargeted metabolomics by RPLC-QEplus (Thermo).
+The demo data for tidymass is untargeted metabolomics by RPLC-QEplus (Thermo). 259 samples in total.
 
-* Samples: 110 blood samples.
+* Subject samples: 2200 blood samples. 110 control samples and 110 case samples.
 
-* 
-
----
-
-# **Download demo data**
+* QC samples: 39
 
 ---
 
-## MS1 mzXML data
+## **Download demo data**
+
+---
+
+#### MS1 mzXML data
 
 [Download link](https://drive.google.com/file/d/1KUk0-PA77zV3UJsuUTEuAK6462yze8mm/view?usp=sharing).
 
@@ -54,7 +54,7 @@ Download and uncompress:
 
 ![](figures/Screen-Shot-2022-01-13-at-10.33.07-PM.png)
 
-## MS2 mzXML data
+#### MS2 mzXML data
 
 [Download link](https://drive.google.com/file/d/1FY3x7q5i1g3oSLaVej__ZaZ4XSX-mWBQ/view?usp=sharing)
 
@@ -62,7 +62,7 @@ Download and uncompress:
 
 ![](figures/Screen-Shot-2022-01-13-at-10.34.18-PM.png)
 
-## Sample information
+#### Sample information
 
 * [Download link](https://drive.google.com/file/d/1yyJeOMUhuMSTmPWfzKuFTCRfZ3zdhO6q/view?usp=sharing)
 
@@ -70,7 +70,7 @@ Download and uncompress:
 
 ![](figures/Screen Shot-2022-01-13-at-10.35.54-PM.png)
 
-### `sample_info_pos`
+###### `sample_info_pos`
 
 `sample_info_pos` is like below:
 
@@ -81,10 +81,10 @@ library(magrittr)
 kbl(sample_info_pos) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
                 fixed_thead = TRUE) %>% 
-  scroll_box(width = "100%", height = "200px")
+  scroll_box(width = "100%", height = "600px")
 ```
 
-### `sample_info_neg`
+###### `sample_info_neg`
 
 `sample_info_neg` is like below:
 
@@ -95,12 +95,12 @@ library(magrittr)
 kbl(sample_info_neg) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
                 fixed_thead = TRUE) %>% 
-  scroll_box(width = "100%", height = "200px")
+  scroll_box(width = "100%", height = "600px")
 ```
 
 ---
 
-# **Session information**
+## **Session information**
 
 ---
 

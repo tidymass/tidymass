@@ -6,7 +6,7 @@ date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
 output:
   html_document:
     df_print: paged
-    toc: no
+    toc: yes
   pdf_document:
     toc: no
 vignette: >
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 
 ---
 
-# **Uninstall `tidyTools` and `metID`**
+## **Uninstall `tidyTools` and `metID`**
 
 ---
 
@@ -53,7 +53,7 @@ remove.packages(pkgs = "metID")
 
 > If there are errors, ignore them.
 
-# **Install `tidymass` from github**
+## **Install `tidymass` from github**
 
 You can just use the `devtools` or `remote` to install `tidymass`. 
 
@@ -106,7 +106,7 @@ And then restart R session and try again.
 
 ---
 
-# **Install tidymass packages one by one**
+## **Install tidymass packages one by one**
 
 ---
 
@@ -128,7 +128,7 @@ devtools::install_github("tidymass/metpath", dependencies = TRUE)
 
 ---
 
-# **Frequently Asked Questions**
+## **Frequently Asked Questions**
 
 ---
 
@@ -168,7 +168,7 @@ BiocManager::install("affy")
 
 ---
 
-# **Session information**
+## **Session information**
 
 ---
 
