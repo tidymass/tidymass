@@ -128,7 +128,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Data cleaning</h1>
                         <h4 data-toc-skip class="author">Xiaotao Shen (<a href="https://www.shenxt.info/" class="external-link uri">https://www.shenxt.info/</a>)</h4>
                         
-            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-17</h4>
+            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-01-18</h4>
       
       
       <div class="d-none name"><code>data_cleaning.Rmd</code></div>
@@ -251,10 +251,407 @@
 <p>We can see that no matter in positive and negative mode, batch effect is serious.</p>
 </div>
 <div class="section level2">
+<h2 id="remove-noisy-metabolic-features">Remove noisy metabolic features<a class="anchor" aria-label="anchor" href="#remove-noisy-metabolic-features"></a>
+</h2>
+<p>Remove variables which have MVs in more than 20% QC samples and in at lest 50% samples in control group or case group.</p>
+<div class="section level3">
+<h3 id="positive-mode">Positive mode<a class="anchor" aria-label="anchor" href="#positive-mode"></a>
+</h3>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_pos</span> <span class="op">%&gt;%</span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span>
+<span class="co">#&gt;     group   n</span>
+<span class="co">#&gt; 1    Case 110</span>
+<span class="co">#&gt; 2 Control 110</span>
+<span class="co">#&gt; 3      QC  39</span></code></pre></div>
+<p>MV percentage in QC samples.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">show_variable_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span> <span class="op">%&gt;%</span> 
+                               <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+                               <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">class</span> <span class="op">==</span> <span class="st">"QC"</span><span class="op">)</span>, 
+                             percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_size_continuous</span><span class="op">(</span>range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p><img src="data_cleaning_files/figure-html/unnamed-chunk-9-1.png" width="100%"></p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">qc_id</span> <span class="op">=</span>
+  <span class="va">object_pos</span> <span class="op">%&gt;%</span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">class</span> <span class="op">==</span> <span class="st">"QC"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span>
+
+<span class="va">control_id</span> <span class="op">=</span>
+  <span class="va">object_pos</span> <span class="op">%&gt;%</span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">group</span> <span class="op">==</span> <span class="st">"Control"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span>
+
+<span class="va">case_id</span> <span class="op">=</span>
+  <span class="va">object_pos</span> <span class="op">%&gt;%</span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">group</span> <span class="op">==</span> <span class="st">"Case"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span>
+
+<span class="va">object_pos</span> <span class="op">=</span>
+  <span class="va">object_pos</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate_variable_na_freq</span><span class="op">(</span>according_to_samples <span class="op">=</span> <span class="va">qc_id</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate_variable_na_freq</span><span class="op">(</span>according_to_samples <span class="op">=</span> <span class="va">control_id</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate_variable_na_freq</span><span class="op">(</span>according_to_samples <span class="op">=</span> <span class="va">case_id</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">extract_variable_info</span><span class="op">(</span><span class="va">object_pos</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;   variable_id       mz        rt    na_freq na_freq.1 na_freq.2</span>
+<span class="co">#&gt; 1  M70T73_POS 70.04074  73.31705 0.28205128 0.6000000 0.4727273</span>
+<span class="co">#&gt; 2  M70T53_POS 70.06596  52.78542 0.00000000 0.1454545 0.0000000</span>
+<span class="co">#&gt; 3 M70T183_POS 70.19977 182.87981 0.00000000 0.6636364 0.7454545</span>
+<span class="co">#&gt; 4 M70T527_POS 70.36113 526.76657 0.02564103 0.1818182 0.3000000</span>
+<span class="co">#&gt; 5 M71T695_POS 70.56911 694.84592 0.02564103 0.6454545 0.5545455</span>
+<span class="co">#&gt; 6 M71T183_POS 70.75034 182.77790 0.05128205 0.7272727 0.7909091</span></code></pre></div>
+<p>Remove variables.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_pos</span> <span class="op">&lt;-</span> 
+  <span class="va">object_pos</span> <span class="op">%&gt;%</span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"variable_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">na_freq</span> <span class="op">&lt;</span> <span class="fl">0.2</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">na_freq.1</span> <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="op">|</span> <span class="va">na_freq.2</span> <span class="op">&lt;</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
+<span class="va">object_pos</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 5101 x 259 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 5101 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 0 variables x 0 MS2 spectra]</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; create_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:19:04</span>
+<span class="co">#&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>        Package Function.used                Time</span>
+<span class="co">#&gt; 1 massprocesser  process_data 2022-01-16 16:18:43</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate_variable_na_freq ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package             Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
+<span class="co">#&gt; 2 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
+<span class="co">#&gt; 3 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
+<span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:44</span></code></pre></div>
+<p>Only 5101 variables left.</p>
+</div>
+<div class="section level3">
+<h3 id="negative-mode">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode"></a>
+</h3>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_neg</span> <span class="op">%&gt;%</span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span>
+<span class="co">#&gt;     group   n</span>
+<span class="co">#&gt; 1    Case 110</span>
+<span class="co">#&gt; 2 Control 110</span>
+<span class="co">#&gt; 3      QC  39</span></code></pre></div>
+<p>MV percentage in QC samples.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">show_variable_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span> <span class="op">%&gt;%</span> 
+                               <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+                               <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">class</span> <span class="op">==</span> <span class="st">"QC"</span><span class="op">)</span>, 
+                             percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_size_continuous</span><span class="op">(</span>range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p><img src="data_cleaning_files/figure-html/unnamed-chunk-13-1.png" width="100%"></p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">qc_id</span> <span class="op">=</span>
+  <span class="va">object_neg</span> <span class="op">%&gt;%</span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">class</span> <span class="op">==</span> <span class="st">"QC"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span>
+
+<span class="va">control_id</span> <span class="op">=</span>
+  <span class="va">object_neg</span> <span class="op">%&gt;%</span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">group</span> <span class="op">==</span> <span class="st">"Control"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span>
+
+<span class="va">case_id</span> <span class="op">=</span>
+  <span class="va">object_neg</span> <span class="op">%&gt;%</span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">group</span> <span class="op">==</span> <span class="st">"Case"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span>
+
+<span class="va">object_neg</span> <span class="op">=</span>
+  <span class="va">object_neg</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate_variable_na_freq</span><span class="op">(</span>according_to_samples <span class="op">=</span> <span class="va">qc_id</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate_variable_na_freq</span><span class="op">(</span>according_to_samples <span class="op">=</span> <span class="va">control_id</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">mutate_variable_na_freq</span><span class="op">(</span>according_to_samples <span class="op">=</span> <span class="va">case_id</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">extract_variable_info</span><span class="op">(</span><span class="va">object_neg</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;   variable_id       mz        rt    na_freq   na_freq.1   na_freq.2</span>
+<span class="co">#&gt; 1 M70T712_NEG 70.05911 711.97894 0.05128205 0.109090909 0.018181818</span>
+<span class="co">#&gt; 2 M70T527_NEG 70.13902 526.85416 0.33333333 0.509090909 0.618181818</span>
+<span class="co">#&gt; 3 M70T587_NEG 70.31217 587.25330 0.00000000 0.009090909 0.009090909</span>
+<span class="co">#&gt; 4  M70T47_NEG 70.33835  46.57537 0.84615385 0.936363636 0.090909091</span>
+<span class="co">#&gt; 5 M71T587_NEG 70.56315 587.02570 0.17948718 0.145454545 0.163636364</span>
+<span class="co">#&gt; 6 M71T641_NEG 70.70657 641.16672 0.10256410 0.063636364 0.072727273</span></code></pre></div>
+<p>Remove variables.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_neg</span> <span class="op">&lt;-</span> 
+  <span class="va">object_neg</span> <span class="op">%&gt;%</span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"variable_info"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">na_freq</span> <span class="op">&lt;</span> <span class="fl">0.2</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">na_freq.1</span> <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="op">|</span> <span class="va">na_freq.2</span> <span class="op">&lt;</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
+<span class="va">object_neg</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 4104 x 259 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 4104 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 0 variables x 0 MS2 spectra]</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; create_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:20:02</span>
+<span class="co">#&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>        Package Function.used                Time</span>
+<span class="co">#&gt; 1 massprocesser  process_data 2022-01-16 16:19:48</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate_variable_na_freq ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package             Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
+<span class="co">#&gt; 2 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
+<span class="co">#&gt; 3 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
+<span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:47</span></code></pre></div>
+<p>4104 features left.</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="filter-outlier-samples">
+<strong>Filter outlier samples</strong><a class="anchor" aria-label="anchor" href="#filter-outlier-samples"></a>
+</h2>
+<p>We can use the detect_outlier() to find the outlier samples.</p>
+<p>More information about how to detect outlier samples can be found <a href="https://privefl.github.io/blog/detecting-outlier-samples-in-pca/" class="external-link">here</a>.</p>
+<div class="section level3">
+<h3 id="positive-mode-1">Positive mode<a class="anchor" aria-label="anchor" href="#positive-mode-1"></a>
+</h3>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">massdataset</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_sample_missing_values.html" class="external-link">show_sample_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>,
+                                        color_by <span class="op">=</span> <span class="st">"group"</span>,
+                                        order_by <span class="op">=</span> <span class="st">"injection.order"</span>,
+                                        percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">theme</span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_size_continuous</span><span class="op">(</span>range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">ggsci</span><span class="fu">::</span><span class="fu"><a href="https://nanx.me/ggsci/reference/scale_aaas.html" class="external-link">scale_color_aaas</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="data_cleaning_files/figure-html/unnamed-chunk-16-1.png" width="100%"></p>
+<p>Detect outlier samples.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">outlier_samples</span> <span class="op">=</span>
+  <span class="va">object_pos</span> <span class="op">%&gt;%</span>
+  <span class="fu">`+`</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">detect_outlier</span><span class="op">(</span><span class="op">)</span>
+
+<span class="va">outlier_samples</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">masscleaner </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1 according_to_na : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2 according_to_pc_sd : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3 according_to_pc_mad : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4 accordint_to_distance : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">extract all outlier table using extract_outlier_table()</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">outlier_table</span> <span class="op">&lt;-</span>
+<span class="fu">extract_outlier_table</span><span class="op">(</span><span class="va">outlier_samples</span><span class="op">)</span>
+
+<span class="va">outlier_table</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;            according_to_na pc_sd pc_mad accordint_to_distance</span>
+<span class="co">#&gt; sample_06            FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_103           FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_11            FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_112           FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_117           FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_12            FALSE FALSE  FALSE                 FALSE</span>
+
+<span class="va">outlier_table</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/apply.html" class="external-link">apply</a></span><span class="op">(</span><span class="fl">1</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">`&gt;`</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; named integer(0)</span></code></pre></div>
+<p>No outlier samples in positive mode.</p>
+</div>
+<div class="section level3">
+<h3 id="negative-mode-1">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode-1"></a>
+</h3>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">massdataset</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_sample_missing_values.html" class="external-link">show_sample_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>,
+                                        color_by <span class="op">=</span> <span class="st">"group"</span>,
+                                        order_by <span class="op">=</span> <span class="st">"injection.order"</span>,
+                                        percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">theme</span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_size_continuous</span><span class="op">(</span>range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">ggsci</span><span class="fu">::</span><span class="fu"><a href="https://nanx.me/ggsci/reference/scale_aaas.html" class="external-link">scale_color_aaas</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="data_cleaning_files/figure-html/unnamed-chunk-19-1.png" width="100%"></p>
+<p>Detect outlier samples.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">outlier_samples</span> <span class="op">=</span>
+  <span class="va">object_neg</span> <span class="op">%&gt;%</span>
+  <span class="fu">`+`</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/scale.html" class="external-link">scale</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">detect_outlier</span><span class="op">(</span><span class="op">)</span>
+
+<span class="va">outlier_samples</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">masscleaner </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1 according_to_na : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2 according_to_pc_sd : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3 according_to_pc_mad : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4 accordint_to_distance : </span>0 outlier samples.</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">extract all outlier table using extract_outlier_table()</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">outlier_table</span> <span class="op">&lt;-</span>
+<span class="fu">extract_outlier_table</span><span class="op">(</span><span class="va">outlier_samples</span><span class="op">)</span>
+
+<span class="va">outlier_table</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;            according_to_na pc_sd pc_mad accordint_to_distance</span>
+<span class="co">#&gt; sample_06            FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_103           FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_11            FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_112           FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_117           FALSE FALSE  FALSE                 FALSE</span>
+<span class="co">#&gt; sample_12            FALSE FALSE  FALSE                 FALSE</span>
+
+<span class="va">outlier_table</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/apply.html" class="external-link">apply</a></span><span class="op">(</span><span class="fl">1</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">`&gt;`</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; named integer(0)</span></code></pre></div>
+<p>No outlier samples in negative mode.</p>
+</div>
+<div class="section level3">
+<h3 id="missing-value-imputation">Missing value imputation<a class="anchor" aria-label="anchor" href="#missing-value-imputation"></a>
+</h3>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span><span class="va">object_pos</span><span class="op">)</span>
+<span class="co">#&gt; [1] 148965</span>
+<span class="va">object_pos</span> <span class="op">&lt;-</span> 
+  <span class="fu">impute_mv</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, method <span class="op">=</span> <span class="st">"knn"</span><span class="op">)</span>
+<span class="co">#&gt; Cluster size 4983 broken into 88 4895 </span>
+<span class="co">#&gt; Done cluster 88 </span>
+<span class="co">#&gt; Cluster size 4895 broken into 4497 398 </span>
+<span class="co">#&gt; Cluster size 4497 broken into 3737 760 </span>
+<span class="co">#&gt; Cluster size 3737 broken into 2703 1034 </span>
+<span class="co">#&gt; Cluster size 2703 broken into 1706 997 </span>
+<span class="co">#&gt; Cluster size 1706 broken into 1240 466 </span>
+<span class="co">#&gt; Done cluster 1240 </span>
+<span class="co">#&gt; Done cluster 466 </span>
+<span class="co">#&gt; Done cluster 1706 </span>
+<span class="co">#&gt; Done cluster 997 </span>
+<span class="co">#&gt; Done cluster 2703 </span>
+<span class="co">#&gt; Done cluster 1034 </span>
+<span class="co">#&gt; Done cluster 3737 </span>
+<span class="co">#&gt; Done cluster 760 </span>
+<span class="co">#&gt; Done cluster 4497 </span>
+<span class="co">#&gt; Done cluster 398 </span>
+<span class="co">#&gt; Done cluster 4895</span>
+
+<span class="fu">get_mv_number</span><span class="op">(</span><span class="va">object_pos</span><span class="op">)</span>
+<span class="co">#&gt; [1] 0</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span><span class="va">object_neg</span><span class="op">)</span>
+<span class="co">#&gt; [1] 146427</span>
+
+<span class="va">object_neg</span> <span class="op">&lt;-</span> 
+  <span class="fu">impute_mv</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, method <span class="op">=</span> <span class="st">"knn"</span><span class="op">)</span>
+<span class="co">#&gt; Cluster size 4006 broken into 3965 41 </span>
+<span class="co">#&gt; Cluster size 3965 broken into 3743 222 </span>
+<span class="co">#&gt; Cluster size 3743 broken into 505 3238 </span>
+<span class="co">#&gt; Done cluster 505 </span>
+<span class="co">#&gt; Cluster size 3238 broken into 2519 719 </span>
+<span class="co">#&gt; Cluster size 2519 broken into 1721 798 </span>
+<span class="co">#&gt; Cluster size 1721 broken into 676 1045 </span>
+<span class="co">#&gt; Done cluster 676 </span>
+<span class="co">#&gt; Done cluster 1045 </span>
+<span class="co">#&gt; Done cluster 1721 </span>
+<span class="co">#&gt; Done cluster 798 </span>
+<span class="co">#&gt; Done cluster 2519 </span>
+<span class="co">#&gt; Done cluster 719 </span>
+<span class="co">#&gt; Done cluster 3238 </span>
+<span class="co">#&gt; Done cluster 3743 </span>
+<span class="co">#&gt; Done cluster 222 </span>
+<span class="co">#&gt; Done cluster 3965 </span>
+<span class="co">#&gt; Done cluster 41</span>
+
+<span class="fu">get_mv_number</span><span class="op">(</span><span class="va">object_neg</span><span class="op">)</span>
+<span class="co">#&gt; [1] 0</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="data-normalization-and-integration">Data normalization and integration<a class="anchor" aria-label="anchor" href="#data-normalization-and-integration"></a>
+</h3>
+</div>
+<div class="section level3">
+<h3 id="positive-mode-2">Positive mode<a class="anchor" aria-label="anchor" href="#positive-mode-2"></a>
+</h3>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_pos</span> <span class="op">&lt;-</span> 
+  <span class="fu">normalize_data</span><span class="op">(</span><span class="va">object_pos</span>, method <span class="op">=</span> <span class="st">"median"</span><span class="op">)</span>
+
+<span class="va">object_pos2</span> <span class="op">&lt;-</span> 
+  <span class="fu">integrate_data</span><span class="op">(</span><span class="va">object_pos</span>, method <span class="op">=</span> <span class="st">"subject_median"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_pos2</span> <span class="op">%&gt;%</span> 
+  <span class="fu">`+`</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">massqc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massqc/man/massqc_pca.html" class="external-link">massqc_pca</a></span><span class="op">(</span>color_by <span class="op">=</span> <span class="st">"batch"</span>, line <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<p><img src="data_cleaning_files/figure-html/unnamed-chunk-25-1.png" width="100%"></p>
+</div>
+<div class="section level3">
+<h3 id="negative-mode-2">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode-2"></a>
+</h3>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_neg</span> <span class="op">&lt;-</span> 
+  <span class="fu">normalize_data</span><span class="op">(</span><span class="va">object_neg</span>, method <span class="op">=</span> <span class="st">"median"</span><span class="op">)</span>
+
+<span class="va">object_neg2</span> <span class="op">&lt;-</span> 
+  <span class="fu">integrate_data</span><span class="op">(</span><span class="va">object_neg</span>, method <span class="op">=</span> <span class="st">"subject_median"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">object_neg2</span> <span class="op">%&gt;%</span> 
+  <span class="fu">`+`</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">massqc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massqc/man/massqc_pca.html" class="external-link">massqc_pca</a></span><span class="op">(</span>color_by <span class="op">=</span> <span class="st">"batch"</span>, line <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<p><img src="data_cleaning_files/figure-html/unnamed-chunk-27-1.png" width="100%"></p>
+<p>Save data for next analysis.</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_pos2</span>, file <span class="op">=</span> <span class="st">"data_cleaning/POS/object_pos2"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_neg2</span>, file <span class="op">=</span> <span class="st">"data_cleaning/NEG/object_neg2"</span><span class="op">)</span></code></pre></div>
+</div>
+</div>
+<div class="section level2">
 <h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
 </h2>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; R Under development (unstable) (2022-01-11 r81473)</span>
 <span class="co">#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
@@ -282,93 +679,94 @@
 <span class="co">#&gt; [22] tinytools_0.9.1      massdataset_0.99.1   tidymass_0.0.1      </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
-<span class="co">#&gt;   [1] utf8_1.2.2                  robust_0.6-1               </span>
-<span class="co">#&gt;   [3] tidyselect_1.1.1            htmlwidgets_1.5.4          </span>
-<span class="co">#&gt;   [5] grid_4.2.0                  devtools_2.4.3             </span>
-<span class="co">#&gt;   [7] munsell_0.5.0               codetools_0.2-18           </span>
-<span class="co">#&gt;   [9] ragg_1.2.1                  preprocessCore_1.57.0      </span>
-<span class="co">#&gt;  [11] future_1.23.0               withr_2.4.3                </span>
-<span class="co">#&gt;  [13] colorspace_2.0-2            rstudioapi_0.13            </span>
-<span class="co">#&gt;  [15] robustbase_0.93-8           listenv_0.8.0              </span>
-<span class="co">#&gt;  [17] mzID_1.33.0                 MatrixGenerics_1.7.0       </span>
-<span class="co">#&gt;  [19] GenomeInfoDbData_1.2.7      polyclip_1.10-0            </span>
-<span class="co">#&gt;  [21] farver_2.1.0                rprojroot_2.0.2            </span>
-<span class="co">#&gt;  [23] parallelly_1.30.0           vctrs_0.3.8                </span>
-<span class="co">#&gt;  [25] generics_0.1.1              xfun_0.29                  </span>
-<span class="co">#&gt;  [27] itertools_0.1-3             randomForest_4.6-14        </span>
-<span class="co">#&gt;  [29] R6_2.5.1                    doParallel_1.0.16          </span>
-<span class="co">#&gt;  [31] GenomeInfoDb_1.31.1         graphlayouts_0.8.0         </span>
-<span class="co">#&gt;  [33] clue_0.3-60                 MsCoreUtils_1.7.1          </span>
-<span class="co">#&gt;  [35] bitops_1.0-7                cachem_1.0.6               </span>
-<span class="co">#&gt;  [37] gridGraphics_0.5-1          DelayedArray_0.21.2        </span>
-<span class="co">#&gt;  [39] assertthat_0.2.1            scales_1.1.1               </span>
-<span class="co">#&gt;  [41] ggraph_2.0.5                gtable_0.3.0               </span>
-<span class="co">#&gt;  [43] globals_0.14.0              affy_1.73.0                </span>
-<span class="co">#&gt;  [45] processx_3.5.2              tidygraph_1.2.0            </span>
-<span class="co">#&gt;  [47] rlang_0.4.12                clisymbols_1.2.0           </span>
-<span class="co">#&gt;  [49] systemfonts_1.0.3           GlobalOptions_0.1.2        </span>
-<span class="co">#&gt;  [51] lazyeval_0.2.2              impute_1.69.0              </span>
-<span class="co">#&gt;  [53] broom_0.7.11                BiocManager_1.30.16        </span>
-<span class="co">#&gt;  [55] yaml_2.2.1                  modelr_0.1.8               </span>
-<span class="co">#&gt;  [57] crosstalk_1.2.0             backports_1.4.1            </span>
-<span class="co">#&gt;  [59] MassSpecWavelet_1.61.0      tools_4.2.0                </span>
-<span class="co">#&gt;  [61] usethis_2.1.5               ggplotify_0.1.0            </span>
-<span class="co">#&gt;  [63] affyio_1.65.0               ellipsis_0.3.2             </span>
-<span class="co">#&gt;  [65] jquerylib_0.1.4             RColorBrewer_1.1-2         </span>
-<span class="co">#&gt;  [67] proxy_0.4-26                sessioninfo_1.2.2          </span>
-<span class="co">#&gt;  [69] plyr_1.8.6                  zlibbioc_1.41.0            </span>
-<span class="co">#&gt;  [71] purrr_0.3.4                 RCurl_1.98-1.5             </span>
-<span class="co">#&gt;  [73] ps_1.6.0                    prettyunits_1.1.1          </span>
-<span class="co">#&gt;  [75] viridis_0.6.2               pbapply_1.5-0              </span>
-<span class="co">#&gt;  [77] GetoptLong_1.0.5            SummarizedExperiment_1.25.3</span>
-<span class="co">#&gt;  [79] haven_2.4.3                 ggrepel_0.9.1              </span>
-<span class="co">#&gt;  [81] cluster_2.1.2               fs_1.5.2                   </span>
-<span class="co">#&gt;  [83] furrr_0.2.3                 data.table_1.14.2          </span>
-<span class="co">#&gt;  [85] openxlsx_4.2.5              circlize_0.4.14            </span>
-<span class="co">#&gt;  [87] reprex_2.0.1                RANN_2.6.1                 </span>
-<span class="co">#&gt;  [89] mvtnorm_1.1-2               pcaMethods_1.87.0          </span>
-<span class="co">#&gt;  [91] matrixStats_0.61.0          pkgload_1.2.4              </span>
-<span class="co">#&gt;  [93] hms_1.1.1                   patchwork_1.1.1            </span>
-<span class="co">#&gt;  [95] evaluate_0.14               XML_3.99-0.8               </span>
-<span class="co">#&gt;  [97] leaflet_2.0.4.1             readxl_1.3.1               </span>
-<span class="co">#&gt;  [99] gridExtra_2.3               IRanges_2.29.1             </span>
-<span class="co">#&gt; [101] shape_1.4.6                 testthat_3.1.1             </span>
-<span class="co">#&gt; [103] compiler_4.2.0              tibble_3.1.6               </span>
-<span class="co">#&gt; [105] ncdf4_1.17                  crayon_1.4.2               </span>
-<span class="co">#&gt; [107] htmltools_0.5.2             pcaPP_1.9-74               </span>
-<span class="co">#&gt; [109] tzdb_0.2.0                  rrcov_1.6-0                </span>
-<span class="co">#&gt; [111] tidyr_1.1.4                 lubridate_1.8.0            </span>
-<span class="co">#&gt; [113] DBI_1.1.2                   tweenr_1.0.2               </span>
-<span class="co">#&gt; [115] dbplyr_2.1.1                ComplexHeatmap_2.11.0      </span>
-<span class="co">#&gt; [117] MASS_7.3-55                 MsFeatures_1.3.0           </span>
-<span class="co">#&gt; [119] Matrix_1.4-0                readr_2.1.1                </span>
-<span class="co">#&gt; [121] cli_3.1.0                   vsn_3.63.0                 </span>
-<span class="co">#&gt; [123] igraph_1.2.6                parallel_4.2.0             </span>
-<span class="co">#&gt; [125] fit.models_0.64             GenomicRanges_1.47.6       </span>
-<span class="co">#&gt; [127] forcats_0.5.1               pkgconfig_2.0.3            </span>
-<span class="co">#&gt; [129] pkgdown_2.0.1               plotly_4.10.0              </span>
-<span class="co">#&gt; [131] MALDIquant_1.21             xml2_1.3.3                 </span>
-<span class="co">#&gt; [133] foreach_1.5.1               ggcorrplot_0.1.3           </span>
-<span class="co">#&gt; [135] missForest_1.4              bslib_0.3.1                </span>
-<span class="co">#&gt; [137] XVector_0.35.0              rvest_1.0.2                </span>
-<span class="co">#&gt; [139] yulab.utils_0.0.4           stringr_1.4.0              </span>
-<span class="co">#&gt; [141] callr_3.7.0                 digest_0.6.29              </span>
-<span class="co">#&gt; [143] Biostrings_2.63.1           rmarkdown_2.11             </span>
-<span class="co">#&gt; [145] cellranger_1.1.0            rjson_0.2.21               </span>
-<span class="co">#&gt; [147] lifecycle_1.0.1             jsonlite_1.7.2             </span>
-<span class="co">#&gt; [149] desc_1.4.0                  viridisLite_0.4.0          </span>
-<span class="co">#&gt; [151] limma_3.51.2                fansi_1.0.0                </span>
-<span class="co">#&gt; [153] pillar_1.6.4                ggsci_2.9                  </span>
-<span class="co">#&gt; [155] lattice_0.20-45             KEGGREST_1.35.0            </span>
-<span class="co">#&gt; [157] fastmap_1.1.0               httr_1.4.2                 </span>
-<span class="co">#&gt; [159] DEoptimR_1.0-10             pkgbuild_1.3.1             </span>
-<span class="co">#&gt; [161] glue_1.6.0                  remotes_2.4.2              </span>
-<span class="co">#&gt; [163] zip_2.2.0                   png_0.1-7                  </span>
-<span class="co">#&gt; [165] iterators_1.0.13            pander_0.6.4               </span>
-<span class="co">#&gt; [167] ggforce_0.3.3               class_7.3-20               </span>
-<span class="co">#&gt; [169] stringi_1.7.6               sass_0.4.0                 </span>
-<span class="co">#&gt; [171] textshaping_0.3.6           memoise_2.0.1              </span>
-<span class="co">#&gt; [173] tidyverse_1.3.1             e1071_1.7-9</span></code></pre></div>
+<span class="co">#&gt;   [1] ragg_1.2.1                  tidyr_1.1.4                </span>
+<span class="co">#&gt;   [3] missForest_1.4              DelayedArray_0.21.2        </span>
+<span class="co">#&gt;   [5] data.table_1.14.2           KEGGREST_1.35.0            </span>
+<span class="co">#&gt;   [7] RCurl_1.98-1.5              doParallel_1.0.16          </span>
+<span class="co">#&gt;   [9] generics_0.1.1              leaflet_2.0.4.1            </span>
+<span class="co">#&gt;  [11] preprocessCore_1.57.0       callr_3.7.0                </span>
+<span class="co">#&gt;  [13] usethis_2.1.5               RANN_2.6.1                 </span>
+<span class="co">#&gt;  [15] proxy_0.4-26                future_1.23.0              </span>
+<span class="co">#&gt;  [17] tzdb_0.2.0                  xml2_1.3.3                 </span>
+<span class="co">#&gt;  [19] lubridate_1.8.0             ggsci_2.9                  </span>
+<span class="co">#&gt;  [21] SummarizedExperiment_1.25.3 assertthat_0.2.1           </span>
+<span class="co">#&gt;  [23] tidyverse_1.3.1             viridis_0.6.2              </span>
+<span class="co">#&gt;  [25] xfun_0.29                   hms_1.1.1                  </span>
+<span class="co">#&gt;  [27] jquerylib_0.1.4             evaluate_0.14              </span>
+<span class="co">#&gt;  [29] DEoptimR_1.0-10             fansi_1.0.0                </span>
+<span class="co">#&gt;  [31] dbplyr_2.1.1                readxl_1.3.1               </span>
+<span class="co">#&gt;  [33] igraph_1.2.6                DBI_1.1.2                  </span>
+<span class="co">#&gt;  [35] htmlwidgets_1.5.4           MsFeatures_1.3.0           </span>
+<span class="co">#&gt;  [37] purrr_0.3.4                 ellipsis_0.3.2             </span>
+<span class="co">#&gt;  [39] crosstalk_1.2.0             backports_1.4.1            </span>
+<span class="co">#&gt;  [41] ggcorrplot_0.1.3            MatrixGenerics_1.7.0       </span>
+<span class="co">#&gt;  [43] vctrs_0.3.8                 remotes_2.4.2              </span>
+<span class="co">#&gt;  [45] cachem_1.0.6                withr_2.4.3                </span>
+<span class="co">#&gt;  [47] ggforce_0.3.3               itertools_0.1-3            </span>
+<span class="co">#&gt;  [49] robustbase_0.93-8           prettyunits_1.1.1          </span>
+<span class="co">#&gt;  [51] cluster_2.1.2               lazyeval_0.2.2             </span>
+<span class="co">#&gt;  [53] crayon_1.4.2                pkgconfig_2.0.3            </span>
+<span class="co">#&gt;  [55] labeling_0.4.2              tweenr_1.0.2               </span>
+<span class="co">#&gt;  [57] GenomeInfoDb_1.31.1         pkgload_1.2.4              </span>
+<span class="co">#&gt;  [59] devtools_2.4.3              rlang_0.4.12               </span>
+<span class="co">#&gt;  [61] globals_0.14.0              lifecycle_1.0.1            </span>
+<span class="co">#&gt;  [63] affyio_1.65.0               MassSpecWavelet_1.61.0     </span>
+<span class="co">#&gt;  [65] modelr_0.1.8                cellranger_1.1.0           </span>
+<span class="co">#&gt;  [67] randomForest_4.6-14         rprojroot_2.0.2            </span>
+<span class="co">#&gt;  [69] polyclip_1.10-0             matrixStats_0.61.0         </span>
+<span class="co">#&gt;  [71] Matrix_1.4-0                reprex_2.0.1               </span>
+<span class="co">#&gt;  [73] GlobalOptions_0.1.2         processx_3.5.2             </span>
+<span class="co">#&gt;  [75] png_0.1-7                   viridisLite_0.4.0          </span>
+<span class="co">#&gt;  [77] rjson_0.2.21                clisymbols_1.2.0           </span>
+<span class="co">#&gt;  [79] bitops_1.0-7                pander_0.6.4               </span>
+<span class="co">#&gt;  [81] Biostrings_2.63.1           shape_1.4.6                </span>
+<span class="co">#&gt;  [83] stringr_1.4.0               parallelly_1.30.0          </span>
+<span class="co">#&gt;  [85] robust_0.6-1                readr_2.1.1                </span>
+<span class="co">#&gt;  [87] gridGraphics_0.5-1          scales_1.1.1               </span>
+<span class="co">#&gt;  [89] memoise_2.0.1               plyr_1.8.6                 </span>
+<span class="co">#&gt;  [91] zlibbioc_1.41.0             compiler_4.2.0             </span>
+<span class="co">#&gt;  [93] RColorBrewer_1.1-2          pcaMethods_1.87.0          </span>
+<span class="co">#&gt;  [95] clue_0.3-60                 rrcov_1.6-0                </span>
+<span class="co">#&gt;  [97] cli_3.1.0                   affy_1.73.0                </span>
+<span class="co">#&gt;  [99] XVector_0.35.0              listenv_0.8.0              </span>
+<span class="co">#&gt; [101] patchwork_1.1.1             pbapply_1.5-0              </span>
+<span class="co">#&gt; [103] ps_1.6.0                    MASS_7.3-55                </span>
+<span class="co">#&gt; [105] tidyselect_1.1.1            vsn_3.63.0                 </span>
+<span class="co">#&gt; [107] stringi_1.7.6               forcats_0.5.1              </span>
+<span class="co">#&gt; [109] textshaping_0.3.6           highr_0.9                  </span>
+<span class="co">#&gt; [111] yaml_2.2.1                  MALDIquant_1.21            </span>
+<span class="co">#&gt; [113] ggrepel_0.9.1               grid_4.2.0                 </span>
+<span class="co">#&gt; [115] sass_0.4.0                  tools_4.2.0                </span>
+<span class="co">#&gt; [117] parallel_4.2.0              circlize_0.4.14            </span>
+<span class="co">#&gt; [119] rstudioapi_0.13             MsCoreUtils_1.7.1          </span>
+<span class="co">#&gt; [121] foreach_1.5.1               gridExtra_2.3              </span>
+<span class="co">#&gt; [123] farver_2.1.0                mzID_1.33.0                </span>
+<span class="co">#&gt; [125] ggraph_2.0.5                digest_0.6.29              </span>
+<span class="co">#&gt; [127] BiocManager_1.30.16         GenomicRanges_1.47.6       </span>
+<span class="co">#&gt; [129] broom_0.7.11                ncdf4_1.17                 </span>
+<span class="co">#&gt; [131] httr_1.4.2                  ComplexHeatmap_2.11.0      </span>
+<span class="co">#&gt; [133] colorspace_2.0-2            rvest_1.0.2                </span>
+<span class="co">#&gt; [135] XML_3.99-0.8                fs_1.5.2                   </span>
+<span class="co">#&gt; [137] IRanges_2.29.1              yulab.utils_0.0.4          </span>
+<span class="co">#&gt; [139] pkgdown_2.0.1               graphlayouts_0.8.0         </span>
+<span class="co">#&gt; [141] ggplotify_0.1.0             plotly_4.10.0              </span>
+<span class="co">#&gt; [143] sessioninfo_1.2.2           systemfonts_1.0.3          </span>
+<span class="co">#&gt; [145] fit.models_0.64             jsonlite_1.7.2             </span>
+<span class="co">#&gt; [147] tidygraph_1.2.0             testthat_3.1.1             </span>
+<span class="co">#&gt; [149] R6_2.5.1                    pillar_1.6.4               </span>
+<span class="co">#&gt; [151] htmltools_0.5.2             glue_1.6.0                 </span>
+<span class="co">#&gt; [153] fastmap_1.1.0               class_7.3-20               </span>
+<span class="co">#&gt; [155] codetools_0.2-18            pkgbuild_1.3.1             </span>
+<span class="co">#&gt; [157] pcaPP_1.9-74                mvtnorm_1.1-2              </span>
+<span class="co">#&gt; [159] furrr_0.2.3                 utf8_1.2.2                 </span>
+<span class="co">#&gt; [161] lattice_0.20-45             bslib_0.3.1                </span>
+<span class="co">#&gt; [163] tibble_3.1.6                zip_2.2.0                  </span>
+<span class="co">#&gt; [165] openxlsx_4.2.5              limma_3.51.2               </span>
+<span class="co">#&gt; [167] rmarkdown_2.11              desc_1.4.0                 </span>
+<span class="co">#&gt; [169] munsell_0.5.0               e1071_1.7-9                </span>
+<span class="co">#&gt; [171] GetoptLong_1.0.5            GenomeInfoDbData_1.2.7     </span>
+<span class="co">#&gt; [173] iterators_1.0.13            impute_1.69.0              </span>
+<span class="co">#&gt; [175] haven_2.4.3                 gtable_0.3.0</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

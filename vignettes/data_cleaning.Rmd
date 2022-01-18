@@ -97,6 +97,281 @@ Negative mode:
 
 We can see that no matter in positive and negative mode, batch effect is serious.
 
+## Remove noisy metabolic features
+
+Remove variables which have MVs in more than 20% QC samples and in at lest 50% samples in control group or case group.
+
+### Positive mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(group)
+```
+MV percentage in QC samples.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_variable_missing_values(object = object_pos %>% 
+                               activate_mass_dataset(what = "sample_info") %>% 
+                               filter(class == "QC"), 
+                             percentage = TRUE) +
+  scale_size_continuous(range = c(0.01, 2))
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+qc_id =
+  object_pos %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  filter(class == "QC") %>%
+  pull(sample_id)
+
+control_id =
+  object_pos %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  filter(group == "Control") %>%
+  pull(sample_id)
+
+case_id =
+  object_pos %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  filter(group == "Case") %>%
+  pull(sample_id)
+
+object_pos =
+  object_pos %>%
+  mutate_variable_na_freq(according_to_samples = qc_id) %>%
+  mutate_variable_na_freq(according_to_samples = control_id) %>%
+  mutate_variable_na_freq(according_to_samples = case_id)
+
+head(extract_variable_info(object_pos))
+```
+
+Remove variables.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos <- 
+  object_pos %>% 
+  activate_mass_dataset(what = "variable_info") %>%
+  filter(na_freq < 0.2 & (na_freq.1 < 0.5 | na_freq.2 < 0.5))
+object_pos
+```
+
+Only 5101 variables left.
+
+
+### Negative mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg %>% 
+  activate_mass_dataset(what = "sample_info") %>% 
+  dplyr::count(group)
+```
+
+MV percentage in QC samples.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+show_variable_missing_values(object = object_neg %>% 
+                               activate_mass_dataset(what = "sample_info") %>% 
+                               filter(class == "QC"), 
+                             percentage = TRUE) +
+  scale_size_continuous(range = c(0.01, 2))
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+qc_id =
+  object_neg %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  filter(class == "QC") %>%
+  pull(sample_id)
+
+control_id =
+  object_neg %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  filter(group == "Control") %>%
+  pull(sample_id)
+
+case_id =
+  object_neg %>%
+  activate_mass_dataset(what = "sample_info") %>%
+  filter(group == "Case") %>%
+  pull(sample_id)
+
+object_neg =
+  object_neg %>%
+  mutate_variable_na_freq(according_to_samples = qc_id) %>%
+  mutate_variable_na_freq(according_to_samples = control_id) %>%
+  mutate_variable_na_freq(according_to_samples = case_id)
+
+head(extract_variable_info(object_neg))
+```
+
+Remove variables.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg <- 
+  object_neg %>% 
+  activate_mass_dataset(what = "variable_info") %>%
+  filter(na_freq < 0.2 & (na_freq.1 < 0.5 | na_freq.2 < 0.5))
+object_neg
+```
+4104 features left.
+
+
+## **Filter outlier samples**
+
+We can use the detect_outlier() to find the outlier samples.
+
+More information about how to detect outlier samples can be found [here](https://privefl.github.io/blog/detecting-outlier-samples-in-pca/).
+
+### Positive mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+massdataset::show_sample_missing_values(object = object_pos,
+                                        color_by = "group",
+                                        order_by = "injection.order",
+                                        percentage = TRUE) +
+  theme(axis.text.x = element_text(size = 2)) +
+  scale_size_continuous(range = c(0.1, 2)) +
+  ggsci::scale_color_aaas()
+```
+
+Detect outlier samples.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+outlier_samples =
+  object_pos %>%
+  `+`(1) %>% 
+  log(2) %>%
+  scale() %>%
+  detect_outlier()
+
+outlier_samples
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+
+outlier_table <-
+extract_outlier_table(outlier_samples)
+
+outlier_table %>% 
+  head()
+
+outlier_table %>% 
+  apply(1, function(x){
+    sum(x)
+  }) %>% 
+  `>`(0) %>% 
+  which()
+```
+
+No outlier samples in positive mode.
+
+
+### Negative mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+massdataset::show_sample_missing_values(object = object_neg,
+                                        color_by = "group",
+                                        order_by = "injection.order",
+                                        percentage = TRUE) +
+  theme(axis.text.x = element_text(size = 2)) +
+  scale_size_continuous(range = c(0.1, 2)) +
+  ggsci::scale_color_aaas()
+```
+
+Detect outlier samples.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+outlier_samples =
+  object_neg %>%
+  `+`(1) %>% 
+  log(2) %>%
+  scale() %>%
+  detect_outlier()
+
+outlier_samples
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+
+outlier_table <-
+extract_outlier_table(outlier_samples)
+
+outlier_table %>% 
+  head()
+
+outlier_table %>% 
+  apply(1, function(x){
+    sum(x)
+  }) %>% 
+  `>`(0) %>% 
+  which()
+```
+
+No outlier samples in negative mode.
+
+### Missing value imputation
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object_pos)
+object_pos <- 
+  impute_mv(object = object_pos, method = "knn")
+
+get_mv_number(object_pos)
+```
+
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+get_mv_number(object_neg)
+
+object_neg <- 
+  impute_mv(object = object_neg, method = "knn")
+
+get_mv_number(object_neg)
+```
+
+### Data normalization and integration
+
+### Positive mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos <- 
+  normalize_data(object_pos, method = "median")
+
+object_pos2 <- 
+  integrate_data(object_pos, method = "subject_median")
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos2 %>% 
+  `+`(1) %>% 
+  log(2) %>% 
+  massqc::massqc_pca(color_by = "batch", line = FALSE)
+```
+
+### Negative mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg <- 
+  normalize_data(object_neg, method = "median")
+
+object_neg2 <- 
+  integrate_data(object_neg, method = "subject_median")
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg2 %>% 
+  `+`(1) %>% 
+  log(2) %>% 
+  massqc::massqc_pca(color_by = "batch", line = FALSE)
+```
+
+Save data for next analysis.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+save(object_pos2, file = "data_cleaning/POS/object_pos2")
+save(object_neg2, file = "data_cleaning/NEG/object_neg2")
+```
 
 ## **Session information**
 
