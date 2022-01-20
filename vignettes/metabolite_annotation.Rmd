@@ -20,7 +20,7 @@ vignette: >
 ```{r, include = FALSE, echo=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
+  comment = "##>",
   warning = FALSE,
   message = TRUE,
   out.width = "100%"
@@ -29,7 +29,183 @@ knitr::opts_chunk$set(
 
 ## **Data preparation**
 
-We just use the dataset which are from [this step](https://tidymass.github.io/tidymass/articles/explore_data.html).
+We just use the dataset which are from [previous step](https://tidymass.github.io/tidymass/articles/data_cleaning.html).
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+library(tidymass)
+load("data_cleaning/POS/object_pos2")
+load("data_cleaning/NEG/object_neg2")
+```
+
+## **Add MS2 spectra to object**
+
+Download the [MS2 data here](https://drive.google.com/file/d/1FY3x7q5i1g3oSLaVej__ZaZ4XSX-mWBQ/view?usp=sharing).
+
+Uncompress it.
+
+![](figures/Screen-Shot-7.png)
+
+#### Positive mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos2 <-
+  mutate_ms2(
+    object = object_pos2,
+    column = "rp",
+    polarity = "positive",
+    ms1.ms2.match.mz.tol = 15,
+    ms1.ms2.match.rt.tol = 30,
+    path = "mgf_ms2_data/POS"
+  )
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos2
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+extract_ms2_data(object_pos2)
+```
+
+
+#### Negative mode
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg2 <-
+  mutate_ms2(
+    object = object_neg2,
+    column = "rp",
+    polarity = "negative",
+    ms1.ms2.match.mz.tol = 15,
+    ms1.ms2.match.rt.tol = 30,
+    path = "mgf_ms2_data/NEG"
+  )
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg2
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+extract_ms2_data(object_neg2)
+```
+
+
+## **Metabolite annotation**
+
+Metabolite annotation is based on the [`metid` package](https://tidymass.github.io/metid/).
+
+### Download database
+
+We need to download MS2 database from `metid` [website](https://tidymass.github.io/metid/articles/public_databases.html).
+
+Here we download the `Michael Snyder RPLC databases`, `Orbitrap database` and `MoNA database`. And place them in a new folder named as `metabolite_annotation`.
+
+![](figures/Screen-Shot-8.png)
+
+### Positive mode
+
+Annotation features using `snyder_database_rplc0.0.3`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("metabolite_annotation/snyder_database_rplc0.0.3.rda")
+snyder_database_rplc0.0.3
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos2 = 
+  annotate_metabolites_mass_dataset(object = object_pos2, 
+                                    ms1.match.ppm = 15, 
+                                    rt.match.tol = 30, 
+                                    polarity = "positive",
+                                    database = snyder_database_rplc0.0.3)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+head(extract_annotation_table(object_pos2))
+```
+
+
+
+Annotation features using `orbitrap_database0.0.3`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("metabolite_annotation/orbitrap_database0.0.3.rda")
+orbitrap_database0.0.3
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos2 = 
+  annotate_metabolites_mass_dataset(object = object_pos2, 
+                                    ms1.match.ppm = 15, 
+                                    polarity = "positive",
+                                    database = orbitrap_database0.0.3)
+```
+
+Annotation features using `mona_database0.0.3`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("metabolite_annotation/mona_database0.0.3.rda")
+orbitrap_database0.0.3
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_pos2 = 
+  annotate_metabolites_mass_dataset(object = object_pos2, 
+                                    ms1.match.ppm = 15, 
+                                    polarity = "positive",
+                                    database = mona_database0.0.3)
+```
+
+
+
+### Negative mode
+
+Annotation features using `snyder_database_rplc0.0.3`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg2 = 
+  annotate_metabolites_mass_dataset(object = object_neg2, 
+                                    ms1.match.ppm = 15, 
+                                    rt.match.tol = 30,
+                                    polarity = "negative",
+                                    database = snyder_database_rplc0.0.3)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+head(extract_annotation_table(object_neg2))
+```
+
+
+
+Annotation features using `orbitrap_database0.0.3`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg2 = 
+  annotate_metabolites_mass_dataset(object = object_neg2, 
+                                    ms1.match.ppm = 15, 
+                                    polarity = "negative",
+                                    database = orbitrap_database0.0.3)
+```
+
+Annotation features using `mona_database0.0.3`.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+object_neg2 = 
+  annotate_metabolites_mass_dataset(object = object_neg2, 
+                                    ms1.match.ppm = 15, 
+                                    polarity = "negative",
+                                    database = mona_database0.0.3)
+```
+
+
+Save data for next analysis.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+save(object_pos2, file = "metabolite_annotation/object_pos2")
+save(object_neg2, file = "metabolite_annotation/object_neg2")
+```
+
 
 
 ## **Session information**

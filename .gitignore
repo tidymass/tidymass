@@ -48,8 +48,14 @@ vignettes/figures
 vignettes/mzxml_ms2_data/
 vignettes/mzxml_ms2_data
 
+vignettes/mgf_ms2_data/
+vignettes/mgf_ms2_data
+
 vignettes/mzxml_ms1_data/
 vignettes/mzxml_ms1_data
 
 vignettes/sample_info/
 vignettes/sample_info
+
+vignettes/metabolite_annotation/
+vignettes/metabolite_annotation
