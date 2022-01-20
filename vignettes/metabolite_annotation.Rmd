@@ -20,7 +20,7 @@ vignette: >
 ```{r, include = FALSE, echo=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "##>",
+  comment = "#>",
   warning = FALSE,
   message = TRUE,
   out.width = "100%"

@@ -166,76 +166,76 @@
     ms1.ms2.match.rt.tol <span class="op">=</span> <span class="fl">30</span>,
     path <span class="op">=</span> <span class="st">"mgf_ms2_data/POS"</span>
   <span class="op">)</span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">1042 out of 5101 variable have MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Selecting the most intense MS2 spectrum for each peak...</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">1042 out of 5101 variable have MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Selecting the most intense MS2 spectrum for each peak...</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">object_pos2</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 5101 x 259 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 5101 x 6 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 6 x 2 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 1042 variables x 951 MS2 spectra]</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; create_mass_dataset ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package         Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:19:04</span>
-<span class="co">##&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>        Package Function.used                Time</span>
-<span class="co">##&gt; 1 massprocesser  process_data 2022-01-16 16:18:43</span>
-<span class="co">##&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span>
-<span class="co">##&gt; <span style="color: #00BB00;">mutate_variable_na_freq ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package             Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
-<span class="co">##&gt; 2 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
-<span class="co">##&gt; 3 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
-<span class="co">##&gt; <span style="color: #00BB00;">filter ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset      filter() 2022-01-18 09:11:44</span>
-<span class="co">##&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:02</span>
-<span class="co">##&gt; <span style="color: #00BB00;">normalize_data ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package    Function.used                Time</span>
-<span class="co">##&gt; 1 masscleaner normalize_data() 2022-01-18 09:38:07</span>
-<span class="co">##&gt; <span style="color: #00BB00;">integrate_data ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package    Function.used                Time</span>
-<span class="co">##&gt; 1 masscleaner integrate_data() 2022-01-18 09:38:08</span>
-<span class="co">##&gt; <span style="color: #00BB00;">update_mass_dataset ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package         Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset update_mass_dataset() 2022-01-19 17:46:57</span>
-<span class="co">##&gt; <span style="color: #00BB00;">mutate_ms2 ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset  mutate_ms2() 2022-01-19 17:47:24</span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 5101 x 259 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 5101 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 1042 variables x 951 MS2 spectra]</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; create_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:19:04</span>
+<span class="co">#&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>        Package Function.used                Time</span>
+<span class="co">#&gt; 1 massprocesser  process_data 2022-01-16 16:18:43</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate_variable_na_freq ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package             Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
+<span class="co">#&gt; 2 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
+<span class="co">#&gt; 3 massdataset mutate_variable_na_freq() 2022-01-18 09:11:43</span>
+<span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:44</span>
+<span class="co">#&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:02</span>
+<span class="co">#&gt; <span style="color: #00BB00;">normalize_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package    Function.used                Time</span>
+<span class="co">#&gt; 1 masscleaner normalize_data() 2022-01-18 09:38:07</span>
+<span class="co">#&gt; <span style="color: #00BB00;">integrate_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package    Function.used                Time</span>
+<span class="co">#&gt; 1 masscleaner integrate_data() 2022-01-18 09:38:08</span>
+<span class="co">#&gt; <span style="color: #00BB00;">update_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset update_mass_dataset() 2022-01-19 21:53:01</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate_ms2 ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset  mutate_ms2() 2022-01-19 21:53:36</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_ms2_data</a></span><span class="op">(</span><span class="va">object_pos2</span><span class="op">)</span>
-<span class="co">##&gt; $`QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf`</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">column: rp</span> </span>
-<span class="co">##&gt; <span style="color: #00BB00;">polarity: positive</span> </span>
-<span class="co">##&gt; <span style="color: #00BB00;">mz_tol: 15</span> </span>
-<span class="co">##&gt; <span style="color: #00BB00;">rt_tol (second): 30</span> </span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">1042 variables:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; M71T775_POS</span> <span style="color: #00BB00;">M72T53_POS</span> <span style="color: #00BB00;">M83T50_POS</span> <span style="color: #00BB00;">M84T57_POS</span> <span style="color: #00BB00;">M85T54_POS...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; 951 MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; mz70.981170654297rt775.4286</span> <span style="color: #00BB00;">mz72.081642150879rt53.6528862</span> <span style="color: #00BB00;">mz82.945625305176rt49.238013</span> <span style="color: #00BB00;">mz84.045127868652rt59.6895132</span> <span style="color: #00BB00;">mz85.029016959043rt53.0835648...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span></code></pre></div>
+<span class="co">#&gt; $`QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf`</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">column: rp</span> </span>
+<span class="co">#&gt; <span style="color: #00BB00;">polarity: positive</span> </span>
+<span class="co">#&gt; <span style="color: #00BB00;">mz_tol: 15</span> </span>
+<span class="co">#&gt; <span style="color: #00BB00;">rt_tol (second): 30</span> </span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1042 variables:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; M71T775_POS</span> <span style="color: #00BB00;">M72T53_POS</span> <span style="color: #00BB00;">M83T50_POS</span> <span style="color: #00BB00;">M84T57_POS</span> <span style="color: #00BB00;">M85T54_POS...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; 951 MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; mz70.981170654297rt775.4286</span> <span style="color: #00BB00;">mz72.081642150879rt53.6528862</span> <span style="color: #00BB00;">mz82.945625305176rt49.238013</span> <span style="color: #00BB00;">mz84.045127868652rt59.6895132</span> <span style="color: #00BB00;">mz85.029016959043rt53.0835648...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="negative-mode">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode"></a>
@@ -250,76 +250,76 @@
     ms1.ms2.match.rt.tol <span class="op">=</span> <span class="fl">30</span>,
     path <span class="op">=</span> <span class="st">"mgf_ms2_data/NEG"</span>
   <span class="op">)</span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">1092 out of 4104 variable have MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span>
-<span class="co">##&gt; <span style="color: #00BB00;">Selecting the most intense MS2 spectrum for each peak...</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Reading mgf data...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">1092 out of 4104 variable have MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span>
+<span class="co">#&gt; <span style="color: #00BB00;">Selecting the most intense MS2 spectrum for each peak...</span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">object_neg2</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 4104 x 259 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 4104 x 6 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 6 x 2 data.frame]</span>
-<span class="co">##&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 1092 variables x 988 MS2 spectra]</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; create_mass_dataset ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package         Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:20:02</span>
-<span class="co">##&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>        Package Function.used                Time</span>
-<span class="co">##&gt; 1 massprocesser  process_data 2022-01-16 16:19:48</span>
-<span class="co">##&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span>
-<span class="co">##&gt; <span style="color: #00BB00;">mutate_variable_na_freq ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package             Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
-<span class="co">##&gt; 2 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
-<span class="co">##&gt; 3 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
-<span class="co">##&gt; <span style="color: #00BB00;">filter ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset      filter() 2022-01-18 09:11:47</span>
-<span class="co">##&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:06</span>
-<span class="co">##&gt; <span style="color: #00BB00;">normalize_data ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package    Function.used                Time</span>
-<span class="co">##&gt; 1 masscleaner normalize_data() 2022-01-18 09:50:47</span>
-<span class="co">##&gt; <span style="color: #00BB00;">integrate_data ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package    Function.used                Time</span>
-<span class="co">##&gt; 1 masscleaner integrate_data() 2022-01-18 09:50:47</span>
-<span class="co">##&gt; <span style="color: #00BB00;">update_mass_dataset ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package         Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset update_mass_dataset() 2022-01-19 18:18:00</span>
-<span class="co">##&gt; <span style="color: #00BB00;">mutate_ms2 ---------- </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span>      Package Function.used                Time</span>
-<span class="co">##&gt; 1 massdataset  mutate_ms2() 2022-01-19 18:18:26</span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 4104 x 259 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">3.variable_info:</span>[ 4104 x 6 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">4.sample_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">5.variable_info_note:</span>[ 6 x 2 data.frame]</span>
+<span class="co">#&gt; <span style="color: #00BB00;">6.ms2_data:</span>[ 1092 variables x 988 MS2 spectra]</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Processing information (extract_process_info())</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; create_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:20:02</span>
+<span class="co">#&gt; <span style="color: #00BB00;">process_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>        Package Function.used                Time</span>
+<span class="co">#&gt; 1 massprocesser  process_data 2022-01-16 16:19:48</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      mutate() 2022-01-16 23:48:08</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate_variable_na_freq ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package             Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
+<span class="co">#&gt; 2 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
+<span class="co">#&gt; 3 massdataset mutate_variable_na_freq() 2022-01-18 09:11:47</span>
+<span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:47</span>
+<span class="co">#&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:06</span>
+<span class="co">#&gt; <span style="color: #00BB00;">normalize_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package    Function.used                Time</span>
+<span class="co">#&gt; 1 masscleaner normalize_data() 2022-01-18 09:50:47</span>
+<span class="co">#&gt; <span style="color: #00BB00;">integrate_data ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package    Function.used                Time</span>
+<span class="co">#&gt; 1 masscleaner integrate_data() 2022-01-18 09:50:47</span>
+<span class="co">#&gt; <span style="color: #00BB00;">update_mass_dataset ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset update_mass_dataset() 2022-01-19 21:53:37</span>
+<span class="co">#&gt; <span style="color: #00BB00;">mutate_ms2 ---------- </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
+<span class="co">#&gt; 1 massdataset  mutate_ms2() 2022-01-19 21:54:06</span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_ms2_data</a></span><span class="op">(</span><span class="va">object_neg2</span><span class="op">)</span>
-<span class="co">##&gt; $`QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf`</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">column: rp</span> </span>
-<span class="co">##&gt; <span style="color: #00BB00;">polarity: negative</span> </span>
-<span class="co">##&gt; <span style="color: #00BB00;">mz_tol: 15</span> </span>
-<span class="co">##&gt; <span style="color: #00BB00;">rt_tol (second): 30</span> </span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">1092 variables:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; M71T51_NEG</span> <span style="color: #00BB00;">M73T74_NEG</span> <span style="color: #00BB00;">M75T52_NEG</span> <span style="color: #00BB00;">M80T299_NEG</span> <span style="color: #00BB00;">M80T232_NEG...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; 988 MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; mz71.012359619141rt52.3270968</span> <span style="color: #00BB00;">mz73.02799987793rt74.779476</span> <span style="color: #00BB00;">mz75.007308959961rt24.1557228</span> <span style="color: #00BB00;">mz79.955728954783rt301.268466</span> <span style="color: #00BB00;">mz79.955834350356rt235.127328...</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span></code></pre></div>
+<span class="co">#&gt; $`QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf`</span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">column: rp</span> </span>
+<span class="co">#&gt; <span style="color: #00BB00;">polarity: negative</span> </span>
+<span class="co">#&gt; <span style="color: #00BB00;">mz_tol: 15</span> </span>
+<span class="co">#&gt; <span style="color: #00BB00;">rt_tol (second): 30</span> </span>
+<span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1092 variables:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; M71T51_NEG</span> <span style="color: #00BB00;">M73T74_NEG</span> <span style="color: #00BB00;">M75T52_NEG</span> <span style="color: #00BB00;">M80T299_NEG</span> <span style="color: #00BB00;">M80T232_NEG...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; 988 MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; mz71.012359619141rt52.3270968</span> <span style="color: #00BB00;">mz73.02799987793rt74.779476</span> <span style="color: #00BB00;">mz75.007308959961rt24.1557228</span> <span style="color: #00BB00;">mz79.955728954783rt301.268466</span> <span style="color: #00BB00;">mz79.955834350356rt235.127328...</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -341,37 +341,37 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"metabolite_annotation/snyder_database_rplc0.0.3.rda"</span><span class="op">)</span>
 <span class="va">snyder_database_rplc0.0.3</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-----------Base information------------</span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">Version: 0.0.2 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Source: MS </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Link: http://snyderlab.stanford.edu/ </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Creater: Xiaotao Shen ( shenxt1990@163.com )</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; With RT information</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span><span style="color: #BBBB00;">-----------Spectral information------------</span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">There are 14 items of metabolites in database:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Lab.ID; Compound.name; mz; RT; CAS.ID; HMDB.ID; KEGG.ID; Formula; mz.pos; mz.neg; Submitter; Family; Sub.pathway; Note </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 833 metabolites in total</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 356 metabolites in positive mode with MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 534 metabolites in negative mode with MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Collision energy in positive mode (number:):</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Total number: 2 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; NCE25; NCE50 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Collision energy in negative mode:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Total number: 2 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; NCE25; NCE50 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BBBB00;">-----------Base information------------</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Version: 0.0.2 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Source: MS </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Link: http://snyderlab.stanford.edu/ </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Creater: Xiaotao Shen ( shenxt1990@163.com )</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; With RT information</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-----------Spectral information------------</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">There are 14 items of metabolites in database:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Lab.ID; Compound.name; mz; RT; CAS.ID; HMDB.ID; KEGG.ID; Formula; mz.pos; mz.neg; Submitter; Family; Sub.pathway; Note </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 833 metabolites in total</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 356 metabolites in positive mode with MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 534 metabolites in negative mode with MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Collision energy in positive mode (number:):</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Total number: 2 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; NCE25; NCE50 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Collision energy in negative mode:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Total number: 2 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; NCE25; NCE50 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>object_pos2 <span class="ot">=</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate_metabolites_mass_dataset</span>(<span class="at">object =</span> object_pos2, </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ms1.match.ppm =</span> <span class="dv">15</span>, </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">rt.match.tol =</span> <span class="dv">30</span>, </span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">polarity =</span> <span class="st">"positive"</span>,</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">database =</span> snyder_database_rplc0.<span class="fl">0.3</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [33mQEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf file:</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [32m1042 MS2 spectra.</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mUse all CE values.</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [33mQEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf file:</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [32m1042 MS2 spectra.</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mUse all CE values.</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="er">|</span>                                                                      <span class="er">|</span>   <span class="dv">0</span>%</span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
@@ -706,82 +706,82 @@
 <span id="cb9-344"><a href="#cb9-344" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span>  <span class="dv">99</span>%</span>
 <span id="cb9-345"><a href="#cb9-345" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb9-346"><a href="#cb9-346" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span> <span class="dv">100</span>%</span>
-<span id="cb9-347"><a href="#cb9-347" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; </span></span>
-<span id="cb9-348"><a href="#cb9-348" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [41mAll done.</span></span>
-<span id="cb9-349"><a href="#cb9-349" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [49m</span></span></code></pre></div>
+<span id="cb9-347"><a href="#cb9-347" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb9-348"><a href="#cb9-348" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [41mAll done.</span></span>
+<span id="cb9-349"><a href="#cb9-349" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [49m</span></span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_annotation_table</a></span><span class="op">(</span><span class="va">object_pos2</span><span class="op">)</span><span class="op">)</span>
-<span class="co">##&gt;    variable_id</span>
-<span class="co">##&gt; 1  M147T54_POS</span>
-<span class="co">##&gt; 2 M195T295_POS</span>
-<span class="co">##&gt; 3 M195T295_POS</span>
-<span class="co">##&gt; 4 M249T550_POS</span>
-<span class="co">##&gt; 5 M249T550_POS</span>
-<span class="co">##&gt; 6 M303T599_POS</span>
-<span class="co">##&gt;                                                                                                                      ms2_files_id</span>
-<span class="co">##&gt; 1 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 2 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 3 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 4 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 5 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 6 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
-<span class="co">##&gt;                  ms2_spectrum_id                      Compound.name  CAS.ID</span>
-<span class="co">##&gt; 1 mz147.076477050781rt55.9785132                    5-OXO-L-PROLINE    &lt;NA&gt;</span>
-<span class="co">##&gt; 2  mz195.087890985585rt293.63844                           Caffeine 58-08-2</span>
-<span class="co">##&gt; 3  mz195.087890985585rt293.63844                           Caffeine 58-08-2</span>
-<span class="co">##&gt; 4 mz249.185119628906rt550.298682                           C16:4 FA    &lt;NA&gt;</span>
-<span class="co">##&gt; 5 mz249.185119628906rt550.298682 C16:4 FA (Hexadecatetraenoic acid)    &lt;NA&gt;</span>
-<span class="co">##&gt; 6 mz303.232121251075rt598.635804               Eicosapentanoic acid    &lt;NA&gt;</span>
-<span class="co">##&gt;     HMDB.ID KEGG.ID   Lab.ID   Adduct   mz.error mz.match.score  RT.error</span>
-<span class="co">##&gt; 1      &lt;NA&gt;    &lt;NA&gt; RPLC_309 (M+NH4)+ 0.03237305      0.9999977 15.778513</span>
-<span class="co">##&gt; 2 HMDB01847  C07481 RPLC_439   (M+H)+ 2.28996396      0.9884144 12.642260</span>
-<span class="co">##&gt; 3 HMDB01847  C07481 RPLC_733   (M+H)+ 3.03996396      0.9796730 29.638440</span>
-<span class="co">##&gt; 4      &lt;NA&gt;    &lt;NA&gt; RPLC_529   (M+H)+ 0.76342773      0.9987057 13.701318</span>
-<span class="co">##&gt; 5      &lt;NA&gt;    &lt;NA&gt; RPLC_794   (M+H)+ 0.23657226      0.9998756  7.701318</span>
-<span class="co">##&gt; 6      &lt;NA&gt;    &lt;NA&gt;  RPLC_96   (M+H)+ 0.55312769      0.9993203 16.364196</span>
-<span class="co">##&gt;   RT.match.score    CE        SS Total.score Database Level</span>
-<span class="co">##&gt; 1      0.8708270 NCE25 0.6771153   0.8062638 MS_0.0.2     1</span>
-<span class="co">##&gt; 2      0.9150353 NCE25 0.7245736   0.8381492 MS_0.0.2     1</span>
-<span class="co">##&gt; 3      0.6138402 NCE25 0.7245736   0.7606651 MS_0.0.2     1</span>
-<span class="co">##&gt; 4      0.9009619 NCE25 0.7444636   0.8471487 MS_0.0.2     1</span>
-<span class="co">##&gt; 5      0.9675868 NCE25 0.6997888   0.8417600 MS_0.0.2     1</span>
-<span class="co">##&gt; 6      0.8617669 NCE50 0.6366207   0.7835821 MS_0.0.2     1</span></code></pre></div>
+<span class="co">#&gt;    variable_id</span>
+<span class="co">#&gt; 1  M147T54_POS</span>
+<span class="co">#&gt; 2 M195T295_POS</span>
+<span class="co">#&gt; 3 M195T295_POS</span>
+<span class="co">#&gt; 4 M249T550_POS</span>
+<span class="co">#&gt; 5 M249T550_POS</span>
+<span class="co">#&gt; 6 M303T599_POS</span>
+<span class="co">#&gt;                                                                                                                      ms2_files_id</span>
+<span class="co">#&gt; 1 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 2 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 3 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 4 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 5 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 6 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt;                  ms2_spectrum_id                      Compound.name  CAS.ID</span>
+<span class="co">#&gt; 1 mz147.076477050781rt55.9785132                    5-OXO-L-PROLINE    &lt;NA&gt;</span>
+<span class="co">#&gt; 2  mz195.087890985585rt293.63844                           Caffeine 58-08-2</span>
+<span class="co">#&gt; 3  mz195.087890985585rt293.63844                           Caffeine 58-08-2</span>
+<span class="co">#&gt; 4 mz249.185119628906rt550.298682                           C16:4 FA    &lt;NA&gt;</span>
+<span class="co">#&gt; 5 mz249.185119628906rt550.298682 C16:4 FA (Hexadecatetraenoic acid)    &lt;NA&gt;</span>
+<span class="co">#&gt; 6 mz303.232121251075rt598.635804               Eicosapentanoic acid    &lt;NA&gt;</span>
+<span class="co">#&gt;     HMDB.ID KEGG.ID   Lab.ID   Adduct   mz.error mz.match.score  RT.error</span>
+<span class="co">#&gt; 1      &lt;NA&gt;    &lt;NA&gt; RPLC_309 (M+NH4)+ 0.03237305      0.9999977 15.778513</span>
+<span class="co">#&gt; 2 HMDB01847  C07481 RPLC_439   (M+H)+ 2.28996396      0.9884144 12.642260</span>
+<span class="co">#&gt; 3 HMDB01847  C07481 RPLC_733   (M+H)+ 3.03996396      0.9796730 29.638440</span>
+<span class="co">#&gt; 4      &lt;NA&gt;    &lt;NA&gt; RPLC_529   (M+H)+ 0.76342773      0.9987057 13.701318</span>
+<span class="co">#&gt; 5      &lt;NA&gt;    &lt;NA&gt; RPLC_794   (M+H)+ 0.23657226      0.9998756  7.701318</span>
+<span class="co">#&gt; 6      &lt;NA&gt;    &lt;NA&gt;  RPLC_96   (M+H)+ 0.55312769      0.9993203 16.364196</span>
+<span class="co">#&gt;   RT.match.score    CE        SS Total.score Database Level</span>
+<span class="co">#&gt; 1      0.8708270 NCE25 0.6771153   0.8062638 MS_0.0.2     1</span>
+<span class="co">#&gt; 2      0.9150353 NCE25 0.7245736   0.8381492 MS_0.0.2     1</span>
+<span class="co">#&gt; 3      0.6138402 NCE25 0.7245736   0.7606651 MS_0.0.2     1</span>
+<span class="co">#&gt; 4      0.9009619 NCE25 0.7444636   0.8471487 MS_0.0.2     1</span>
+<span class="co">#&gt; 5      0.9675868 NCE25 0.6997888   0.8417600 MS_0.0.2     1</span>
+<span class="co">#&gt; 6      0.8617669 NCE50 0.6366207   0.7835821 MS_0.0.2     1</span></code></pre></div>
 <p>Annotation features using <code>orbitrap_database0.0.3</code>.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"metabolite_annotation/orbitrap_database0.0.3.rda"</span><span class="op">)</span>
 <span class="va">orbitrap_database0.0.3</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-----------Base information------------</span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">Version: 0.0.1 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Source: NIST </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Link: https://www.nist.gov/ </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Creater: Xiaotao Shen ( shenxt1990@163.com )</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Without RT informtaion</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span><span style="color: #BBBB00;">-----------Spectral information------------</span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">There are 8 items of metabolites in database:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Lab.ID; Compound.name; mz; RT; CAS.ID; HMDB.ID; KEGG.ID; Formula </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 8360 metabolites in total</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 7103 metabolites in positive mode with MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 3311 metabolites in negative mode with MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Collision energy in positive mode (number:):</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Total number: 12 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; 10; 15; 45; 55; 5; 20; 30; 35; 40; 25 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Collision energy in negative mode:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Total number: 12 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; 10; 25; 5; 15; 20; 30; 50; 35; 40; 45 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BBBB00;">-----------Base information------------</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Version: 0.0.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Source: NIST </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Link: https://www.nist.gov/ </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Creater: Xiaotao Shen ( shenxt1990@163.com )</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Without RT informtaion</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-----------Spectral information------------</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">There are 8 items of metabolites in database:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Lab.ID; Compound.name; mz; RT; CAS.ID; HMDB.ID; KEGG.ID; Formula </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 8360 metabolites in total</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 7103 metabolites in positive mode with MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 3311 metabolites in negative mode with MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Collision energy in positive mode (number:):</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Total number: 12 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; 10; 15; 45; 55; 5; 20; 30; 35; 40; 25 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Collision energy in negative mode:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Total number: 12 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; 10; 25; 5; 15; 20; 30; 50; 35; 40; 45 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>object_pos2 <span class="ot">=</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate_metabolites_mass_dataset</span>(<span class="at">object =</span> object_pos2, </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ms1.match.ppm =</span> <span class="dv">15</span>, </span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">polarity =</span> <span class="st">"positive"</span>,</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">database =</span> orbitrap_database0.<span class="fl">0.3</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [33mNo RT information in database.</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; The weight of RT have been set as 0.</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mQEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf file:</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [32m1042 MS2 spectra.</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mUse all CE values.</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [33mNo RT information in database.</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The weight of RT have been set as 0.</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mQEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf file:</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [32m1042 MS2 spectra.</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mUse all CE values.</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="er">|</span>                                                                      <span class="er">|</span>   <span class="dv">0</span>%</span>
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
@@ -1116,45 +1116,45 @@
 <span id="cb12-345"><a href="#cb12-345" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span>  <span class="dv">99</span>%</span>
 <span id="cb12-346"><a href="#cb12-346" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb12-347"><a href="#cb12-347" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span> <span class="dv">100</span>%</span>
-<span id="cb12-348"><a href="#cb12-348" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; </span></span>
-<span id="cb12-349"><a href="#cb12-349" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [41mAll done.</span></span>
-<span id="cb12-350"><a href="#cb12-350" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [49m</span></span></code></pre></div>
+<span id="cb12-348"><a href="#cb12-348" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-349"><a href="#cb12-349" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [41mAll done.</span></span>
+<span id="cb12-350"><a href="#cb12-350" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [49m</span></span></code></pre></div>
 <p>Annotation features using <code>mona_database0.0.3</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"metabolite_annotation/mona_database0.0.3.rda"</span><span class="op">)</span>
 <span class="va">orbitrap_database0.0.3</span>
-<span class="co">##&gt; <span style="color: #BBBB00;">-----------Base information------------</span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">Version: 0.0.1 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Source: NIST </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Link: https://www.nist.gov/ </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Creater: Xiaotao Shen ( shenxt1990@163.com )</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Without RT informtaion</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span><span style="color: #BBBB00;">-----------Spectral information------------</span></span>
-<span class="co"><span style="color: #BBBB00;">##&gt; </span><span style="color: #00BB00;">There are 8 items of metabolites in database:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Lab.ID; Compound.name; mz; RT; CAS.ID; HMDB.ID; KEGG.ID; Formula </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 8360 metabolites in total</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 7103 metabolites in positive mode with MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; There are 3311 metabolites in negative mode with MS2 spectra.</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Collision energy in positive mode (number:):</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Total number: 12 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; 10; 15; 45; 55; 5; 20; 30; 35; 40; 25 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Collision energy in negative mode:</span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; Total number: 12 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; 10; 25; 5; 15; 20; 30; 50; 35; 40; 45 </span></span>
-<span class="co"><span style="color: #00BB00;">##&gt; </span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BBBB00;">-----------Base information------------</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">Version: 0.0.1 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Source: NIST </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Link: https://www.nist.gov/ </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Creater: Xiaotao Shen ( shenxt1990@163.com )</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Without RT informtaion</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-----------Spectral information------------</span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">There are 8 items of metabolites in database:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Lab.ID; Compound.name; mz; RT; CAS.ID; HMDB.ID; KEGG.ID; Formula </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 8360 metabolites in total</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 7103 metabolites in positive mode with MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; There are 3311 metabolites in negative mode with MS2 spectra.</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Collision energy in positive mode (number:):</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Total number: 12 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; 10; 15; 45; 55; 5; 20; 30; 35; 40; 25 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Collision energy in negative mode:</span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; Total number: 12 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; 10; 25; 5; 15; 20; 30; 50; 35; 40; 45 </span></span>
+<span class="co"><span style="color: #00BB00;">#&gt; </span></span></code></pre></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>object_pos2 <span class="ot">=</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate_metabolites_mass_dataset</span>(<span class="at">object =</span> object_pos2, </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ms1.match.ppm =</span> <span class="dv">15</span>, </span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">polarity =</span> <span class="st">"positive"</span>,</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">database =</span> mona_database0.<span class="fl">0.3</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [33mNo RT information in database.</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; The weight of RT have been set as 0.</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mQEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf file:</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [32m1042 MS2 spectra.</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mUse all CE values.</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [33mNo RT information in database.</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The weight of RT have been set as 0.</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mQEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf file:</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [32m1042 MS2 spectra.</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mUse all CE values.</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="er">|</span>                                                                      <span class="er">|</span>   <span class="dv">0</span>%</span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
@@ -1489,9 +1489,9 @@
 <span id="cb14-345"><a href="#cb14-345" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span>  <span class="dv">99</span>%</span>
 <span id="cb14-346"><a href="#cb14-346" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb14-347"><a href="#cb14-347" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span> <span class="dv">100</span>%</span>
-<span id="cb14-348"><a href="#cb14-348" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; </span></span>
-<span id="cb14-349"><a href="#cb14-349" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [41mAll done.</span></span>
-<span id="cb14-350"><a href="#cb14-350" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [49m</span></span></code></pre></div>
+<span id="cb14-348"><a href="#cb14-348" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb14-349"><a href="#cb14-349" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [41mAll done.</span></span>
+<span id="cb14-350"><a href="#cb14-350" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [49m</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="negative-mode-1">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode-1"></a>
@@ -1503,12 +1503,12 @@
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">rt.match.tol =</span> <span class="dv">30</span>,</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">polarity =</span> <span class="st">"negative"</span>,</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">database =</span> snyder_database_rplc0.<span class="fl">0.3</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [33mQEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf file:</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [32m1092 MS2 spectra.</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mUse all CE values.</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [33mQEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf file:</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [32m1092 MS2 spectra.</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mUse all CE values.</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="er">|</span>                                                                      <span class="er">|</span>   <span class="dv">0</span>%</span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
@@ -1839,60 +1839,60 @@
 <span id="cb15-340"><a href="#cb15-340" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span>  <span class="dv">99</span>%</span>
 <span id="cb15-341"><a href="#cb15-341" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb15-342"><a href="#cb15-342" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span> <span class="dv">100</span>%</span>
-<span id="cb15-343"><a href="#cb15-343" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; </span></span>
-<span id="cb15-344"><a href="#cb15-344" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [41mAll done.</span></span>
-<span id="cb15-345"><a href="#cb15-345" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [49m</span></span></code></pre></div>
+<span id="cb15-343"><a href="#cb15-343" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb15-344"><a href="#cb15-344" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [41mAll done.</span></span>
+<span id="cb15-345"><a href="#cb15-345" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [49m</span></span></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_annotation_table</a></span><span class="op">(</span><span class="va">object_neg2</span><span class="op">)</span><span class="op">)</span>
-<span class="co">##&gt;     variable_id</span>
-<span class="co">##&gt; 1   M117T71_NEG</span>
-<span class="co">##&gt; 2   M128T60_NEG</span>
-<span class="co">##&gt; 3   M128T60_NEG</span>
-<span class="co">##&gt; 4   M128T60_NEG</span>
-<span class="co">##&gt; 5  M157T289_NEG</span>
-<span class="co">##&gt; 6 M173T85_2_NEG</span>
-<span class="co">##&gt;                                                                                                                  ms2_files_id</span>
-<span class="co">##&gt; 1 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 2 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 3 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 4 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 5 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
-<span class="co">##&gt; 6 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
-<span class="co">##&gt;                  ms2_spectrum_id                      Compound.name CAS.ID</span>
-<span class="co">##&gt; 1  mz117.018020629883rt67.495452                          SUCCINATE   &lt;NA&gt;</span>
-<span class="co">##&gt; 2 mz128.034046327327rt57.5210652                    5-OXO-D-PROLINE   &lt;NA&gt;</span>
-<span class="co">##&gt; 3 mz128.034046327327rt57.5210652                    5-OXO-L-PROLINE   &lt;NA&gt;</span>
-<span class="co">##&gt; 4 mz128.034046327327rt57.5210652  2-Pyrrolidinone-5-carboxylic acid   &lt;NA&gt;</span>
-<span class="co">##&gt; 5 mz157.086114630752rt291.011406 C8:1,OH FA (Hydroxy-octenoic acid)      0</span>
-<span class="co">##&gt; 6  mz173.008049260911rt65.558784                        Citric acid   &lt;NA&gt;</span>
-<span class="co">##&gt;   HMDB.ID KEGG.ID   Lab.ID     Adduct mz.error mz.match.score  RT.error</span>
-<span class="co">##&gt; 1    &lt;NA&gt;    &lt;NA&gt; RPLC_347     (M-H)- 3.223425      0.9771746 29.095452</span>
-<span class="co">##&gt; 2    &lt;NA&gt;    &lt;NA&gt; RPLC_290     (M-H)- 3.109182      0.9787469 17.321065</span>
-<span class="co">##&gt; 3    &lt;NA&gt;    &lt;NA&gt; RPLC_309     (M-H)- 3.109182      0.9787469 17.321065</span>
-<span class="co">##&gt; 4    &lt;NA&gt;    &lt;NA&gt;   RPLC_7     (M-H)- 3.134182      0.9784074 24.521065</span>
-<span class="co">##&gt; 5       0       0 RPLC_750     (M-H)- 3.275923      0.9764340  9.011406</span>
-<span class="co">##&gt; 6    &lt;NA&gt;    &lt;NA&gt; RPLC_128 (M-H2O-H)- 2.639348      0.9846389 29.558784</span>
-<span class="co">##&gt;   RT.match.score    CE        SS Total.score Database Level</span>
-<span class="co">##&gt; 1      0.6248129 NCE25 0.7238321   0.7624129 MS_0.0.2     1</span>
-<span class="co">##&gt; 2      0.8464726 NCE25 0.7098234   0.8112166 MS_0.0.2     1</span>
-<span class="co">##&gt; 3      0.8464726 NCE25 0.6999214   0.8062656 MS_0.0.2     1</span>
-<span class="co">##&gt; 4      0.7160209 NCE50 0.7085841   0.7778991 MS_0.0.2     1</span>
-<span class="co">##&gt; 5      0.9558884 NCE25 0.5157216   0.7409414 MS_0.0.2     1</span>
-<span class="co">##&gt; 6      0.6154504 NCE25 0.5348299   0.6674373 MS_0.0.2     1</span></code></pre></div>
+<span class="co">#&gt;     variable_id</span>
+<span class="co">#&gt; 1   M117T71_NEG</span>
+<span class="co">#&gt; 2   M128T60_NEG</span>
+<span class="co">#&gt; 3   M128T60_NEG</span>
+<span class="co">#&gt; 4   M128T60_NEG</span>
+<span class="co">#&gt; 5  M157T289_NEG</span>
+<span class="co">#&gt; 6 M173T85_2_NEG</span>
+<span class="co">#&gt;                                                                                                                  ms2_files_id</span>
+<span class="co">#&gt; 1 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 2 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 3 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 4 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 5 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 6 QEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf</span>
+<span class="co">#&gt;                  ms2_spectrum_id                      Compound.name CAS.ID</span>
+<span class="co">#&gt; 1  mz117.018020629883rt67.495452                          SUCCINATE   &lt;NA&gt;</span>
+<span class="co">#&gt; 2 mz128.034046327327rt57.5210652                    5-OXO-D-PROLINE   &lt;NA&gt;</span>
+<span class="co">#&gt; 3 mz128.034046327327rt57.5210652                    5-OXO-L-PROLINE   &lt;NA&gt;</span>
+<span class="co">#&gt; 4 mz128.034046327327rt57.5210652  2-Pyrrolidinone-5-carboxylic acid   &lt;NA&gt;</span>
+<span class="co">#&gt; 5 mz157.086114630752rt291.011406 C8:1,OH FA (Hydroxy-octenoic acid)      0</span>
+<span class="co">#&gt; 6  mz173.008049260911rt65.558784                        Citric acid   &lt;NA&gt;</span>
+<span class="co">#&gt;   HMDB.ID KEGG.ID   Lab.ID     Adduct mz.error mz.match.score  RT.error</span>
+<span class="co">#&gt; 1    &lt;NA&gt;    &lt;NA&gt; RPLC_347     (M-H)- 3.223425      0.9771746 29.095452</span>
+<span class="co">#&gt; 2    &lt;NA&gt;    &lt;NA&gt; RPLC_290     (M-H)- 3.109182      0.9787469 17.321065</span>
+<span class="co">#&gt; 3    &lt;NA&gt;    &lt;NA&gt; RPLC_309     (M-H)- 3.109182      0.9787469 17.321065</span>
+<span class="co">#&gt; 4    &lt;NA&gt;    &lt;NA&gt;   RPLC_7     (M-H)- 3.134182      0.9784074 24.521065</span>
+<span class="co">#&gt; 5       0       0 RPLC_750     (M-H)- 3.275923      0.9764340  9.011406</span>
+<span class="co">#&gt; 6    &lt;NA&gt;    &lt;NA&gt; RPLC_128 (M-H2O-H)- 2.639348      0.9846389 29.558784</span>
+<span class="co">#&gt;   RT.match.score    CE        SS Total.score Database Level</span>
+<span class="co">#&gt; 1      0.6248129 NCE25 0.7238321   0.7624129 MS_0.0.2     1</span>
+<span class="co">#&gt; 2      0.8464726 NCE25 0.7098234   0.8112166 MS_0.0.2     1</span>
+<span class="co">#&gt; 3      0.8464726 NCE25 0.6999214   0.8062656 MS_0.0.2     1</span>
+<span class="co">#&gt; 4      0.7160209 NCE50 0.7085841   0.7778991 MS_0.0.2     1</span>
+<span class="co">#&gt; 5      0.9558884 NCE25 0.5157216   0.7409414 MS_0.0.2     1</span>
+<span class="co">#&gt; 6      0.6154504 NCE25 0.5348299   0.6674373 MS_0.0.2     1</span></code></pre></div>
 <p>Annotation features using <code>orbitrap_database0.0.3</code>.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>object_neg2 <span class="ot">=</span> </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate_metabolites_mass_dataset</span>(<span class="at">object =</span> object_neg2, </span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ms1.match.ppm =</span> <span class="dv">15</span>, </span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">polarity =</span> <span class="st">"negative"</span>,</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">database =</span> orbitrap_database0.<span class="fl">0.3</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [33mNo RT information in database.</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; The weight of RT have been set as 0.</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mQEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf file:</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [32m1092 MS2 spectra.</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mUse all CE values.</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [33mNo RT information in database.</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The weight of RT have been set as 0.</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mQEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf file:</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [32m1092 MS2 spectra.</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mUse all CE values.</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="er">|</span>                                                                      <span class="er">|</span>   <span class="dv">0</span>%</span>
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
@@ -2223,23 +2223,23 @@
 <span id="cb17-341"><a href="#cb17-341" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span>  <span class="dv">99</span>%</span>
 <span id="cb17-342"><a href="#cb17-342" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb17-343"><a href="#cb17-343" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span> <span class="dv">100</span>%</span>
-<span id="cb17-344"><a href="#cb17-344" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; </span></span>
-<span id="cb17-345"><a href="#cb17-345" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [41mAll done.</span></span>
-<span id="cb17-346"><a href="#cb17-346" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [49m</span></span></code></pre></div>
+<span id="cb17-344"><a href="#cb17-344" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb17-345"><a href="#cb17-345" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [41mAll done.</span></span>
+<span id="cb17-346"><a href="#cb17-346" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [49m</span></span></code></pre></div>
 <p>Annotation features using <code>mona_database0.0.3</code>.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>object_neg2 <span class="ot">=</span> </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate_metabolites_mass_dataset</span>(<span class="at">object =</span> object_neg2, </span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ms1.match.ppm =</span> <span class="dv">15</span>, </span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">polarity =</span> <span class="st">"negative"</span>,</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">database =</span> mona_database0.<span class="fl">0.3</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [33mNo RT information in database.</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; The weight of RT have been set as 0.</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mQEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf file:</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [32m1092 MS2 spectra.</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m [33mUse all CE values.</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [39m</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [33mNo RT information in database.</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The weight of RT have been set as 0.</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mQEP_SGA_QC_neg_ms2_ce25_01.mgf;QEP_SGA_QC_neg_ms2_ce25_02.mgf;QEP_SGA_QC_neg_ms2_ce50_01.mgf;QEP_SGA_QC_neg_ms2_ce50_02.mgf file:</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [32m1092 MS2 spectra.</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m [33mUse all CE values.</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [32mIdentifing metabolites with MS/MS database...</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [39m</span></span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="er">|</span>                                                                      <span class="er">|</span>   <span class="dv">0</span>%</span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
@@ -2570,132 +2570,136 @@
 <span id="cb18-341"><a href="#cb18-341" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span>  <span class="dv">99</span>%</span>
 <span id="cb18-342"><a href="#cb18-342" aria-hidden="true" tabindex="-1"></a>  <span class="sc">|</span>                                                                            </span>
 <span id="cb18-343"><a href="#cb18-343" aria-hidden="true" tabindex="-1"></a>  <span class="er">|======================================================================|</span> <span class="dv">100</span>%</span>
-<span id="cb18-344"><a href="#cb18-344" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt; </span></span>
-<span id="cb18-345"><a href="#cb18-345" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [41mAll done.</span></span>
-<span id="cb18-346"><a href="#cb18-346" aria-hidden="true" tabindex="-1"></a><span class="do">##&gt;  [49m</span></span></code></pre></div>
+<span id="cb18-344"><a href="#cb18-344" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb18-345"><a href="#cb18-345" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [41mAll done.</span></span>
+<span id="cb18-346"><a href="#cb18-346" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [49m</span></span></code></pre></div>
+<p>Save data for next analysis.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_pos2</span>, file <span class="op">=</span> <span class="st">"metabolite_annotation/object_pos2"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_neg2</span>, file <span class="op">=</span> <span class="st">"metabolite_annotation/object_neg2"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
 </h2>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">##&gt; R Under development (unstable) (2022-01-11 r81473)</span>
-<span class="co">##&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
-<span class="co">##&gt; Running under: macOS Big Sur/Monterey 10.16</span>
-<span class="co">##&gt; </span>
-<span class="co">##&gt; Matrix products: default</span>
-<span class="co">##&gt; BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib</span>
-<span class="co">##&gt; LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib</span>
-<span class="co">##&gt; </span>
-<span class="co">##&gt; locale:</span>
-<span class="co">##&gt; [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8</span>
-<span class="co">##&gt; </span>
-<span class="co">##&gt; attached base packages:</span>
-<span class="co">##&gt; [1] stats4    stats     graphics  grDevices utils     datasets  methods  </span>
-<span class="co">##&gt; [8] base     </span>
-<span class="co">##&gt; </span>
-<span class="co">##&gt; other attached packages:</span>
-<span class="co">##&gt;  [1] dplyr_1.0.7          metid_1.1.0          metpath_0.0.1       </span>
-<span class="co">##&gt;  [4] massstat_0.0.1       ggfortify_0.4.14     ggplot2_3.3.5       </span>
-<span class="co">##&gt;  [7] massqc_0.0.1         tinytools_0.9.1      masscleaner_0.9.2   </span>
-<span class="co">##&gt; [10] xcms_3.17.1          MSnbase_2.21.3       ProtGenerics_1.27.2 </span>
-<span class="co">##&gt; [13] S4Vectors_0.33.10    mzR_2.29.1           Rcpp_1.0.7          </span>
-<span class="co">##&gt; [16] Biobase_2.55.0       BiocGenerics_0.41.2  BiocParallel_1.29.10</span>
-<span class="co">##&gt; [19] massprocesser_0.9.2  magrittr_2.0.1       masstools_0.99.3    </span>
-<span class="co">##&gt; [22] massdataset_0.99.1   tidymass_0.0.1      </span>
-<span class="co">##&gt; </span>
-<span class="co">##&gt; loaded via a namespace (and not attached):</span>
-<span class="co">##&gt;   [1] utf8_1.2.2                  tidyselect_1.1.1           </span>
-<span class="co">##&gt;   [3] robust_0.6-1                htmlwidgets_1.5.4          </span>
-<span class="co">##&gt;   [5] grid_4.2.0                  devtools_2.4.3             </span>
-<span class="co">##&gt;   [7] munsell_0.5.0               codetools_0.2-18           </span>
-<span class="co">##&gt;   [9] ragg_1.2.1                  preprocessCore_1.57.0      </span>
-<span class="co">##&gt;  [11] future_1.23.0               withr_2.4.3                </span>
-<span class="co">##&gt;  [13] colorspace_2.0-2            knitr_1.37                 </span>
-<span class="co">##&gt;  [15] rstudioapi_0.13             robustbase_0.93-8          </span>
-<span class="co">##&gt;  [17] listenv_0.8.0               mzID_1.33.0                </span>
-<span class="co">##&gt;  [19] MatrixGenerics_1.7.0        GenomeInfoDbData_1.2.7     </span>
-<span class="co">##&gt;  [21] polyclip_1.10-0             farver_2.1.0               </span>
-<span class="co">##&gt;  [23] rprojroot_2.0.2             parallelly_1.30.0          </span>
-<span class="co">##&gt;  [25] vctrs_0.3.8                 generics_0.1.1             </span>
-<span class="co">##&gt;  [27] xfun_0.29                   itertools_0.1-3            </span>
-<span class="co">##&gt;  [29] randomForest_4.6-14         R6_2.5.1                   </span>
-<span class="co">##&gt;  [31] doParallel_1.0.16           GenomeInfoDb_1.31.1        </span>
-<span class="co">##&gt;  [33] graphlayouts_0.8.0          clue_0.3-60                </span>
-<span class="co">##&gt;  [35] MsCoreUtils_1.7.1           bitops_1.0-7               </span>
-<span class="co">##&gt;  [37] cachem_1.0.6                gridGraphics_0.5-1         </span>
-<span class="co">##&gt;  [39] DelayedArray_0.21.2         assertthat_0.2.1           </span>
-<span class="co">##&gt;  [41] scales_1.1.1                ggraph_2.0.5               </span>
-<span class="co">##&gt;  [43] gtable_0.3.0                globals_0.14.0             </span>
-<span class="co">##&gt;  [45] affy_1.73.0                 processx_3.5.2             </span>
-<span class="co">##&gt;  [47] tidygraph_1.2.0             rlang_0.4.12               </span>
-<span class="co">##&gt;  [49] clisymbols_1.2.0            systemfonts_1.0.3          </span>
-<span class="co">##&gt;  [51] GlobalOptions_0.1.2         lazyeval_0.2.2             </span>
-<span class="co">##&gt;  [53] impute_1.69.0               broom_0.7.11               </span>
-<span class="co">##&gt;  [55] BiocManager_1.30.16         yaml_2.2.1                 </span>
-<span class="co">##&gt;  [57] modelr_0.1.8                stevedore_0.9.4            </span>
-<span class="co">##&gt;  [59] crosstalk_1.2.0             backports_1.4.1            </span>
-<span class="co">##&gt;  [61] MassSpecWavelet_1.61.0      usethis_2.1.5              </span>
-<span class="co">##&gt;  [63] tools_4.2.0                 ggplotify_0.1.0            </span>
-<span class="co">##&gt;  [65] affyio_1.65.0               ellipsis_0.3.2             </span>
-<span class="co">##&gt;  [67] jquerylib_0.1.4             RColorBrewer_1.1-2         </span>
-<span class="co">##&gt;  [69] proxy_0.4-26                sessioninfo_1.2.2          </span>
-<span class="co">##&gt;  [71] plyr_1.8.6                  zlibbioc_1.41.0            </span>
-<span class="co">##&gt;  [73] purrr_0.3.4                 RCurl_1.98-1.5             </span>
-<span class="co">##&gt;  [75] prettyunits_1.1.1           ps_1.6.0                   </span>
-<span class="co">##&gt;  [77] viridis_0.6.2               pbapply_1.5-0              </span>
-<span class="co">##&gt;  [79] GetoptLong_1.0.5            SummarizedExperiment_1.25.3</span>
-<span class="co">##&gt;  [81] massconverter_0.99.1        haven_2.4.3                </span>
-<span class="co">##&gt;  [83] ggrepel_0.9.1               cluster_2.1.2              </span>
-<span class="co">##&gt;  [85] fs_1.5.2                    furrr_0.2.3                </span>
-<span class="co">##&gt;  [87] data.table_1.14.2           openxlsx_4.2.5             </span>
-<span class="co">##&gt;  [89] circlize_0.4.14             reprex_2.0.1               </span>
-<span class="co">##&gt;  [91] RANN_2.6.1                  pcaMethods_1.87.0          </span>
-<span class="co">##&gt;  [93] mvtnorm_1.1-2               matrixStats_0.61.0         </span>
-<span class="co">##&gt;  [95] pkgload_1.2.4               hms_1.1.1                  </span>
-<span class="co">##&gt;  [97] patchwork_1.1.1             evaluate_0.14              </span>
-<span class="co">##&gt;  [99] XML_3.99-0.8                leaflet_2.0.4.1            </span>
-<span class="co">##&gt; [101] readxl_1.3.1                IRanges_2.29.1             </span>
-<span class="co">##&gt; [103] gridExtra_2.3               shape_1.4.6                </span>
-<span class="co">##&gt; [105] testthat_3.1.1              compiler_4.2.0             </span>
-<span class="co">##&gt; [107] tibble_3.1.6                ncdf4_1.17                 </span>
-<span class="co">##&gt; [109] crayon_1.4.2                htmltools_0.5.2            </span>
-<span class="co">##&gt; [111] pcaPP_1.9-74                tzdb_0.2.0                 </span>
-<span class="co">##&gt; [113] tidyr_1.1.4                 rrcov_1.6-0                </span>
-<span class="co">##&gt; [115] lubridate_1.8.0             DBI_1.1.2                  </span>
-<span class="co">##&gt; [117] tweenr_1.0.2                dbplyr_2.1.1               </span>
-<span class="co">##&gt; [119] ComplexHeatmap_2.11.0       MASS_7.3-55                </span>
-<span class="co">##&gt; [121] MsFeatures_1.3.0            Matrix_1.4-0               </span>
-<span class="co">##&gt; [123] readr_2.1.1                 cli_3.1.0                  </span>
-<span class="co">##&gt; [125] vsn_3.63.0                  igraph_1.2.6               </span>
-<span class="co">##&gt; [127] parallel_4.2.0              GenomicRanges_1.47.6       </span>
-<span class="co">##&gt; [129] forcats_0.5.1               pkgconfig_2.0.3            </span>
-<span class="co">##&gt; [131] fit.models_0.64             pkgdown_2.0.1              </span>
-<span class="co">##&gt; [133] plotly_4.10.0               MALDIquant_1.21            </span>
-<span class="co">##&gt; [135] xml2_1.3.3                  foreach_1.5.1              </span>
-<span class="co">##&gt; [137] ggcorrplot_0.1.3            bslib_0.3.1                </span>
-<span class="co">##&gt; [139] missForest_1.4              XVector_0.35.0             </span>
-<span class="co">##&gt; [141] rvest_1.0.2                 yulab.utils_0.0.4          </span>
-<span class="co">##&gt; [143] callr_3.7.0                 stringr_1.4.0              </span>
-<span class="co">##&gt; [145] digest_0.6.29               Biostrings_2.63.1          </span>
-<span class="co">##&gt; [147] rmarkdown_2.11              cellranger_1.1.0           </span>
-<span class="co">##&gt; [149] curl_4.3.2                  rjson_0.2.21               </span>
-<span class="co">##&gt; [151] lifecycle_1.0.1             jsonlite_1.7.2             </span>
-<span class="co">##&gt; [153] desc_1.4.0                  viridisLite_0.4.0          </span>
-<span class="co">##&gt; [155] limma_3.51.2                fansi_1.0.0                </span>
-<span class="co">##&gt; [157] pillar_1.6.4                ggsci_2.9                  </span>
-<span class="co">##&gt; [159] lattice_0.20-45             pkgbuild_1.3.1             </span>
-<span class="co">##&gt; [161] KEGGREST_1.35.0             fastmap_1.1.0              </span>
-<span class="co">##&gt; [163] httr_1.4.2                  DEoptimR_1.0-10            </span>
-<span class="co">##&gt; [165] remotes_2.4.2               glue_1.6.0                 </span>
-<span class="co">##&gt; [167] zip_2.2.0                   png_0.1-7                  </span>
-<span class="co">##&gt; [169] iterators_1.0.13            pander_0.6.4               </span>
-<span class="co">##&gt; [171] ggforce_0.3.3               class_7.3-20               </span>
-<span class="co">##&gt; [173] stringi_1.7.6               sass_0.4.0                 </span>
-<span class="co">##&gt; [175] textshaping_0.3.6           memoise_2.0.1              </span>
-<span class="co">##&gt; [177] tidyverse_1.3.1             e1071_1.7-9</span></code></pre></div>
+<span class="co">#&gt; R Under development (unstable) (2022-01-11 r81473)</span>
+<span class="co">#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
+<span class="co">#&gt; Running under: macOS Big Sur/Monterey 10.16</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Matrix products: default</span>
+<span class="co">#&gt; BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib</span>
+<span class="co">#&gt; LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; locale:</span>
+<span class="co">#&gt; [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attached base packages:</span>
+<span class="co">#&gt; [1] stats4    stats     graphics  grDevices utils     datasets  methods  </span>
+<span class="co">#&gt; [8] base     </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; other attached packages:</span>
+<span class="co">#&gt;  [1] dplyr_1.0.7          metid_1.1.0          metpath_0.0.1       </span>
+<span class="co">#&gt;  [4] massstat_0.0.1       ggfortify_0.4.14     ggplot2_3.3.5       </span>
+<span class="co">#&gt;  [7] massqc_0.0.1         tinytools_0.9.1      masscleaner_0.9.2   </span>
+<span class="co">#&gt; [10] xcms_3.17.1          MSnbase_2.21.3       ProtGenerics_1.27.2 </span>
+<span class="co">#&gt; [13] S4Vectors_0.33.10    mzR_2.29.1           Rcpp_1.0.7          </span>
+<span class="co">#&gt; [16] Biobase_2.55.0       BiocGenerics_0.41.2  BiocParallel_1.29.10</span>
+<span class="co">#&gt; [19] massprocesser_0.9.2  magrittr_2.0.1       masstools_0.99.3    </span>
+<span class="co">#&gt; [22] massdataset_0.99.1   tidymass_0.0.1      </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loaded via a namespace (and not attached):</span>
+<span class="co">#&gt;   [1] utf8_1.2.2                  tidyselect_1.1.1           </span>
+<span class="co">#&gt;   [3] robust_0.6-1                htmlwidgets_1.5.4          </span>
+<span class="co">#&gt;   [5] grid_4.2.0                  devtools_2.4.3             </span>
+<span class="co">#&gt;   [7] munsell_0.5.0               codetools_0.2-18           </span>
+<span class="co">#&gt;   [9] ragg_1.2.1                  preprocessCore_1.57.0      </span>
+<span class="co">#&gt;  [11] future_1.23.0               withr_2.4.3                </span>
+<span class="co">#&gt;  [13] colorspace_2.0-2            knitr_1.37                 </span>
+<span class="co">#&gt;  [15] rstudioapi_0.13             robustbase_0.93-8          </span>
+<span class="co">#&gt;  [17] listenv_0.8.0               mzID_1.33.0                </span>
+<span class="co">#&gt;  [19] MatrixGenerics_1.7.0        GenomeInfoDbData_1.2.7     </span>
+<span class="co">#&gt;  [21] polyclip_1.10-0             farver_2.1.0               </span>
+<span class="co">#&gt;  [23] rprojroot_2.0.2             parallelly_1.30.0          </span>
+<span class="co">#&gt;  [25] vctrs_0.3.8                 generics_0.1.1             </span>
+<span class="co">#&gt;  [27] xfun_0.29                   itertools_0.1-3            </span>
+<span class="co">#&gt;  [29] randomForest_4.6-14         R6_2.5.1                   </span>
+<span class="co">#&gt;  [31] doParallel_1.0.16           GenomeInfoDb_1.31.1        </span>
+<span class="co">#&gt;  [33] graphlayouts_0.8.0          clue_0.3-60                </span>
+<span class="co">#&gt;  [35] MsCoreUtils_1.7.1           bitops_1.0-7               </span>
+<span class="co">#&gt;  [37] cachem_1.0.6                gridGraphics_0.5-1         </span>
+<span class="co">#&gt;  [39] DelayedArray_0.21.2         assertthat_0.2.1           </span>
+<span class="co">#&gt;  [41] scales_1.1.1                ggraph_2.0.5               </span>
+<span class="co">#&gt;  [43] gtable_0.3.0                globals_0.14.0             </span>
+<span class="co">#&gt;  [45] affy_1.73.0                 processx_3.5.2             </span>
+<span class="co">#&gt;  [47] tidygraph_1.2.0             rlang_0.4.12               </span>
+<span class="co">#&gt;  [49] clisymbols_1.2.0            systemfonts_1.0.3          </span>
+<span class="co">#&gt;  [51] GlobalOptions_0.1.2         lazyeval_0.2.2             </span>
+<span class="co">#&gt;  [53] impute_1.69.0               broom_0.7.11               </span>
+<span class="co">#&gt;  [55] BiocManager_1.30.16         yaml_2.2.1                 </span>
+<span class="co">#&gt;  [57] modelr_0.1.8                stevedore_0.9.4            </span>
+<span class="co">#&gt;  [59] crosstalk_1.2.0             backports_1.4.1            </span>
+<span class="co">#&gt;  [61] MassSpecWavelet_1.61.0      usethis_2.1.5              </span>
+<span class="co">#&gt;  [63] tools_4.2.0                 ggplotify_0.1.0            </span>
+<span class="co">#&gt;  [65] affyio_1.65.0               ellipsis_0.3.2             </span>
+<span class="co">#&gt;  [67] jquerylib_0.1.4             RColorBrewer_1.1-2         </span>
+<span class="co">#&gt;  [69] proxy_0.4-26                sessioninfo_1.2.2          </span>
+<span class="co">#&gt;  [71] plyr_1.8.6                  zlibbioc_1.41.0            </span>
+<span class="co">#&gt;  [73] purrr_0.3.4                 RCurl_1.98-1.5             </span>
+<span class="co">#&gt;  [75] prettyunits_1.1.1           ps_1.6.0                   </span>
+<span class="co">#&gt;  [77] viridis_0.6.2               pbapply_1.5-0              </span>
+<span class="co">#&gt;  [79] GetoptLong_1.0.5            SummarizedExperiment_1.25.3</span>
+<span class="co">#&gt;  [81] massconverter_0.99.1        haven_2.4.3                </span>
+<span class="co">#&gt;  [83] ggrepel_0.9.1               cluster_2.1.2              </span>
+<span class="co">#&gt;  [85] fs_1.5.2                    furrr_0.2.3                </span>
+<span class="co">#&gt;  [87] data.table_1.14.2           openxlsx_4.2.5             </span>
+<span class="co">#&gt;  [89] circlize_0.4.14             reprex_2.0.1               </span>
+<span class="co">#&gt;  [91] RANN_2.6.1                  pcaMethods_1.87.0          </span>
+<span class="co">#&gt;  [93] mvtnorm_1.1-2               matrixStats_0.61.0         </span>
+<span class="co">#&gt;  [95] pkgload_1.2.4               hms_1.1.1                  </span>
+<span class="co">#&gt;  [97] patchwork_1.1.1             evaluate_0.14              </span>
+<span class="co">#&gt;  [99] XML_3.99-0.8                leaflet_2.0.4.1            </span>
+<span class="co">#&gt; [101] readxl_1.3.1                IRanges_2.29.1             </span>
+<span class="co">#&gt; [103] gridExtra_2.3               shape_1.4.6                </span>
+<span class="co">#&gt; [105] testthat_3.1.1              compiler_4.2.0             </span>
+<span class="co">#&gt; [107] tibble_3.1.6                ncdf4_1.17                 </span>
+<span class="co">#&gt; [109] crayon_1.4.2                htmltools_0.5.2            </span>
+<span class="co">#&gt; [111] pcaPP_1.9-74                tzdb_0.2.0                 </span>
+<span class="co">#&gt; [113] tidyr_1.1.4                 rrcov_1.6-0                </span>
+<span class="co">#&gt; [115] lubridate_1.8.0             DBI_1.1.2                  </span>
+<span class="co">#&gt; [117] tweenr_1.0.2                dbplyr_2.1.1               </span>
+<span class="co">#&gt; [119] ComplexHeatmap_2.11.0       MASS_7.3-55                </span>
+<span class="co">#&gt; [121] MsFeatures_1.3.0            Matrix_1.4-0               </span>
+<span class="co">#&gt; [123] readr_2.1.1                 cli_3.1.0                  </span>
+<span class="co">#&gt; [125] vsn_3.63.0                  igraph_1.2.6               </span>
+<span class="co">#&gt; [127] parallel_4.2.0              GenomicRanges_1.47.6       </span>
+<span class="co">#&gt; [129] forcats_0.5.1               pkgconfig_2.0.3            </span>
+<span class="co">#&gt; [131] fit.models_0.64             pkgdown_2.0.1              </span>
+<span class="co">#&gt; [133] plotly_4.10.0               MALDIquant_1.21            </span>
+<span class="co">#&gt; [135] xml2_1.3.3                  foreach_1.5.1              </span>
+<span class="co">#&gt; [137] ggcorrplot_0.1.3            bslib_0.3.1                </span>
+<span class="co">#&gt; [139] missForest_1.4              XVector_0.35.0             </span>
+<span class="co">#&gt; [141] rvest_1.0.2                 yulab.utils_0.0.4          </span>
+<span class="co">#&gt; [143] callr_3.7.0                 stringr_1.4.0              </span>
+<span class="co">#&gt; [145] digest_0.6.29               Biostrings_2.63.1          </span>
+<span class="co">#&gt; [147] rmarkdown_2.11              cellranger_1.1.0           </span>
+<span class="co">#&gt; [149] curl_4.3.2                  rjson_0.2.21               </span>
+<span class="co">#&gt; [151] lifecycle_1.0.1             jsonlite_1.7.2             </span>
+<span class="co">#&gt; [153] desc_1.4.0                  viridisLite_0.4.0          </span>
+<span class="co">#&gt; [155] limma_3.51.2                fansi_1.0.0                </span>
+<span class="co">#&gt; [157] pillar_1.6.4                ggsci_2.9                  </span>
+<span class="co">#&gt; [159] lattice_0.20-45             pkgbuild_1.3.1             </span>
+<span class="co">#&gt; [161] KEGGREST_1.35.0             fastmap_1.1.0              </span>
+<span class="co">#&gt; [163] httr_1.4.2                  DEoptimR_1.0-10            </span>
+<span class="co">#&gt; [165] remotes_2.4.2               glue_1.6.0                 </span>
+<span class="co">#&gt; [167] zip_2.2.0                   png_0.1-7                  </span>
+<span class="co">#&gt; [169] iterators_1.0.13            pander_0.6.4               </span>
+<span class="co">#&gt; [171] ggforce_0.3.3               class_7.3-20               </span>
+<span class="co">#&gt; [173] stringi_1.7.6               sass_0.4.0                 </span>
+<span class="co">#&gt; [175] textshaping_0.3.6           memoise_2.0.1              </span>
+<span class="co">#&gt; [177] tidyverse_1.3.1             e1071_1.7-9</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
