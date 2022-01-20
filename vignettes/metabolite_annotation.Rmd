@@ -199,6 +199,41 @@ object_neg2 =
 ```
 
 
+### Annotation information
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+head(extract_annotation_table(object = object_pos2))
+```
+
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+variable_info_pos = 
+extract_variable_info(object = object_pos2)
+head(variable_info_pos)
+table(variable_info_pos$Level)
+table(variable_info_pos$Database)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+ms2_plot_mass_dataset(object = object_pos2, 
+                      variable_id = "M86T95_POS", 
+                      database = mona_database0.0.3)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+ms2_plot_mass_dataset(object = object_pos2, 
+                      variable_id = "M86T95_POS", 
+                      database = mona_database0.0.3, 
+                      interactive_plot = TRUE)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+ms2_plot_mass_dataset(object = object_pos2, 
+                      variable_id = "M147T54_POS", 
+                      database = snyder_database_rplc0.0.3, 
+                      interactive_plot = FALSE)
+```
+
 Save data for next analysis.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}

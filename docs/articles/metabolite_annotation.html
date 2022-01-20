@@ -2573,8 +2573,119 @@
 <span id="cb18-344"><a href="#cb18-344" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb18-345"><a href="#cb18-345" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [41mAll done.</span></span>
 <span id="cb18-346"><a href="#cb18-346" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [49m</span></span></code></pre></div>
-<p>Save data for next analysis.</p>
+</div>
+<div class="section level3">
+<h3 id="annotation-information">Annotation information<a class="anchor" aria-label="anchor" href="#annotation-information"></a>
+</h3>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_annotation_table</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos2</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;    variable_id</span>
+<span class="co">#&gt; 1 M100T160_POS</span>
+<span class="co">#&gt; 2 M103T100_POS</span>
+<span class="co">#&gt; 3 M103T100_POS</span>
+<span class="co">#&gt; 4  M104T51_POS</span>
+<span class="co">#&gt; 5 M113T187_POS</span>
+<span class="co">#&gt; 6  M113T81_POS</span>
+<span class="co">#&gt;                                                                                                                      ms2_files_id</span>
+<span class="co">#&gt; 1 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 2 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 3 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 4 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 5 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt; 6 QEP_SGA_QC_posi_ms2_ce25_01.mgf;QEP_SGA_QC_posi_ms2_ce25_02.mgf;QEP_SGA_QC_posi_ms2_ce50_01.mgf;QEP_SGA_QC_posi_ms2_ce50_02.mgf</span>
+<span class="co">#&gt;                  ms2_spectrum_id           Compound.name    CAS.ID   HMDB.ID</span>
+<span class="co">#&gt; 1 mz100.076248168945rt158.377638  N-Methyl-2-pyrrolidone  872-50-4      &lt;NA&gt;</span>
+<span class="co">#&gt; 2   mz103.054814801682rt96.92601      Phenylacetaldehyde  122-78-1 HMDB06236</span>
+<span class="co">#&gt; 3   mz103.054814801682rt96.92601 3-Amino-2-oxazolidinone   80-65-9      &lt;NA&gt;</span>
+<span class="co">#&gt; 4  mz104.107467651367rt49.510314      5-Amino-1-pentanol 2508-29-4      &lt;NA&gt;</span>
+<span class="co">#&gt; 5 mz113.060150146484rt188.406384    1,4-Cyclohexanedione      &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="co">#&gt; 6   mz113.035087585449rt77.20827                  URACIL      &lt;NA&gt;      &lt;NA&gt;</span>
+<span class="co">#&gt;   KEGG.ID     Lab.ID     Adduct  mz.error mz.match.score RT.error</span>
+<span class="co">#&gt; 1  C11118 MONA_11509     (M+H)+  1.335652      0.9960435       NA</span>
+<span class="co">#&gt; 2  C00601    NO07389 (M+H-H2O)+  1.537004      0.9947640       NA</span>
+<span class="co">#&gt; 3    &lt;NA&gt;    NO07231     (M+H)+ 11.537004      0.7439487       NA</span>
+<span class="co">#&gt; 4    &lt;NA&gt;    NO07238     (M+H)+  1.169128      0.9969671       NA</span>
+<span class="co">#&gt; 5    &lt;NA&gt; MONA_14519     (M+H)+  1.051626      0.9975454       NA</span>
+<span class="co">#&gt; 6    &lt;NA&gt; MONA_18148     (M+H)+  1.275544      0.9963909       NA</span>
+<span class="co">#&gt;   RT.match.score                  CE        SS Total.score   Database Level</span>
+<span class="co">#&gt; 1             NA       35  (nominal) 0.6871252   0.8029696 MoNA_0.0.1     2</span>
+<span class="co">#&gt; 2             NA                  10 0.5748835   0.7323387 NIST_0.0.1     2</span>
+<span class="co">#&gt; 3             NA                  20 0.5020256   0.5927468 NIST_0.0.1     2</span>
+<span class="co">#&gt; 4             NA                   5 0.5971697   0.7470937 NIST_0.0.1     2</span>
+<span class="co">#&gt; 5             NA HCD (NCE 20-30-40%) 0.5401414   0.7116679 MoNA_0.0.1     2</span>
+<span class="co">#&gt; 6             NA                  10 0.6889885   0.8042644 MoNA_0.0.1     2</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">variable_info_pos</span> <span class="op">=</span> 
+<span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_variable_info</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos2</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">variable_info_pos</span><span class="op">)</span>
+<span class="co">#&gt;   variable_id       mz        rt    na_freq  na_freq.1  na_freq.2 Compound.name</span>
+<span class="co">#&gt; 1  M70T53_POS 70.06596  52.78542 0.00000000 0.14545455 0.00000000          &lt;NA&gt;</span>
+<span class="co">#&gt; 2 M70T527_POS 70.36113 526.76657 0.02564103 0.18181818 0.30000000          &lt;NA&gt;</span>
+<span class="co">#&gt; 3 M71T775_POS 70.98125 775.44867 0.00000000 0.00000000 0.00000000          &lt;NA&gt;</span>
+<span class="co">#&gt; 4 M71T669_POS 70.98125 668.52844 0.00000000 0.02727273 0.01818182          &lt;NA&gt;</span>
+<span class="co">#&gt; 5 M71T715_POS 70.98125 714.74066 0.05128205 0.12727273 0.02727273          &lt;NA&gt;</span>
+<span class="co">#&gt; 6  M71T54_POS 71.04999  54.45641 0.15384615 0.99090909 0.05454545          &lt;NA&gt;</span>
+<span class="co">#&gt;   CAS.ID HMDB.ID KEGG.ID Lab.ID Adduct mz.error mz.match.score RT.error</span>
+<span class="co">#&gt; 1   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;       NA             NA       NA</span>
+<span class="co">#&gt; 2   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;       NA             NA       NA</span>
+<span class="co">#&gt; 3   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;       NA             NA       NA</span>
+<span class="co">#&gt; 4   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;       NA             NA       NA</span>
+<span class="co">#&gt; 5   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;       NA             NA       NA</span>
+<span class="co">#&gt; 6   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;       NA             NA       NA</span>
+<span class="co">#&gt;   RT.match.score   CE SS Total.score Database Level</span>
+<span class="co">#&gt; 1             NA &lt;NA&gt; NA          NA     &lt;NA&gt;    NA</span>
+<span class="co">#&gt; 2             NA &lt;NA&gt; NA          NA     &lt;NA&gt;    NA</span>
+<span class="co">#&gt; 3             NA &lt;NA&gt; NA          NA     &lt;NA&gt;    NA</span>
+<span class="co">#&gt; 4             NA &lt;NA&gt; NA          NA     &lt;NA&gt;    NA</span>
+<span class="co">#&gt; 5             NA &lt;NA&gt; NA          NA     &lt;NA&gt;    NA</span>
+<span class="co">#&gt; 6             NA &lt;NA&gt; NA          NA     &lt;NA&gt;    NA</span>
+<span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">variable_info_pos</span><span class="op">$</span><span class="va">Level</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;   1   2 </span>
+<span class="co">#&gt;  23 183</span>
+<span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">variable_info_pos</span><span class="op">$</span><span class="va">Database</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; MoNA_0.0.1   MS_0.0.2 NIST_0.0.1 </span>
+<span class="co">#&gt;         78         23        105</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">ms2_plot_mass_dataset</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos2</span>, 
+                      variable_id <span class="op">=</span> <span class="st">"M86T95_POS"</span>, 
+                      database <span class="op">=</span> <span class="va">mona_database0.0.3</span><span class="op">)</span>
+<span class="co">#&gt; $M86T95_POS_1</span></code></pre></div>
+<p><img src="metabolite_annotation_files/figure-html/unnamed-chunk-22-1.png" width="100%"></p>
+<pre><code><span class="co">#&gt; </span>
+<span class="co">#&gt; $M86T95_POS_2</span></code></pre>
+<p><img src="metabolite_annotation_files/figure-html/unnamed-chunk-22-2.png" width="100%"></p>
+<pre><code><span class="co">#&gt; </span>
+<span class="co">#&gt; $M86T95_POS_3</span></code></pre>
+<p><img src="metabolite_annotation_files/figure-html/unnamed-chunk-22-3.png" width="100%"></p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">ms2_plot_mass_dataset</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos2</span>, 
+                      variable_id <span class="op">=</span> <span class="st">"M86T95_POS"</span>, 
+                      database <span class="op">=</span> <span class="va">mona_database0.0.3</span>, 
+                      interactive_plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; $M86T95_POS_1</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $M86T95_POS_2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $M86T95_POS_3</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">ms2_plot_mass_dataset</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos2</span>, 
+                      variable_id <span class="op">=</span> <span class="st">"M147T54_POS"</span>, 
+                      database <span class="op">=</span> <span class="va">snyder_database_rplc0.0.3</span>, 
+                      interactive_plot <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; database may be wrong.</span>
+<span class="co">#&gt; database may be wrong.</span>
+<span class="co">#&gt; $M147T54_POS_1</span></code></pre></div>
+<p><img src="metabolite_annotation_files/figure-html/unnamed-chunk-24-1.png" width="100%"></p>
+<pre><code><span class="co">#&gt; </span>
+<span class="co">#&gt; $M147T54_POS_2</span></code></pre>
+<p><img src="metabolite_annotation_files/figure-html/unnamed-chunk-24-2.png" width="100%"></p>
+<pre><code><span class="co">#&gt; </span>
+<span class="co">#&gt; $M147T54_POS_3</span></code></pre>
+<p><img src="metabolite_annotation_files/figure-html/unnamed-chunk-24-3.png" width="100%"></p>
+<p>Save data for next analysis.</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_pos2</span>, file <span class="op">=</span> <span class="st">"metabolite_annotation/object_pos2"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_neg2</span>, file <span class="op">=</span> <span class="st">"metabolite_annotation/object_neg2"</span><span class="op">)</span></code></pre></div>
 </div>
@@ -2583,7 +2694,7 @@
 <h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
 </h2>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; R Under development (unstable) (2022-01-11 r81473)</span>
 <span class="co">#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
@@ -2617,89 +2728,90 @@
 <span class="co">#&gt;   [7] munsell_0.5.0               codetools_0.2-18           </span>
 <span class="co">#&gt;   [9] ragg_1.2.1                  preprocessCore_1.57.0      </span>
 <span class="co">#&gt;  [11] future_1.23.0               withr_2.4.3                </span>
-<span class="co">#&gt;  [13] colorspace_2.0-2            knitr_1.37                 </span>
-<span class="co">#&gt;  [15] rstudioapi_0.13             robustbase_0.93-8          </span>
-<span class="co">#&gt;  [17] listenv_0.8.0               mzID_1.33.0                </span>
-<span class="co">#&gt;  [19] MatrixGenerics_1.7.0        GenomeInfoDbData_1.2.7     </span>
-<span class="co">#&gt;  [21] polyclip_1.10-0             farver_2.1.0               </span>
-<span class="co">#&gt;  [23] rprojroot_2.0.2             parallelly_1.30.0          </span>
-<span class="co">#&gt;  [25] vctrs_0.3.8                 generics_0.1.1             </span>
-<span class="co">#&gt;  [27] xfun_0.29                   itertools_0.1-3            </span>
-<span class="co">#&gt;  [29] randomForest_4.6-14         R6_2.5.1                   </span>
-<span class="co">#&gt;  [31] doParallel_1.0.16           GenomeInfoDb_1.31.1        </span>
-<span class="co">#&gt;  [33] graphlayouts_0.8.0          clue_0.3-60                </span>
-<span class="co">#&gt;  [35] MsCoreUtils_1.7.1           bitops_1.0-7               </span>
-<span class="co">#&gt;  [37] cachem_1.0.6                gridGraphics_0.5-1         </span>
-<span class="co">#&gt;  [39] DelayedArray_0.21.2         assertthat_0.2.1           </span>
-<span class="co">#&gt;  [41] scales_1.1.1                ggraph_2.0.5               </span>
-<span class="co">#&gt;  [43] gtable_0.3.0                globals_0.14.0             </span>
-<span class="co">#&gt;  [45] affy_1.73.0                 processx_3.5.2             </span>
-<span class="co">#&gt;  [47] tidygraph_1.2.0             rlang_0.4.12               </span>
-<span class="co">#&gt;  [49] clisymbols_1.2.0            systemfonts_1.0.3          </span>
-<span class="co">#&gt;  [51] GlobalOptions_0.1.2         lazyeval_0.2.2             </span>
-<span class="co">#&gt;  [53] impute_1.69.0               broom_0.7.11               </span>
-<span class="co">#&gt;  [55] BiocManager_1.30.16         yaml_2.2.1                 </span>
-<span class="co">#&gt;  [57] modelr_0.1.8                stevedore_0.9.4            </span>
-<span class="co">#&gt;  [59] crosstalk_1.2.0             backports_1.4.1            </span>
-<span class="co">#&gt;  [61] MassSpecWavelet_1.61.0      usethis_2.1.5              </span>
-<span class="co">#&gt;  [63] tools_4.2.0                 ggplotify_0.1.0            </span>
-<span class="co">#&gt;  [65] affyio_1.65.0               ellipsis_0.3.2             </span>
-<span class="co">#&gt;  [67] jquerylib_0.1.4             RColorBrewer_1.1-2         </span>
-<span class="co">#&gt;  [69] proxy_0.4-26                sessioninfo_1.2.2          </span>
-<span class="co">#&gt;  [71] plyr_1.8.6                  zlibbioc_1.41.0            </span>
-<span class="co">#&gt;  [73] purrr_0.3.4                 RCurl_1.98-1.5             </span>
-<span class="co">#&gt;  [75] prettyunits_1.1.1           ps_1.6.0                   </span>
-<span class="co">#&gt;  [77] viridis_0.6.2               pbapply_1.5-0              </span>
-<span class="co">#&gt;  [79] GetoptLong_1.0.5            SummarizedExperiment_1.25.3</span>
-<span class="co">#&gt;  [81] massconverter_0.99.1        haven_2.4.3                </span>
-<span class="co">#&gt;  [83] ggrepel_0.9.1               cluster_2.1.2              </span>
-<span class="co">#&gt;  [85] fs_1.5.2                    furrr_0.2.3                </span>
-<span class="co">#&gt;  [87] data.table_1.14.2           openxlsx_4.2.5             </span>
-<span class="co">#&gt;  [89] circlize_0.4.14             reprex_2.0.1               </span>
-<span class="co">#&gt;  [91] RANN_2.6.1                  pcaMethods_1.87.0          </span>
-<span class="co">#&gt;  [93] mvtnorm_1.1-2               matrixStats_0.61.0         </span>
-<span class="co">#&gt;  [95] pkgload_1.2.4               hms_1.1.1                  </span>
-<span class="co">#&gt;  [97] patchwork_1.1.1             evaluate_0.14              </span>
-<span class="co">#&gt;  [99] XML_3.99-0.8                leaflet_2.0.4.1            </span>
-<span class="co">#&gt; [101] readxl_1.3.1                IRanges_2.29.1             </span>
-<span class="co">#&gt; [103] gridExtra_2.3               shape_1.4.6                </span>
-<span class="co">#&gt; [105] testthat_3.1.1              compiler_4.2.0             </span>
-<span class="co">#&gt; [107] tibble_3.1.6                ncdf4_1.17                 </span>
-<span class="co">#&gt; [109] crayon_1.4.2                htmltools_0.5.2            </span>
-<span class="co">#&gt; [111] pcaPP_1.9-74                tzdb_0.2.0                 </span>
-<span class="co">#&gt; [113] tidyr_1.1.4                 rrcov_1.6-0                </span>
-<span class="co">#&gt; [115] lubridate_1.8.0             DBI_1.1.2                  </span>
-<span class="co">#&gt; [117] tweenr_1.0.2                dbplyr_2.1.1               </span>
-<span class="co">#&gt; [119] ComplexHeatmap_2.11.0       MASS_7.3-55                </span>
-<span class="co">#&gt; [121] MsFeatures_1.3.0            Matrix_1.4-0               </span>
-<span class="co">#&gt; [123] readr_2.1.1                 cli_3.1.0                  </span>
-<span class="co">#&gt; [125] vsn_3.63.0                  igraph_1.2.6               </span>
-<span class="co">#&gt; [127] parallel_4.2.0              GenomicRanges_1.47.6       </span>
-<span class="co">#&gt; [129] forcats_0.5.1               pkgconfig_2.0.3            </span>
-<span class="co">#&gt; [131] fit.models_0.64             pkgdown_2.0.1              </span>
-<span class="co">#&gt; [133] plotly_4.10.0               MALDIquant_1.21            </span>
-<span class="co">#&gt; [135] xml2_1.3.3                  foreach_1.5.1              </span>
-<span class="co">#&gt; [137] ggcorrplot_0.1.3            bslib_0.3.1                </span>
-<span class="co">#&gt; [139] missForest_1.4              XVector_0.35.0             </span>
-<span class="co">#&gt; [141] rvest_1.0.2                 yulab.utils_0.0.4          </span>
-<span class="co">#&gt; [143] callr_3.7.0                 stringr_1.4.0              </span>
-<span class="co">#&gt; [145] digest_0.6.29               Biostrings_2.63.1          </span>
-<span class="co">#&gt; [147] rmarkdown_2.11              cellranger_1.1.0           </span>
-<span class="co">#&gt; [149] curl_4.3.2                  rjson_0.2.21               </span>
-<span class="co">#&gt; [151] lifecycle_1.0.1             jsonlite_1.7.2             </span>
-<span class="co">#&gt; [153] desc_1.4.0                  viridisLite_0.4.0          </span>
-<span class="co">#&gt; [155] limma_3.51.2                fansi_1.0.0                </span>
-<span class="co">#&gt; [157] pillar_1.6.4                ggsci_2.9                  </span>
-<span class="co">#&gt; [159] lattice_0.20-45             pkgbuild_1.3.1             </span>
-<span class="co">#&gt; [161] KEGGREST_1.35.0             fastmap_1.1.0              </span>
-<span class="co">#&gt; [163] httr_1.4.2                  DEoptimR_1.0-10            </span>
-<span class="co">#&gt; [165] remotes_2.4.2               glue_1.6.0                 </span>
-<span class="co">#&gt; [167] zip_2.2.0                   png_0.1-7                  </span>
-<span class="co">#&gt; [169] iterators_1.0.13            pander_0.6.4               </span>
-<span class="co">#&gt; [171] ggforce_0.3.3               class_7.3-20               </span>
-<span class="co">#&gt; [173] stringi_1.7.6               sass_0.4.0                 </span>
-<span class="co">#&gt; [175] textshaping_0.3.6           memoise_2.0.1              </span>
-<span class="co">#&gt; [177] tidyverse_1.3.1             e1071_1.7-9</span></code></pre></div>
+<span class="co">#&gt;  [13] colorspace_2.0-2            highr_0.9                  </span>
+<span class="co">#&gt;  [15] knitr_1.37                  rstudioapi_0.13            </span>
+<span class="co">#&gt;  [17] robustbase_0.93-8           listenv_0.8.0              </span>
+<span class="co">#&gt;  [19] mzID_1.33.0                 labeling_0.4.2             </span>
+<span class="co">#&gt;  [21] MatrixGenerics_1.7.0        GenomeInfoDbData_1.2.7     </span>
+<span class="co">#&gt;  [23] polyclip_1.10-0             farver_2.1.0               </span>
+<span class="co">#&gt;  [25] rprojroot_2.0.2             parallelly_1.30.0          </span>
+<span class="co">#&gt;  [27] vctrs_0.3.8                 generics_0.1.1             </span>
+<span class="co">#&gt;  [29] xfun_0.29                   itertools_0.1-3            </span>
+<span class="co">#&gt;  [31] randomForest_4.6-14         R6_2.5.1                   </span>
+<span class="co">#&gt;  [33] doParallel_1.0.16           GenomeInfoDb_1.31.1        </span>
+<span class="co">#&gt;  [35] graphlayouts_0.8.0          clue_0.3-60                </span>
+<span class="co">#&gt;  [37] MsCoreUtils_1.7.1           bitops_1.0-7               </span>
+<span class="co">#&gt;  [39] cachem_1.0.6                gridGraphics_0.5-1         </span>
+<span class="co">#&gt;  [41] DelayedArray_0.21.2         assertthat_0.2.1           </span>
+<span class="co">#&gt;  [43] scales_1.1.1                ggraph_2.0.5               </span>
+<span class="co">#&gt;  [45] gtable_0.3.0                globals_0.14.0             </span>
+<span class="co">#&gt;  [47] affy_1.73.0                 processx_3.5.2             </span>
+<span class="co">#&gt;  [49] tidygraph_1.2.0             rlang_0.4.12               </span>
+<span class="co">#&gt;  [51] clisymbols_1.2.0            systemfonts_1.0.3          </span>
+<span class="co">#&gt;  [53] GlobalOptions_0.1.2         lazyeval_0.2.2             </span>
+<span class="co">#&gt;  [55] impute_1.69.0               broom_0.7.11               </span>
+<span class="co">#&gt;  [57] BiocManager_1.30.16         yaml_2.2.1                 </span>
+<span class="co">#&gt;  [59] modelr_0.1.8                stevedore_0.9.4            </span>
+<span class="co">#&gt;  [61] crosstalk_1.2.0             backports_1.4.1            </span>
+<span class="co">#&gt;  [63] MassSpecWavelet_1.61.0      usethis_2.1.5              </span>
+<span class="co">#&gt;  [65] tools_4.2.0                 ggplotify_0.1.0            </span>
+<span class="co">#&gt;  [67] affyio_1.65.0               ellipsis_0.3.2             </span>
+<span class="co">#&gt;  [69] jquerylib_0.1.4             RColorBrewer_1.1-2         </span>
+<span class="co">#&gt;  [71] proxy_0.4-26                sessioninfo_1.2.2          </span>
+<span class="co">#&gt;  [73] plyr_1.8.6                  zlibbioc_1.41.0            </span>
+<span class="co">#&gt;  [75] purrr_0.3.4                 RCurl_1.98-1.5             </span>
+<span class="co">#&gt;  [77] prettyunits_1.1.1           ps_1.6.0                   </span>
+<span class="co">#&gt;  [79] viridis_0.6.2               pbapply_1.5-0              </span>
+<span class="co">#&gt;  [81] GetoptLong_1.0.5            SummarizedExperiment_1.25.3</span>
+<span class="co">#&gt;  [83] massconverter_0.99.1        haven_2.4.3                </span>
+<span class="co">#&gt;  [85] ggrepel_0.9.1               cluster_2.1.2              </span>
+<span class="co">#&gt;  [87] fs_1.5.2                    furrr_0.2.3                </span>
+<span class="co">#&gt;  [89] data.table_1.14.2           openxlsx_4.2.5             </span>
+<span class="co">#&gt;  [91] circlize_0.4.14             reprex_2.0.1               </span>
+<span class="co">#&gt;  [93] RANN_2.6.1                  pcaMethods_1.87.0          </span>
+<span class="co">#&gt;  [95] mvtnorm_1.1-2               matrixStats_0.61.0         </span>
+<span class="co">#&gt;  [97] pkgload_1.2.4               hms_1.1.1                  </span>
+<span class="co">#&gt;  [99] patchwork_1.1.1             evaluate_0.14              </span>
+<span class="co">#&gt; [101] XML_3.99-0.8                leaflet_2.0.4.1            </span>
+<span class="co">#&gt; [103] readxl_1.3.1                IRanges_2.29.1             </span>
+<span class="co">#&gt; [105] gridExtra_2.3               shape_1.4.6                </span>
+<span class="co">#&gt; [107] testthat_3.1.1              compiler_4.2.0             </span>
+<span class="co">#&gt; [109] tibble_3.1.6                ncdf4_1.17                 </span>
+<span class="co">#&gt; [111] crayon_1.4.2                htmltools_0.5.2            </span>
+<span class="co">#&gt; [113] pcaPP_1.9-74                tzdb_0.2.0                 </span>
+<span class="co">#&gt; [115] tidyr_1.1.4                 rrcov_1.6-0                </span>
+<span class="co">#&gt; [117] lubridate_1.8.0             DBI_1.1.2                  </span>
+<span class="co">#&gt; [119] tweenr_1.0.2                dbplyr_2.1.1               </span>
+<span class="co">#&gt; [121] ComplexHeatmap_2.11.0       MASS_7.3-55                </span>
+<span class="co">#&gt; [123] MsFeatures_1.3.0            Matrix_1.4-0               </span>
+<span class="co">#&gt; [125] readr_2.1.1                 cli_3.1.0                  </span>
+<span class="co">#&gt; [127] vsn_3.63.0                  igraph_1.2.6               </span>
+<span class="co">#&gt; [129] parallel_4.2.0              GenomicRanges_1.47.6       </span>
+<span class="co">#&gt; [131] forcats_0.5.1               pkgconfig_2.0.3            </span>
+<span class="co">#&gt; [133] fit.models_0.64             pkgdown_2.0.1              </span>
+<span class="co">#&gt; [135] plotly_4.10.0               MALDIquant_1.21            </span>
+<span class="co">#&gt; [137] xml2_1.3.3                  foreach_1.5.1              </span>
+<span class="co">#&gt; [139] ggcorrplot_0.1.3            bslib_0.3.1                </span>
+<span class="co">#&gt; [141] missForest_1.4              XVector_0.35.0             </span>
+<span class="co">#&gt; [143] rvest_1.0.2                 yulab.utils_0.0.4          </span>
+<span class="co">#&gt; [145] callr_3.7.0                 stringr_1.4.0              </span>
+<span class="co">#&gt; [147] digest_0.6.29               Biostrings_2.63.1          </span>
+<span class="co">#&gt; [149] rmarkdown_2.11              cellranger_1.1.0           </span>
+<span class="co">#&gt; [151] curl_4.3.2                  rjson_0.2.21               </span>
+<span class="co">#&gt; [153] lifecycle_1.0.1             jsonlite_1.7.2             </span>
+<span class="co">#&gt; [155] desc_1.4.0                  viridisLite_0.4.0          </span>
+<span class="co">#&gt; [157] limma_3.51.2                fansi_1.0.0                </span>
+<span class="co">#&gt; [159] pillar_1.6.4                ggsci_2.9                  </span>
+<span class="co">#&gt; [161] lattice_0.20-45             pkgbuild_1.3.1             </span>
+<span class="co">#&gt; [163] KEGGREST_1.35.0             fastmap_1.1.0              </span>
+<span class="co">#&gt; [165] httr_1.4.2                  DEoptimR_1.0-10            </span>
+<span class="co">#&gt; [167] remotes_2.4.2               glue_1.6.0                 </span>
+<span class="co">#&gt; [169] zip_2.2.0                   png_0.1-7                  </span>
+<span class="co">#&gt; [171] iterators_1.0.13            pander_0.6.4               </span>
+<span class="co">#&gt; [173] ggforce_0.3.3               class_7.3-20               </span>
+<span class="co">#&gt; [175] stringi_1.7.6               sass_0.4.0                 </span>
+<span class="co">#&gt; [177] textshaping_0.3.6           memoise_2.0.1              </span>
+<span class="co">#&gt; [179] tidyverse_1.3.1             e1071_1.7-9</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
