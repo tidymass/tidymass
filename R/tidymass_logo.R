@@ -24,7 +24,7 @@
 
 tidymass_logo <- function(unicode = l10n_info()$`UTF-8`) {
   message(crayon::green("Thank you for using tidymass!\n"))
-  message(crayon::green("Version 0.0.1 (2021-12-22)\n"))
+  message(crayon::green("Version 0.9.1 (2021-12-22)\n"))
   message(
     crayon::green(
       "More information can be found at https://tidymass.github.io/tidymass/\n"

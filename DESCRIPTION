@@ -1,6 +1,6 @@
 Package: tidymass
 Title: R packages for mass spectrometry data processing and analysis
-Version: 0.0.1
+Version: 0.9.1
 Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",
@@ -21,7 +21,7 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Depends: 
-    R (>= 4.2)
+    R (>= 4.1)
 Imports: 
     crayon,
     devtools,
