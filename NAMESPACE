@@ -2,7 +2,6 @@
 
 S3method(print,tidymass_conflicts)
 S3method(print,tidymass_logo)
-export(mutate_ms2)
 export(tidymass_conflicts)
 export(tidymass_deps)
 export(tidymass_install)

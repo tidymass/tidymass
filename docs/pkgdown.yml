@@ -12,9 +12,10 @@ articles:
   metabolite_annotation: metabolite_annotation.html
   more_software: more_software.html
   raw_data_processing: raw_data_processing.html
+  statistical_analysis: statistical_analysis.html
   tidymass_install: tidymass_install.html
   version0.4.0: version0.4.0.html
-last_built: 2022-01-20T07:58Z
+last_built: 2022-01-29T07:08Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles
