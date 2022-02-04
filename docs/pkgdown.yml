@@ -1,5 +1,5 @@
 pandoc: 2.14.0.3
-pkgdown: 2.0.1
+pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   contact_us: contact_us.html
@@ -11,11 +11,12 @@ articles:
   faq: faq.html
   metabolite_annotation: metabolite_annotation.html
   more_software: more_software.html
+  pathway_enrichment: pathway_enrichment.html
   raw_data_processing: raw_data_processing.html
   statistical_analysis: statistical_analysis.html
   tidymass_install: tidymass_install.html
   version0.4.0: version0.4.0.html
-last_built: 2022-01-29T07:08Z
+last_built: 2022-02-04T19:16Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles

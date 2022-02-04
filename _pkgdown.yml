@@ -71,6 +71,8 @@ navbar:
         href: articles/metabolite_annotation.html
       - text: "Statistical analysis"
         href: articles/statistical_analysis.html
+      - text: "Pathway enrichment"
+        href: articles/pathway_enrichment.html
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990
