@@ -9,7 +9,6 @@
 #' @importFrom dplyr filter
 #' @importFrom tibble tibble
 #' @importFrom rlang is_installed
-#' @import massconverter
 #' @import massdataset
 #' @import massprocesser
 #' @import masscleaner

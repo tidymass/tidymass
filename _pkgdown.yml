@@ -55,8 +55,10 @@ navbar:
       text: Tutorial
       icon: fa-folder-open
       menu:
-      - text: "Install tidymass "
+      - text: "Install tidymass"
         href: articles/tidymass_install.html
+      - text: "Docker version of tidymass"
+        href: articles/docker.html
       - text: "Download demo data"
         href: articles/demo_data.html
       - text: "Convert raw data to mzXML/mgf"

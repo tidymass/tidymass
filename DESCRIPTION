@@ -33,7 +33,6 @@ Imports:
     dplyr,
     rlang,
     tibble,
-    massconverter,
     masstools,
     massdataset,
     massprocesser,
@@ -47,7 +46,6 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Remotes: 
-    tidymass/massconverter,
     tidymass/masstools,
     tidymass/massdataset,
     tidymass/massprocesser,

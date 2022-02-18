@@ -9,8 +9,8 @@ tidymass_install(
   upgrade = "never",
   dependencies = NA,
   demo_data = TRUE,
-  which_package = c("all", "massconverter", "massdataset", "massprocesser",
-    "masscleaner", "massqc", "metid", "massstat", "metpath", "masstools"),
+  which_package = c("all", "massdataset", "massprocesser", "masscleaner", "massqc",
+    "metid", "massstat", "metpath", "masstools"),
   ...
 )
 }
