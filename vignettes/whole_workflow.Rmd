@@ -805,11 +805,12 @@ object_neg2 =
 ```
 
 
-```{r,eval=TRUE, echo=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+We use the saved results before.
+
+```{r,eval=TRUE, echo=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 load("metabolite_annotation/object_pos2")
 load("metabolite_annotation/object_neg2")
 ```
-
 
 ## Annotation information
 
@@ -832,14 +833,7 @@ ms2_plot_mass_dataset(object = object_pos2,
                       database = mona_database0.0.3)
 ```
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-ms2_plot_mass_dataset(object = object_pos2, 
-                      variable_id = "M86T95_POS", 
-                      database = mona_database0.0.3, 
-                      interactive_plot = TRUE)
-```
-
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 ms2_plot_mass_dataset(object = object_pos2, 
                       variable_id = "M147T54_POS", 
                       database = snyder_database_rplc0.0.3, 

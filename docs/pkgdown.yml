@@ -14,11 +14,12 @@ articles:
   more_software: more_software.html
   pathway_enrichment: pathway_enrichment.html
   raw_data_processing: raw_data_processing.html
+  tidymass_parameters.template: statiscal_analysis/Parameter_report/tidymass_parameters.template.html
   statistical_analysis: statistical_analysis.html
   tidymass_install: tidymass_install.html
   version0.4.0: version0.4.0.html
   whole_workflow: whole_workflow.html
-last_built: 2022-02-19T17:46Z
+last_built: 2022-02-19T21:12Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles

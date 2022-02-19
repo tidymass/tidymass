@@ -27,11 +27,7 @@ knitr::opts_chunk$set(
 )
 ```
 
----
-
 # **Uninstall `tidyTools` and `metID`**
-
----
 
 `tinyTools` has been renamed as `tinytools` and `metID` has been renamed as `metid`. So please uninstall them before you install `tidymass`. **And don't use them any more.**
 
@@ -53,24 +49,47 @@ remove.packages(pkgs = "metID")
 
 > If there are errors, ignore them.
 
-# **Install `tidymass` from github**
+# **Install `tidymass` from GitLab**
 
-You can just use the `devtools` or `remotes` to install `tidymass`. 
-
-Please update `devtools` or `remotes``first and then restart your r session.
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-install.packages("devtools")
-install.packages("remotes")
-```
+## Install `tidymass`
 
 Then install `tidymass`:
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-devtools::install_github("tidymass/tidymass", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/tidymass", dependencies = TRUE)
 ```
 
-or 
+## Install tidymass packages one by one
+
+If you use the Windows OS and the dependencies can not be installed, try to install all the `tidymass` packages one by one.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_gitlab("jaspershen/masstools", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massdataset", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massqc", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massprocesser", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/masscleaner", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massstat", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/metid", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/metpath", dependencies = TRUE)
+```
+
+
+# **Install `tidymass` from GitHub**
+
+## Update `remotes`
+
+You can just use the `remotes` to install `tidymass`. 
+
+Please update `remotes``first and then restart your r session.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+install.packages("remotes")
+```
+
+## Install `tidymass`
+
+Then install `tidymass`:
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 remotes::install_github("tidymass/tidymass", dependencies = TRUE)
@@ -111,33 +130,26 @@ GITHUB_PAT=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
 
 And then restart R session and try again.
 
----
 
-# **Install tidymass packages one by one**
+## Install tidymass packages one by one
 
----
-
-If you use the windoes os and the dependencies can not be installed, try to install all the `tidymass` packages one by one.
+If you use the Windows OS and the dependencies can not be installed, try to install all the `tidymass` packages one by one.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-devtools::install_github("tidymass/tinytools", dependencies = TRUE)
-devtools::install_github("tidymass/massdataset", dependencies = TRUE)
-devtools::install_github("tidymass/demodata", dependencies = TRUE)
-devtools::install_github("tidymass/massqc", dependencies = TRUE)
-devtools::install_github("tidymass/massprocesser", dependencies = TRUE)
-devtools::install_github("tidymass/masscleaner", dependencies = TRUE)
-devtools::install_github("tidymass/massstat", dependencies = TRUE)
-devtools::install_github("tidymass/metid", dependencies = TRUE)
-devtools::install_github("tidymass/metpath", dependencies = TRUE)
+remotes::install_github("tidymass/masstools", dependencies = TRUE)
+remotes::install_github("tidymass/massdataset", dependencies = TRUE)
+remotes::install_github("tidymass/massqc", dependencies = TRUE)
+remotes::install_github("tidymass/massprocesser", dependencies = TRUE)
+remotes::install_github("tidymass/masscleaner", dependencies = TRUE)
+remotes::install_github("tidymass/massstat", dependencies = TRUE)
+remotes::install_github("tidymass/metid", dependencies = TRUE)
+remotes::install_github("tidymass/metpath", dependencies = TRUE)
 ```
 
 [Let me know if you have any questions](shenxt1990@outlook.com).
 
----
 
 # **Frequently Asked Questions**
-
----
 
 1. Can not install dependent packages `raster` and `Cario`
 
@@ -173,11 +185,8 @@ Just try to restart R and install `affy`.
 BiocManager::install("affy")
 ```
 
----
 
 # **Session information**
-
----
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 sessionInfo()
