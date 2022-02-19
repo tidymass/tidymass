@@ -17,7 +17,8 @@ articles:
   statistical_analysis: statistical_analysis.html
   tidymass_install: tidymass_install.html
   version0.4.0: version0.4.0.html
-last_built: 2022-02-19T06:32Z
+  whole_workflow: whole_workflow.html
+last_built: 2022-02-19T17:46Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles

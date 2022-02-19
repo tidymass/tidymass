@@ -219,7 +219,7 @@ object_neg
 
 ## **Filter outlier samples**
 
-We can use the detect_outlier() to find the outlier samples.
+We can use the `detect_outlier()` to find the outlier samples.
 
 More information about how to detect outlier samples can be found [here](https://privefl.github.io/blog/detecting-outlier-samples-in-pca/).
 

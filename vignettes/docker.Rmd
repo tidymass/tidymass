@@ -69,8 +69,13 @@ Then open the browser and visit http://localhost:8787 to power on RStudio server
 ![](figures/Screen-Shot 6.png)
 
 ![](figures/Screen-Shot 7.png)
-
 ![](figures/Untitled.gif)
+
+# **Demo data and example analysis code**
+
+In this tidymass docker image, a folder named "demo_data" is included to help users to learn how to use `tidymass`.
+
+Open the `tidymass_demo.Rmd` file and then run it code chunk bu chunk or just render it by clicking `Knit` on Rstudio.
 
 ## **Session information**
 

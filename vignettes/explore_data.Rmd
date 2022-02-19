@@ -141,7 +141,6 @@ get_mv_number(object = object_pos, by = "variable") %>%
 
 Missing value number in each variable.
 
-
 We can use the figure to show the missing value information.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -266,7 +265,6 @@ get_mv_number(object = object_neg, by = "variable") %>%
 ```
 
 Missing value number in each variable.
-
 
 We can use the figure to show the missing value information.
 

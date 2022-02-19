@@ -75,6 +75,8 @@ navbar:
         href: articles/statistical_analysis.html
       - text: "Pathway enrichment"
         href: articles/pathway_enrichment.html
+      - text: "Whole workflow using tidymass"
+        href: articles/whole_workflow.html
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990

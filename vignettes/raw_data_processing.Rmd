@@ -71,7 +71,7 @@ All the results will be placed in the folder `"mzxml_ms1_data/POS/Result"`. More
 
 ![](figures/Screen-Shot-2.png)
 
-You can just load the `object`, which is a `mass_class` class dataset.
+You can just load the `object`, which is a `mass_dataset` class object.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 library(massdataset)
@@ -127,7 +127,7 @@ load("mzxml_ms1_data/NEG/Result/object")
 object
 ```
 
-We can see that there are 8804 metabolic features in positive mode.
+We can see that there are 8804 metabolic features in negative mode.
 
 ## **Session information**
 
