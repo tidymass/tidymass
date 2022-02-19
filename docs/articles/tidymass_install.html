@@ -167,22 +167,48 @@
 </blockquote>
 </div>
 <div class="section level2">
+<h2 id="install-tidymass-from-gitlab">
+<strong>Install <code>tidymass</code> from GitLab</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-from-gitlab"></a>
+</h2>
+<div class="section level3">
+<h3 id="install-tidymass">Install <code>tidymass</code><a class="anchor" aria-label="anchor" href="#install-tidymass"></a>
+</h3>
+<p>Then install <code>tidymass</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/tidymass"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="install-tidymass-packages-one-by-one">Install tidymass packages one by one<a class="anchor" aria-label="anchor" href="#install-tidymass-packages-one-by-one"></a>
+</h3>
+<p>If you use the Windows OS and the dependencies can not be installed, try to install all the <code>tidymass</code> packages one by one.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/masstools"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massdataset"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massqc"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massprocesser"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/masscleaner"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massstat"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/metid"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/metpath"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+</div>
+</div>
+<div class="section level2">
 <h2 id="install-tidymass-from-github">
-<strong>Install <code>tidymass</code> from github</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-from-github"></a>
+<strong>Install <code>tidymass</code> from GitHub</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-from-github"></a>
 </h2>
 <div class="section level3">
 <h3 id="update-remotes">Update <code>remotes</code><a class="anchor" aria-label="anchor" href="#update-remotes"></a>
 </h3>
 <p>You can just use the <code>remotes</code> to install <code>tidymass</code>.</p>
 <p>Please update `remotes``first and then restart your r session.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="install-tidymass">Install <code>tidymass</code><a class="anchor" aria-label="anchor" href="#install-tidymass"></a>
+<h3 id="install-tidymass-1">Install <code>tidymass</code><a class="anchor" aria-label="anchor" href="#install-tidymass-1"></a>
 </h3>
 <p>Then install <code>tidymass</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tidymass"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>In the installation, it will ask if you want to update some packages for few times, just enter <code>enter</code> key to skip it.</p>
 <p>If there is a error like below:</p>
@@ -191,14 +217,14 @@
 <ol style="list-style-type: decimal">
 <li>In you R console, type this code:</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/github-token.html" class="external-link">create_github_token</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>It will open a page in browser, and create a “New personal access token” and copy it.</p>
 <p><img src="figures/Screen-Shot-2021-12-24-at-9.28.18-PM.png"></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Then type this code:</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">edit_r_environ</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>and then add one line like below:</p>
 <pre><code><span class="va">GITHUB_PAT</span><span class="op">=</span><span class="va">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</span></code></pre>
@@ -208,10 +234,10 @@
 <p>And then restart R session and try again.</p>
 </div>
 <div class="section level3">
-<h3 id="install-tidymass-packages-one-by-one">Install tidymass packages one by one<a class="anchor" aria-label="anchor" href="#install-tidymass-packages-one-by-one"></a>
+<h3 id="install-tidymass-packages-one-by-one-1">Install tidymass packages one by one<a class="anchor" aria-label="anchor" href="#install-tidymass-packages-one-by-one-1"></a>
 </h3>
 <p>If you use the Windows OS and the dependencies can not be installed, try to install all the <code>tidymass</code> packages one by one.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/masstools"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massdataset"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massqc"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
@@ -220,32 +246,6 @@
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/massstat"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/metid"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/metpath"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-</div>
-</div>
-<div class="section level2">
-<h2 id="install-tidymass-from-gitlab">
-<strong>Install <code>tidymass</code> from GitLab</strong><a class="anchor" aria-label="anchor" href="#install-tidymass-from-gitlab"></a>
-</h2>
-<div class="section level3">
-<h3 id="install-tidymass-1">Install <code>tidymass</code><a class="anchor" aria-label="anchor" href="#install-tidymass-1"></a>
-</h3>
-<p>Then install <code>tidymass</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/tidymass"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="install-tidymass-packages-one-by-one-1">Install tidymass packages one by one<a class="anchor" aria-label="anchor" href="#install-tidymass-packages-one-by-one-1"></a>
-</h3>
-<p>If you use the Windows OS and the dependencies can not be installed, try to install all the <code>tidymass</code> packages one by one.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/masstools"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massdataset"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massqc"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massprocesser"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/masscleaner"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/massstat"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/metid"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/metpath"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><a href="shenxt1990@outlook.com">Let me know if you have any questions</a>.</p>
 </div>
 </div>
