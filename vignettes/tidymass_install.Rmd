@@ -146,8 +146,35 @@ remotes::install_github("tidymass/metid", dependencies = TRUE)
 remotes::install_github("tidymass/metpath", dependencies = TRUE)
 ```
 
-[Let me know if you have any questions](shenxt1990@outlook.com).
 
+# **Install `tidymass` from Gitee**
+
+If you can't install pacakgs from GitHub and GitLab, please try install packags from Gitee.
+
+## Install `tidymass`
+
+Then install `tidymass`:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_git(url = "https://gitee.com/jaspershen/tidymass", dependencies = TRUE)
+```
+
+## Install tidymass packages one by one.
+
+If you use the Windows OS and the dependencies can not be installed, try to install all the `tidymass` packages one by one.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_git(url = "https://gitee.com/jaspershen/masstools", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massdataset", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massqc", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massprocesser", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/masscleaner", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massstat", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/metid", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/metpath", dependencies = TRUE)
+```
+
+[Let me know if you have any questions](shenxt1990@outlook.com).
 
 # **Frequently Asked Questions**
 
