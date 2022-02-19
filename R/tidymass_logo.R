@@ -23,7 +23,7 @@
 
 tidymass_logo <- function(unicode = l10n_info()$`UTF-8`) {
   message(crayon::green("Thank you for using tidymass!\n"))
-  message(crayon::green("Version 0.9.1 (2021-12-22)\n"))
+  message(crayon::green("Version", tidymass_version, "(", update_date, ')\n'))
   message(
     crayon::green(
       "More information can be found at https://tidymass.github.io/tidymass/\n"
@@ -64,7 +64,6 @@ tidymass_logo <- function(unicode = l10n_info()$`UTF-8`) {
   
   col_hexa <- purrr::map2(hexa, cols, ~ crayon::make_style(.y)(.x))
   
-  
   for (i in 0:9) {
     pat <- paste0("\\b", i, "\\b")
     logo <- sub(pat, col_hexa[[i + 1]], logo)
@@ -79,3 +78,6 @@ print.tidymass_logo <- function(x, ...) {
   cat(x, ..., sep = "\n")
   invisible(x)
 }
+
+tidymass_version = "0.99.2"
+update_date = as.character(Sys.time())
