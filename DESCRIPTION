@@ -47,10 +47,10 @@ Suggests:
 VignetteBuilder: knitr
 Remotes: 
     gitlab::jaspershen/masstools,
-    github::tidymass/massdataset,
-    github::tidymass/massprocesser,
-    github::tidymass/masscleaner,
-    github::tidymass/massstat,
-    github::tidymass/metpath,
-    github::tidymass/metid,
-    github::tidymass/massqc
+    gitlab::jaspershen/massdataset,
+    gitlab::jaspershen/massprocesser,
+    gitlab::jaspershen/masscleaner,
+    gitlab::jaspershen/massstat,
+    gitlab::jaspershen/metpath,
+    gitlab::jaspershen/metid,
+    gitlab::jaspershen/massqc

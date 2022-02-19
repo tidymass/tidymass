@@ -55,18 +55,25 @@ remove.packages(pkgs = "metID")
 
 # **Install `tidymass` from github**
 
-You can just use the `devtools` or `remote` to install `tidymass`. 
+You can just use the `devtools` or `remotes` to install `tidymass`. 
 
-Please update `devtools` first and then restart your r session.
+Please update `devtools` or `remotes``first and then restart your r session.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 install.packages("devtools")
+install.packages("remotes")
 ```
 
 Then install `tidymass`:
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 devtools::install_github("tidymass/tidymass", dependencies = TRUE)
+```
+
+or 
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_github("tidymass/tidymass", dependencies = TRUE)
 ```
 
 In the installation, it will ask if you want to update some packages for few times, just enter `enter` key to skip it.
