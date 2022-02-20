@@ -1,6 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `tidymass`: R packages for MS data processing and analysis <img src="man/figures/logo.png" align="right" alt="" width="100" />
+# `tidymass`: R packages for LC-MS data processing and analysis <img src="man/figures/logo.png" align="right" alt="" width="100" />
 
 [![](https://www.r-pkg.org/badges/version/tidymass?color=green)](https://cran.r-project.org/package=tidymass)
 [![](https://img.shields.io/github/languages/code-size/tidymass/tidymass.svg)](https://github.com/tidymass/tidymass)
