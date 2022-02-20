@@ -5,6 +5,7 @@ author:
 date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
 output:
   html_document:
+    number_sections: true
     df_print: paged
     toc: yes
   pdf_document:
@@ -27,7 +28,19 @@ knitr::opts_chunk$set(
 )
 ```
 
+# **Update R version**
+
+`tidymass` need R version > 4.1. You can check your R version in your console:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+version
+```
+
+If you R version is < 4.1, please [download and install the latest version of R](https://cran.r-project.org/mirrors.html), and then restart your R.
+
 # **Uninstall `tidyTools` and `metID`**
+
+If you have installed `tinyTools` or `metID`, please uninstall them.
 
 `tinyTools` has been renamed as `tinytools` and `metID` has been renamed as `metid`. So please uninstall them before you install `tidymass`. **And don't use them any more.**
 
@@ -50,6 +63,16 @@ remove.packages(pkgs = "metID")
 > If there are errors, ignore them.
 
 # **Install `tidymass` from GitLab**
+
+## Update `remotes`
+
+You can use the `remotes` package to install `tidymass`. 
+
+Please update `remotes``first and then restart your r session.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+install.packages("remotes")
+```
 
 ## Install `tidymass`
 
@@ -76,16 +99,6 @@ remotes::install_gitlab("jaspershen/metpath", dependencies = TRUE)
 
 
 # **Install `tidymass` from GitHub**
-
-## Update `remotes`
-
-You can just use the `remotes` to install `tidymass`. 
-
-Please update `remotes``first and then restart your r session.
-
-```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-install.packages("remotes")
-```
 
 ## Install `tidymass`
 

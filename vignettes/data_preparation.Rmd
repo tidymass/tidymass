@@ -5,6 +5,7 @@ author:
 date: "Created on 2021-12-04 and updated on `r Sys.Date()`"
 output:
   html_document:
+    number_sections: true
     df_print: paged
     toc: yes
   pdf_document:
