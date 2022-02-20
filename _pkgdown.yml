@@ -95,12 +95,12 @@ navbar:
       text: More
       icon: fa-laptop-code
       menu:
-      - text: "MetNormalizer"
-      - text: Database normalization
+      - text: MetNormalizer
         href: https://jaspershen.github.io/MetNormalizer/
       - text: "lipidflow"
-      - text: Absolute quantification for lipidomics data
         href: https://jaspershen.github.io/lipidflow/
+      - text: "laggedcor"
+        href: https://jaspershen.github.io/laggedcor/
     news:
       text: News & Blog
       icon: fa-rss
