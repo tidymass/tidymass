@@ -26,24 +26,29 @@ The `tidymass` is a collection of R packages designed for LC-MS-based untargeted
 ---
 
 You can install `tidymass` from
-[GitHub](https://github.com/tidymass/tidymass).
+[GitHub](https://github.com/tidymass/tidymass) or GitLab.
 
 ``` r
-if(!require(devtools)){
-install.packages("devtools")
+if(!require(remotes)){
+install.packages("remotes")
 }
-devtools::install_github("tidymass/tidymass")
+remotes::install_github("tidymass/tidymass")
 ```
 
 ``` r
-library(tidymass)
+if(!require(remotes)){
+install.packages("remotes")
+}
+remotes::install_gitlab("jaspershen/tidymass")
 ```
+
+> More information can be found [here](https://tidymass.github.io/tidymass/articles/tidymass_install.html).
 
 <h2 style="color:red;"><i class="fas fa-code-branch"> Packages</h2>
 
 ---
 
-Now, `tidymass` contains 9 packages, which are listed below:
+Now, `tidymass` contains nine packages that are listed below:
 
 <h3 style="color:#b45c6c;"><i class="fas fa-code"> massConverter</h3> <a href="https://tidymass.github.io/massconverter/" target="_blank"><img src="man/figures/massconverter_logo.png" align="left" alt="" width="120" /></a>
 
