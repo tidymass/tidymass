@@ -35,15 +35,8 @@ install.packages("devtools")
 devtools::install_github("tidymass/tidymass")
 ```
 
-Then you can use `tidymass_install()` to install all the packages in
-`tidymass`.
-
 ``` r
 library(tidymass)
-```
-
-``` r
-tidymass::tidymass_install(from = "github", force = FALSE)
 ```
 
 <h2 style="color:red;"><i class="fas fa-code-branch"> Packages</h2>
@@ -151,7 +144,7 @@ Palo Alto, CA
 
 ---
 
-If you use tidymass in you publications, please cite this publication:
+If you use `tidymass` in you publications, please cite this publication:
 
 X. Shen, R. Wang, X. Xiong, Y. Yin, Y. Cai, Z. Ma, N. Liu, and Z.-J.
 Zhu\* (Corresponding Author), Metabolic Reaction Network-based Recursive
