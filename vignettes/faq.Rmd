@@ -65,6 +65,17 @@ GITHUB_PAT=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
 
 And then restart R session and try again.
 
+# **Comments**
+
+Please leave a messing if you have any questions about `tidymass`.
+
+[Leave a message](https://github.com/tidymass/tidymass/issues)
+
+```{r,eval=TRUE, echo=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+knitr::include_url("https://github.com/tidymass/tidymass/issues")
+```
+
+
 # **Session information**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
