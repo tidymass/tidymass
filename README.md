@@ -1,6 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `tidymass`: R packages for LC-MS data processing and analysis <img src="man/figures/logo.png" align="right" alt="" width="100" />
+# `Tidymass`: An Object-oriented Computational Framework for LC-MS Data Processing and Analysis <img src="man/figures/logo.png" align="right" alt="" width="100" />
 
 [![](https://www.r-pkg.org/badges/version/tidymass?color=green)](https://cran.r-project.org/package=tidymass)
 [![](https://img.shields.io/github/languages/code-size/tidymass/tidymass.svg)](https://github.com/tidymass/tidymass)
@@ -15,13 +15,27 @@
 
 <img src="man/figures/20211224_6.png" align="left" alt="" width = "50%"/>
 
-We present the `tidyMass` project, a comprehensive computational framework that can process the whole workflow of data processing/analysis for LC-MS-based untargeted metabolomics, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis). `TidyMass` was designed based on the following strategies to address the limitations of current tools. 
+We present the `tidyMass` project, a comprehensive computational framework that can process the whole workflow of data processing/analysis for LC-MS-based untargeted metabolomics, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis). 
+
+`TidyMass` was designed based on the following strategies to address the limitations of current tools. 
 
 **(1) Cross-platform utility**
 
 **(2) Uniform, shareable, traceable, and reproducible**
 
 A uniform data format is specifically designed to store and manage metabolomics data and processing parameters, making it is possible to trace the analysis steps and parameters used. 3) Flexible and extensible. TidyMass is a collection of multiple R packages, in which the different packages correspond to different steps. This modular design makes `tidyMass` a highly flexible and extensible tool.
+
+**Analysis workflow of `tidyMass`**
+
+<img src="man/figures/Figure_new.png" align="left" alt="" width = "100%"/>
+
+<br>
+
+---
+
+**The `mass_dataset` class and its property**
+
+<img src="man/figures/Figure_new 2.png" align="left" alt="" width = "100%"/>
 
 <br>
 

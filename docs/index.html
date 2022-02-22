@@ -55,9 +55,14 @@
     Tutorial
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdown--tutorial">
+    <h6 class="dropdown-header" data-toc-skip>Install and update tidymass</h6>
     <a class="dropdown-item" href="articles/tidymass_install.html">Install tidymass</a>
     <a class="dropdown-item" href="articles/docker.html">Docker version of tidymass</a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header" data-toc-skip>Demo data</h6>
     <a class="dropdown-item" href="articles/demo_data.html">Download demo data</a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header" data-toc-skip>Use tidymass step by step</h6>
     <a class="dropdown-item" href="articles/data_convert.html">Convert raw data to mzXML/mgf</a>
     <a class="dropdown-item" href="articles/raw_data_processing.html">Raw data processing</a>
     <a class="dropdown-item" href="articles/explore_data.html">Explore data</a>
@@ -65,7 +70,14 @@
     <a class="dropdown-item" href="articles/metabolite_annotation.html">Metabolite annotation</a>
     <a class="dropdown-item" href="articles/statistical_analysis.html">Statistical analysis</a>
     <a class="dropdown-item" href="articles/pathway_enrichment.html">Pathway enrichment</a>
-    <a class="dropdown-item" href="articles/whole_workflow.html">Whole workflow using tidymass</a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header" data-toc-skip>Use tidymass for whole workflow</h6>
+    <a class="dropdown-item" href="articles/whole_workflow.html">Whole workflow</a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header" data-toc-skip>Integrate tidymass with other pipeline</h6>
+    <a class="external-link dropdown-item" href="https://github.com/yufree/xcmsrocker">xcmsrocker</a>
+    <a class="external-link dropdown-item" href="https://innovations.stanford.edu/sdo">Stanford data ocean</a>
+    <div class="dropdown-divider"></div>
   </div>
 </li>
 <li class="nav-item dropdown">
@@ -127,28 +139,35 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis-">
-<code>tidymass</code>: R packages for LC-MS data processing and analysis <a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis-">
+<code>Tidymass</code>: An Object-oriented Computational Framework for LC-MS Data Processing and Analysis <a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis-"></a>
 </h1>
 </div>
 
 <p><br></p>
-<h2 style="color:red;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--1">
+<h2 style="color:red;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--1">
 <i class="fas fa-info-circle"> About
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--1"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--1"></a>
 </h2>
 <hr>
 <p><img src="reference/figures/20211224_6.png" align="left" alt="" width="50%"></p>
-<p>We present the <code>tidyMass</code> project, a comprehensive computational framework that can process the whole workflow of data processing/analysis for LC-MS-based untargeted metabolomics, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis). <code>TidyMass</code> was designed based on the following strategies to address the limitations of current tools.</p>
+<p>We present the <code>tidyMass</code> project, a comprehensive computational framework that can process the whole workflow of data processing/analysis for LC-MS-based untargeted metabolomics, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis).</p>
+<p><code>TidyMass</code> was designed based on the following strategies to address the limitations of current tools.</p>
 <p><strong>(1) Cross-platform utility</strong></p>
 <p><strong>(2) Uniform, shareable, traceable, and reproducible</strong></p>
 <p>A uniform data format is specifically designed to store and manage metabolomics data and processing parameters, making it is possible to trace the analysis steps and parameters used. 3) Flexible and extensible. TidyMass is a collection of multiple R packages, in which the different packages correspond to different steps. This modular design makes <code>tidyMass</code> a highly flexible and extensible tool.</p>
+<p><strong>Analysis workflow of <code>tidyMass</code></strong></p>
+<p><img src="reference/figures/Figure_new.png" align="left" alt="" width="100%"></p>
 <p><br></p>
-<h2 style="color:red;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--2">
+<hr>
+<p><strong>The <code>mass_dataset</code> class and its property</strong></p>
+<p><img src="reference/figures/Figure_new%202.png" align="left" alt="" width="100%"></p>
+<p><br></p>
+<h2 style="color:red;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--2">
 <i class="fas fa-cloud-download-alt"> Installation
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--2"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--2"></a>
 </h2>
 <hr>
 <p>You can install <code>tidymass</code> from <a href="https://github.com/tidymass/tidymass" class="external-link">GitHub</a> or GitLab.</p>
@@ -165,98 +184,98 @@
 <blockquote>
 <p>More information can be found <a href="https://tidymass.github.io/tidymass/articles/tidymass_install.html">here</a>.</p>
 </blockquote>
-<h2 style="color:red;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--3">
+<h2 style="color:red;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--3">
 <i class="fas fa-code-branch"> Packages
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--3"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--3"></a>
 </h2>
 <hr>
 <p>Now, <code>tidymass</code> contains nine packages that are listed below:</p>
-<h3 style="color:#b45c6c;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--4">
+<h3 style="color:#b45c6c;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--4">
 <i class="fas fa-code"> massConverter
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--4"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--4"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massconverter/" target="_blank" class="external-link"><img src="reference/figures/massconverter_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massconverter</code> is used to convert mass spectrometry raw data to other format data (mzXML, mxML, etc.).</p>
 <p><br></p>
-<h3 style="color:#e474ac;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--5">
+<h3 style="color:#e474ac;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--5">
 <i class="fas fa-code"> massDataset
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--5"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--5"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massdataset/" target="_blank" class="external-link"><img src="reference/figures/massdataset_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massdataset</code> is used organize metabolomics experiment data into a <code>mass_dataset</code> class object, that can be processed by all the <code>tidymass</code> packages.</p>
 <p><br></p>
-<h3 style="color:#f4ac64;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--6">
+<h3 style="color:#f4ac64;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--6">
 <i class="fas fa-code"> massProcesser
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--6"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--6"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massprocesser/" target="_blank" class="external-link"><img src="reference/figures/massprocesser_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massprocesser</code> is used for LC-MS based untargeted metabolomics raw data processing.</p>
 <p><br></p>
-<h3 style="color:#2098b8;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--7">
+<h3 style="color:#2098b8;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--7">
 <i class="fas fa-code"> massCleaner
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--7"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--7"></a>
 </h3>
 <p><a href="https://tidymass.github.io/masscleaner/" target="_blank" class="external-link"><img src="reference/figures/masscleaner_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>masscleaner</code> is used for data cleaning of metabolomics.</p>
 <p><br><br></p>
-<h3 style="color:#abcc2c;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--8">
+<h3 style="color:#abcc2c;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--8">
 <i class="fas fa-code"> massQC
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--8"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--8"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massqc/" target="_blank" class="external-link"><img src="reference/figures/massqc_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massqc</code> is used for data quality assessment and control.</p>
 <p><br><br></p>
-<h3 style="color:#2ca4e4;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--9">
+<h3 style="color:#2ca4e4;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--9">
 <i class="fas fa-code"> metID
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--9"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--9"></a>
 </h3>
 <p><a href="https://tidymass.github.io/metid/" target="_blank" class="external-link"><img src="reference/figures/metid_logo2.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>metid</code> is used for metabolite database construction and metabolite annotation.</p>
 <p><br><br></p>
-<h3 style="color:#dce45c;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--10">
+<h3 style="color:#dce45c;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--10">
 <i class="fas fa-code"> massStat
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--10"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--10"></a>
 </h3>
 <p><a href="https://tidymass.github.io/massstat/" target="_blank" class="external-link"><img src="reference/figures/massstat_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>massstat</code> is used for statistical analysis of untargeted metabolomics.</p>
 <p><br><br></p>
-<h3 style="color:#ccac9c;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--11">
+<h3 style="color:#ccac9c;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--11">
 <i class="fas fa-code"> metPath
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--11"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--11"></a>
 </h3>
 <p><a href="https://tidymass.github.io/metpath/" target="_blank" class="external-link"><img src="reference/figures/metpath_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>metpath</code> is used for pathway enrichment analysis of metabolomics data.</p>
 <p><br><br></p>
-<h3 style="color:#ec1c04;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--12">
+<h3 style="color:#ec1c04;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--12">
 <i class="fas fa-code"> massTools
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--12"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--12"></a>
 </h3>
 <p><a href="https://tidymass.github.io/masstools/" target="_blank" class="external-link"><img src="reference/figures/masstools_logo.png" align="left" alt="" width="120"></a></p>
 <p><br></p>
 <p><code>masstools</code> is a collection of useful tiny tools for mass spectrometry data processing and analysis.</p>
 <p><br></p>
-<h2 style="color:red;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--13">
+<h2 style="color:red;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--13">
 <i class="fas fa-question-circle"> Need help?
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--13"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--13"></a>
 </h2>
 <hr>
 <p>If you have any questions about <code>tidymass</code>, please don’t hesitate to email me (<a href="mailto:shenxt@stanford.edu" class="email">shenxt@stanford.edu</a>) or reach out me via the social medias below.</p>
@@ -264,10 +283,10 @@
 <p><i class="fa fa-envelope"></i> <a href="mailto:shenxt@stanford.edu" class="email">shenxt@stanford.edu</a></p>
 <p><i class="fa fa-twitter"></i> <a href="https://twitter.com/xiaotaoshen1990" class="external-link">Twitter</a></p>
 <p><i class="fa fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Alway+Building/@37.4322345,-122.1770883,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa4d335c3be37:0x9057931f3b312c29!8m2!3d37.4322345!4d-122.1748996" class="external-link">M339, Alway Buidling, Cooper Lane, Palo Alto, CA 94304</a></p>
-<h2 style="color:red;" id="tidymass-r-packages-for-lc-ms-data-processing-and-analysis--14">
+<h2 style="color:red;" id="tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--14">
 <i class="fas fa-location-arrow"> Citation
 </i>
-<a class="anchor" aria-label="anchor" href="#tidymass-r-packages-for-lc-ms-data-processing-and-analysis--14"></a>
+<a class="anchor" aria-label="anchor" href="#tidymass-an-object-oriented-computational-framework-for-lc-ms-data-processing-and-analysis--14"></a>
 </h2>
 <hr>
 <p>If you use <code>tidymass</code> in you publications, please cite this publication:</p>

@@ -53,12 +53,18 @@ navbar:
       text: Tutorial
       icon: fa-folder-open
       menu:
+      - text: ---
+      - text: "Install and update tidymass"
       - text: "Install tidymass"
         href: articles/tidymass_install.html
       - text: "Docker version of tidymass"
         href: articles/docker.html
+      - text: ---
+      - text: "Demo data"
       - text: "Download demo data"
         href: articles/demo_data.html
+      - text: ---
+      - text: "Use tidymass step by step"
       - text: "Convert raw data to mzXML/mgf"
         href: articles/data_convert.html
       - text: "Raw data processing"
@@ -73,8 +79,17 @@ navbar:
         href: articles/statistical_analysis.html
       - text: "Pathway enrichment"
         href: articles/pathway_enrichment.html
-      - text: "Whole workflow using tidymass"
+      - text: ---
+      - text: "Use tidymass for whole workflow"
+      - text: "Whole workflow"
         href: articles/whole_workflow.html
+      - text: ---
+      - text: "Integrate tidymass with other pipeline"
+      - text: "xcmsrocker"
+        href: https://github.com/yufree/xcmsrocker
+      - text: "Stanford data ocean"
+        href: https://innovations.stanford.edu/sdo
+      - text: ---
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990
