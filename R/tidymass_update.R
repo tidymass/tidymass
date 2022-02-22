@@ -1,139 +1,121 @@
-#' Update tidymass packages
-#'
-#' This will check to see if all tidymass packages (and optionally, their
-#' dependencies) are up-to-date, and will install after an interactive
-#' confirmation.
-#'
-#' @inheritParams tidymass_deps
+##------------------------------------------------------------------------------
+#' @title check_tidymass_version
+#' @description Check if there are packages in tidymass can be updated.
+#' @author Xiaotao Shen
+#' \email{shenxt1990@@outlook.com}
+#' @param packages core or all packages in tidymass. "core" means all the core
+#' packages in tidymass and "all" means all the packages in tidymass.
+#' @importFrom rvcheck check_github
 #' @export
-#' @examples
-#' \dontrun{
-#' tidymass_update()
-#' }
-tidymass_update <-
-  function(recursive = FALSE,
-           repos = getOption("repos")) {
-    deps <- tidymass_deps(recursive, repos)
-    behind <- dplyr::filter(deps, behind)
+
+check_tidymass_version <-
+  function(packages = c("core", "all")) {
+    packages <- match.arg(packages)
+    check_result <-
+      c(
+        "tidymass",
+        "massconverter",
+        "massdataset",
+        "massprocesser",
+        "masscleaner",
+        "massqc",
+        "metid",
+        "massstat",
+        "metpath",
+        "masstools"
+      ) %>%
+      lapply(function(x) {
+        y <-
+          rvcheck::check_github(pkg = paste0("tidymass/", x))
+        y$installed_version <-
+          as.character(y$installed_version)
+        unlist(y)
+      })
+      check_result <- 
+      do.call(rbind, check_result) %>%
+      as.data.frame()
     
-    if (nrow(behind) == 0) {
-      cli::cat_line("All tidymass packages up-to-date")
-      return(invisible())
+    check_result$package <-
+      check_result$package %>%
+      stringr::str_replace("tidymass\\/", "")
+    
+    check_result$up_to_date <-
+      as.logical(check_result$up_to_date)
+    
+    
+    if (packages == "core") {
+      check_result <-
+        check_result %>%
+        dplyr::filter(!stringr::str_detect(package, "massconverter"))
     }
     
-    cli::cat_line(
-      cli::pluralize(
-        "The following {cli::qty(nrow(behind))}package{?s} {?is/are} out of date:"
-      )
-    )
-    cli::cat_line()
-    cli::cat_bullet(format(behind$package),
-                    " (",
-                    behind$local,
-                    " -> ",
-                    behind$cran,
-                    ")")
-    
-    cli::cat_line()
-    cli::cat_line("Start a clean R session then run:")
-    
-    pkg_str <- paste0(deparse(behind$package), collapse = "\n")
-    cli::cat_line("install.packages(", pkg_str, ")")
-    
-    invisible()
+    if (all(check_result$up_to_date)) {
+      message("No package to update.\n")
+    } else{
+      message("Use update_tidymass() to update the following pacakges.\n")
+      check_result
+    }
   }
 
-#' Get a situation report on the tidymass
-#'
-#' This function gives a quick overview of the versions of R and RStudio as
-#' well as all tidymass packages. It's primarily designed to help you get
-#' a quick idea of what's going on when you're helping someone else debug
-#' a problem.
-#'
+
+##------------------------------------------------------------------------------
+#' @title update_tidymass
+#' @description Update packages in tidymass.
+#' @author Xiaotao Shen
+#' \email{shenxt1990@@outlook.com}
+#' @param packages core or all packages in tidymass. "core" means all the core
+#' packages in tidymass and "all" means all the packages in tidymass.
+#' @param from github, gitlab or gitee.
+#' @importFrom rvcheck check_github
+#' @importFrom remotes install_github install_gitlab install_git
 #' @export
-tidymass_sitrep <- function() {
-  cli::cat_rule("R & RStudio")
-  if (rstudioapi::isAvailable()) {
-    cli::cat_bullet("RStudio: ", rstudioapi::getVersion())
+update_tidymass <-
+  function(packages = c("core", "all"),
+           from = c("github", "gitlab", "gitee")) {
+    packages <- match.arg(packages)
+    from <- match.arg(from)
+    
+    check_result <-
+      check_tidymass_version(packages = packages)
+    
+    if (!is.null(check_result)) {
+      if (from == "github") {
+        for (i in check_result$package) {
+          tryCatch(
+            detach(name = paste0("package:", i)),
+            error = function(e) {
+              message(i, ".\n")
+            }
+          )
+          remotes::install_github(repo = paste0("tidymass/", i),
+                                  upgrade = "never")
+        }
+      }
+      
+      if (from == "gitlab") {
+        for (i in check_result$package) {
+          tryCatch(
+            detach(name = paste0("package:", i)),
+            error = function(e) {
+              message(i, ".\n")
+            }
+          )
+          remotes::install_gitlab(repo = paste0("tidymass/", i),
+                                  upgrade = "never")
+        }
+      }
+      
+      if (from == "gitee") {
+        tryCatch(
+          detach(name = paste0("package:", i)),
+          error = function(e) {
+            message(i, ".\n")
+          }
+        )
+        for (i in check_result$package) {
+          remotes::install_git(url = paste0("https://gitee.com/jaspershen/", i),
+                               upgrade = "never")
+        }
+      }
+    }
   }
-  cli::cat_bullet("R: ", getRversion())
-  
-  deps <- tidymass_deps()
-  package_pad <- format(deps$package)
-  packages <- ifelse(
-    deps$behind,
-    paste0(
-      cli::col_yellow(cli::style_bold(package_pad)),
-      " (",
-      deps$local,
-      " < ",
-      deps$cran,
-      ")"
-    ),
-    paste0(package_pad, " (", deps$cran, ")")
-  )
-  
-  cli::cat_rule("Core packages")
-  cli::cat_bullet(packages[deps$package %in% core])
-  cli::cat_rule("Non-core packages")
-  cli::cat_bullet(packages[!deps$package %in% core])
-}
-
-#' List all tidymass dependencies
-#'
-#' @param recursive If \code{TRUE}, will also list all dependencies of
-#'   tidymass packages.
-#' @param repos The repositories to use to check for updates.
-#'   Defaults to \code{getOption("repos")}.
-#' @export
-tidymass_deps <-
-  function(recursive = FALSE,
-           repos = getOption("repos")) {
-    pkgs <- utils::available.packages(repos = repos)
-    deps <-
-      tools::package_dependencies("tidymass", pkgs, recursive = recursive)
-    
-    pkg_deps <- unique(sort(unlist(deps)))
-    
-    base_pkgs <- c(
-      "base",
-      "compiler",
-      "datasets",
-      "graphics",
-      "grDevices",
-      "grid",
-      "methods",
-      "parallel",
-      "splines",
-      "stats",
-      "stats4",
-      "tools",
-      "tcltk",
-      "utils"
-    )
-    pkg_deps <- setdiff(pkg_deps, base_pkgs)
-    
-    tool_pkgs <- c("cli", "crayon", "rstudioapi")
-    pkg_deps <- setdiff(pkg_deps, tool_pkgs)
-    
-    cran_version <-
-      lapply(pkgs[pkg_deps, "Version"], base::package_version)
-    local_version <- lapply(pkg_deps, packageVersion)
-    
-    behind <- purrr::map2_lgl(cran_version, local_version, `>`)
-    
-    tibble::tibble(
-      package = pkg_deps,
-      cran = cran_version %>% purrr::map_chr(as.character),
-      local = local_version %>% purrr::map_chr(as.character),
-      behind = behind
-    )
-  }
-
-packageVersion <- function(pkg) {
-  if (rlang::is_installed(pkg)) {
-    utils::packageVersion(pkg)
-  } else {
-    0
-  }
-}

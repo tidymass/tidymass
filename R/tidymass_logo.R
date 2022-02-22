@@ -7,8 +7,6 @@
 #' @return A ASCII log of tidymass
 #' @export
 #' @importFrom dplyr filter
-#' @importFrom tibble tibble
-#' @importFrom rlang is_installed
 #' @import massdataset
 #' @import massprocesser
 #' @import masscleaner
@@ -79,5 +77,5 @@ print.tidymass_logo <- function(x, ...) {
   invisible(x)
 }
 
-tidymass_version = "0.99.2"
+tidymass_version = "0.99.3"
 update_date = as.character(Sys.time())

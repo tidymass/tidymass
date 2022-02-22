@@ -68,7 +68,7 @@ remove.packages(pkgs = "metID")
 
 You can use the `remotes` package to install `tidymass`. 
 
-Please update `remotes``first and then restart your r session.
+Please update `remotes` first and then restart your r session.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 install.packages("remotes")
@@ -76,11 +76,15 @@ install.packages("remotes")
 
 ## Install `tidymass`
 
-Then install `tidymass`:
+Install `tidymass` by:
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 remotes::install_gitlab("jaspershen/tidymass", dependencies = TRUE)
 ```
+
+> During installing, it may ask you several times: "Would you like to uodate some pacakges?" Just Enter the `Enter` or `Retrun` key to skip updates.
+
+![](figures/Screen-Shot 9.png)
 
 ## Install tidymass packages one by one
 
@@ -108,7 +112,7 @@ Then install `tidymass`:
 remotes::install_github("tidymass/tidymass", dependencies = TRUE)
 ```
 
-In the installation, it will ask if you want to update some packages for few times, just enter `enter` key to skip it.
+> During the installation, it will ask if you want to update some packages for few times, just enter `Enter` or `Reurn` key to skip it.
 
 If there is a error like below:
 
@@ -224,6 +228,23 @@ Just try to restart R and install `affy`.
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 BiocManager::install("affy")
 ```
+
+
+# **Update `tidymass`**
+
+If you want to check if there are updates for `tidymass` and packages in it. Just check it like this.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+check_tidymass_version()
+```
+
+And the `update_tidymass()` function can be used to update `tidymass` and packages in it.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+update_tidymass(from = "github")
+```
+
+> If the `from = "github"` doesn't work, try set it as `from = "gitlab"` or `from = "gitee"`.
 
 
 # **Session information**

@@ -1,6 +1,6 @@
 Package: tidymass
 Title: R packages for mass spectrometry data processing and analysis
-Version: 0.99.2
+Version: 0.99.3
 Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",
@@ -24,15 +24,12 @@ Depends:
     R (>= 4.1)
 Imports: 
     crayon,
-    devtools,
     purrr,
     stringr,
     cli,
     magrittr,
     rstudioapi,
     dplyr,
-    rlang,
-    tibble,
     masstools,
     massdataset,
     massprocesser,
@@ -40,7 +37,9 @@ Imports:
     massstat,
     metpath,
     metid,
-    massqc
+    massqc,
+    rvcheck,
+    remotes
 Suggests: 
     knitr,
     rmarkdown
