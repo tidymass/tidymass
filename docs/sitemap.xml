@@ -70,6 +70,9 @@
     <loc>https://tidymass.github.io/tidymass/news/index.html</loc>
   </url>
   <url>
+    <loc>https://tidymass.github.io/tidymass/reference/check_tidymass_version.html</loc>
+  </url>
+  <url>
     <loc>https://tidymass.github.io/tidymass/reference/index.html</loc>
   </url>
   <url>
@@ -95,5 +98,8 @@
   </url>
   <url>
     <loc>https://tidymass.github.io/tidymass/reference/tidymass_update.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.github.io/tidymass/reference/update_tidymass.html</loc>
   </url>
 </urlset>

@@ -235,6 +235,10 @@ BiocManager::install("affy")
 If you want to check if there are updates for `tidymass` and packages in it. Just check it like this.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+library(tidymass)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 check_tidymass_version()
 ```
 
