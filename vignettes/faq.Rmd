@@ -28,10 +28,42 @@ knitr::opts_chunk$set(
 )
 ```
 
-# **Data preparation**
+# **Installation**
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+1. During the installation, it will ask if you want to update some packages for few times, just enter `Enter` or `Reurn` key to skip it.
+
+2. When you install `tidymass` from `github`, and there is a error like below:
+
 ```
+Error: Failed to install 'tidymass' from GitHub: HTTP error 403. API rate limit exceeded for 171.66.10.237. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)
+```
+
+Try to resolve it by:
+
+In you R console, type this code:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+usethis::create_github_token()
+```
+
+It will open a page in browser, and create a "New personal access token" and copy it.
+
+![](figures/Screen-Shot-2021-12-24-at-9.28.18-PM.png)
+
+Then type this code:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+usethis::edit_r_environ()
+```
+
+and then add one line like below:
+
+```
+GITHUB_PAT=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
+```
+> The `GITHUB_PAT` should be yours that is created in step 1.
+
+And then restart R session and try again.
 
 # **Session information**
 

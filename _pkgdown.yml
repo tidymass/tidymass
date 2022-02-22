@@ -12,8 +12,6 @@ home:
         href: https://github.com/tidymass/tidymass/issues
       - text: <i class="fa fa-home"></i> Find me
         href: https://www.shenxt.info/
-      - text: <i class="fa fa-laptop-code"></i> More software
-        href: articles/more_software.html
 
 sidebar:
   structure: [links, license, community, citation, authors, dev]

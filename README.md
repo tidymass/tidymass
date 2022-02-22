@@ -15,9 +15,13 @@
 
 <img src="man/figures/20211224_6.png" align="left" alt="" width = "50%"/>
 
-The `tidymass` is a collection of R packages designed for LC-MS-based untargeted metabolomics data processing. All packages share an underlying design philosophy, grammar, and data structures.
+We present the `tidyMass` project, a comprehensive computational framework that can process the whole workflow of data processing/analysis for LC-MS-based untargeted metabolomics, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis). `TidyMass` was designed based on the following strategies to address the limitations of current tools. 
 
-`Tidymass` is a comprehensive computational framework for MS-based untargeted metabolomics data processing and analysis, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis).
+**(1) Cross-platform utility**
+
+**(2) Uniform, shareable, traceable, and reproducible**
+
+A uniform data format is specifically designed to store and manage metabolomics data and processing parameters, making it is possible to trace the analysis steps and parameters used. 3) Flexible and extensible. TidyMass is a collection of multiple R packages, in which the different packages correspond to different steps. This modular design makes `tidyMass` a highly flexible and extensible tool.
 
 <br>
 
