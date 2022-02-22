@@ -52,6 +52,9 @@ check_tidymass_version <-
     if (all(check_result$up_to_date)) {
       message("No package to update.\n")
     } else{
+      check_result <- 
+        check_result %>% 
+        dplyr::filter(!up_to_date)
       message("Use update_tidymass() to update the following pacakges.\n")
       check_result
     }

@@ -77,5 +77,5 @@ print.tidymass_logo <- function(x, ...) {
   invisible(x)
 }
 
-tidymass_version = "0.99.3"
+tidymass_version = "0.99.4"
 update_date = as.character(Sys.time())

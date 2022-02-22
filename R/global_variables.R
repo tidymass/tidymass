@@ -1,1 +1,2 @@
-globalVariables(names = c("package"))
+globalVariables(names = c("package",
+                          "up_to_date"))
