@@ -368,7 +368,7 @@
 <span class="co">#&gt; 5   0.8042644 MoNA_0.0.1     2</span>
 <span class="co">#&gt; 6   0.7116679 MoNA_0.0.1     2</span></code></pre></div>
 <div class="section level3">
-<h3 id="load-kegg-pathway-human-database">Load KEGG pathway human database<a class="anchor" aria-label="anchor" href="#load-kegg-pathway-human-database"></a>
+<h3 id="load-kegg-human-pathway-database">Load <code>KEGG</code> human pathway database<a class="anchor" aria-label="anchor" href="#load-kegg-human-pathway-database"></a>
 </h3>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"kegg_hsa_pathway"</span>, package <span class="op">=</span> <span class="st">"metpath"</span><span class="op">)</span>
@@ -472,7 +472,7 @@
 <span class="co">#&gt; [49] "C00366" "C07130" "C05635" "C16038" "C08322" "C16308" "C10911" "C05498"</span>
 <span class="co">#&gt; [57] "C05472" "C04555"</span></code></pre></div>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">result</span> <span class="op">=</span> 
+<code class="sourceCode R"><span class="va">result</span> <span class="op">&lt;-</span> 
 <span class="fu">enrich_kegg</span><span class="op">(</span>query_id <span class="op">=</span> <span class="va">kegg_id</span>, 
             query_type <span class="op">=</span> <span class="st">"compound"</span>, 
             id_type <span class="op">=</span> <span class="st">"KEGG"</span>,
@@ -494,8 +494,8 @@
 </div>
 </div>
 <div class="section level2">
-<h2 id="plot-to-show-pathway-enrichment">
-<strong>Plot to show pathway enrichment</strong><a class="anchor" aria-label="anchor" href="#plot-to-show-pathway-enrichment"></a>
+<h2 id="plot-to-show-pathway-enrichment-result">
+<strong>Plot to show pathway enrichment result</strong><a class="anchor" aria-label="anchor" href="#plot-to-show-pathway-enrichment-result"></a>
 </h2>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">enrich_bar_plot</span><span class="op">(</span>object <span class="op">=</span> <span class="va">result</span>,

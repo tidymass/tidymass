@@ -28,13 +28,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-***
 # **Data preparation**
 
 Download the demo data and [refer this article](https://tidymass.github.io/tidymass/articles/demo_data.html).
 
-We have positive and negative mode. For each mode, we have control, case and QC groups. Control group have 110 samples, and case group have 110 samples as well.
+We have positive and negative mode. For each mode, we have `control`, `case` and `QC` groups. Control group have 110 samples, and case group have 110 samples as well.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 library(tidymass)
@@ -68,7 +66,7 @@ process_data(
 )
 ```
 
-All the results will be placed in the folder `"mzxml_ms1_data/POS/Result"`. More information about that can be found [here](https://tidymass.github.io/massprocesser/articles/raw_data_processing.html).
+All the results will be placed in the folder named `mzxml_ms1_data/POS/Result`. More information about that can be found [here](https://tidymass.github.io/massprocesser/articles/raw_data_processing.html).
 
 ![](figures/Screen-Shot-2.png)
 
@@ -79,7 +77,7 @@ load("mzxml_ms1_data/POS/Result/object")
 object
 ```
 
-We can see that there are 10149 metabolic features in positive mode.
+We can see that there are 10,149 metabolic features in positive mode.
 
 ![](figures/Screen-Shot.png)
 
@@ -87,7 +85,8 @@ You can use the `plot_adjusted_rt()` function to get the interactive plot.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 load("mzxml_ms1_data/POS/Result/intermediate_data/xdata2")
-####set the group_for_figure if you want to show specific groups. And set it as "all" if you want to show all samples.
+####set the group_for_figure if you want to show specific groups. 
+####And set it as "all" if you want to show all samples.
 plot <-
 massprocesser::plot_adjusted_rt(object = xdata2, 
                  group_for_figure = "QC", 
@@ -123,7 +122,7 @@ load("mzxml_ms1_data/NEG/Result/object")
 object
 ```
 
-We can see that there are 8804 metabolic features in negative mode.
+We can see that there are 8,804 metabolic features in negative mode.
 
 # **Explore data**
 
@@ -133,14 +132,14 @@ After the [`raw data processing`](https://tidymass.github.io/tidymass/articles/r
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 load("mzxml_ms1_data/POS/Result/object")
-object_pos = object
+object_pos <- object
 object_pos
 ```
 
 Read sample information.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-sample_info_pos = readr::read_csv("sample_info/sample_info_pos.csv")
+sample_info_pos <- readr::read_csv("sample_info/sample_info_pos.csv")
 head(sample_info_pos)
 ```
 
@@ -158,7 +157,7 @@ object_pos <-
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-object_pos =
+object_pos <-
   object_pos %>%
   activate_mass_dataset(what = "sample_info") %>%
   left_join(sample_info_pos,
@@ -187,7 +186,6 @@ So for positive mode, we have 259 samples and 10149 variables. 220 subject sampl
 
 Next, we can get the peak distributation plot of positive mode.
 
-
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_pos %>%
   `+`(1) %>% 
@@ -202,7 +200,7 @@ We can explore the missing values in positive mode data.
 get_mv_number(object = object_pos)
 ```
 
-785821 mvs in total.
+785,821 mvs in total.
 
 Missing value number in each sample.
 
@@ -217,9 +215,9 @@ Missing value number in each variable.
 We can use the figure to show the missing value information.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-show_missing_values(object = object_pos, show_column_names = FALSE, percentage = TRUE)
+show_missing_values(object = object_pos, 
+                    show_column_names = FALSE, percentage = TRUE)
 ```
-
 
 Show the mvs in samples
 
@@ -350,6 +348,7 @@ show_variable_missing_values(object = object_neg,
   scale_size_continuous(range = c(0.01, 1))
 ```
 
+---
 
 # **Data cleaning**
 
@@ -466,7 +465,7 @@ object_pos <-
 object_pos
 ```
 
-Only 5101 variables left.
+Only 5,101 variables left.
 
 
 ### Negative mode
@@ -524,7 +523,7 @@ object_neg <-
   filter(na_freq < 0.2 & (na_freq.1 < 0.5 | na_freq.2 < 0.5))
 object_neg
 ```
-4104 features left.
+4,104 features left.
 
 
 ## Filter outlier samples
@@ -559,7 +558,6 @@ outlier_samples
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-
 outlier_table <-
 extract_outlier_table(outlier_samples)
 
@@ -728,7 +726,7 @@ Here we download the `Michael Snyder RPLC databases`, `Orbitrap database` and `M
 
 ### Positive mode
 
-Annotation features using `snyder_database_rplc0.0.3`.
+#### Annotate features using `snyder_database_rplc0.0.3`.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 load("metabolite_annotation/snyder_database_rplc0.0.3.rda")
@@ -743,7 +741,7 @@ object_pos2 =
                                     database = snyder_database_rplc0.0.3)
 ```
 
-Annotation features using `orbitrap_database0.0.3`.
+#### Annotate features using `orbitrap_database0.0.3`.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 load("metabolite_annotation/orbitrap_database0.0.3.rda")
@@ -757,7 +755,7 @@ object_pos2 =
                                     database = orbitrap_database0.0.3)
 ```
 
-Annotation features using `mona_database0.0.3`.
+#### Annotate features using `mona_database0.0.3`.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 load("metabolite_annotation/mona_database0.0.3.rda")
@@ -773,7 +771,7 @@ object_pos2 =
 
 ### Negative mode
 
-Annotation features using `snyder_database_rplc0.0.3`.
+#### Annotate features using `snyder_database_rplc0.0.3`.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg2 = 
@@ -785,7 +783,7 @@ object_neg2 =
 ```
 
 
-Annotation features using `orbitrap_database0.0.3`.
+#### Annotate features using `orbitrap_database0.0.3`.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg2 = 
@@ -795,7 +793,7 @@ object_neg2 =
                                     database = orbitrap_database0.0.3)
 ```
 
-Annotation features using `mona_database0.0.3`.
+#### Annotate features using `mona_database0.0.3`.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg2 = 
@@ -806,14 +804,12 @@ object_neg2 =
 ```
 
 
-We use the saved results before.
-
-```{r,eval=TRUE, echo=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=TRUE, echo=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 load("metabolite_annotation/object_pos2")
 load("metabolite_annotation/object_neg2")
 ```
 
-## Annotation information
+## Annotation result
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 head(extract_annotation_table(object = object_pos2))
@@ -821,7 +817,7 @@ head(extract_annotation_table(object = object_pos2))
 
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-variable_info_pos = 
+variable_info_pos <- 
 extract_variable_info(object = object_pos2)
 head(variable_info_pos)
 table(variable_info_pos$Level)
@@ -840,6 +836,7 @@ ms2_plot_mass_dataset(object = object_pos2,
                       database = snyder_database_rplc0.0.3, 
                       interactive_plot = FALSE)
 ```
+---
 
 # **Statistical analysis**
 
@@ -848,7 +845,7 @@ ms2_plot_mass_dataset(object = object_pos2,
 ### Positive mode.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-object_pos2 = 
+object_pos2 <- 
   object_pos2 %>% 
   activate_mass_dataset(what = "annotation_table") %>% 
   filter(!is.na(Level)) %>% 
@@ -862,7 +859,7 @@ object_pos2
 ### Negative mode.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-object_neg2 = 
+object_neg2 <- 
   object_neg2 %>% 
   activate_mass_dataset(what = "annotation_table") %>% 
   filter(!is.na(Level)) %>% 
@@ -875,7 +872,7 @@ object_neg2
 
 ## Merge data
 
-We need to merge positive and negative mode data as one dataset.
+We need to merge positive and negative mode data as one `mass_dataset` class.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 head(colnames(object_pos2))
@@ -1017,7 +1014,7 @@ diff_metabolites <-
 head(diff_metabolites)
 ```
 
-## Load KEGG pathway human database
+## Load `KEGG` human pathway database
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 data("kegg_hsa_pathway", package = "metpath")
@@ -1031,14 +1028,14 @@ get_pathway_class(kegg_hsa_pathway)
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 #get the class of pathways
-pathway_class = 
+pathway_class <- 
   metpath::pathway_class(kegg_hsa_pathway)
 head(pathway_class)
 ```
 
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-remain_idx =
+remain_idx <-
   pathway_class %>%
   unlist() %>%
   stringr::str_detect("Disease") %>%
@@ -1050,7 +1047,7 @@ remain_idx
 
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-pathway_database =
+pathway_database <-
   kegg_hsa_pathway[remain_idx]
 pathway_database
 ```
@@ -1067,7 +1064,7 @@ kegg_id
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-result = 
+result <- 
 enrich_kegg(query_id = kegg_id, 
             query_type = "compound", 
             id_type = "KEGG",
@@ -1084,7 +1081,7 @@ result
 ```
 
 
-## Plot to show pathway enrichment
+## Plot to show pathway enrichment result
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 enrich_bar_plot(object = result,

@@ -112,17 +112,13 @@ load("metabolite_annotation/snyder_database_rplc0.0.3.rda")
 snyder_database_rplc0.0.3
 ```
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_pos2 <-
   annotate_metabolites_mass_dataset(object = object_pos2, 
                                     ms1.match.ppm = 15, 
                                     rt.match.tol = 30, 
                                     polarity = "positive",
                                     database = snyder_database_rplc0.0.3)
-```
-
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-head(extract_annotation_table(object_pos2))
 ```
 
 ### Annotate features using `orbitrap_database0.0.3`.
@@ -132,7 +128,7 @@ load("metabolite_annotation/orbitrap_database0.0.3.rda")
 orbitrap_database0.0.3
 ```
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_pos2 <- 
   annotate_metabolites_mass_dataset(object = object_pos2, 
                                     ms1.match.ppm = 15, 
@@ -147,7 +143,7 @@ load("metabolite_annotation/mona_database0.0.3.rda")
 orbitrap_database0.0.3
 ```
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_pos2 <- 
   annotate_metabolites_mass_dataset(object = object_pos2, 
                                     ms1.match.ppm = 15, 
@@ -159,7 +155,7 @@ object_pos2 <-
 
 ### Annotate features using `snyder_database_rplc0.0.3`.
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg2 <- 
   annotate_metabolites_mass_dataset(object = object_neg2, 
                                     ms1.match.ppm = 15, 
@@ -168,13 +164,9 @@ object_neg2 <-
                                     database = snyder_database_rplc0.0.3)
 ```
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-head(extract_annotation_table(object_neg2))
-```
-
 ### Annotate features using `orbitrap_database0.0.3`.
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg2 <- 
   annotate_metabolites_mass_dataset(object = object_neg2, 
                                     ms1.match.ppm = 15, 
@@ -184,7 +176,7 @@ object_neg2 <-
 
 ### Annotate features using `mona_database0.0.3`.
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg2 <- 
   annotate_metabolites_mass_dataset(object = object_neg2, 
                                     ms1.match.ppm = 15, 
@@ -192,6 +184,10 @@ object_neg2 <-
                                     database = mona_database0.0.3)
 ```
 
+```{r,eval=TRUE,echo=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+load("metabolite_annotation/object_pos2")
+load("metabolite_annotation/object_neg2")
+```
 
 ## Annotation result
 

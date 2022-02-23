@@ -157,7 +157,7 @@
 <h2 id="data-preparation">
 <strong>Data preparation</strong><a class="anchor" aria-label="anchor" href="#data-preparation"></a>
 </h2>
-<p>Now the positive mode and negative mode have been annotated respectively. Now we need to merge positive and negative mode data.</p>
+<p>Now the positive mode and negative mode have been annotated respectively. We need to merge positive and negative mode data.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">tidymass</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></code></pre></div>
@@ -171,9 +171,11 @@
 <div class="section level3">
 <h3 id="remove-the-features-without-annotations">Remove the features without annotations<a class="anchor" aria-label="anchor" href="#remove-the-features-without-annotations"></a>
 </h3>
-<p>Positive mode.</p>
+<div class="section level4">
+<h4 id="positive-mode">Positive mode<a class="anchor" aria-label="anchor" href="#positive-mode"></a>
+</h4>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">object_pos2</span> <span class="op">=</span> 
+<code class="sourceCode R"><span class="va">object_pos2</span> <span class="op">&lt;-</span> 
   <span class="va">object_pos2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"annotation_table"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">Level</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
@@ -230,9 +232,12 @@
 <span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-01-19 22:00:00</span>
 <span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-01-19 22:23:24</span>
 <span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-01-19 22:52:50</span></code></pre></div>
-<p>Negative mode.</p>
+</div>
+<div class="section level4">
+<h4 id="negative-mode">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode"></a>
+</h4>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">object_neg2</span> <span class="op">=</span> 
+<code class="sourceCode R"><span class="va">object_neg2</span> <span class="op">&lt;-</span> 
   <span class="va">object_neg2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"annotation_table"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">Level</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
@@ -290,10 +295,11 @@
 <span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-01-19 23:12:58</span>
 <span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-01-19 23:40:34</span></code></pre></div>
 </div>
+</div>
 <div class="section level3">
 <h3 id="merge-data">Merge data<a class="anchor" aria-label="anchor" href="#merge-data"></a>
 </h3>
-<p>We need to merge positive and negative mode data as one dataset.</p>
+<p>We need to merge positive and negative mode data as one <code>mass_dataset</code> class.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">object_pos2</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1] "sample_06"  "sample_103" "sample_11"  "sample_112" "sample_117"</span>
@@ -303,7 +309,7 @@
 <span class="co">#&gt; [1] "sample_06"  "sample_103" "sample_11"  "sample_112" "sample_117"</span>
 <span class="co">#&gt; [6] "sample_12"</span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">object</span> <span class="op">=</span> 
+<code class="sourceCode R"><span class="va">object</span> <span class="op">&lt;-</span> 
 <span class="fu">merge_mass_dataset</span><span class="op">(</span>x <span class="op">=</span> <span class="va">object_pos2</span>, 
                    y <span class="op">=</span> <span class="va">object_neg2</span>, 
                    sample_direction <span class="op">=</span> <span class="st">"inner"</span>,
@@ -509,7 +515,7 @@
 
 <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html" class="external-link">write_csv</a></span><span class="op">(</span><span class="va">differential_metabolites</span>, 
                  file <span class="op">=</span> <span class="st">"statiscal_analysis/differential_metabolites.csv"</span><span class="op">)</span></code></pre></div>
-<p>Save result for next analysis.</p>
+<p>Save result for subsequent analysis.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object</span>, file <span class="op">=</span> <span class="st">"statiscal_analysis/object"</span><span class="op">)</span></code></pre></div>
 </div>

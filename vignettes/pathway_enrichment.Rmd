@@ -67,7 +67,7 @@ head(diff_metabolites)
 ```
 
 
-## Load KEGG pathway human database
+## Load `KEGG` human pathway database
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 data("kegg_hsa_pathway", package = "metpath")
@@ -115,7 +115,7 @@ kegg_id
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-result = 
+result <- 
 enrich_kegg(query_id = kegg_id, 
             query_type = "compound", 
             id_type = "KEGG",
@@ -125,15 +125,13 @@ enrich_kegg(query_id = kegg_id,
             threads = 3)
 ```
 
-
 Check the result:
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 result
 ```
 
-
-# **Plot to show pathway enrichment**
+# **Plot to show pathway enrichment result**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 enrich_bar_plot(object = result,

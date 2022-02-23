@@ -251,7 +251,7 @@
 <p>Here, we can use the <code>massqc</code> package to <a href="https://tidymass.github.io/massqc/" class="external-link">assess the data quality</a>.</p>
 <p>We can just use the <code>massqc_report()</code> function to get a html format quality assessment report.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">massqc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massqc/man/massqc_report.html" class="external-link">massqc_report</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, 
+<code class="sourceCode R"><span class="fu">massqc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massqc/man/massqc_report.html" class="external-link">massqc_report</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>,
                       path <span class="op">=</span> <span class="st">"data_cleaning/POS/data_quality_before_data_cleaning"</span><span class="op">)</span></code></pre></div>
 <p>A html format report and pdf figures will be placed in the folder <code>data_cleaning/POS/data_quality_before_data_cleaning/Report</code>.</p>
 <p><img src="figures/Screen-Shot-3.png"></p>
@@ -358,7 +358,7 @@
 <span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:44</span></code></pre></div>
-<p>Only 5101 variables left.</p>
+<p>Only 5,101 variables left.</p>
 </div>
 <div class="section level3">
 <h3 id="negative-mode">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode"></a>
@@ -658,7 +658,7 @@
   <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">massqc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/massqc/man/massqc_pca.html" class="external-link">massqc_pca</a></span><span class="op">(</span>color_by <span class="op">=</span> <span class="st">"batch"</span>, line <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><img src="data_cleaning_files/figure-html/unnamed-chunk-27-1.png" width="100%"></p>
-<p>Save data for next analysis.</p>
+<p>Save data for subsequent analysis.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_pos2</span>, file <span class="op">=</span> <span class="st">"data_cleaning/POS/object_pos2"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_neg2</span>, file <span class="op">=</span> <span class="st">"data_cleaning/NEG/object_neg2"</span><span class="op">)</span></code></pre></div>
