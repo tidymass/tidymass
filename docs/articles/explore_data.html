@@ -153,15 +153,52 @@
 
     
     
-<hr>
 <div class="section level2">
 <h2 id="data-preparation">
 <strong>Data preparation</strong><a class="anchor" aria-label="anchor" href="#data-preparation"></a>
 </h2>
-<p>After the <a href="https://tidymass.github.io/tidymass/articles/raw_data_processing.html"><code>raw data processing</code></a>, peak tables for positive and negative mode will be generated.</p>
+<p>After the <a href="https://tidymass.github.io/tidymass/articles/raw_data_processing.html"><code>raw data processing</code></a>, peak tables for positive and negative mode have been generated.</p>
 <p>Next, we need to get the peak table and sample information and organize them as <code>mass_dataset</code> class objects.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidymass/massdataset" class="external-link">massdataset</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">tidymass</span><span class="op">)</span>
+<span class="co">#&gt; Registered S3 method overwritten by 'Hmisc':</span>
+<span class="co">#&gt;   method       from      </span>
+<span class="co">#&gt;   vcov.default fit.models</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Attaching packages</span> ─────────────────────────────────────── tidymass 0.99.4 ──</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">massprocesser</span> 0.99.3     <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">massstat     </span> 0.99.6</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">masscleaner  </span> 0.99.3     <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">metpath      </span> 0.99.2</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">massqc       </span> 0.99.3     <span style="color: #00BB00;">✓</span> <span style="color: #0000BB;">metid        </span> 1.2.2</span>
+<span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ─────────────────────────────────────────── tidymass_conflicts() ──</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">massdataset</span>::<span style="color: #00BB00;">apply()</span>            masks <span style="color: #0000BB;">base</span>::apply()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">xcms</span>::<span style="color: #00BB00;">collect()</span>                 masks <span style="color: #0000BB;">dplyr</span>::collect()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">colMeans()</span>        masks <span style="color: #0000BB;">massdataset</span>::colMeans(), <span style="color: #0000BB;">base</span>::colMeans()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">colSums()</span>         masks <span style="color: #0000BB;">massdataset</span>::colSums(), <span style="color: #0000BB;">base</span>::colSums()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">MSnbase</span>::<span style="color: #00BB00;">combine()</span>              masks <span style="color: #0000BB;">Biobase</span>::combine(), <span style="color: #0000BB;">BiocGenerics</span>::combine(), <span style="color: #0000BB;">dplyr</span>::combine()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tidyr</span>::<span style="color: #00BB00;">extract()</span>                masks <span style="color: #0000BB;">magrittr</span>::extract()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">metpath</span>::<span style="color: #00BB00;">filter()</span>               masks <span style="color: #0000BB;">dplyr</span>::filter(), <span style="color: #0000BB;">massdataset</span>::filter(), <span style="color: #0000BB;">stats</span>::filter()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">first()</span>              masks <span style="color: #0000BB;">dplyr</span>::first()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">get_compound_class()</span> masks <span style="color: #0000BB;">masstools</span>::get_compound_class()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">get_os()</span>             masks <span style="color: #0000BB;">masstools</span>::get_os()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">getDP()</span>              masks <span style="color: #0000BB;">masstools</span>::getDP()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">xcms</span>::<span style="color: #00BB00;">groups()</span>                  masks <span style="color: #0000BB;">dplyr</span>::groups()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">intersect()</span>          masks <span style="color: #0000BB;">BiocGenerics</span>::intersect(), <span style="color: #0000BB;">massdataset</span>::intersect(), <span style="color: #0000BB;">base</span>::intersect()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">keep_one()</span>           masks <span style="color: #0000BB;">masstools</span>::keep_one()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>                    masks <span style="color: #0000BB;">stats</span>::lag()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">ms2_plot()</span>           masks <span style="color: #0000BB;">masstools</span>::ms2_plot()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">ms2Match()</span>           masks <span style="color: #0000BB;">masstools</span>::ms2Match()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">mz_rt_match()</span>        masks <span style="color: #0000BB;">masstools</span>::mz_rt_match(), <span style="color: #0000BB;">massdataset</span>::mz_rt_match()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">name_duplicated()</span>    masks <span style="color: #0000BB;">masstools</span>::name_duplicated()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">metid</span>::<span style="color: #00BB00;">read_mgf()</span>               masks <span style="color: #0000BB;">tinytools</span>::read_mgf(), <span style="color: #0000BB;">masstools</span>::read_mgf()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">MSnbase</span>::<span style="color: #00BB00;">reduce()</span>               masks <span style="color: #0000BB;">purrr</span>::reduce()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">removeNoise()</span>        masks <span style="color: #0000BB;">masstools</span>::removeNoise()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">S4Vectors</span>::<span style="color: #00BB00;">rename()</span>             masks <span style="color: #0000BB;">dplyr</span>::rename(), <span style="color: #0000BB;">massdataset</span>::rename()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">rowMeans()</span>        masks <span style="color: #0000BB;">massdataset</span>::rowMeans(), <span style="color: #0000BB;">base</span>::rowMeans()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">BiocGenerics</span>::<span style="color: #00BB00;">rowSums()</span>         masks <span style="color: #0000BB;">massdataset</span>::rowSums(), <span style="color: #0000BB;">base</span>::rowSums()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">purrr</span>::<span style="color: #00BB00;">set_names()</span>              masks <span style="color: #0000BB;">magrittr</span>::set_names()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">setwd_project()</span>      masks <span style="color: #0000BB;">masstools</span>::setwd_project()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">split_formula()</span>      masks <span style="color: #0000BB;">masstools</span>::split_formula()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">trans_ID()</span>           masks <span style="color: #0000BB;">masstools</span>::trans_ID()</span>
+<span class="co">#&gt; <span style="color: #BB0000;">x</span> <span style="color: #0000BB;">tinytools</span>::<span style="color: #00BB00;">trans_id_database()</span>  masks <span style="color: #0000BB;">masstools</span>::trans_id_database()</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></code></pre></div>
 <div class="section level3">
 <h3 id="positive-mode">Positive mode<a class="anchor" aria-label="anchor" href="#positive-mode"></a>
@@ -212,7 +249,7 @@
 <p>Add <code>sample_info_pos</code> to <code>object_pos</code></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_sample_info</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">extract_sample_info</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;    sample_id group   class injection.order</span>
 <span class="co">#&gt; 1  sample_06  Case Subject               1</span>
@@ -224,17 +261,17 @@
 
 <span class="va">object_pos</span> <span class="op">&lt;-</span> 
   <span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"group"</span>, <span class="st">"class"</span>, <span class="st">"injection.order"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">object_pos</span> <span class="op">=</span>
   <span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">sample_info_pos</span>,
             by <span class="op">=</span> <span class="st">"sample_id"</span><span class="op">)</span>
 
 <span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_sample_info</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">extract_sample_info</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;    sample_id injection.order   class batch  subject_id group</span>
 <span class="co">#&gt; 1  sample_06               4 Subject     1 subject_414  Case</span>
@@ -269,14 +306,14 @@
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">object_pos</span><span class="op">)</span>
 <span class="co">#&gt; [1] 10149   259</span>
 <span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">class</span><span class="op">)</span>
 <span class="co">#&gt;     class   n</span>
 <span class="co">#&gt; 1      QC  39</span>
 <span class="co">#&gt; 2 Subject 220</span>
 
 <span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span>
 <span class="co">#&gt;     group   n</span>
 <span class="co">#&gt; 1    Case 110</span>
@@ -284,7 +321,7 @@
 <span class="co">#&gt; 3      QC  39</span>
 
 <span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">batch</span><span class="op">)</span>
 <span class="co">#&gt;   batch   n</span>
 <span class="co">#&gt; 1     1 112</span>
@@ -295,37 +332,37 @@
 <code class="sourceCode R"><span class="va">object_pos</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu">`+`</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_mz_rt_plot.html" class="external-link">show_mz_rt_plot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">show_mz_rt_plot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_size.html" class="external-link">scale_size_continuous</a></span><span class="op">(</span>range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="explore_data_files/figure-html/unnamed-chunk-9-1.png" width="100%"></p>
 <p>We can explore the missing values in positive mode data.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/summary-mass_dataset.html" class="external-link">get_mv_number</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span><span class="op">)</span>
 <span class="co">#&gt; [1] 785821</span></code></pre></div>
 <p>785821 mvs in total.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/summary-mass_dataset.html" class="external-link">get_mv_number</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, by <span class="op">=</span> <span class="st">"sample"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, by <span class="op">=</span> <span class="st">"sample"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;  sample_06 sample_103  sample_11 sample_112 sample_117  sample_12 </span>
 <span class="co">#&gt;       4016       2711       4063       2981       2919       3844</span></code></pre></div>
 <p>Missing value number in each sample.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/summary-mass_dataset.html" class="external-link">get_mv_number</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, by <span class="op">=</span> <span class="st">"variable"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, by <span class="op">=</span> <span class="st">"variable"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;  M70T73_POS  M70T53_POS M70T183_POS M70T527_POS M71T695_POS M71T183_POS </span>
 <span class="co">#&gt;         129          16         155          54         133         169</span></code></pre></div>
 <p>Missing value number in each variable.</p>
 <p>We can use the figure to show the missing value information.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_missing_values.html" class="external-link">show_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, show_column_names <span class="op">=</span> <span class="cn">FALSE</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">show_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, show_column_names <span class="op">=</span> <span class="cn">FALSE</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="explore_data_files/figure-html/unnamed-chunk-13-1.png" width="100%"></p>
 <p>Show the mvs in samples</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_sample_missing_values.html" class="external-link">show_sample_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">show_sample_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="explore_data_files/figure-html/unnamed-chunk-14-1.png" width="100%"></p>
 <p>Show the mvs in variables</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_variable_missing_values.html" class="external-link">show_variable_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, 
+<code class="sourceCode R"><span class="fu">show_variable_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_pos</span>, 
                              percentage <span class="op">=</span> <span class="cn">TRUE</span>, 
                              show_x_text <span class="op">=</span> <span class="cn">FALSE</span>, 
                              show_x_ticks <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>
@@ -381,7 +418,7 @@
 <p>Add <code>sample_info_neg</code> to <code>object_neg</code></p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_sample_info</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">extract_sample_info</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;    sample_id group   class injection.order</span>
 <span class="co">#&gt; 1  sample_06  Case Subject               1</span>
@@ -393,17 +430,17 @@
 
 <span class="va">object_neg</span> <span class="op">&lt;-</span> 
   <span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"group"</span>, <span class="st">"class"</span>, <span class="st">"injection.order"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">object_neg</span> <span class="op">=</span>
   <span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">sample_info_neg</span>,
             by <span class="op">=</span> <span class="st">"sample_id"</span><span class="op">)</span>
 
 <span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/extract-mass_dataset.html" class="external-link">extract_sample_info</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">extract_sample_info</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;    sample_id injection.order   class batch  subject_id group</span>
 <span class="co">#&gt; 1  sample_06               4 Subject     1 subject_414  Case</span>
@@ -438,14 +475,14 @@
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">object_neg</span><span class="op">)</span>
 <span class="co">#&gt; [1] 8804  259</span>
 <span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">class</span><span class="op">)</span>
 <span class="co">#&gt;     class   n</span>
 <span class="co">#&gt; 1      QC  39</span>
 <span class="co">#&gt; 2 Subject 220</span>
 
 <span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span>
 <span class="co">#&gt;     group   n</span>
 <span class="co">#&gt; 1    Case 110</span>
@@ -453,7 +490,7 @@
 <span class="co">#&gt; 3      QC  39</span>
 
 <span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/activate_mass_dataset.html" class="external-link">activate_mass_dataset</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu">activate_mass_dataset</span><span class="op">(</span>what <span class="op">=</span> <span class="st">"sample_info"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">batch</span><span class="op">)</span>
 <span class="co">#&gt;   batch   n</span>
 <span class="co">#&gt; 1     1  86</span>
@@ -464,37 +501,37 @@
 <code class="sourceCode R"><span class="va">object_neg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu">`+`</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_mz_rt_plot.html" class="external-link">show_mz_rt_plot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">show_mz_rt_plot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_size.html" class="external-link">scale_size_continuous</a></span><span class="op">(</span>range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="explore_data_files/figure-html/unnamed-chunk-22-1.png" width="100%"></p>
 <p>We can explore the missing values in negitive mode data.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/summary-mass_dataset.html" class="external-link">get_mv_number</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span><span class="op">)</span>
 <span class="co">#&gt; [1] 748253</span></code></pre></div>
 <p>748253 mvs in total.</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/summary-mass_dataset.html" class="external-link">get_mv_number</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, by <span class="op">=</span> <span class="st">"sample"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, by <span class="op">=</span> <span class="st">"sample"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;  sample_06 sample_103  sample_11 sample_112 sample_117  sample_12 </span>
 <span class="co">#&gt;       3029       2766       3298       3100       2912       3053</span></code></pre></div>
 <p>Missing value number in each sample.</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/summary-mass_dataset.html" class="external-link">get_mv_number</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, by <span class="op">=</span> <span class="st">"variable"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+<code class="sourceCode R"><span class="fu">get_mv_number</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, by <span class="op">=</span> <span class="st">"variable"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; M70T712_NEG M70T527_NEG M70T587_NEG  M70T47_NEG M71T587_NEG M71T641_NEG </span>
 <span class="co">#&gt;          16         137           2         146          41          19</span></code></pre></div>
 <p>Missing value number in each variable.</p>
 <p>We can use the figure to show the missing value information.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_missing_values.html" class="external-link">show_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, show_column_names <span class="op">=</span> <span class="cn">FALSE</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">show_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, show_column_names <span class="op">=</span> <span class="cn">FALSE</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="explore_data_files/figure-html/unnamed-chunk-26-1.png" width="100%"></p>
 <p>Show the mvs in samples</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_sample_missing_values.html" class="external-link">show_sample_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">show_sample_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, percentage <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="explore_data_files/figure-html/unnamed-chunk-27-1.png" width="100%"></p>
 <p>Show the mvs in variables</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/massdataset/man/show_variable_missing_values.html" class="external-link">show_variable_missing_values</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, 
+<code class="sourceCode R"><span class="fu">show_variable_missing_values</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object_neg</span>, 
                              percentage <span class="op">=</span> <span class="cn">TRUE</span>, 
                              show_x_text <span class="op">=</span> <span class="cn">FALSE</span>, 
                              show_x_ticks <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>
@@ -503,7 +540,8 @@
 </div>
 </div>
 <div class="section level2">
-<h2 id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
+<h2 id="conclusion">
+<strong>Conclusion</strong><a class="anchor" aria-label="anchor" href="#conclusion"></a>
 </h2>
 <p>So from those exploration, we have a brief summary of our data. Next, we will use <a href="https://tidymass.github.io/masscleaner/" class="external-link"><code>masscleaner</code> pacakge</a> to do the data cleaning of data.</p>
 </div>

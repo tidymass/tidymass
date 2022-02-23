@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## **Data preparation**
+# **Data preparation**
 
 Load the differential expressional metabolites.
 
@@ -45,7 +45,7 @@ load("statiscal_analysis/object")
 object
 ```
 
-## **Pathway enrichment**
+# **Pathway enrichment**
 
 All the results will be placed in a folder named as `pathway_enrichment`.
 
@@ -67,7 +67,7 @@ head(diff_metabolites)
 ```
 
 
-### Load KEGG pathway human database
+## Load KEGG pathway human database
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 data("kegg_hsa_pathway", package = "metpath")
@@ -133,7 +133,7 @@ result
 ```
 
 
-## **Plot to show pathway enrichment**
+# **Plot to show pathway enrichment**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 enrich_bar_plot(object = result,
@@ -154,7 +154,7 @@ enrich_network(
 )
 ```
 
-## **Session information**
+# **Session information**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 sessionInfo()

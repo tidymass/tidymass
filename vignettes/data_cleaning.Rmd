@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## **Data preparation**
+# **Data preparation**
 
 We just use the dataset which are from [this step](https://tidymass.github.io/tidymass/articles/explore_data.html).
 
@@ -37,7 +37,6 @@ library(tidymass)
 load("data_cleaning/POS/object_pos")
 load("data_cleaning/NEG/object_neg")
 ```
-
 Change batch to character.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -60,14 +59,14 @@ object_pos
 object_neg
 ```
 
-## Data quality assessment before data cleaning
+# Data quality assessment before data cleaning
 
 Here, we can use the `massqc` package to [assess the data quality](https://tidymass.github.io/massqc/).
 
 We can just use the `massqc_report()` function to get a html format quality assessment report.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-massqc::massqc_report(object = object_pos, 
+massqc::massqc_report(object = object_pos,
                       path = "data_cleaning/POS/data_quality_before_data_cleaning")
 ```
 
@@ -86,7 +85,6 @@ massqc::massqc_report(object = object_neg,
                       path = "data_cleaning/NEG/data_quality_before_data_cleaning")
 ```
 
-
 The PCA score plot is used to show the batch effect of positive and negative dataset.
 
 Positive mode:
@@ -98,11 +96,11 @@ Negative mode:
 
 We can see that no matter in positive and negative mode, batch effect is serious.
 
-## Remove noisy metabolic features
+# Remove noisy metabolic features
 
 Remove variables which have MVs in more than 20% QC samples and in at lest 50% samples in control group or case group.
 
-### Positive mode
+## Positive mode
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_pos %>% 
@@ -157,10 +155,9 @@ object_pos <-
 object_pos
 ```
 
-Only 5101 variables left.
+Only 5,101 variables left.
 
-
-### Negative mode
+## Negative mode
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg %>% 
@@ -218,13 +215,13 @@ object_neg
 4104 features left.
 
 
-## **Filter outlier samples**
+# **Filter outlier samples**
 
 We can use the `detect_outlier()` to find the outlier samples.
 
 More information about how to detect outlier samples can be found [here](https://privefl.github.io/blog/detecting-outlier-samples-in-pca/).
 
-### Positive mode
+## Positive mode
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 massdataset::show_sample_missing_values(object = object_pos,
@@ -267,8 +264,7 @@ outlier_table %>%
 
 No outlier samples in positive mode.
 
-
-### Negative mode
+## Negative mode
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 massdataset::show_sample_missing_values(object = object_neg,
@@ -311,7 +307,7 @@ outlier_table %>%
 
 No outlier samples in negative mode.
 
-### Missing value imputation
+## Missing value imputation
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 get_mv_number(object_pos)
@@ -331,9 +327,9 @@ object_neg <-
 get_mv_number(object_neg)
 ```
 
-### Data normalization and integration
+## Data normalization and integration
 
-### Positive mode
+## Positive mode
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_pos <- 
@@ -350,7 +346,7 @@ object_pos2 %>%
   massqc::massqc_pca(color_by = "batch", line = FALSE)
 ```
 
-### Negative mode
+## Negative mode
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object_neg <- 
@@ -367,14 +363,14 @@ object_neg2 %>%
   massqc::massqc_pca(color_by = "batch", line = FALSE)
 ```
 
-Save data for next analysis.
+Save data for subsequent analysis.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 save(object_pos2, file = "data_cleaning/POS/object_pos2")
 save(object_neg2, file = "data_cleaning/NEG/object_neg2")
 ```
 
-## **Session information**
+# **Session information**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 sessionInfo()

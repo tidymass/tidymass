@@ -28,50 +28,41 @@ knitr::opts_chunk$set(
 )
 ```
 
----
-
-## **Introduction**
-
----
+# **Introduction**
 
 The demo data for tidymass is untargeted metabolomics by RPLC-QEplus (Thermo). 259 samples in total.
 
-* Subject samples: 2200 blood samples. 110 control samples and 110 case samples.
+* Subject samples: 220 blood samples. 110 control samples and 110 case samples.
 
 * QC samples: 39
 
----
+# **Download demo data**
 
-## **Download demo data**
-
----
-
-#### MS1 mzXML data
+## 1. MS1 data (mzXML format)
 
 [Download link](https://drive.google.com/file/d/1KUk0-PA77zV3UJsuUTEuAK6462yze8mm/view?usp=sharing).
 
-Download and uncompress:
-
+Download and uncompress it:
 
 ![](figures/Screen-Shot-2022-01-13-at-10.33.07-PM.png)
 
-#### MS2 mzXML data
+## 2. MS2 data (mgf format)
 
-[Download link](https://drive.google.com/file/d/1FY3x7q5i1g3oSLaVej__ZaZ4XSX-mWBQ/view?usp=sharing)
+[Download link](https://drive.google.com/file/d/1_bj1AFQ1QV1ZfmnlZzbQ_4Nh6vVZ_RT6/view?usp=sharing)
 
-Download and uncompress:
+Download and uncompress it:
 
-![](figures/Screen-Shot-2022-01-13-at-10.34.18-PM.png)
+![](figures/Screen-Shot 14.png)
 
-#### Sample information
+## 3. Sample information
 
 * [Download link](https://drive.google.com/file/d/1yyJeOMUhuMSTmPWfzKuFTCRfZ3zdhO6q/view?usp=sharing)
 
-Download and uncompress:
+Download and uncompress it:
 
 ![](figures/Screen Shot-2022-01-13-at-10.35.54-PM.png)
 
-###### `sample_info_pos`
+### `sample_info_pos`
 
 `sample_info_pos` is like below:
 
@@ -85,7 +76,7 @@ kbl(sample_info_pos) %>%
   scroll_box(width = "100%", height = "600px")
 ```
 
-###### `sample_info_neg`
+### `sample_info_neg`
 
 `sample_info_neg` is like below:
 
@@ -99,11 +90,7 @@ kbl(sample_info_neg) %>%
   scroll_box(width = "100%", height = "600px")
 ```
 
----
-
-## **Session information**
-
----
+# **Session information**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 sessionInfo()

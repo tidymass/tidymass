@@ -153,57 +153,36 @@
 
     
     
-<hr>
 <div class="section level2">
 <h2 id="data-preparation">
 <strong>Data preparation</strong><a class="anchor" aria-label="anchor" href="#data-preparation"></a>
 </h2>
-<hr>
-<p>Please place the raw data in one folder according to MS1 and MS2.</p>
-<hr>
+<p>Please place the raw data in one folder according to MS1 and MS2. Then you can convert them using <code>Proteowizard</code> or <code>massconverter</code> package.</p>
 </div>
 <div class="section level2">
 <h2 id="proteowizard">
 <strong>Proteowizard</strong><a class="anchor" aria-label="anchor" href="#proteowizard"></a>
 </h2>
-<hr>
-<div class="section level4">
-<h4 id="convert-ms1-data-to-mzxml-format-data">Convert MS1 data to <code>mzXML</code> format data<a class="anchor" aria-label="anchor" href="#convert-ms1-data-to-mzxml-format-data"></a>
-</h4>
+<div class="section level3">
+<h3 id="convert-ms1-data-to-mzxml-format-data">Convert MS1 data to <code>mzXML</code> format data<a class="anchor" aria-label="anchor" href="#convert-ms1-data-to-mzxml-format-data"></a>
+</h3>
 <p>Just convert data into <code>mzXML</code> format data according to the parameters below:</p>
-<p><img src="../reference/figures/Screen%20Shot%202022-01-13%20at%2012.06.14%20AM.png"></p>
-</div>
-<div class="section level4">
-<h4 id="convert-ms2-data-to-mzxml-or-mgf-format-data">Convert MS2 data to <code>mzXML</code> or <code>mgf</code> format data<a class="anchor" aria-label="anchor" href="#convert-ms2-data-to-mzxml-or-mgf-format-data"></a>
-</h4>
+<p><img src="../reference/figures/Screen%20Shot%202022-01-13%20at%2012.06.14%20AM.png"> ## Convert MS2 data to <code>mzXML</code> or <code>mgf</code> format data</p>
 <p>Just convert data into <code>mzXML</code> or <code>mgf</code> format data according to the parameters below:</p>
 <p><img src="../reference/figures/Screen%20Shot%202022-01-13%20at%2012.09.12%20AM.png"></p>
-<hr>
 </div>
 </div>
 <div class="section level2">
 <h2 id="convert-data-using-massconverter">
 <strong>Convert data using <code>massconverter</code></strong><a class="anchor" aria-label="anchor" href="#convert-data-using-massconverter"></a>
 </h2>
-<hr>
-<p><code>massconverter</code> is a pacakge in <code>tidymass</code> which can be used to convert mass spectrometry raw data based on docker image of pwid. See more information <a href="https://tidymass.github.io/massconverter/" class="external-link">here</a>.</p>
-<div class="section level4">
-<h4 id="convert-data-to-mzxml-format-data">Convert data to <code>mzXML</code> format data<a class="anchor" aria-label="anchor" href="#convert-data-to-mzxml-format-data"></a>
-</h4>
-<p>We use the demo data to show how to use <code>massconverter</code>.</p>
-<p>Download the data and put them your working directory and uncompress it.</p>
-</div>
-<div class="section level4">
-<h4 id="convert-data-to-mgf-format-data">Convert data to <code>mgf</code> format data<a class="anchor" aria-label="anchor" href="#convert-data-to-mgf-format-data"></a>
-</h4>
-<hr>
-</div>
+<p><code>massconverter</code> is a package in <code>tidymass</code> project which can be used to convert mass spectrometry raw data based on docker image of <a href="https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses" class="external-link"><code>pwid</code></a>. See more information <a href="https://tidymass.github.io/massconverter/" class="external-link">here</a>.</p>
+<p>More inforamtion can be found <a href="https://tidymass.github.io/massconverter/articles/convert_data.html" class="external-link">here</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
 </h2>
-<hr>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; R Under development (unstable) (2022-01-11 r81473)</span>

@@ -153,50 +153,46 @@
 
     
     
-<hr>
 <div class="section level2">
 <h2 id="introduction">
 <strong>Introduction</strong><a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<hr>
 <p>The demo data for tidymass is untargeted metabolomics by RPLC-QEplus (Thermo). 259 samples in total.</p>
 <ul>
-<li><p>Subject samples: 2200 blood samples. 110 control samples and 110 case samples.</p></li>
+<li><p>Subject samples: 220 blood samples. 110 control samples and 110 case samples.</p></li>
 <li><p>QC samples: 39</p></li>
 </ul>
-<hr>
 </div>
 <div class="section level2">
 <h2 id="download-demo-data">
 <strong>Download demo data</strong><a class="anchor" aria-label="anchor" href="#download-demo-data"></a>
 </h2>
-<hr>
-<div class="section level4">
-<h4 id="ms1-mzxml-data">MS1 mzXML data<a class="anchor" aria-label="anchor" href="#ms1-mzxml-data"></a>
-</h4>
+<div class="section level3">
+<h3 id="ms1-data-mzxml-format">1. MS1 data (mzXML format)<a class="anchor" aria-label="anchor" href="#ms1-data-mzxml-format"></a>
+</h3>
 <p><a href="https://drive.google.com/file/d/1KUk0-PA77zV3UJsuUTEuAK6462yze8mm/view?usp=sharing" class="external-link">Download link</a>.</p>
-<p>Download and uncompress:</p>
+<p>Download and uncompress it:</p>
 <p><img src="figures/Screen-Shot-2022-01-13-at-10.33.07-PM.png"></p>
 </div>
-<div class="section level4">
-<h4 id="ms2-mzxml-data">MS2 mzXML data<a class="anchor" aria-label="anchor" href="#ms2-mzxml-data"></a>
-</h4>
-<p><a href="https://drive.google.com/file/d/1FY3x7q5i1g3oSLaVej__ZaZ4XSX-mWBQ/view?usp=sharing" class="external-link">Download link</a></p>
-<p>Download and uncompress:</p>
-<p><img src="figures/Screen-Shot-2022-01-13-at-10.34.18-PM.png"></p>
+<div class="section level3">
+<h3 id="ms2-data-mgf-format">2. MS2 data (mgf format)<a class="anchor" aria-label="anchor" href="#ms2-data-mgf-format"></a>
+</h3>
+<p><a href="https://drive.google.com/file/d/1_bj1AFQ1QV1ZfmnlZzbQ_4Nh6vVZ_RT6/view?usp=sharing" class="external-link">Download link</a></p>
+<p>Download and uncompress it:</p>
+<p><img src="figures/Screen-Shot%2014.png"></p>
 </div>
-<div class="section level4">
-<h4 id="sample-information">Sample information<a class="anchor" aria-label="anchor" href="#sample-information"></a>
-</h4>
+<div class="section level3">
+<h3 id="sample-information">3. Sample information<a class="anchor" aria-label="anchor" href="#sample-information"></a>
+</h3>
 <ul>
 <li><a href="https://drive.google.com/file/d/1yyJeOMUhuMSTmPWfzKuFTCRfZ3zdhO6q/view?usp=sharing" class="external-link">Download link</a></li>
 </ul>
-<p>Download and uncompress:</p>
+<p>Download and uncompress it:</p>
 <p><img src="figures/Screen%20Shot-2022-01-13-at-10.35.54-PM.png"></p>
-<div class="section level6">
-<h6 id="sample_info_pos">
+<div class="section level4">
+<h4 id="sample_info_pos">
 <code>sample_info_pos</code><a class="anchor" aria-label="anchor" href="#sample_info_pos"></a>
-</h6>
+</h4>
 <p><code>sample_info_pos</code> is like below:</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; overflow-x: scroll; width:100%; ">
 <table class="table table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
@@ -5405,10 +5401,10 @@ Control
 </table>
 </div>
 </div>
-<div class="section level6">
-<h6 id="sample_info_neg">
+<div class="section level4">
+<h4 id="sample_info_neg">
 <code>sample_info_neg</code><a class="anchor" aria-label="anchor" href="#sample_info_neg"></a>
-</h6>
+</h4>
 <p><code>sample_info_neg</code> is like below:</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; overflow-x: scroll; width:100%; ">
 <table class="table table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
@@ -10616,7 +10612,6 @@ Control
 </tbody>
 </table>
 </div>
-<hr>
 </div>
 </div>
 </div>
@@ -10624,16 +10619,15 @@ Control
 <h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
 </h2>
-<hr>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; R Under development (unstable) (2022-01-11 r81473)</span>
+<span class="co">#&gt; R version 4.1.2 (2021-11-01)</span>
 <span class="co">#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
-<span class="co">#&gt; Running under: macOS Big Sur/Monterey 10.16</span>
+<span class="co">#&gt; Running under: macOS Big Sur 10.16</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Matrix products: default</span>
-<span class="co">#&gt; BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib</span>
-<span class="co">#&gt; LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib</span>
+<span class="co">#&gt; BLAS:   /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRblas.0.dylib</span>
+<span class="co">#&gt; LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; locale:</span>
 <span class="co">#&gt; [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8</span>
@@ -10642,24 +10636,24 @@ Control
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt; [1] kableExtra_1.3.4</span>
+<span class="co">#&gt; [1] magrittr_2.0.2   kableExtra_1.3.4</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
 <span class="co">#&gt;  [1] tidyselect_1.1.1  xfun_0.29         bslib_0.3.1       purrr_0.3.4      </span>
 <span class="co">#&gt;  [5] colorspace_2.0-2  vctrs_0.3.8       htmltools_0.5.2   viridisLite_0.4.0</span>
-<span class="co">#&gt;  [9] yaml_2.2.1        utf8_1.2.2        rlang_0.4.12      pkgdown_2.0.1    </span>
-<span class="co">#&gt; [13] jquerylib_0.1.4   pillar_1.6.4      glue_1.6.0        bit64_4.0.5      </span>
+<span class="co">#&gt;  [9] yaml_2.3.4        utf8_1.2.2        rlang_1.0.1       pkgdown_2.0.2    </span>
+<span class="co">#&gt; [13] jquerylib_0.1.4   pillar_1.7.0      glue_1.6.1        bit64_4.0.5      </span>
 <span class="co">#&gt; [17] lifecycle_1.0.1   stringr_1.4.0     munsell_0.5.0     ragg_1.2.1       </span>
-<span class="co">#&gt; [21] rvest_1.0.2       codetools_0.2-18  memoise_2.0.1     evaluate_0.14    </span>
-<span class="co">#&gt; [25] knitr_1.37        tzdb_0.2.0        fastmap_1.1.0     parallel_4.2.0   </span>
-<span class="co">#&gt; [29] fansi_1.0.0       highr_0.9         readr_2.1.1       scales_1.1.1     </span>
+<span class="co">#&gt; [21] rvest_1.0.2       codetools_0.2-18  memoise_2.0.1     evaluate_0.15    </span>
+<span class="co">#&gt; [25] knitr_1.37        tzdb_0.2.0        fastmap_1.1.0     parallel_4.1.2   </span>
+<span class="co">#&gt; [29] fansi_1.0.2       highr_0.9         readr_2.1.2       scales_1.1.1     </span>
 <span class="co">#&gt; [33] cachem_1.0.6      desc_1.4.0        vroom_1.5.7       webshot_0.5.2    </span>
-<span class="co">#&gt; [37] jsonlite_1.7.2    systemfonts_1.0.3 fs_1.5.2          bit_4.0.4        </span>
+<span class="co">#&gt; [37] jsonlite_1.7.3    systemfonts_1.0.3 fs_1.5.2          bit_4.0.4        </span>
 <span class="co">#&gt; [41] textshaping_0.3.6 hms_1.1.1         digest_0.6.29     stringi_1.7.6    </span>
-<span class="co">#&gt; [45] rprojroot_2.0.2   cli_3.1.0         tools_4.2.0       magrittr_2.0.1   </span>
-<span class="co">#&gt; [49] sass_0.4.0        tibble_3.1.6      crayon_1.4.2      pkgconfig_2.0.3  </span>
-<span class="co">#&gt; [53] ellipsis_0.3.2    xml2_1.3.3        rmarkdown_2.11    svglite_2.0.0    </span>
-<span class="co">#&gt; [57] httr_1.4.2        rstudioapi_0.13   R6_2.5.1          compiler_4.2.0</span></code></pre></div>
+<span class="co">#&gt; [45] rprojroot_2.0.2   cli_3.2.0         tools_4.1.2       sass_0.4.0       </span>
+<span class="co">#&gt; [49] tibble_3.1.6      crayon_1.5.0      pkgconfig_2.0.3   ellipsis_0.3.2   </span>
+<span class="co">#&gt; [53] xml2_1.3.3        rmarkdown_2.11    svglite_2.0.0     httr_1.4.2       </span>
+<span class="co">#&gt; [57] rstudioapi_0.13   R6_2.5.1          compiler_4.1.2</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

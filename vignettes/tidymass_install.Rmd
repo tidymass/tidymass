@@ -30,13 +30,13 @@ knitr::opts_chunk$set(
 
 # **Update R version**
 
-`tidymass` need R version > 4.1. You can check your R version in your console:
+`tidymass` require R version > 4.1. You can check your R version in your console:
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 version
 ```
 
-If you R version is < 4.1, please [download and install the latest version of R](https://cran.r-project.org/mirrors.html), and then restart your R.
+If your R version is < 4.1, please [download and install the latest version of R](https://cran.r-project.org/mirrors.html), and then restart your R.
 
 # **Uninstall `tidyTools` and `metID`**
 
@@ -191,7 +191,7 @@ remotes::install_git(url = "https://gitee.com/jaspershen/metid", dependencies = 
 remotes::install_git(url = "https://gitee.com/jaspershen/metpath", dependencies = TRUE)
 ```
 
-[Let me know if you have any questions](shenxt1990@outlook.com).
+[Let me know if you have any questions](https://github.com/tidymass/tidymass/issues).
 
 # **Frequently Asked Questions**
 
@@ -235,17 +235,13 @@ BiocManager::install("affy")
 If you want to check if there are updates for `tidymass` and packages in it. Just check it like this.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-library(tidymass)
-```
-
-```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-check_tidymass_version()
+tidymass::check_tidymass_version()
 ```
 
 And the `update_tidymass()` function can be used to update `tidymass` and packages in it.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-update_tidymass(from = "github")
+tidymass::update_tidymass(from = "github")
 ```
 
 > If the `from = "github"` doesn't work, try set it as `from = "gitlab"` or `from = "gitee"`.
