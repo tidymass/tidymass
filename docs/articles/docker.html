@@ -196,10 +196,54 @@
 <p><img src="figures/Untitled%202.gif"></p>
 </div>
 <div class="section level2">
+<h2 id="build-your-own-images-based-on-tidymass">
+<strong>Build your own images based on tidymass</strong><a class="anchor" aria-label="anchor" href="#build-your-own-images-based-on-tidymass"></a>
+</h2>
+<div class="section level3">
+<h3 id="create-dockerfile">Create <code>dockerfile</code><a class="anchor" aria-label="anchor" href="#create-dockerfile"></a>
+</h3>
+<p>Create a <code>dockerfile</code> without extension. And then open and modify it.</p>
+<pre><code>FROM jaspershen/tidymass:latest
+MAINTAINER "Xiaotao Shen" shenxt1990@outlook.com
+
+RUN apt-get update &amp;&amp; apt-get install -y curl
+
+COPY demo_data/ /home/rstudio/demo_data/
+
+RUN chmod 777 /home/rstudio/demo_data/
+
+RUN R -e 'install.packages("remotes")'
+
+RUN R -e "remotes::install_gitlab('jaspershen/tidymass')"</code></pre>
+<p>If you want to install packages (for example ggraph) which are necessary for you analysis, please add a new line:</p>
+<pre><code>RUN R -e 'install.packages("ggraph")'</code></pre>
+<p>And you also need to copy your data to the image use the <code>COPY</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="build-image">Build image<a class="anchor" aria-label="anchor" href="#build-image"></a>
+</h3>
+<p>In the terminal, use below code to build the image.</p>
+<pre><code>docker build -t image-name -f Dockerfile .</code></pre>
+<p>Change the <code>image-name</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="use-the-docker-tag-command-to-give-the-tidymass-image-a-new-name">Use the <code>docker tag</code> command to give the <code>tidymass</code> image a new name<a class="anchor" aria-label="anchor" href="#use-the-docker-tag-command-to-give-the-tidymass-image-a-new-name"></a>
+</h3>
+<p>We need to create a account on the docker hub (<a href="https://hub.docker.com/" class="external-link uri">https://hub.docker.com/</a>) and then use the next code to link the local image to our account.</p>
+<pre><code>docker tag image-name your-account/image-name:latest</code></pre>
+</div>
+<div class="section level3">
+<h3 id="push-image-to-docker-hub">Push image to docker hub<a class="anchor" aria-label="anchor" href="#push-image-to-docker-hub"></a>
+</h3>
+<pre><code>docker push your-account/image-name:latest</code></pre>
+<p>Then other people can download your image which contains your code, data and analysis enivorment, which make it is pretty easy to repeat your analysis and results.</p>
+</div>
+</div>
+<div class="section level2">
 <h2 id="session-information">
 <strong>Session information</strong><a class="anchor" aria-label="anchor" href="#session-information"></a>
 </h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; R version 4.1.2 (2021-11-01)</span>
 <span class="co">#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
