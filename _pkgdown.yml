@@ -63,6 +63,8 @@ navbar:
       - text: "Demo data"
       - text: "Download demo data"
         href: articles/demo_data.html
+      - text: "Create mass_dataset class from other tools"
+        href: articles/create_mass_dataset.html
       - text: ---
       - text: "Use tidymass step by step"
       - text: "Convert raw data to mzXML/mgf"

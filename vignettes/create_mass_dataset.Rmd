@@ -1,0 +1,86 @@
+---
+title: "Create mass_dataset class from other tools"
+author:
+- name: Xiaotao Shen (https://www.shenxt.info/)
+date: "Created on 2022-02-25 and updated on `r Sys.Date()`"
+output:
+  html_document:
+    number_sections: true
+    df_print: paged
+    toc: yes
+  pdf_document:
+    toc: no
+vignette: >
+  %\VignetteIndexEntry{create_mass_dataset}
+  %\VignettePackage{tidymass}
+  % \VignetteEngine{knitr::rmarkdown}
+  % \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+```
+
+If you don't want to use the `massprocesser` for raw data processing, you can absolutely use other tools (mzMine or MS-DIAL). Then you can just use the functions from `massdataset` convert results from them to `mass_dataset` class.
+
+# **mzMine feature table to `mass_dataset` class**
+
+
+We can also directory convert feature table from [mzMine](http://mzmine.github.io/) to `mass_dataset` class.
+
+An example feature table from mzMine.
+
+```{r,eval=TRUE, echo=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+library(massdataset)
+data("mzmine_table")
+library(kableExtra)
+library(magrittr)
+kbl(mzmine_table) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+                fixed_thead = TRUE) %>% 
+  scroll_box(width = "100%", height = "600px")
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+data("mzmine_table")
+object =
+   convet_mzmine2mass_dataset(x = mzmine_table)
+object
+```
+
+# **MS-DIAL feature table to `mass_dataset` class**
+
+We can also directory convert feature table from [MS-DIAL](http://prime.psc.riken.jp/compms/msdial/main.html) to `mass_dataset` class.
+
+An example feature table from MS-DIAL.
+
+```{r,eval=TRUE, echo=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+library(massdataset)
+data("msdial_table")
+library(kableExtra)
+library(magrittr)
+kbl(msdial_table) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+                fixed_thead = TRUE) %>% 
+  scroll_box(width = "100%", height = "600px")
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+data("msdial_table")
+object =
+   convert_msdial2mass_dataset(x = msdial_table)
+object
+```
+
+# **Session information**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

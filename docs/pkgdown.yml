@@ -3,6 +3,7 @@ pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   contact_us: contact_us.html
+  create_mass_dataset: create_mass_dataset.html
   data_cleaning: data_cleaning.html
   data_convert: data_convert.html
   data_preparation: data_preparation.html
@@ -19,7 +20,7 @@ articles:
   tidymass_install: tidymass_install.html
   version0.4.0: version0.4.0.html
   whole_workflow: whole_workflow.html
-last_built: 2022-02-23T06:54Z
+last_built: 2022-02-25T08:55Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles
