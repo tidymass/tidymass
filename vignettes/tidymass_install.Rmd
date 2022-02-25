@@ -229,24 +229,6 @@ Just try to restart R and install `affy`.
 BiocManager::install("affy")
 ```
 
-
-# **Update `tidymass`**
-
-If you want to check if there are updates for `tidymass` and packages in it. Just check it like this.
-
-```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-tidymass::check_tidymass_version()
-```
-
-And the `update_tidymass()` function can be used to update `tidymass` and packages in it.
-
-```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-tidymass::update_tidymass(from = "github")
-```
-
-> If the `from = "github"` doesn't work, try set it as `from = "gitlab"` or `from = "gitee"`.
-
-
 # **Session information**
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}

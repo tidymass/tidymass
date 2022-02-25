@@ -46,6 +46,8 @@ A uniform data format is specifically designed to store and manage metabolomics 
 You can install `tidymass` from
 [GitHub](https://github.com/tidymass/tidymass) or [GitLab](https://gitlab.com/dashboard/projects).
 
+Option 1: GitHub
+
 ``` r
 if(!require(remotes)){
 install.packages("remotes")
@@ -53,8 +55,16 @@ install.packages("remotes")
 remotes::install_github("tidymass/tidymass")
 ```
 
+Option 2: GitLab
+
 ``` r
 remotes::install_gitlab("jaspershen/tidymass")
+```
+
+Option 3: Gitee
+
+``` r
+remotes::install_git(url = "https://gitee.com/jaspershen/tidymass", dependencies = TRUE)
 ```
 
 > More information can be found [here](https://tidymass.github.io/tidymass/articles/tidymass_install.html).

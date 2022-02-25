@@ -57,8 +57,12 @@ navbar:
       - text: "Install and update tidymass"
       - text: "Install tidymass"
         href: articles/tidymass_install.html
+      - text: "Update tidymass"
+        href: articles/tidymass_update.html
       - text: "Docker version of tidymass"
         href: articles/docker.html
+      - text: "Build your own images based on tidymass"
+        href: articles/build_docker.html
       - text: ---
       - text: "Demo data"
       - text: "Download demo data"

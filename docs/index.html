@@ -57,7 +57,9 @@
   <div class="dropdown-menu" aria-labelledby="dropdown--tutorial">
     <h6 class="dropdown-header" data-toc-skip>Install and update tidymass</h6>
     <a class="dropdown-item" href="articles/tidymass_install.html">Install tidymass</a>
+    <a class="dropdown-item" href="articles/tidymass_update.html">Update tidymass</a>
     <a class="dropdown-item" href="articles/docker.html">Docker version of tidymass</a>
+    <a class="dropdown-item" href="articles/build_docker.html">Build your own images based on tidymass</a>
     <div class="dropdown-divider"></div>
     <h6 class="dropdown-header" data-toc-skip>Demo data</h6>
     <a class="dropdown-item" href="articles/demo_data.html">Download demo data</a>
@@ -172,13 +174,18 @@
 </h2>
 <hr>
 <p>You can install <code>tidymass</code> from <a href="https://github.com/tidymass/tidymass" class="external-link">GitHub</a> or <a href="https://gitlab.com/dashboard/projects" class="external-link">GitLab</a>.</p>
+<p>Option 1: GitHub</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
 <span class="op">}</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tidymass/tidymass"</span><span class="op">)</span></code></pre></div>
+<p>Option 2: GitLab</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_gitlab.html" class="external-link">install_gitlab</a></span><span class="op">(</span><span class="st">"jaspershen/tidymass"</span><span class="op">)</span></code></pre></div>
+<p>Option 3: Gitee</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html" class="external-link">install_git</a></span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://gitee.com/jaspershen/tidymass"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <blockquote>
 <p>More information can be found <a href="https://tidymass.github.io/tidymass/articles/tidymass_install.html">here</a>.</p>
 </blockquote>

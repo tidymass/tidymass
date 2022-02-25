@@ -2,6 +2,7 @@ pandoc: 2.14.0.3
 pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
+  build_docker: build_docker.html
   contact_us: contact_us.html
   create_mass_dataset: create_mass_dataset.html
   data_cleaning: data_cleaning.html
@@ -18,9 +19,10 @@ articles:
   tidymass_parameters.template: statiscal_analysis/Parameter_report/tidymass_parameters.template.html
   statistical_analysis: statistical_analysis.html
   tidymass_install: tidymass_install.html
+  tidymass_update: tidymass_update.html
   version0.4.0: version0.4.0.html
   whole_workflow: whole_workflow.html
-last_built: 2022-02-25T08:55Z
+last_built: 2022-02-25T17:54Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles
