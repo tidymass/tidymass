@@ -35,6 +35,7 @@ vignettes/demo_data/
 demo_data
 .Rproj.user
 manuscript
+manuscript/
 summary
 .RData
 .Rhistory

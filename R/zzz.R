@@ -1,6 +1,5 @@
-
-
 .onAttach <- function(...) {
+  options(warn = -1)
   needed <- core[!is_attached(core)]
   if (length(needed) == 0)
     return()

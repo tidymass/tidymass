@@ -1,6 +1,6 @@
 Package: tidymass
 Title: R packages for mass spectrometry data processing and analysis
-Version: 0.99.4
+Version: 0.99.5
 Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",

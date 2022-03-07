@@ -5,6 +5,7 @@ README.Rmd
 demo_data
 logo.txt
 manuscript
+manuscript/
 summary
 tidymass.Rproj
 ^.*\.Rproj$
