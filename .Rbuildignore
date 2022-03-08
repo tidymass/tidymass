@@ -17,6 +17,13 @@ vignettes/demo_data
 vignettes/example/
 vignettes/demo_data/
 vignettes/
+vignettes/data_cleaning
+vignettes/pathway_enrichment
+vignettes/statistical_analysis
+
+vignettes/data_cleaning/
+vignettes/pathway_enrichment/
+vignettes/statistical_analysis/
 
 
 man/figures
