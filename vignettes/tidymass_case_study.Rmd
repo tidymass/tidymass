@@ -1570,7 +1570,7 @@ volcano_plot(object = object,
              point_size_scale = "p_value_adjust_malelcc_vs_malecontrol") +
   scale_size_continuous(range = c(0.5, 5))
 plot
-ggsave(plot, filename = "statistical_analysis/male_LCC_vs_femal_control.pdf", width = 8, height = 7)
+ggsave(plot, filename = "statistical_analysis/male_LCC_vs_mal_control.pdf", width = 8, height = 7)
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
