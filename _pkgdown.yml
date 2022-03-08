@@ -96,6 +96,14 @@ navbar:
       - text: "Stanford data ocean"
         href: https://innovations.stanford.edu/sdo
       - text: ---
+      - text: "Case study for tidyMass paper"
+      - text: "Download data"
+        href: articles/case_study_data.html
+      - text: "Case study"
+        href: articles/tidymass_case_study.html
+      - text: "Repeat case study by docker"
+        href: articles/repeat_case_study.html
+      - text: ---
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990

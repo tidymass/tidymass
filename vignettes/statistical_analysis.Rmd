@@ -105,14 +105,14 @@ object
 
 Then we can use the `report_parameters()` function to trace processing information of object.
 
-All the analysis results will be placed in a folder named as `statiscal_analysis`.
+All the analysis results will be placed in a folder named as `statistical_analysis`.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-dir.create(path = "statiscal_analysis", showWarnings = FALSE)
+dir.create(path = "statistical_analysis", showWarnings = FALSE)
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-report_parameters(object = object, path = "statiscal_analysis/")
+report_parameters(object = object, path = "statistical_analysis/")
 ```
 
 A html format file named as `parameter_report.html` will be generated.
@@ -204,13 +204,14 @@ differential_metabolites <-
   filter(p_value_adjust < 0.05)
 
 readr::write_csv(differential_metabolites, 
-                 file = "statiscal_analysis/differential_metabolites.csv")
+                 file = "statistical_analysis/differential_metabolites.csv")
 ```
 
 Save result for subsequent analysis.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-save(object, file = "statiscal_analysis/object")
+object_final <- object
+save(object_final, file = "statistical_analysis/object_final")
 ```
 
 # **Session information**

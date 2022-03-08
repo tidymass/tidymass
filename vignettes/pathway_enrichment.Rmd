@@ -38,11 +38,11 @@ library(tidyverse)
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-load("statiscal_analysis/object")
+load("statistical_analysis/object_final")
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-object
+object_final
 ```
 
 # **Pathway enrichment**
@@ -56,7 +56,7 @@ dir.create(path = "pathway_enrichment", showWarnings = FALSE)
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 diff_metabolites <-
-  object %>% 
+  object_final %>% 
   activate_mass_dataset(what = "variable_info") %>% 
   filter(p_value_adjust < 0.05) %>% 
   extract_variable_info()

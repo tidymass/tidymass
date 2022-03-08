@@ -1,0 +1,69 @@
+---
+title: "Repeat case study by docker"
+author:
+- name: Xiaotao Shen (https://www.shenxt.info/)
+date: "Created on 2022-03-07 and updated on `r Sys.Date()`"
+output:
+  html_document:
+    number_sections: true
+    df_print: paged
+    toc: yes
+  pdf_document:
+    toc: no
+vignette: >
+  %\VignetteIndexEntry{repeat_case_study}
+  %\VignettePackage{tidymass}
+  % \VignetteEngine{knitr::rmarkdown}
+  % \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+```
+
+# **Introduction**
+
+You can use the docker image of case study to repeat all the analysis and results in tidymass manuscript.
+
+# **Download and install docker**
+
+Please refer to the [official website](https://www.docker.com/get-started) to download and install docker. And then run docker.
+
+# **Pull the tidymass-case-study image**
+
+Open you terminal and then type code below:
+
+```
+docker pull jaspershen/tidymass-case-study:latest
+```
+
+# **Run tidymass-case-study docker image**
+
+In you terminal, run the code below:
+
+```
+docker run -e PASSWORD=tidymass -p 8787:8787 jaspershen/tidymass-case-study:latest
+```
+
+Then open the browser and visit <http://localhost:8787> to power on RStudio server. The user name is `rstudio` and the password is `tidymass`.
+
+![](figures/Screen-Shot 5.png)
+
+# **Run case study code**
+
+Open the `tidymass_case_study.Rmd`, and then click `Knit`.
+
+![](figures/repeat_case_study.gif)
+
+# **Session information**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

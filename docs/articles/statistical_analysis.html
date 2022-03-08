@@ -39,7 +39,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">tidymass</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.99.4</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.99.5</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,6 +80,11 @@
     <h6 class="dropdown-header" data-toc-skip>Integrate tidymass with other pipeline</h6>
     <a class="external-link dropdown-item" href="https://github.com/yufree/xcmsrocker">xcmsrocker</a>
     <a class="external-link dropdown-item" href="https://innovations.stanford.edu/sdo">Stanford data ocean</a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header" data-toc-skip>Case study for tidyMass paper</h6>
+    <a class="dropdown-item" href="../articles/case_study_data.html">Download data</a>
+    <a class="dropdown-item" href="../articles/tidymass_case_study.html">Case study</a>
+    <a class="dropdown-item" href="../articles/repeat_case_study.html">Repeat case study by docker</a>
     <div class="dropdown-divider"></div>
   </div>
 </li>
@@ -148,7 +153,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Statistical analysis</h1>
                         <h4 data-toc-skip class="author">Xiaotao Shen (<a href="https://www.shenxt.info/" class="external-link uri">https://www.shenxt.info/</a>)</h4>
                         
-            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-02-25</h4>
+            <h4 data-toc-skip class="date">Created on 2021-12-04 and updated on 2022-03-07</h4>
       
       
       <div class="d-none name"><code>statistical_analysis.Rmd</code></div>
@@ -213,8 +218,8 @@
 <span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:44</span>
-<span class="co">#&gt; 2 massdataset      filter() 2022-01-28 22:50:44</span>
-<span class="co">#&gt; 3 massdataset      filter() 2022-01-28 22:50:44</span>
+<span class="co">#&gt; 2 massdataset      filter() 2022-03-07 17:27:45</span>
+<span class="co">#&gt; 3 massdataset      filter() 2022-03-07 17:27:45</span>
 <span class="co">#&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:02</span>
@@ -232,9 +237,9 @@
 <span class="co">#&gt; 1 massdataset  mutate_ms2() 2022-01-19 21:53:36</span>
 <span class="co">#&gt; <span style="color: #00BB00;">annotate_metabolites_mass_dataset ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>  Package                       Function.used                Time</span>
-<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-01-19 22:00:00</span>
-<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-01-19 22:23:24</span>
-<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-01-19 22:52:50</span></code></pre></div>
+<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-02-22 21:16:23</span>
+<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-02-22 21:30:10</span>
+<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-02-22 21:47:59</span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="negative-mode">Negative mode<a class="anchor" aria-label="anchor" href="#negative-mode"></a>
@@ -275,8 +280,8 @@
 <span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:47</span>
-<span class="co">#&gt; 2 massdataset      filter() 2022-01-28 22:50:45</span>
-<span class="co">#&gt; 3 massdataset      filter() 2022-01-28 22:50:45</span>
+<span class="co">#&gt; 2 massdataset      filter() 2022-03-07 17:27:46</span>
+<span class="co">#&gt; 3 massdataset      filter() 2022-03-07 17:27:46</span>
 <span class="co">#&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:06</span>
@@ -294,9 +299,9 @@
 <span class="co">#&gt; 1 massdataset  mutate_ms2() 2022-01-19 21:54:06</span>
 <span class="co">#&gt; <span style="color: #00BB00;">annotate_metabolites_mass_dataset ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>  Package                       Function.used                Time</span>
-<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-01-19 22:57:19</span>
-<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-01-19 23:12:58</span>
-<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-01-19 23:40:34</span></code></pre></div>
+<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-02-22 21:50:29</span>
+<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-02-22 22:08:10</span>
+<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-02-22 22:26:33</span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -322,7 +327,7 @@
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">object</span>
 <span class="co">#&gt; <span style="color: #BBBB00;">-------------------- </span></span>
-<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.4 </span></span>
+<span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">massdataset version: 0.99.14 </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span><span style="color: #BBBB00;">-------------------- </span></span>
 <span class="co"><span style="color: #BBBB00;">#&gt; </span><span style="color: #00BB00;">1.expression_data:</span>[ 371 x 259 data.frame]</span>
 <span class="co">#&gt; <span style="color: #00BB00;">2.sample_info:</span>[ 259 x 11 data.frame]</span>
@@ -349,8 +354,8 @@
 <span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:44</span>
-<span class="co">#&gt; 2 massdataset      filter() 2022-01-28 22:50:44</span>
-<span class="co">#&gt; 3 massdataset      filter() 2022-01-28 22:50:44</span>
+<span class="co">#&gt; 2 massdataset      filter() 2022-03-07 17:27:45</span>
+<span class="co">#&gt; 3 massdataset      filter() 2022-03-07 17:27:45</span>
 <span class="co">#&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:02</span>
@@ -368,9 +373,9 @@
 <span class="co">#&gt; 1 massdataset  mutate_ms2() 2022-01-19 21:53:36</span>
 <span class="co">#&gt; <span style="color: #00BB00;">annotate_metabolites_mass_dataset ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>  Package                       Function.used                Time</span>
-<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-01-19 22:00:00</span>
-<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-01-19 22:23:24</span>
-<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-01-19 22:52:50</span>
+<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-02-22 21:16:23</span>
+<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-02-22 21:30:10</span>
+<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-02-22 21:47:59</span>
 <span class="co">#&gt; <span style="color: #00BB00;">create_mass_dataset ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package         Function.used                Time</span>
 <span class="co">#&gt; 1 massdataset create_mass_dataset() 2022-01-16 16:20:02</span>
@@ -388,8 +393,8 @@
 <span class="co">#&gt; <span style="color: #00BB00;">filter ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 massdataset      filter() 2022-01-18 09:11:47</span>
-<span class="co">#&gt; 2 massdataset      filter() 2022-01-28 22:50:45</span>
-<span class="co">#&gt; 3 massdataset      filter() 2022-01-28 22:50:45</span>
+<span class="co">#&gt; 2 massdataset      filter() 2022-03-07 17:27:46</span>
+<span class="co">#&gt; 3 massdataset      filter() 2022-03-07 17:27:46</span>
 <span class="co">#&gt; <span style="color: #00BB00;">impute_mv ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package Function.used                Time</span>
 <span class="co">#&gt; 1 masscleaner   impute_mv() 2022-01-18 09:38:06</span>
@@ -407,12 +412,12 @@
 <span class="co">#&gt; 1 massdataset  mutate_ms2() 2022-01-19 21:54:06</span>
 <span class="co">#&gt; <span style="color: #00BB00;">annotate_metabolites_mass_dataset ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>  Package                       Function.used                Time</span>
-<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-01-19 22:57:19</span>
-<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-01-19 23:12:58</span>
-<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-01-19 23:40:34</span>
+<span class="co">#&gt; 1   metid annotate_metabolites_mass_dataset() 2022-02-22 21:50:29</span>
+<span class="co">#&gt; 2   metid annotate_metabolites_mass_dataset() 2022-02-22 22:08:10</span>
+<span class="co">#&gt; 3   metid annotate_metabolites_mass_dataset() 2022-02-22 22:26:33</span>
 <span class="co">#&gt; <span style="color: #00BB00;">merge_mass_dataset ---------- </span></span>
 <span class="co"><span style="color: #00BB00;">#&gt; </span>      Package      Function.used                Time</span>
-<span class="co">#&gt; 1 massdataset merge_mass_dataset 2022-01-28 22:50:45</span></code></pre></div>
+<span class="co">#&gt; 1 massdataset merge_mass_dataset 2022-03-07 17:27:46</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -420,14 +425,14 @@
 <strong>Trace processing information of object</strong><a class="anchor" aria-label="anchor" href="#trace-processing-information-of-object"></a>
 </h2>
 <p>Then we can use the <code>report_parameters()</code> function to trace processing information of object.</p>
-<p>All the analysis results will be placed in a folder named as <code>statiscal_analysis</code>.</p>
+<p>All the analysis results will be placed in a folder named as <code>statistical_analysis</code>.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"statiscal_analysis"</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"statistical_analysis"</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">report_parameters</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object</span>, path <span class="op">=</span> <span class="st">"statiscal_analysis/"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu">report_parameters</span><span class="op">(</span>object <span class="op">=</span> <span class="va">object</span>, path <span class="op">=</span> <span class="st">"statistical_analysis/"</span><span class="op">)</span>
 <span class="co">#&gt; processing file: tidymass_parameters.template.Rmd</span>
 <span class="co">#&gt; output file: tidymass_parameters.template.knit.md</span>
-<span class="co">#&gt; /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS tidymass_parameters.template.knit.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output tidymass_parameters.template.html --lua-filter /Library/Frameworks/R.framework/Versions/library/rmarkdown/rmarkdown/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/library/rmarkdown/rmarkdown/lua/latex-div.lua --self-contained --variable bs3=TRUE --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/library/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --variable theme=bootstrap --include-in-header /var/folders/m8/z8rq9r453dn9rk4zx4cw5_5h0000gn/T//Rtmp8hTtHp/rmarkdown-str30ae2e5687fb.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'</span>
+<span class="co">#&gt; /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS tidymass_parameters.template.knit.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output tidymass_parameters.template.html --lua-filter /Library/Frameworks/R.framework/Versions/library/rmarkdown/rmarkdown/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/library/rmarkdown/rmarkdown/lua/latex-div.lua --self-contained --variable bs3=TRUE --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/library/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --variable theme=bootstrap --include-in-header /var/folders/m8/z8rq9r453dn9rk4zx4cw5_5h0000gn/T//RtmpcRItde/rmarkdown-stre9ae21d3ad9b.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Output created: tidymass_parameters.template.html</span>
 <span class="co">#&gt; <span style="color: #BBBB00;">Done.</span></span>
@@ -517,10 +522,11 @@
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">p_value_adjust</span> <span class="op">&lt;</span> <span class="fl">0.05</span><span class="op">)</span>
 
 <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html" class="external-link">write_csv</a></span><span class="op">(</span><span class="va">differential_metabolites</span>, 
-                 file <span class="op">=</span> <span class="st">"statiscal_analysis/differential_metabolites.csv"</span><span class="op">)</span></code></pre></div>
+                 file <span class="op">=</span> <span class="st">"statistical_analysis/differential_metabolites.csv"</span><span class="op">)</span></code></pre></div>
 <p>Save result for subsequent analysis.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object</span>, file <span class="op">=</span> <span class="st">"statiscal_analysis/object"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">object_final</span> <span class="op">&lt;-</span> <span class="va">object</span>
+<span class="fu"><a href="https://rdrr.io/r/base/save.html" class="external-link">save</a></span><span class="op">(</span><span class="va">object_final</span>, file <span class="op">=</span> <span class="st">"statistical_analysis/object_final"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="session-information">
@@ -544,106 +550,112 @@
 <span class="co">#&gt; [8] base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt;  [1] knitr_1.37           forcats_0.5.1        stringr_1.4.0       </span>
-<span class="co">#&gt;  [4] purrr_0.3.4          readr_2.1.1          tidyr_1.1.4         </span>
-<span class="co">#&gt;  [7] tibble_3.1.6         tidyverse_1.3.1      dplyr_1.0.7         </span>
-<span class="co">#&gt; [10] metid_1.2.1          metpath_0.0.1        massstat_0.99.1     </span>
-<span class="co">#&gt; [13] ggfortify_0.4.14     ggplot2_3.3.5        massqc_0.9.1        </span>
-<span class="co">#&gt; [16] tinytools_0.9.1      masscleaner_0.9.2    xcms_3.17.1         </span>
-<span class="co">#&gt; [19] MSnbase_2.21.3       ProtGenerics_1.27.2  S4Vectors_0.33.10   </span>
-<span class="co">#&gt; [22] mzR_2.29.1           Rcpp_1.0.7           Biobase_2.55.0      </span>
-<span class="co">#&gt; [25] BiocGenerics_0.41.2  BiocParallel_1.29.10 massprocesser_0.9.2 </span>
-<span class="co">#&gt; [28] magrittr_2.0.1       masstools_0.99.3     massdataset_0.99.4  </span>
-<span class="co">#&gt; [31] tidymass_0.9.1      </span>
+<span class="co">#&gt;  [1] knitr_1.37           forcats_0.5.1.9000   stringr_1.4.0       </span>
+<span class="co">#&gt;  [4] purrr_0.3.4          readr_2.1.2          tidyr_1.2.0         </span>
+<span class="co">#&gt;  [7] tibble_3.1.6         tidyverse_1.3.1      tinytools_0.9.1     </span>
+<span class="co">#&gt; [10] dplyr_1.0.8          metid_1.2.4          metpath_0.99.2      </span>
+<span class="co">#&gt; [13] massstat_0.99.12     ggfortify_0.4.14     massqc_0.99.7       </span>
+<span class="co">#&gt; [16] masscleaner_0.99.7   xcms_3.16.1          MSnbase_2.20.4      </span>
+<span class="co">#&gt; [19] ProtGenerics_1.26.0  S4Vectors_0.32.3     mzR_2.28.0          </span>
+<span class="co">#&gt; [22] Rcpp_1.0.8           Biobase_2.54.0       BiocGenerics_0.40.0 </span>
+<span class="co">#&gt; [25] BiocParallel_1.28.3  massprocesser_0.99.3 ggplot2_3.3.5       </span>
+<span class="co">#&gt; [28] magrittr_2.0.2       masstools_0.99.4     massdataset_0.99.14 </span>
+<span class="co">#&gt; [31] tidymass_0.99.5     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
-<span class="co">#&gt;   [1] ragg_1.2.1                  missForest_1.4             </span>
-<span class="co">#&gt;   [3] bit64_4.0.5                 DelayedArray_0.21.2        </span>
-<span class="co">#&gt;   [5] data.table_1.14.2           KEGGREST_1.35.0            </span>
-<span class="co">#&gt;   [7] RCurl_1.98-1.5              doParallel_1.0.16          </span>
-<span class="co">#&gt;   [9] generics_0.1.1              snow_0.4-4                 </span>
-<span class="co">#&gt;  [11] leaflet_2.0.4.1             preprocessCore_1.57.0      </span>
-<span class="co">#&gt;  [13] callr_3.7.0                 usethis_2.1.5              </span>
+<span class="co">#&gt;   [1] ragg_1.2.1                  bit64_4.0.5                </span>
+<span class="co">#&gt;   [3] missForest_1.4              DelayedArray_0.20.0        </span>
+<span class="co">#&gt;   [5] data.table_1.14.2           rpart_4.1.16               </span>
+<span class="co">#&gt;   [7] KEGGREST_1.34.0             RCurl_1.98-1.5             </span>
+<span class="co">#&gt;   [9] doParallel_1.0.17           generics_0.1.2             </span>
+<span class="co">#&gt;  [11] snow_0.4-4                  leaflet_2.1.0              </span>
+<span class="co">#&gt;  [13] preprocessCore_1.56.0       mixOmics_6.18.1            </span>
 <span class="co">#&gt;  [15] RANN_2.6.1                  proxy_0.4-26               </span>
 <span class="co">#&gt;  [17] future_1.23.0               bit_4.0.4                  </span>
 <span class="co">#&gt;  [19] tzdb_0.2.0                  xml2_1.3.3                 </span>
 <span class="co">#&gt;  [21] lubridate_1.8.0             ggsci_2.9                  </span>
-<span class="co">#&gt;  [23] SummarizedExperiment_1.25.3 assertthat_0.2.1           </span>
+<span class="co">#&gt;  [23] SummarizedExperiment_1.24.0 assertthat_0.2.1           </span>
 <span class="co">#&gt;  [25] viridis_0.6.2               xfun_0.29                  </span>
 <span class="co">#&gt;  [27] hms_1.1.1                   jquerylib_0.1.4            </span>
-<span class="co">#&gt;  [29] evaluate_0.14               DEoptimR_1.0-10            </span>
-<span class="co">#&gt;  [31] fansi_1.0.0                 dbplyr_2.1.1               </span>
-<span class="co">#&gt;  [33] readxl_1.3.1                igraph_1.2.6               </span>
+<span class="co">#&gt;  [29] evaluate_0.15               DEoptimR_1.0-10            </span>
+<span class="co">#&gt;  [31] fansi_1.0.2                 dbplyr_2.1.1               </span>
+<span class="co">#&gt;  [33] readxl_1.3.1                igraph_1.2.11              </span>
 <span class="co">#&gt;  [35] DBI_1.1.2                   htmlwidgets_1.5.4          </span>
-<span class="co">#&gt;  [37] MsFeatures_1.3.0            ellipsis_0.3.2             </span>
-<span class="co">#&gt;  [39] crosstalk_1.2.0             backports_1.4.1            </span>
-<span class="co">#&gt;  [41] ggcorrplot_0.1.3            MatrixGenerics_1.7.0       </span>
-<span class="co">#&gt;  [43] vctrs_0.3.8                 remotes_2.4.2              </span>
-<span class="co">#&gt;  [45] cachem_1.0.6                withr_2.4.3                </span>
-<span class="co">#&gt;  [47] ggforce_0.3.3               itertools_0.1-3            </span>
-<span class="co">#&gt;  [49] robustbase_0.93-8           vroom_1.5.7                </span>
-<span class="co">#&gt;  [51] prettyunits_1.1.1           cluster_2.1.2              </span>
-<span class="co">#&gt;  [53] lazyeval_0.2.2              crayon_1.4.2               </span>
-<span class="co">#&gt;  [55] pkgconfig_2.0.3             tweenr_1.0.2               </span>
-<span class="co">#&gt;  [57] GenomeInfoDb_1.31.1         pkgload_1.2.4              </span>
-<span class="co">#&gt;  [59] devtools_2.4.3              rlang_0.4.12               </span>
-<span class="co">#&gt;  [61] globals_0.14.0              lifecycle_1.0.1            </span>
-<span class="co">#&gt;  [63] affyio_1.65.0               MassSpecWavelet_1.61.0     </span>
-<span class="co">#&gt;  [65] modelr_0.1.8                cellranger_1.1.0           </span>
-<span class="co">#&gt;  [67] randomForest_4.6-14         rprojroot_2.0.2            </span>
-<span class="co">#&gt;  [69] polyclip_1.10-0             matrixStats_0.61.0         </span>
-<span class="co">#&gt;  [71] Matrix_1.3-4                reprex_2.0.1               </span>
-<span class="co">#&gt;  [73] GlobalOptions_0.1.2         processx_3.5.2             </span>
-<span class="co">#&gt;  [75] png_0.1-7                   viridisLite_0.4.0          </span>
-<span class="co">#&gt;  [77] rjson_0.2.21                clisymbols_1.2.0           </span>
-<span class="co">#&gt;  [79] bitops_1.0-7                pander_0.6.4               </span>
-<span class="co">#&gt;  [81] Biostrings_2.63.1           shape_1.4.6                </span>
-<span class="co">#&gt;  [83] parallelly_1.30.0           robust_0.6-1               </span>
-<span class="co">#&gt;  [85] stevedore_0.9.4             gridGraphics_0.5-1         </span>
-<span class="co">#&gt;  [87] scales_1.1.1                memoise_2.0.1              </span>
-<span class="co">#&gt;  [89] plyr_1.8.6                  zlibbioc_1.41.0            </span>
-<span class="co">#&gt;  [91] compiler_4.1.2              RColorBrewer_1.1-2         </span>
-<span class="co">#&gt;  [93] pcaMethods_1.87.0           clue_0.3-60                </span>
-<span class="co">#&gt;  [95] rrcov_1.6-0                 cli_3.1.0                  </span>
-<span class="co">#&gt;  [97] affy_1.73.0                 XVector_0.35.0             </span>
-<span class="co">#&gt;  [99] listenv_0.8.0               patchwork_1.1.1            </span>
-<span class="co">#&gt; [101] pbapply_1.5-0               ps_1.6.0                   </span>
-<span class="co">#&gt; [103] MASS_7.3-55                 tidyselect_1.1.1           </span>
-<span class="co">#&gt; [105] vsn_3.63.0                  stringi_1.7.6              </span>
-<span class="co">#&gt; [107] textshaping_0.3.6           yaml_2.2.1                 </span>
-<span class="co">#&gt; [109] MALDIquant_1.21             ggrepel_0.9.1              </span>
-<span class="co">#&gt; [111] grid_4.1.2                  sass_0.4.0                 </span>
-<span class="co">#&gt; [113] tools_4.1.2                 parallel_4.1.2             </span>
-<span class="co">#&gt; [115] circlize_0.4.14             rstudioapi_0.13            </span>
-<span class="co">#&gt; [117] MsCoreUtils_1.7.1           foreach_1.5.1              </span>
-<span class="co">#&gt; [119] gridExtra_2.3               farver_2.1.0               </span>
-<span class="co">#&gt; [121] mzID_1.33.0                 ggraph_2.0.5               </span>
-<span class="co">#&gt; [123] digest_0.6.29               BiocManager_1.30.16        </span>
-<span class="co">#&gt; [125] GenomicRanges_1.47.6        broom_0.7.11               </span>
-<span class="co">#&gt; [127] ncdf4_1.17                  httr_1.4.2                 </span>
-<span class="co">#&gt; [129] ComplexHeatmap_2.11.0       colorspace_2.0-2           </span>
-<span class="co">#&gt; [131] rvest_1.0.2                 XML_3.99-0.8               </span>
-<span class="co">#&gt; [133] fs_1.5.2                    IRanges_2.29.1             </span>
-<span class="co">#&gt; [135] massconverter_0.99.1        yulab.utils_0.0.4          </span>
-<span class="co">#&gt; [137] pkgdown_2.0.1               graphlayouts_0.8.0         </span>
-<span class="co">#&gt; [139] ggplotify_0.1.0             plotly_4.10.0              </span>
-<span class="co">#&gt; [141] sessioninfo_1.2.2           systemfonts_1.0.3          </span>
-<span class="co">#&gt; [143] fit.models_0.64             jsonlite_1.7.2             </span>
-<span class="co">#&gt; [145] tidygraph_1.2.0             testthat_3.1.1             </span>
-<span class="co">#&gt; [147] R6_2.5.1                    pillar_1.6.4               </span>
-<span class="co">#&gt; [149] htmltools_0.5.2             glue_1.6.0                 </span>
-<span class="co">#&gt; [151] fastmap_1.1.0               class_7.3-20               </span>
-<span class="co">#&gt; [153] codetools_0.2-18            pkgbuild_1.3.1             </span>
-<span class="co">#&gt; [155] pcaPP_1.9-74                mvtnorm_1.1-2              </span>
-<span class="co">#&gt; [157] furrr_0.2.3                 utf8_1.2.2                 </span>
-<span class="co">#&gt; [159] lattice_0.20-45             bslib_0.3.1                </span>
-<span class="co">#&gt; [161] curl_4.3.2                  zip_2.2.0                  </span>
-<span class="co">#&gt; [163] openxlsx_4.2.5              limma_3.51.2               </span>
-<span class="co">#&gt; [165] rmarkdown_2.11              desc_1.4.0                 </span>
-<span class="co">#&gt; [167] munsell_0.5.0               e1071_1.7-9                </span>
-<span class="co">#&gt; [169] GetoptLong_1.0.5            GenomeInfoDbData_1.2.7     </span>
-<span class="co">#&gt; [171] iterators_1.0.13            impute_1.69.0              </span>
-<span class="co">#&gt; [173] haven_2.4.3                 gtable_0.3.0</span></code></pre></div>
+<span class="co">#&gt;  [37] MsFeatures_1.3.0            rARPACK_0.11-0             </span>
+<span class="co">#&gt;  [39] ellipsis_0.3.2              RSpectra_0.16-0            </span>
+<span class="co">#&gt;  [41] crosstalk_1.2.0             backports_1.4.1            </span>
+<span class="co">#&gt;  [43] ggcorrplot_0.1.3            MatrixGenerics_1.6.0       </span>
+<span class="co">#&gt;  [45] vctrs_0.3.8                 remotes_2.4.2              </span>
+<span class="co">#&gt;  [47] cachem_1.0.6                withr_2.4.3                </span>
+<span class="co">#&gt;  [49] ggforce_0.3.3               itertools_0.1-3            </span>
+<span class="co">#&gt;  [51] robustbase_0.93-9           vroom_1.5.7                </span>
+<span class="co">#&gt;  [53] checkmate_2.0.0             cluster_2.1.2              </span>
+<span class="co">#&gt;  [55] lazyeval_0.2.2              crayon_1.5.0               </span>
+<span class="co">#&gt;  [57] ellipse_0.4.2               labeling_0.4.2             </span>
+<span class="co">#&gt;  [59] pkgconfig_2.0.3             tweenr_1.0.2               </span>
+<span class="co">#&gt;  [61] GenomeInfoDb_1.30.0         nnet_7.3-17                </span>
+<span class="co">#&gt;  [63] rlang_1.0.1                 globals_0.14.0             </span>
+<span class="co">#&gt;  [65] lifecycle_1.0.1             affyio_1.64.0              </span>
+<span class="co">#&gt;  [67] extrafontdb_1.0             fastDummies_1.6.3          </span>
+<span class="co">#&gt;  [69] MassSpecWavelet_1.60.0      modelr_0.1.8               </span>
+<span class="co">#&gt;  [71] cellranger_1.1.0            randomForest_4.7-1         </span>
+<span class="co">#&gt;  [73] rprojroot_2.0.2             polyclip_1.10-0            </span>
+<span class="co">#&gt;  [75] matrixStats_0.61.0          Matrix_1.4-0               </span>
+<span class="co">#&gt;  [77] reprex_2.0.1                base64enc_0.1-3            </span>
+<span class="co">#&gt;  [79] GlobalOptions_0.1.2         png_0.1-7                  </span>
+<span class="co">#&gt;  [81] viridisLite_0.4.0           rjson_0.2.21               </span>
+<span class="co">#&gt;  [83] clisymbols_1.2.0            bitops_1.0-7               </span>
+<span class="co">#&gt;  [85] pander_0.6.4                Biostrings_2.62.0          </span>
+<span class="co">#&gt;  [87] shape_1.4.6                 parallelly_1.30.0          </span>
+<span class="co">#&gt;  [89] robust_0.7-0                jpeg_0.1-9                 </span>
+<span class="co">#&gt;  [91] gridGraphics_0.5-1          scales_1.1.1               </span>
+<span class="co">#&gt;  [93] memoise_2.0.1               plyr_1.8.6                 </span>
+<span class="co">#&gt;  [95] zlibbioc_1.40.0             compiler_4.1.2             </span>
+<span class="co">#&gt;  [97] RColorBrewer_1.1-2          pcaMethods_1.86.0          </span>
+<span class="co">#&gt;  [99] clue_0.3-60                 rrcov_1.6-2                </span>
+<span class="co">#&gt; [101] cli_3.2.0                   affy_1.72.0                </span>
+<span class="co">#&gt; [103] XVector_0.34.0              listenv_0.8.0              </span>
+<span class="co">#&gt; [105] patchwork_1.1.1             pbapply_1.5-0              </span>
+<span class="co">#&gt; [107] htmlTable_2.4.0             Formula_1.2-4              </span>
+<span class="co">#&gt; [109] MASS_7.3-55                 tidyselect_1.1.1           </span>
+<span class="co">#&gt; [111] vsn_3.62.0                  stringi_1.7.6              </span>
+<span class="co">#&gt; [113] textshaping_0.3.6           highr_0.9                  </span>
+<span class="co">#&gt; [115] yaml_2.3.4                  latticeExtra_0.6-29        </span>
+<span class="co">#&gt; [117] MALDIquant_1.21             ggrepel_0.9.1              </span>
+<span class="co">#&gt; [119] grid_4.1.2                  sass_0.4.0                 </span>
+<span class="co">#&gt; [121] tools_4.1.2                 parallel_4.1.2             </span>
+<span class="co">#&gt; [123] circlize_0.4.14             rstudioapi_0.13            </span>
+<span class="co">#&gt; [125] MsCoreUtils_1.6.0           foreach_1.5.2              </span>
+<span class="co">#&gt; [127] foreign_0.8-82              gridExtra_2.3              </span>
+<span class="co">#&gt; [129] farver_2.1.0                mzID_1.32.0                </span>
+<span class="co">#&gt; [131] ggraph_2.0.5                rvcheck_0.2.1              </span>
+<span class="co">#&gt; [133] digest_0.6.29               BiocManager_1.30.16        </span>
+<span class="co">#&gt; [135] GenomicRanges_1.46.1        broom_0.7.12               </span>
+<span class="co">#&gt; [137] ncdf4_1.19                  httr_1.4.2                 </span>
+<span class="co">#&gt; [139] ComplexHeatmap_2.10.0       colorspace_2.0-2           </span>
+<span class="co">#&gt; [141] rvest_1.0.2                 XML_3.99-0.8               </span>
+<span class="co">#&gt; [143] fs_1.5.2                    IRanges_2.28.0             </span>
+<span class="co">#&gt; [145] splines_4.1.2               yulab.utils_0.0.4          </span>
+<span class="co">#&gt; [147] graphlayouts_0.8.0          pkgdown_2.0.2              </span>
+<span class="co">#&gt; [149] ggplotify_0.1.0             plotly_4.10.0              </span>
+<span class="co">#&gt; [151] systemfonts_1.0.3           fit.models_0.64            </span>
+<span class="co">#&gt; [153] jsonlite_1.7.3              tidygraph_1.2.0            </span>
+<span class="co">#&gt; [155] corpcor_1.6.10              R6_2.5.1                   </span>
+<span class="co">#&gt; [157] Hmisc_4.6-0                 pillar_1.7.0               </span>
+<span class="co">#&gt; [159] htmltools_0.5.2             glue_1.6.1                 </span>
+<span class="co">#&gt; [161] fastmap_1.1.0               class_7.3-20               </span>
+<span class="co">#&gt; [163] codetools_0.2-18            pcaPP_1.9-74               </span>
+<span class="co">#&gt; [165] mvtnorm_1.1-3               furrr_0.2.3                </span>
+<span class="co">#&gt; [167] utf8_1.2.2                  lattice_0.20-45            </span>
+<span class="co">#&gt; [169] bslib_0.3.1                 zip_2.2.0                  </span>
+<span class="co">#&gt; [171] openxlsx_4.2.5              Rttf2pt1_1.3.9             </span>
+<span class="co">#&gt; [173] survival_3.2-13             limma_3.50.0               </span>
+<span class="co">#&gt; [175] rmarkdown_2.11              desc_1.4.0                 </span>
+<span class="co">#&gt; [177] munsell_0.5.0               e1071_1.7-9                </span>
+<span class="co">#&gt; [179] GetoptLong_1.0.5            GenomeInfoDbData_1.2.7     </span>
+<span class="co">#&gt; [181] iterators_1.0.14            impute_1.68.0              </span>
+<span class="co">#&gt; [183] haven_2.4.3                 reshape2_1.4.4             </span>
+<span class="co">#&gt; [185] gtable_0.3.0                extrafont_0.17</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

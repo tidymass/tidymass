@@ -1,0 +1,61 @@
+---
+title: "Case study data"
+author:
+- name: Xiaotao Shen (https://www.shenxt.info/)
+date: "Created on 2022-03-07 and updated on `r Sys.Date()`"
+output:
+  html_document:
+    number_sections: true
+    df_print: paged
+    toc: yes
+  pdf_document:
+    toc: no
+vignette: >
+  %\VignetteIndexEntry{case_study_data}
+  %\VignettePackage{tidymass}
+  % \VignetteEngine{knitr::rmarkdown}
+  % \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+```
+
+# **MS1 Raw data**
+
+The raw data of the case study (MS1, mzML format) is accessible on `MetaboLights` with [MTBLS1122 (HILIC positive)](https://www.ebi.ac.uk/metabolights/MTBLS1122), [MTBLS1124 (HILIC negative)](https://www.ebi.ac.uk/metabolights/MTBLS1124/descriptors), [MTBLS1122 (RPLC positive)](https://www.ebi.ac.uk/metabolights/MTBLS1129/descriptors) and [MTBLS1130 (RPLC negative)](https://www.ebi.ac.uk/metabolights/MTBLS1130/descriptors).
+
+# **MS2 raw data**
+
+The raw data of the case study (MS2, mgf format) is accessible [here](https://drive.google.com/file/d/1fR75tWp9jqp8vuWq85GvDGJ864Pb6AH2/view?usp=sharing).
+
+# **Processed data**
+
+The processed data (“mass_dataset” class) from the `massProcesser` package are [available here](https://drive.google.com/file/d/1BxILAJYAHBiIKLKaAcsTY-tgMCWV2YcO/view?usp=sharing).
+
+# **Other data**
+
+You can also download all the other dataset which are necessary for reproducible analysis for case_study.
+
+1. [data_cleaning](https://drive.google.com/file/d/1Rg5wzSrIQm5i4Eb6TyK5MrOs342UbOPK/view?usp=sharing)
+
+2. [metabolite_annotation](https://drive.google.com/file/d/1lht4LAG8VKGHqRceslPUc-dZVm72o7eD/view?usp=sharing)
+
+3. [pathway_enrichment](https://drive.google.com/file/d/1ysz9opVjiCVNpLC0R75O2SD56h_2EyPg/view?usp=sharing)
+
+4. [sample_info](https://drive.google.com/file/d/1v47gH9jvcARIuG8DUwSY7RgC58msjNo2/view?usp=sharing)
+
+5. [Statistical_analysis](https://drive.google.com/file/d/1V7U7R12Qpsh3QR3c82F9dGq9x4QxRcpj/view?usp=sharing)
+
+# **Session information**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```
