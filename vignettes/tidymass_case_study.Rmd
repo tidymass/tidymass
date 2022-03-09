@@ -36,7 +36,9 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-Data introduction. We have RPLC (positive and negative mode), HILIC (positive and negative mode).
+Data introduction. We have RPLC (positive and negative mode), HILIC (positive and negative mode). More information can be found here.
+
+[Sex Differences in Colon Cancer Metabolism Reveal A Novel Subphenotype](https://www.nature.com/articles/s41598-020-61851-0)
 
 # Download data
 
@@ -167,6 +169,11 @@ massprocesser::plot_adjusted_rt(object = xdata2,
 plot
 ```
 
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "xdata2")
+gc()
+```
+
 ## RPLC negative mode
 
 The processing of negative mode is same with positive mode data.
@@ -244,10 +251,16 @@ object_rplc_pos <- object
 object_rplc_pos
 ```
 
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "object")
+gc()
+```
+
 Read sample information.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-sample_info_pos <- readr::read_csv("sample_info/RPLC/sample_info_pos_1.csv")
+sample_info_pos <- 
+  readr::read_csv("sample_info/RPLC/sample_info_pos_1.csv")
 head(sample_info_pos)
 ```
 
@@ -261,7 +274,7 @@ object_rplc_pos %>%
 object_rplc_pos <- 
   object_rplc_pos %>% 
   activate_mass_dataset(what = "sample_info") %>%
-  dplyr::select(-c("group", "class", "injection.order"))
+  dplyr::select(-c(group, class, injection.order))
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -325,7 +338,7 @@ show_missing_values(object = object_rplc_pos,
                     percentage = TRUE)
 ```
 
-Show the mvs in samples
+Show the mvs in samples.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 show_sample_missing_values(object = object_rplc_pos, 
@@ -353,6 +366,11 @@ Load `object`.
 load("mzxml_ms1_data/RPLC/NEG/Result/object")
 object_rplc_neg <- object
 object_rplc_neg
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "object")
+gc()
 ```
 
 Read sample information.
@@ -405,6 +423,11 @@ object_hilic_pos <- object
 object_hilic_pos
 ```
 
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "object")
+gc()
+```
+
 Read sample information.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -447,6 +470,11 @@ Load `object`.
 load("mzxml_ms1_data/HILIC/NEG/Result/object")
 object_hilic_neg <- object
 object_hilic_neg
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "object")
+gc()
 ```
 
 Read sample information.
@@ -511,8 +539,7 @@ object_hilic_neg <-
   dplyr::mutate(batch = as.character(batch))
 ```
 
-
-Save thme for subsequent analysis.
+Save them for subsequent analysis.
 
 ```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 save(object_rplc_pos, file = "data_cleaning/RPLC/POS/object_rplc_pos")
@@ -980,6 +1007,20 @@ Save it for subsequent analysis.
 save(object_hilic_neg2, file = "data_cleaning/HILIC/NEG/object_hilic_neg2")
 ```
 
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(
+  list = c(
+    "object_hilic_pos",
+    "object_hilic_neg",
+    "object_rplc_pos",
+    "object_rplc_neg"
+  )
+)
+gc()
+```
+
+
 ## Data quality assessment after data cleaning
 
 We can use the `massqc_report()` function to get a html format quality assessment report.
@@ -1251,6 +1292,18 @@ Save it for subsequent analysis.
 save(object_hilic_neg3, file = "metabolite_annotation/HILIC/NEG/object_hilic_neg3")
 ```
 
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(
+  list = c(
+    "object_hilic_pos2",
+    "object_hilic_neg2",
+    "object_rplc_pos2",
+    "object_rplc_neg2"
+  )
+)
+gc()
+```
+
 
 ## Annotation result
 
@@ -1324,19 +1377,19 @@ object_hilic_neg3 <-
 We need to merge RPLC, HILIC positive and negative mode data as one `mass_dataset` class.
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-head(colnames(object_rplc_pos2))
+head(colnames(object_rplc_pos3))
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-head(colnames(object_rplc_neg2))
+head(colnames(object_rplc_neg3))
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-head(colnames(object_hilic_pos2))
+head(colnames(object_hilic_pos3))
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-head(colnames(object_hilic_neg2))
+head(colnames(object_hilic_neg3))
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -1377,6 +1430,18 @@ object <-
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 object
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(
+  list = c(
+    "object_hilic_pos3",
+    "object_hilic_neg3",
+    "object_rplc_pos3",
+    "object_rplc_neg3"
+  )
+)
+gc()
 ```
 
 ## Remove redundant metabolites
@@ -1460,7 +1525,6 @@ maleLCC <-
   activate_mass_dataset(what = "sample_info") %>%
   dplyr::filter(group == "male LCC") %>%
   dplyr::pull(sample_id)
-
 
 maleRCC <-
   object %>%
@@ -1570,7 +1634,7 @@ volcano_plot(object = object,
              point_size_scale = "p_value_adjust_malelcc_vs_malecontrol") +
   scale_size_continuous(range = c(0.5, 5))
 plot
-ggsave(plot, filename = "statistical_analysis/male_LCC_vs_mal_control.pdf", width = 8, height = 7)
+ggsave(plot, filename = "statistical_analysis/male_LCC_vs_male_control.pdf", width = 8, height = 7)
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -1618,6 +1682,11 @@ massstat::Heatmap(matrix = temp_object,
                   border = TRUE)
 ```
 
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = c("temp_object"))
+gc()
+```
+
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 temp_object <- 
 object %>% 
@@ -1637,6 +1706,11 @@ massstat::Heatmap(matrix = temp_object,
                   top_annotation = h1, 
                   row_labels = extract_variable_info(temp_object)$Compound.name,
                   border = TRUE)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = c("temp_object"))
+gc()
 ```
 
 ### Pathway enrichment analysis
@@ -1689,6 +1763,7 @@ enrich_kegg(query_id = kegg_id,
             p_cutoff = 0.05, 
             p_adjust_method = "BH", 
             threads = 3)
+save(result_female, file = "pathway_enrichment/result_female")
 ```
 
 
@@ -1708,6 +1783,7 @@ enrich_kegg(query_id = kegg_id,
             p_cutoff = 0.05, 
             p_adjust_method = "BH", 
             threads = 3)
+save(result_male, file = "pathway_enrichment/result_male")
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
@@ -1722,6 +1798,11 @@ ggsave(plot,
        height = 7)
 ```
 
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "plot")
+gc()
+```
+
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
 plot <- 
 enrich_scatter_plot(object = result_male,
@@ -1732,6 +1813,11 @@ ggsave(plot,
        filename = "pathway_enrichment/male_pathway_scatter.pdf",
        width = 7,
        height = 7)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "plot")
+gc()
 ```
 
 
@@ -1757,6 +1843,11 @@ ggsave(plot,
        filename = "pathway_enrichment/female_pathway_scatter.pdf",
        width = 7,
        height = 7)
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = c("plot", "result_female", "result_male"))
+gc()
 ```
 
 # Correlation network analysis
@@ -1792,6 +1883,13 @@ graph_data_female <-
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "temp_object")
+gc()
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+library(extrafont)
+loadfonts()
 plot <- 
 ggraph(graph = graph_data_female, layout = "kk") +
   geom_edge_fan(aes(color = correlation,
@@ -1805,8 +1903,6 @@ ggraph(graph = graph_data_female, layout = "kk") +
   theme_graph() +
   scale_edge_color_gradient2(low = "darkblue", mid = "white", high = "red")
 plot
-library(extrafont)
-loadfonts()
 ggsave(plot, filename = "pathway_enrichment/female_cor_network.pdf", width = 7, height = 7)
 ```
 
@@ -1834,6 +1930,11 @@ graph_data_male <-
     neg_cor_cutoff = 0
   ) %>% 
   mutate(Degree = centrality_degree(mode = 'all'))
+```
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, results = 'hide'}
+rm(list = "temp_object")
+gc()
 ```
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
