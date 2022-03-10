@@ -23,17 +23,17 @@
 
 **(2) Uniform, shareable, traceable, and reproducible**
 
-**Analysis workflow of `tidyMass`**
-
 <img src="man/figures/Figure_new.png" align="left" alt="" width = "100%"/>
+
+**Analysis workflow of `tidyMass`**
 
 <br>
 
 ---
 
-**The `mass_dataset` class and its property**
-
 <img src="man/figures/Figure_new 2.png" align="left" alt="" width = "100%"/>
+
+**The `mass_dataset` class and its property**
 
 <br>
 
