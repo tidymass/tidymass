@@ -67,8 +67,6 @@ remotes::install_git(url = "https://gitee.com/jaspershen/tidymass", dependencies
 
 > More information can be found [here](https://tidymass.github.io/tidymass/articles/tidymass_install.html).
 
-<br>
-
 <h2 style="color:red;"><i class="fas fa-question-circle"> Need help?</h2>
 
 ---
@@ -81,10 +79,6 @@ email me (<shenxt@stanford.edu>) or reach out me via the social medias below.
 <i class="fa fa-envelope"></i>  <shenxt@stanford.edu>
 
 <i class="fa fa-twitter"></i>  [Twitter](https://twitter.com/xiaotaoshen1990)
-
-<i class="fa fa-map-marker-alt"></i>  [M339, Alway Buidling, Cooper Lane,
-Palo Alto, CA
-94304](https://www.google.com/maps/place/Alway+Building/@37.4322345,-122.1770883,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa4d335c3be37:0x9057931f3b312c29!8m2!3d37.4322345!4d-122.1748996)
 
 <h2 style="color:red;"><i class="fas fa-location-arrow"> Citation</h2>
 
