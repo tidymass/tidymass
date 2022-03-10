@@ -100,4 +100,4 @@ knitr::opts_chunk$set(
 
 <br>
 
-`masstools` is a collection of useful tiny tools for mass spectrometry data processing and analysis.
+`masstools` is a collection of useful tiny tools. [More information...](https://tidymass.github.io/masstools/)
