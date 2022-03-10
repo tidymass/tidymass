@@ -25,17 +25,17 @@
 
 <img src="man/figures/Figure_new.png" align="left" alt="" width = "100%"/>
 
-**Analysis workflow of `tidyMass`**
-
 <br>
+
+**Analysis workflow of `tidyMass`**
 
 ---
 
 <img src="man/figures/Figure_new 2.png" align="left" alt="" width = "100%"/>
 
-**The `mass_dataset` class and its property**
-
 <br>
+
+**The `mass_dataset` class and its property**
 
 <h2 style="color:red;"><i class="fas fa-cloud-download-alt"> Installation</h2>
 
