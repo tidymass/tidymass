@@ -1,6 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `Tidymass`: An Object-oriented Computational Framework for LC-MS Data Processing and Analysis <img src="man/figures/logo.png" align="right" alt="" width="100" />
+## `Tidymass`: An Object-oriented Reproducible Analysis Framework for LC-MS Data <img src="man/figures/logo.png" align="right" alt="" width="100" />
 
 [![](https://www.r-pkg.org/badges/version/tidymass?color=green)](https://cran.r-project.org/package=tidymass)
 [![](https://img.shields.io/github/languages/code-size/tidymass/tidymass.svg)](https://github.com/tidymass/tidymass)
@@ -13,17 +13,15 @@
 
 ---
 
-<img src="man/figures/20211224_6.png" align="left" alt="" width = "50%"/>
+<img src="man/figures/packages.png" align="left" alt="" width = "50%"/>
 
-We present the `tidyMass` project, a comprehensive computational framework that can process the whole workflow of data processing/analysis for LC-MS-based untargeted metabolomics, including raw data processing (peak detecting), data cleaning (missing value processing, data normalization, and integration), statistical analysis, metabolite annotation, and biological function mining (pathway enrichment, feature-based metabolic module analysis). 
+`TidyMass` project is a comprehensive computational framework that can process the whole workflow of data processing and analysis for LC-MS-based untargeted metabolomics. 
 
 `TidyMass` was designed based on the following strategies to address the limitations of current tools. 
 
 **(1) Cross-platform utility**
 
 **(2) Uniform, shareable, traceable, and reproducible**
-
-A uniform data format is specifically designed to store and manage metabolomics data and processing parameters, making it is possible to trace the analysis steps and parameters used. 3) Flexible and extensible. TidyMass is a collection of multiple R packages, in which the different packages correspond to different steps. This modular design makes `tidyMass` a highly flexible and extensible tool.
 
 **Analysis workflow of `tidyMass`**
 
@@ -44,7 +42,7 @@ A uniform data format is specifically designed to store and manage metabolomics 
 ---
 
 You can install `tidymass` from
-[GitHub](https://github.com/tidymass/tidymass) or [GitLab](https://gitlab.com/dashboard/projects).
+[GitHub](https://github.com/tidymass/tidymass), [GitLab](https://gitlab.com/dashboard/projects) or [Gitee](https://gitee.com/jaspershen/projects).
 
 Option 1: GitHub
 
@@ -68,88 +66,6 @@ remotes::install_git(url = "https://gitee.com/jaspershen/tidymass", dependencies
 ```
 
 > More information can be found [here](https://tidymass.github.io/tidymass/articles/tidymass_install.html).
-
-<h2 style="color:red;"><i class="fas fa-code-branch"> Packages</h2>
-
----
-
-Now, `tidymass` contains nine packages that are listed below:
-
-<h3 style="color:#b45c6c;"><i class="fas fa-code"> massConverter</h3> <a href="https://tidymass.github.io/massconverter/" target="_blank"><img src="man/figures/massconverter_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`massconverter` is used to convert mass spectrometry raw data to other format data (mzXML, mxML, etc.).
-
-<br>
-
-<h3 style="color:#e474ac;"><i class="fas fa-code"> massDataset</h3> <a href="https://tidymass.github.io/massdataset/" target="_blank"><img src="man/figures/massdataset_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`massdataset` is used organize metabolomics experiment data into a `mass_dataset` class object, that can be processed by all the `tidymass` packages.
-
-<br>
-
-<h3 style="color:#f4ac64;"><i class="fas fa-code"> massProcesser</h3> <a href="https://tidymass.github.io/massprocesser/" target="_blank"><img src="man/figures/massprocesser_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`massprocesser` is used for LC-MS based untargeted metabolomics raw data processing.
-
-<br>
-
-<h3 style="color:#2098b8;"><i class="fas fa-code"> massCleaner</h3> <a href="https://tidymass.github.io/masscleaner/" target="_blank"><img src="man/figures/masscleaner_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`masscleaner` is used for data cleaning of metabolomics.
-
-<br>
-<br>
-
-<h3 style="color:#abcc2c;"><i class="fas fa-code"> massQC</h3> <a href="https://tidymass.github.io/massqc/" target="_blank"><img src="man/figures/massqc_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`massqc` is used for data quality assessment and control.
-
-<br>
-<br>
-
-<h3 style="color:#2ca4e4;"><i class="fas fa-code"> metID</h3> <a href="https://tidymass.github.io/metid/" target="_blank"><img src="man/figures/metid_logo2.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`metid` is used for metabolite database construction and metabolite annotation.
-
-<br>
-<br>
-
-<h3 style="color:#dce45c;"><i class="fas fa-code"> massStat</h3> <a href="https://tidymass.github.io/massstat/" target="_blank"><img src="man/figures/massstat_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`massstat` is used for statistical analysis of untargeted metabolomics.
-
-<br>
-<br>
-
-<h3 style="color:#ccac9c;"><i class="fas fa-code"> metPath</h3> <a href="https://tidymass.github.io/metpath/" target="_blank"><img src="man/figures/metpath_logo.png" align="left" alt="" width="120" /></a>
-
-
-<br>
-
-`metpath` is used for pathway enrichment analysis of metabolomics data.
-
-<br>
-<br>
-
-<h3 style="color:#ec1c04;"><i class="fas fa-code"> massTools</h3> <a href="https://tidymass.github.io/masstools/" target="_blank"><img src="man/figures/masstools_logo.png" align="left" alt="" width="120" /></a>
-
-<br>
-
-`masstools` is a collection of useful tiny tools for mass spectrometry data processing and analysis.
 
 <br>
 

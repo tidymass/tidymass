@@ -46,15 +46,17 @@ navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, articles, news, questions, more_sofware]
+    left: [home, packages, install, articles, news, questions, more_sofware]
     right: [github, twitter]
   components:
-    articles:
-      text: Tutorial
-      icon: fa-folder-open
+    packages:
+      text: Packages
+      icon: fa-code
+      href: articles/packages.html
+    install:
+      text: Installation
+      icon: fa-download
       menu:
-      - text: ---
-      - text: "Install and update tidymass"
       - text: "Install tidymass"
         href: articles/tidymass_install.html
       - text: "Update tidymass"
@@ -63,6 +65,10 @@ navbar:
         href: articles/docker.html
       - text: "Build your own images based on tidymass"
         href: articles/build_docker.html
+    articles:
+      text: Tutorial
+      icon: fa-folder-open
+      menu:
       - text: ---
       - text: "Demo data"
       - text: "Download demo data"
@@ -87,14 +93,7 @@ navbar:
         href: articles/pathway_enrichment.html
       - text: ---
       - text: "Use tidymass for whole workflow"
-      - text: "Whole workflow"
         href: articles/whole_workflow.html
-      - text: ---
-      - text: "Integrate tidymass with other pipeline"
-      - text: "xcmsrocker"
-        href: https://github.com/yufree/xcmsrocker
-      - text: "Stanford data ocean"
-        href: https://innovations.stanford.edu/sdo
       - text: ---
       - text: "Case study for tidyMass paper"
       - text: "Download data"
@@ -103,7 +102,6 @@ navbar:
         href: articles/tidymass_case_study.html
       - text: "Repeat case study by docker"
         href: articles/repeat_case_study.html
-      - text: ---
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990
@@ -122,6 +120,10 @@ navbar:
       text: More
       icon: fa-laptop-code
       menu:
+      - text: "xcmsrocker"
+        href: https://github.com/yufree/xcmsrocker
+      - text: "Stanford Data Ocean"
+        href: https://innovations.stanford.edu/sdo
       - text: MetNormalizer
         href: https://jaspershen.github.io/MetNormalizer/
       - text: "lipidflow"

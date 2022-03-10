@@ -15,6 +15,7 @@ articles:
   faq: faq.html
   metabolite_annotation: metabolite_annotation.html
   more_software: more_software.html
+  packages: packages.html
   pathway_enrichment: pathway_enrichment.html
   raw_data_processing: raw_data_processing.html
   repeat_case_study: repeat_case_study.html
@@ -25,7 +26,7 @@ articles:
   tidymass_update: tidymass_update.html
   version0.4.0: version0.4.0.html
   whole_workflow: whole_workflow.html
-last_built: 2022-03-09T06:11Z
+last_built: 2022-03-10T05:50Z
 urls:
   reference: https://tidymass.github.io/tidymass/reference
   article: https://tidymass.github.io/tidymass/articles
