@@ -71,11 +71,15 @@ Change the `image-name`.
 
 We need to create a account on the docker hub (https://hub.docker.com/) and then use the next code to link the local image to our account.
 
+In the terminal:
+
 ```
 docker tag image-name your-account/image-name:latest
 ```
 
 # Push image to docker hub
+
+In the terminal:
 
 ```
 docker push your-account/image-name:latest
