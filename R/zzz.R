@@ -7,10 +7,10 @@
   crayon::num_colors(TRUE)
   tidymass_attach()
   
-  if (!"package:conflicted" %in% search()) {
-    x <- tidymass_conflicts()
-    msg(tidymass_conflict_message(x), startup = TRUE)
-  }
+  # if (!"package:conflicted" %in% search()) {
+  #   x <- tidymass_conflicts()
+  #   msg(tidymass_conflict_message(x), startup = TRUE)
+  # }
   
 }
 
