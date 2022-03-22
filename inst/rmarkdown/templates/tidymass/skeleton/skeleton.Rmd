@@ -1,0 +1,60 @@
+---
+title: "TidyMass"
+author: "Xaiotao Shen"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    number_sections: true
+    df_print: paged
+    toc: yes
+  pdf_document:
+    toc: no
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+```
+
+# Intrudoction
+
+This is a RMarkdown Template for `tidymass`
+
+If you use `tidymass` in your publications, please cite this paper:
+
+TidyMass: An Object-oriented Reproducible Analysis Framework for LC-MS Data.
+
+Xiaotao Shen, Hong Yan, Chuchu Wang, Peng Gao, Caroline H. Johnson, Michael P. Snyder.
+
+[Web Link](https://www.biorxiv.org/content/10.1101/2022.03.15.484499v1).
+
+Thank you very much!
+
+# Create mass_data class object
+
+We can create `mass_data` class object using `create_mass_dataset()` function.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
+library(tidymass)
+
+data("expression_data")
+data("sample_info")
+data("sample_info_note")
+data("variable_info")
+data("variable_info_note")
+object =
+  create_mass_dataset(
+    expression_data = expression_data,
+    sample_info = sample_info,
+    variable_info = variable_info,
+    sample_info_note = sample_info_note,
+    variable_info_note = variable_info_note
+  )
+object
+```

@@ -84,7 +84,7 @@ email me (<shenxt@stanford.edu>) or reach out me via the social medias below.
 
 ---
 
-If you use `tidymass` in you publications, please cite this publication:
+If you use `tidymass` in your publications, please cite this paper:
 
 TidyMass: An Object-oriented Reproducible Analysis Framework for LC-MS Data.
 
