@@ -46,7 +46,7 @@ navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, packages, install, articles, news, questions, more_sofware]
+    left: [home, packages, install, articles, reference, news, questions, more_sofware]
     right: [github, twitter]
   components:
     packages:
