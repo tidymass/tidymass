@@ -1,5 +1,6 @@
 core <-
-  c("massdataset",
+  c(
+    "massdataset",
     "massprocesser",
     "masscleaner",
     "massqc",
@@ -58,9 +59,7 @@ tidymass_attach <- function() {
   info <- paste0(packages[col1], "     ", packages[-col1])
   
   msg(paste(info, collapse = "\n"), startup = TRUE)
-  
-  suppressPackageStartupMessages(lapply(to_load, same_library))
-  
+  # suppressPackageStartupMessages(lapply(to_load, same_library))
   invisible()
 }
 
@@ -73,4 +72,3 @@ tidymass_package_version <- function(x) {
   }
   paste0(version, collapse = ".")
 }
-
