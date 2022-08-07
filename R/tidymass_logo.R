@@ -20,13 +20,9 @@
 ##https://onlineasciitools.com/convert-text-to-ascii-art
 
 tidymass_logo <- function(unicode = l10n_info()$`UTF-8`) {
-  message(crayon::green("Thank you for using tidymass!\n"))
-  message(crayon::green("Version", tidymass_version, "(", update_date, ')\n'))
-  message(
-    crayon::green(
-      "More information can be found at https://tidymass.github.io/tidymass/\n"
-    )
-  )
+  message(crayon::green("Thank you for using tidymass!"))
+  message(crayon::green("Version", tidymass_version, "(", update_date, ')'))
+  message(crayon::green("More information: tidymass.org"))
   
   logo =
     c(
@@ -77,5 +73,7 @@ print.tidymass_logo <- function(x, ...) {
   invisible(x)
 }
 
-tidymass_version = "0.99.6"
-update_date = as.character(Sys.time())
+tidymass_version <-
+  as.character(utils::packageVersion("tidymass"))
+update_date <-
+  as.character(Sys.time())

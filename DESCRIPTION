@@ -1,6 +1,6 @@
 Package: tidymass
 Title: R packages for mass spectrometry data processing and analysis
-Version: 0.99.7
+Version: 1.0.1
 Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",
@@ -19,7 +19,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Depends: 
     R (>= 4.1)
 Imports: 

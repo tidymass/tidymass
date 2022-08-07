@@ -42,7 +42,6 @@ check_tidymass_version <-
     check_result$up_to_date <-
       as.logical(check_result$up_to_date)
     
-    
     if (packages == "core") {
       check_result <-
         check_result %>%
@@ -50,12 +49,12 @@ check_tidymass_version <-
     }
     
     if (all(check_result$up_to_date)) {
-      message("No package to update.\n")
+      message("No package to update.")
     } else{
       check_result <- 
         check_result %>% 
         dplyr::filter(!up_to_date)
-      message("Use update_tidymass() to update the following pacakges.\n")
+      message("Use update_tidymass() to update the following pacakges.")
       check_result
     }
   }
