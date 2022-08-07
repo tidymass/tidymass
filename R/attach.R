@@ -59,7 +59,7 @@ tidymass_attach <- function() {
   info <- paste0(packages[col1], "     ", packages[-col1])
   
   msg(paste(info, collapse = "\n"), startup = TRUE)
-  # suppressPackageStartupMessages(lapply(to_load, same_library))
+  suppressPackageStartupMessages(lapply(to_load, same_library))
   invisible()
 }
 
