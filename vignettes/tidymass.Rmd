@@ -27,10 +27,33 @@ knitr::opts_chunk$set(
 )
 ```
 
-# **Install**
+# **Installation**
 
-```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
-library(tidymass)
+You can install `tidymass` from [GitLab](https://gitlab.com/jaspershen/tidymass)
+
+``` {r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, code_folding=TRUE}
+if(!require(remotes)){
+install.packages("remotes")
+}
+remotes::install_gitlab("jaspershen/tidymass")
+```
+
+or [GitHub](https://github.com/tidymass/tidymass)
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, code_folding=TRUE}
+remotes::install_github("tidymass/tidymass")
+```
+
+# **Check versions of all the packages in tidymass**
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, code_folding=TRUE}
+tidymass::check_tidymass_version()
+```
+
+# **Update packages in tidymass**
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE, code_folding=TRUE}
+tidymass::update_tidymass()
 ```
 
 # **Session information**

@@ -30,7 +30,7 @@ navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, intro, articles, news, reference]
+    left: [home, intro, news, reference]
     right: [github, twitter]
   components:
     articles:
@@ -44,10 +44,6 @@ navbar:
     news:
       text: News
       menu:
-      - text: "Blog posts"
-      - text: "Version 0.9.2"
-        href: articles/version_0_9_2.html
-      - text: "------------------"
       - text: "Change log"
         href: news/index.html
         
