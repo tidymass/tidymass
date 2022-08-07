@@ -1,20 +1,17 @@
 destination: docs
 
-url: https://tidymass.github.io/tidymass/
+url: https://tidymass.tidymass.org
 
 home:
   strip_header: false
   title: tidymass
   links:
-      - text: <i class="fa fa-home"></i> Browse source code
-        href: https://github.com/tidymass/tidymass
-      - text: <i class="fa fa-bug"></i> Report a bug
-        href: https://github.com/tidymass/tidymass/issues
-      - text: <i class="fa fa-home"></i> Find me
-        href: https://www.shenxt.info/
+  - text: Find me
+    href: https://www.shenxt.info/
 
-sidebar:
-  structure: [links, license, community, citation, authors, dev]
+authors:
+  Xiaotao Shen:
+    href: https://www.shenxt.info/
 
 development:
   mode: auto
@@ -22,138 +19,49 @@ development:
   version_tooltip: "Under development"
 
 template:
-  bootstrap: 5
-  bslib:
-    primary: "#06ACB2"
-  bootswatch: superhero
-  theme: arrow-dark
   params:
     docsearch:
-      api_key: 21ff2860978c5d2ceb7d4150364070ff
+      api_key: 2f09495997a50f5008bc92fa73c5552d
       index_name: tidymass
+    bootswatch: flatly
     ganalytics: UA-000000-01
-
-reference:
-  - title: Functions
-    desc: Functions in tidymas
-    contents:
-    - tidymass_install
-    - tidymass_logo
-    - tidymass_conflicts
-    - tidymass_packages
-
+    
 navbar:
   title: "sparklyr"
   # type: inverse
   structure:
-    left: [home, packages, install, articles, reference, news, questions, more_sofware]
+    left: [home, intro, articles, news, reference]
     right: [github, twitter]
   components:
-    packages:
-      text: Packages
-      icon: fa-code
-      href: articles/packages.html
-    install:
-      text: Installation
-      icon: fa-download
-      menu:
-      - text: "Install tidymass"
-        href: articles/tidymass_install.html
-      - text: "Update tidymass"
-        href: articles/tidymass_update.html
-      - text: "Docker version of tidymass"
-        href: articles/docker.html
-      - text: "Build your own images based on tidymass"
-        href: articles/build_docker.html
     articles:
-      text: Tutorial
-      icon: fa-folder-open
+      text: Help document
       menu:
-      - text: ---
-      - text: "Demo data"
-      - text: "Download demo data"
-        href: articles/demo_data.html
-      - text: "Create mass_dataset class from other tools"
-        href: articles/create_mass_dataset.html
-      - text: ---
-      - text: "Use tidymass step by step"
-      - text: "Convert raw data to mzXML/mgf"
-        href: articles/data_convert.html
-      - text: "Raw data processing"
-        href: articles/raw_data_processing.html
-      - text: "Explore data"
-        href: articles/explore_data.html
-      - text: "Data cleaning"
-        href: articles/data_cleaning.html
-      - text: "Metabolite annotation"
-        href: articles/metabolite_annotation.html
-      - text: "Statistical analysis"
-        href: articles/statistical_analysis.html
-      - text: "Pathway enrichment"
-        href: articles/pathway_enrichment.html
-      - text: ---
-      - text: "Use tidymass for whole workflow"
-        href: articles/whole_workflow.html
-      - text: ---
-      - text: "Case study for tidyMass paper"
-      - text: "Download data"
-        href: articles/case_study_data.html
-      - text: "Case study"
-        href: articles/tidymass_case_study.html
-      - text: "Repeat case study by docker"
-        href: articles/repeat_case_study.html
+      - text: Install tidymass
+        href: articles/tidymass_install.html
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/xiaotaoshen1990
-    github:
-      icon: fa-github
-      href: https://github.com/tidymass/tidymass
-    contact:
-      text: Contact us
-      icon: fa-paper-plane
-      href: articles/contact_us.html
-    questions:
-      text: FAQ
-      icon: fa-question-circle
-      href: articles/faq.html
-    more_sofware:
-      text: More
-      icon: fa-laptop-code
-      menu:
-      - text: "xcmsrocker"
-        href: https://github.com/yufree/xcmsrocker
-      - text: "Stanford Data Ocean"
-        href: https://innovations.stanford.edu/sdo
-      - text: MetNormalizer
-        href: https://jaspershen.github.io/MetNormalizer/
-      - text: "lipidflow"
-        href: https://jaspershen.github.io/lipidflow/
-      - text: "laggedcor"
-        href: https://jaspershen.github.io/laggedcor/
     news:
-      text: News & Blog
-      icon: fa-rss
+      text: News
       menu:
       - text: "Blog posts"
-      - text: "Version 0.4.0"
-        href: articles/version0.4.0.html
+      - text: "Version 0.9.2"
+        href: articles/version_0_9_2.html
       - text: "------------------"
       - text: "Change log"
         href: news/index.html
         
 footer:
   structure: 
-    left: [package, developed_by, from, more_sofware]
-    right: [contact, email, wechat, website, twitter, address]
+    left: [package, developed_by, from]
+    right: [contact, email, wechat, tidymass]
   components:
     from: <br> from <i class="fa fa-university"></i> Stanford University <br> <i class="fa fa-clinic-medical"></i>School of Medicine <br> <i class="fa fa-dna"></i> Genetics Department
     more_sofware: <br> <i class="fa fa-laptop-code"></i> [More softare](https://www.shenxt.info/files/wechat_QR.jpg)
     contact: <b>Contact Us:</b> <br>
     email: <i class="fa fa-envelope"></i> shenxt1990@outlook.com <br>
     wechat: <i class="fa fa-weixin"></i>  [shenxt1990](https://www.shenxt.info/files/wechat_QR.jpg) <br>
-    website: <i class="fa fa-home"></i> [shenxt.info](https://www.shenxt.info) <br>
-    twitter: <i class="fa fa-twitter"></i> [Twitter](https://twitter.com/xiaotaoshen1990) <br>
-    address: <i class="fa fa-map-marker-alt"></i> [BMI building](https://goo.gl/maps/WLps4yacxfRfyAxTA)
-        
+    tidymass: <i class="fa fa-network-wired"></i> [A part of tidymass](https://www.tidymass.org/)
+     
 toc:
-  depth: 4
+  depth: 3

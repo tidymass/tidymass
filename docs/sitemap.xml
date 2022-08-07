@@ -1,129 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tidymass.github.io/tidymass/404.html</loc>
+    <loc>https://tidymass.tidymass.org/404.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/LICENSE-text.html</loc>
+    <loc>https://tidymass.tidymass.org/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/build_docker.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/build_docker.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/case_study_data.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/case_study_data.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/contact_us.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/contact_us.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/create_mass_dataset.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/create_mass_dataset.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/data_cleaning.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/data_cleaning.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/data_convert.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/data_convert.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/data_preparation.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/data_preparation.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/demo_data.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/demo_data.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/docker.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/docker.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/explore_data.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/explore_data.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/faq.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/faq.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/index.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/metabolite_annotation.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/metabolite_annotation.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/more_software.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/more_software.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/packages.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/packages.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/pathway_enrichment.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/pathway_enrichment.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/raw_data_processing.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/raw_data_processing.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/repeat_case_study.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/repeat_case_study.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/statiscal_analysis/Parameter_report/tidymass_parameters.template.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/statiscal_analysis/Parameter_report/tidymass_parameters.template.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/statistical_analysis/Parameter_report/tidymass_parameters.template.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/statistical_analysis/Parameter_report/tidymass_parameters.template.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/statistical_analysis.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/statistical_analysis.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/tidymass_case_study.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/tidymass.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/tidymass_install.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/tidymass_case_study.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/tidymass_update.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/tidymass_install.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/version0.4.0.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/tidymass_update.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/articles/whole_workflow.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/version0.4.0.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/authors.html</loc>
+    <loc>https://tidymass.tidymass.org/articles/whole_workflow.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/index.html</loc>
+    <loc>https://tidymass.tidymass.org/authors.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/news/index.html</loc>
+    <loc>https://tidymass.tidymass.org/index.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/check_tidymass_version.html</loc>
+    <loc>https://tidymass.tidymass.org/news/index.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/index.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/check_tidymass_version.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/mutate_ms2.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/tidymass_conflicts.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/mutate_ms2.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/tidymass_deps.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/tidymass_conflicts.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/tidymass_install.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/tidymass_deps.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/tidymass_logo.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/tidymass_install.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/tidymass_packages.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/tidymass_logo.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/tidymass_sitrep.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/tidymass_packages.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/tidymass_update.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/tidymass_sitrep.html</loc>
   </url>
   <url>
-    <loc>https://tidymass.github.io/tidymass/reference/update_tidymass.html</loc>
+    <loc>https://tidymass.tidymass.org/reference/tidymass_update.html</loc>
+  </url>
+  <url>
+    <loc>https://tidymass.tidymass.org/reference/update_tidymass.html</loc>
   </url>
 </urlset>

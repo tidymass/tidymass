@@ -1,33 +1,10 @@
-pandoc: 2.14.0.3
-pkgdown: 2.0.2
+pandoc: '2.18'
+pkgdown: 2.0.5
 pkgdown_sha: ~
 articles:
-  build_docker: build_docker.html
-  case_study_data: case_study_data.html
-  contact_us: contact_us.html
-  create_mass_dataset: create_mass_dataset.html
-  data_cleaning: data_cleaning.html
-  data_convert: data_convert.html
-  data_preparation: data_preparation.html
-  demo_data: demo_data.html
-  docker: docker.html
-  explore_data: explore_data.html
-  faq: faq.html
-  metabolite_annotation: metabolite_annotation.html
-  more_software: more_software.html
-  packages: packages.html
-  pathway_enrichment: pathway_enrichment.html
-  raw_data_processing: raw_data_processing.html
-  repeat_case_study: repeat_case_study.html
-  tidymass_parameters.template: statistical_analysis/Parameter_report/tidymass_parameters.template.html
-  statistical_analysis: statistical_analysis.html
-  tidymass_case_study: tidymass_case_study.html
-  tidymass_install: tidymass_install.html
-  tidymass_update: tidymass_update.html
-  version0.4.0: version0.4.0.html
-  whole_workflow: whole_workflow.html
-last_built: 2022-03-22T00:10Z
+  tidymass: tidymass.html
+last_built: 2022-08-07T23:17Z
 urls:
-  reference: https://tidymass.github.io/tidymass/reference
-  article: https://tidymass.github.io/tidymass/articles
+  reference: https://tidymass.tidymass.org/reference
+  article: https://tidymass.tidymass.org/articles
 
