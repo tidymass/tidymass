@@ -15,6 +15,7 @@
 #' @import massstat
 #' @import metpath
 #' @import masstools
+#' @importFrom utils packageVersion
 #' @examples
 #' tidymass_logo()
 ##https://onlineasciitools.com/convert-text-to-ascii-art

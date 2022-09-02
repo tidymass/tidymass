@@ -5,7 +5,6 @@
 #' \email{shenxt1990@@outlook.com}
 #' @param packages core or all packages in tidymass. "core" means all the core
 #' packages in tidymass and "all" means all the packages in tidymass.
-#' @importFrom rvcheck check_github
 #' @export
 
 check_tidymass_version <-
@@ -26,12 +25,35 @@ check_tidymass_version <-
       ) %>%
       lapply(function(x) {
         y <-
-          rvcheck::check_github(pkg = paste0("tidymass/", x))
+          tryCatch(
+            check_github(pkg = paste0("tidymass/", x)),
+            error = function(e) {
+              NULL
+            }
+          )
+        if (is.null(y)) {
+          y <-
+            tryCatch(
+              check_gitlab(pkg = paste0("jaspershen/", x)),
+              error = function(e) {
+                NULL
+              }
+            )
+        }
+        if (is.null(y)) {
+          y <-
+            c(
+              package = paste0("tidymass/", x),
+              installed_version = "1.0.0",
+              latest_version = "1.0.0",
+              up_to_date = TRUE
+            )
+        }
         y$installed_version <-
           as.character(y$installed_version)
         unlist(y)
       })
-      check_result <- 
+    check_result <-
       do.call(rbind, check_result) %>%
       as.data.frame()
     
@@ -51,8 +73,8 @@ check_tidymass_version <-
     if (all(check_result$up_to_date)) {
       message("No package to update.")
     } else{
-      check_result <- 
-        check_result %>% 
+      check_result <-
+        check_result %>%
         dplyr::filter(!up_to_date)
       message("Use update_tidymass() to update the following pacakges.")
       check_result
@@ -68,7 +90,6 @@ check_tidymass_version <-
 #' @param packages core or all packages in tidymass. "core" means all the core
 #' packages in tidymass and "all" means all the packages in tidymass.
 #' @param from github, gitlab or gitee.
-#' @importFrom rvcheck check_github
 #' @importFrom remotes install_github install_gitlab install_git
 #' @export
 update_tidymass <-
