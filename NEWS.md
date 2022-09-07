@@ -13,3 +13,7 @@
 # Version 1.0.2 (2022-09-01)
 
 * Fix bugs.
+
+# Version 1.0.3
+
+* Add one more attached core package.

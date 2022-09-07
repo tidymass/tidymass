@@ -9,7 +9,8 @@ core <-
     "metid",
     "masstools",
     "dplyr",
-    "ggplot2"
+    "ggplot2",
+    "magrittr"
   )
 
 tidymass_core_unloaded <- function() {
