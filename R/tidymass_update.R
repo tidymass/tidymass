@@ -53,6 +53,7 @@ check_tidymass_version <-
           as.character(y$installed_version)
         unlist(y)
       })
+    
     check_result <-
       do.call(rbind, check_result) %>%
       as.data.frame()
@@ -60,6 +61,10 @@ check_tidymass_version <-
     check_result$package <-
       check_result$package %>%
       stringr::str_replace("tidymass\\/", "")
+    
+    check_result$up_to_date <-
+      check_result$installed_version ==
+      check_result$latest_version
     
     check_result$up_to_date <-
       as.logical(check_result$up_to_date)

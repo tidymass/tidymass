@@ -17,3 +17,7 @@
 # Version 1.0.3
 
 * Add one more attached core package.
+
+# Version 1.0.4 (2022-09-15)
+
+* * Fix bugs.
