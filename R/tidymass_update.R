@@ -134,13 +134,13 @@ update_tidymass <-
       }
       
       if (from == "gitee") {
-        tryCatch(
-          detach(name = paste0("package:", i)),
-          error = function(e) {
-            message(i, ".\n")
-          }
-        )
         for (i in check_result$package) {
+          tryCatch(
+            detach(name = paste0("package:", i)),
+            error = function(e) {
+              message(i, ".\n")
+            }
+          )
           remotes::install_git(url = paste0("https://gitee.com/tidymass/", i),
                                upgrade = "never")
         }

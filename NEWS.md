@@ -21,3 +21,7 @@
 # Version 1.0.4 (2022-09-15)
 
 * * Fix bugs.
+
+# Version 1.0.5 (2022-09-17)
+
+* Fix one bug in update_tidymass.
