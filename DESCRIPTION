@@ -46,11 +46,11 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Remotes: 
-    gitlab::jaspershen/masstools,
-    gitlab::jaspershen/massdataset,
-    gitlab::jaspershen/massprocesser,
-    gitlab::jaspershen/masscleaner,
-    gitlab::jaspershen/massstat,
-    gitlab::jaspershen/metpath,
-    gitlab::jaspershen/metid,
-    gitlab::jaspershen/massqc
+    gitlab::tidymass/masstools,
+    gitlab::tidymass/massdataset,
+    gitlab::tidymass/massprocesser,
+    gitlab::tidymass/masscleaner,
+    gitlab::tidymass/massstat,
+    gitlab::tidymass/metpath,
+    gitlab::tidymass/metid,
+    gitlab::tidymass/massqc

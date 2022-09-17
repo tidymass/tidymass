@@ -34,7 +34,7 @@ check_tidymass_version <-
         if (is.null(y)) {
           y <-
             tryCatch(
-              check_gitlab(pkg = paste0("jaspershen/", x)),
+              check_gitlab(pkg = paste0("tidymass/", x)),
               error = function(e) {
                 NULL
               }
@@ -141,7 +141,7 @@ update_tidymass <-
           }
         )
         for (i in check_result$package) {
-          remotes::install_git(url = paste0("https://gitee.com/jaspershen/", i),
+          remotes::install_git(url = paste0("https://gitee.com/tidymass/", i),
                                upgrade = "never")
         }
       }

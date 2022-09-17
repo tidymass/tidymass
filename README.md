@@ -15,13 +15,13 @@
 
 # **Installation**
 
-You can install `tidymass` from [GitLab](https://gitlab.com/jaspershen/tidymass)
+You can install `tidymass` from [GitLab](https://gitlab.com/tidymass/tidymass)
 
 ``` r
 if(!require(remotes)){
 install.packages("remotes")
 }
-remotes::install_gitlab("jaspershen/tidymass")
+remotes::install_gitlab("tidymass/tidymass")
 ```
 
 or [GitHub](https://github.com/tidymass/tidymass)
