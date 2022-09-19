@@ -6,7 +6,8 @@
 \usage{
 update_tidymass(
   packages = c("core", "all"),
-  from = c("github", "gitlab", "gitee")
+  from = c("gitlab", "github", "gitee"),
+  fastgit = FALSE
 )
 }
 \arguments{
@@ -14,6 +15,9 @@ update_tidymass(
 packages in tidymass and "all" means all the packages in tidymass.}
 
 \item{from}{github, gitlab or gitee.}
+
+\item{fastgit}{if install packages using fastgit. see
+https://hub.fastgit.org/}
 }
 \description{
 Update packages in tidymass.

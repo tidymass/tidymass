@@ -1,7 +1,7 @@
 Package: tidymass
 Type: Package
 Title: R packages for mass spectrometry data processing and analysis
-Version: 1.0.5
+Version: 1.0.6
 Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",
@@ -20,7 +20,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 Depends: 
     R (>= 4.1)
 Imports: 
@@ -32,7 +32,7 @@ Imports:
     magrittr,
     rstudioapi,
     dplyr,
-    masstools,
+    masstools (>= 1.0.7),
     massdataset,
     massprocesser,
     masscleaner,

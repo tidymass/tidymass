@@ -20,8 +20,12 @@
 
 # Version 1.0.4 (2022-09-15)
 
-* * Fix bugs.
+* Fix bugs.
 
 # Version 1.0.5 (2022-09-17)
 
 * Fix one bug in update_tidymass.
+
+# Version 1.0.6 (2022-09-19)
+
+* Can update tidymass from fastgit.

@@ -95,11 +95,15 @@ check_tidymass_version <-
 #' @param packages core or all packages in tidymass. "core" means all the core
 #' packages in tidymass and "all" means all the packages in tidymass.
 #' @param from github, gitlab or gitee.
+#' @param fastgit if install packages using fastgit. see
+#' https://hub.fastgit.org/
 #' @importFrom remotes install_github install_gitlab install_git
+#' @importFrom masstools install_fastgit
 #' @export
 update_tidymass <-
   function(packages = c("core", "all"),
-           from = c("github", "gitlab", "gitee")) {
+           from = c("gitlab", "github", "gitee"),
+           fastgit = FALSE) {
     packages <- match.arg(packages)
     from <- match.arg(from)
     
@@ -115,8 +119,17 @@ update_tidymass <-
               message(i, ".\n")
             }
           )
-          remotes::install_github(repo = paste0("tidymass/", i),
-                                  upgrade = "never")
+          if (fastgit) {
+            masstools::install_fastgit(
+              pkg = paste0("tidymass/", i),
+              from = from,
+              upgrade = "never"
+            )
+          } else{
+            remotes::install_github(repo = paste0("tidymass/", i),
+                                    upgrade = "never")
+          }
+          
         }
       }
       
@@ -128,8 +141,17 @@ update_tidymass <-
               message(i, ".\n")
             }
           )
-          remotes::install_gitlab(repo = paste0("tidymass/", i),
-                                  upgrade = "never")
+          
+          if (fastgit) {
+            masstools::install_fastgit(
+              pkg = paste0("tidymass/", i),
+              from = from,
+              upgrade = "never"
+            )
+          } else{
+            remotes::install_gitlab(repo = paste0("tidymass/", i),
+                                    upgrade = "never")
+          }
         }
       }
       
@@ -141,8 +163,16 @@ update_tidymass <-
               message(i, ".\n")
             }
           )
-          remotes::install_git(url = paste0("https://gitee.com/tidymass/", i),
-                               upgrade = "never")
+          if (fastgit) {
+            masstools::install_fastgit(
+              pkg = paste0("tidymass/", i),
+              from = from,
+              upgrade = "never"
+            )
+          } else{
+            remotes::install_git(url = paste0("https://gitee.com/tidymass/", i),
+                                 upgrade = "never")
+          }
         }
       }
     }
