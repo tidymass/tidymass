@@ -72,33 +72,20 @@ check_gitlab <- function(pkg) {
 }
 
 
-check_github_gitlab <- function(pkg, repo = "github") {
-  installed_version <-
-    tryCatch(
-      utils::packageVersion(gsub(".*/", "", pkg)),
-      error = function(e)
-        NA
-    )
-  
-  if (repo == "github") {
-    url <-
-      paste0("https://raw.githubusercontent.com/",
-             pkg,
-             "/master/DESCRIPTION")
-    
-    x <-
+check_github_gitlab <-
+  function(pkg, repo = "github") {
+    installed_version <-
       tryCatch(
-        readLines(url),
-        error = function(e) {
-          NULL
-        }
+        utils::packageVersion(gsub(".*/", "", pkg)),
+        error = function(e)
+          NA
       )
     
-    if (is.null(x)) {
+    if (repo == "github") {
       url <-
         paste0("https://raw.githubusercontent.com/",
                pkg,
-               "/main/DESCRIPTION")
+               "/master/DESCRIPTION")
       
       x <-
         tryCatch(
@@ -108,59 +95,73 @@ check_github_gitlab <- function(pkg, repo = "github") {
           }
         )
       
+      if (is.null(x)) {
+        url <-
+          paste0("https://raw.githubusercontent.com/",
+                 pkg,
+                 "/main/DESCRIPTION")
+        
+        x <-
+          tryCatch(
+            readLines(url),
+            error = function(e) {
+              NULL
+            }
+          )
+        
+      }
+      
+    } else if (repo == "gitlab") {
+      url <- paste0("https://gitlab.com/", pkg, "/raw/master/DESCRIPTION")
+      x <-
+        tryCatch(
+          readLines(url),
+          error = function(e) {
+            NULL
+          }
+        )
+      
+      if (is.null(x)) {
+        url <-
+          paste0("https://gitlab.com/", pkg, "/raw/main/DESCRIPTION")
+      }
+      
+      x <-
+        tryCatch(
+          readLines(url),
+          error = function(e) {
+            NULL
+          }
+        )
+    } else {
+      stop("only work with github and gitlab")
     }
-    
-  } else if (repo == "gitlab") {
-    url <- paste0("https://gitlab.com/", pkg, "/raw/master/DESCRIPTION")
-    x <-
-      tryCatch(
-        readLines(url),
-        error = function(e) {
-          NULL
-        }
-      )
     
     if (is.null(x)) {
-      url <-
-        paste0("https://gitlab.com/", pkg, "/raw/main/DESCRIPTION")
+      stop("can't read information from ", url)
     }
     
-    x <-
-      tryCatch(
-        readLines(url),
-        error = function(e) {
-          NULL
-        }
-      )
-  } else {
-    stop("only work with github and gitlab")
-  }
-  
-  if (is.null(x)) {
-    stop("can't read information from ", url)
-  }
-  
-  remote_version <-
-    gsub("Version:\\s*", "", x[grep('Version:', x)])
-  
-  res <- list(
-    package = pkg,
-    installed_version = installed_version,
-    latest_version = remote_version,
-    up_to_date = NA
-  )
-  
-  if (is.na(installed_version)) {
-    message(paste("##", pkg, "is not installed..."))
-  } else {
-    if (remote_version > installed_version) {
-      msg <- paste("##", pkg, "is out of date...")
-      message(msg)
-      res$up_to_date <- FALSE
-    } else if (remote_version == installed_version) {
-      message("package is up-to-date devel version")
-      res$up_to_date <- TRUE
+    remote_version <-
+      gsub("Version:\\s*", "", x[grep('Version:', x)])
+    
+    res <- list(
+      package = pkg,
+      installed_version = installed_version,
+      latest_version = remote_version,
+      up_to_date = NA
+    )
+    
+    if (is.na(installed_version)) {
+      message(crayon::red(paste("##", pkg, "is not installed...")))
+    } else {
+      if (remote_version > installed_version) {
+        msg <- paste("##", pkg, "is out of date...")
+        message(crayon::yellow(msg))
+        res$up_to_date <- FALSE
+      } else if (remote_version == installed_version) {
+        message("##",pkg, " is up-to-date devel version")
+        res$up_to_date <- TRUE
+      }
     }
+    return(res)
   }
-  return(res)
-}
