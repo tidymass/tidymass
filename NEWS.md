@@ -29,3 +29,7 @@
 # Version 1.0.6 (2022-09-19)
 
 * Can update tidymass from fastgit.
+
+# Version 1.0.7 (2022-09-21)
+
+* Fix bug when check update of tidymass.

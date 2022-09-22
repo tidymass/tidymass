@@ -64,16 +64,21 @@ style_grey <- function(level, ...) {
 
 #####Code are from Guangchuang Yu
 check_github <- function(pkg) {
-  check_github_gitlab(pkg, "github")
+  check_github_gitlab_gitee(pkg, "github")
 }
 
 check_gitlab <- function(pkg) {
-  check_github_gitlab(pkg, "gitlab")
+  check_github_gitlab_gitee(pkg, "gitlab")
+}
+
+check_gitee <- function(pkg) {
+  check_github_gitlab_gitee(pkg, "gitee")
 }
 
 
-check_github_gitlab <-
-  function(pkg, repo = "github") {
+check_github_gitlab_gitee <-
+  function(pkg, repo = c("github", "gitlab", "gitee")) {
+    repo <- match.arg(repo)
     installed_version <-
       tryCatch(
         utils::packageVersion(gsub(".*/", "", pkg)),
@@ -108,10 +113,10 @@ check_github_gitlab <-
               NULL
             }
           )
-        
       }
-      
-    } else if (repo == "gitlab") {
+    }
+    
+    if (repo == "gitlab") {
       url <- paste0("https://gitlab.com/", pkg, "/raw/master/DESCRIPTION")
       x <-
         tryCatch(
@@ -133,8 +138,30 @@ check_github_gitlab <-
             NULL
           }
         )
-    } else {
-      stop("only work with github and gitlab")
+    }
+    
+    if (repo == "gitee") {
+      url <- paste0("https://gitee.com/", pkg, "/raw/master/DESCRIPTION")
+      x <-
+        tryCatch(
+          readLines(url),
+          error = function(e) {
+            NULL
+          }
+        )
+      
+      if (is.null(x)) {
+        url <-
+          paste0("https://gitee.com/", pkg, "/raw/main/DESCRIPTION")
+      }
+      
+      x <-
+        tryCatch(
+          readLines(url),
+          error = function(e) {
+            NULL
+          }
+        )
     }
     
     if (is.null(x)) {
@@ -159,7 +186,7 @@ check_github_gitlab <-
         message(crayon::yellow(msg))
         res$up_to_date <- FALSE
       } else if (remote_version == installed_version) {
-        message("##",pkg, " is up-to-date devel version")
+        message("##", pkg, " is up-to-date devel version")
         res$up_to_date <- TRUE
       }
     }

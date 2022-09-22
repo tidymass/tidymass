@@ -5,10 +5,13 @@
 #' \email{shenxt1990@@outlook.com}
 #' @param packages core or all packages in tidymass. "core" means all the core
 #' packages in tidymass and "all" means all the packages in tidymass.
+#' @param from "gitlab", "github", or "gitee"
 #' @export
 
 check_tidymass_version <-
-  function(packages = c("core", "all")) {
+  function(packages = c("core", "all"),
+           from = c("gitlab", "github", "gitee")) {
+    from <- match.arg(from)
     packages <- match.arg(packages)
     check_result <-
       c(
@@ -40,6 +43,17 @@ check_tidymass_version <-
               }
             )
         }
+        
+        if (is.null(y)) {
+          y <-
+            tryCatch(
+              check_gitee(pkg = paste0("tidymass/", x)),
+              error = function(e) {
+                NULL
+              }
+            )
+        }
+        
         if (is.null(y)) {
           y <-
             c(
