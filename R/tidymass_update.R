@@ -5,12 +5,12 @@
 #' \email{shenxt1990@@outlook.com}
 #' @param packages core or all packages in tidymass. "core" means all the core
 #' packages in tidymass and "all" means all the packages in tidymass.
-#' @param from "gitlab", "github", or "gitee"
+#' @param from "gitlab", "github", or "gitee", or "tidymass.org"
 #' @export
 
 check_tidymass_version <-
   function(packages = c("core", "all"),
-           from = c("gitlab", "github", "gitee")) {
+           from = c("gitlab", "github", "gitee", "shen")) {
     from <- match.arg(from)
     packages <- match.arg(packages)
     check_result <-
@@ -48,6 +48,16 @@ check_tidymass_version <-
           y <-
             tryCatch(
               check_gitee(pkg = paste0("tidymass/", x)),
+              error = function(e) {
+                NULL
+              }
+            )
+        }
+        
+        if (is.null(y)) {
+          y <-
+            tryCatch(
+              check_tidymass.org(pkg = x),
               error = function(e) {
                 NULL
               }
@@ -116,7 +126,7 @@ check_tidymass_version <-
 #' @export
 update_tidymass <-
   function(packages = c("core", "all"),
-           from = c("gitlab", "github", "gitee"),
+           from = c("gitlab", "github", "gitee", "tidymass.org"),
            fastgit = FALSE) {
     packages <- match.arg(packages)
     from <- match.arg(from)
@@ -187,6 +197,18 @@ update_tidymass <-
             remotes::install_git(url = paste0("https://gitee.com/tidymass/", i),
                                  upgrade = "never")
           }
+        }
+      }
+      
+      if (from == "tidymass.org") {
+        for (i in check_result$package) {
+          tryCatch(
+            detach(name = paste0("package:", i)),
+            error = function(e) {
+              message(i, ".\n")
+            }
+          )
+          install_tidymass(which_package = i, from = "tidymass.org")
         }
       }
     }

@@ -6,7 +6,7 @@
 \usage{
 update_tidymass(
   packages = c("core", "all"),
-  from = c("gitlab", "github", "gitee"),
+  from = c("gitlab", "github", "gitee", "tidymass.org"),
   fastgit = FALSE
 )
 }

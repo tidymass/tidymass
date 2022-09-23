@@ -6,14 +6,14 @@
 \usage{
 check_tidymass_version(
   packages = c("core", "all"),
-  from = c("gitlab", "github", "gitee")
+  from = c("gitlab", "github", "gitee", "shen")
 )
 }
 \arguments{
 \item{packages}{core or all packages in tidymass. "core" means all the core
 packages in tidymass and "all" means all the packages in tidymass.}
 
-\item{from}{"gitlab", "github", or "gitee"}
+\item{from}{"gitlab", "github", or "gitee", or "tidymass.org"}
 }
 \description{
 Check if there are packages in tidymass can be updated.

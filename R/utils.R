@@ -75,6 +75,46 @@ check_gitee <- function(pkg) {
   check_github_gitlab_gitee(pkg, "gitee")
 }
 
+check_tidymass.org <-
+  function(pkg) {
+    x <-
+      readLines(paste0(
+        "https://www.tidymass.org/tidymass-packages/",
+        pkg,
+        "_Description.txt"
+      ))
+    installed_version <-
+      tryCatch(
+        utils::packageVersion(gsub(".*/", "", pkg)),
+        error = function(e)
+          NA
+      )
+    
+    remote_version <-
+      gsub("Version:\\s*", "", x[grep('Version:', x)])
+    
+    res <- list(
+      package = pkg,
+      installed_version = installed_version,
+      latest_version = remote_version,
+      up_to_date = NA
+    )
+    
+    if (is.na(installed_version)) {
+      message(crayon::red(paste("##", pkg, "is not installed...")))
+    } else {
+      if (remote_version > installed_version) {
+        msg <- paste("##", pkg, "is out of date...")
+        message(crayon::yellow(msg))
+        res$up_to_date <- FALSE
+      } else if (remote_version == installed_version) {
+        message("##", pkg, " is up-to-date devel version")
+        res$up_to_date <- TRUE
+      }
+    }
+    return(res)
+  }
+
 
 check_github_gitlab_gitee <-
   function(pkg, repo = c("github", "gitlab", "gitee")) {

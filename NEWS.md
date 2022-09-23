@@ -33,3 +33,7 @@
 # Version 1.0.7 (2022-09-21)
 
 * Fix bug when check update of tidymass.
+
+# Version 1.0.8 (2022-09-22)
+
+* Now you can update tidymass packages from "tidymass.org", just set the from as "tidymass.org"
