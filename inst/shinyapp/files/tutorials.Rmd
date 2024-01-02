@@ -1,0 +1,88 @@
+---
+title: ""
+output: 
+  html_document:
+    toc: false
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    number_sections: false
+date: "2023-12-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+MAPA is a Shiny application designed for analyzing and visualizing biological data, especially in the context of pathways and networks. This tutorial will walk you through the steps of using MAPA for data upload, enrichment, merging, visualization, interpretation, and reporting.
+
+This tutorial provides a step-by-step guide to using the MAPA Shiny app for biological data analysis. Each tab in the app is dedicated to a specific aspect of the analysis, ensuring a structured and comprehensive approach to data processing and visualization. Remember to explore various options and parameters to tailor the analysis to your specific needs.
+
+# Step 1: Data Upload and ID Mapping
+
+1. **Upload Data**:
+   - Navigate to the "Upload Data" tab.
+   - Use `fileInput` to upload your data in CSV or Excel format. You can also check "Use example" to work with preloaded data.
+   - Select the type of ID your data contains (ENSEMBL, UniProt, or EntrezID).
+
+2. **ID Mapping**:
+   - Click "Submit" to map IDs using the `clusterProfiler` and `org.Hs.eg.db` packages.
+   - The mapped data will appear in a table. You can download it by clicking "Download".
+
+# Step 2: Enrich Pathways
+
+1. **Select Databases and Parameters**:
+   - In the "Enrich Pathways" tab, choose the databases (GO, KEGG, Reactome) for pathway enrichment.
+   - Set parameters like organism, P-value cutoff, adjustment method, and gene set size.
+
+2. **Run Enrichment**:
+   - Click "Submit" to start the enrichment process.
+   - Once completed, results for each selected database will appear in separate tabs. These can be downloaded.
+
+# Step 3: Merge Pathways
+
+1. **Set Merging Criteria**:
+   - Go to the "Merge Pathways" tab.
+   - Adjust parameters like P-adjust cutoff, gene count cutoff, similarity cutoff, and similarity method for each database.
+
+2. **Merge and Visualize**:
+   - Click "Submit" to merge pathways.
+   - View the merged pathways in the result table and download if needed.
+   - You can also visualize the pathways by clicking on the “Generate plot” buttons under each database tab.
+
+# Step 4: Merge Modules
+
+1. **Merge Functional Modules**:
+   - In the "Merge Modules" tab, set the similarity cutoff and method.
+   - Click "Submit" to merge.
+   - View and download the merged module results.
+
+2. **Visualize Merged Modules**:
+   - Generate a plot for the merged modules using provided controls for customization.
+
+# Step 5: Data Visualization
+
+1. **Customized Plots**:
+   - The "Data Visualization" tab offers various plotting options (Barplot, Module Similarity Network, etc.).
+   - Customize your plot using the available options and generate it.
+   - Use the download button to save your plot.
+
+# Step 6: LLM Interpretation
+
+1. **Generate Interpretations**:
+   - Navigate to "LLM Interpretation".
+   - Provide an OpenAI Key for GPT-3 access, select your disease or phenotype, and set the interpretation parameters.
+   - Click "Submit" to get an interpretation of your data using GPT-3.
+
+# Step 7: Results and Reporting
+
+1. **Generate Report**:
+   - In the "Results and Report" tab, click on "Generate report" to compile your analysis results.
+   - View the report in the app or download it.
+
+2. **Code Access**:
+   - Throughout the process, you can view the R code for each step by clicking the "Code" button. This is useful for understanding the underlying computations or for advanced customization.
+
+
