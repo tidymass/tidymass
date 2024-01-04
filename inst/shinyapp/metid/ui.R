@@ -42,11 +42,11 @@ if (!require(tidymass)) {
   install_tidymass(from = "tidymass.org")
 }
 
-if (!require(extrafont)) {
-  install.packages("extrafont")
-  library(extrafont)
-  extrafont::loadfonts()
-}
+# if (!require(extrafont)) {
+#   install.packages("extrafont")
+#   library(extrafont)
+#   extrafont::loadfonts()
+# }
 
 ui <- dashboardPage(
   skin = "blue",
