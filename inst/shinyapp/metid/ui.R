@@ -1,9 +1,9 @@
 options(shiny.maxRequestSize = 300 * 1024 ^ 2)
 
-# if (!require(tidyverse)) {
-#   install.packages("tidyverse")
-#   library(tidyverse)
-# }
+if (!require(tidyverse)) {
+  install.packages("tidyverse")
+  library(tidyverse)
+}
 if (!require(shiny)) {
   install.packages("shiny")
   library(shiny)
