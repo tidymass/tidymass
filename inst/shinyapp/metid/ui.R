@@ -37,10 +37,10 @@ if (!require(massdataset)) {
   remotes::install_github("tidymass/massdataset")
 }
 
-if (!require(tidymass)) {
-  source("https://www.tidymass.org/tidymass-packages/install_tidymass.txt")
-  install_tidymass(from = "tidymass.org")
-}
+# if (!require(tidymass)) {
+#   source("https://www.tidymass.org/tidymass-packages/install_tidymass.txt")
+#   install_tidymass(from = "tidymass.org")
+# }
 
 # if (!require(extrafont)) {
 #   install.packages("extrafont")
