@@ -41,3 +41,7 @@
 # Version 1.0.9 (2024-01-01)
 
 * Add shiny app.
+
+# Version 1.0.10 (2024-01-06)
+
+* Add shiny app for metid package.

@@ -1,12 +1,12 @@
 Package: tidymass
 Type: Package
 Title: R packages for mass spectrometry data processing and analysis
-Version: 1.0.9
+Version: 1.0.10
 Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",
            role = c("aut", "cre"),
-           email = "shenxt1990@outlook.com",
+           email = "xiaotao.shen@outlook.com",
            comment = c(ORCID = "0000-0002-9608-9964")),
         person(given = "Hong",
            family = "Yan",
