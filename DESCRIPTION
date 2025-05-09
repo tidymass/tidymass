@@ -1,16 +1,13 @@
 Package: tidymass
 Type: Package
 Title: R packages for mass spectrometry data processing and analysis
-Version: 1.0.10
+Version: 2.0.10
 Authors@R: c(
     person(given = "Xiaotao",
            family = "Shen",
            role = c("aut", "cre"),
            email = "xiaotao.shen@outlook.com",
            comment = c(ORCID = "0000-0002-9608-9964")),
-        person(given = "Hong",
-           family = "Yan",
-           role = c("ctb")),           
         person(given = "Chuchu",
            family = "Wang",
            role = c("ctb"))
@@ -20,7 +17,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Depends: 
     R (>= 4.1)
 Imports: 

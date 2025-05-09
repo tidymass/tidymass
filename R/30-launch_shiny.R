@@ -25,8 +25,6 @@ launch_tidymass_shiny <-
   }
 
 
-
-
 #' Launch metid Shiny Application
 #'
 #' This function launches the metid Shiny application included in the 'metid' package.
