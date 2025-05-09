@@ -3,8 +3,6 @@
 S3method(print,tidymass_conflicts)
 S3method(print,tidymass_logo)
 export(check_tidymass_version)
-export(launch_metid_shiny)
-export(launch_tidymass_shiny)
 export(tidymass_conflicts)
 export(tidymass_logo)
 export(tidymass_packages)

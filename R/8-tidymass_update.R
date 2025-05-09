@@ -24,7 +24,8 @@ check_tidymass_version <-
         "metid",
         "massstat",
         "metpath",
-        "masstools"
+        "masstools",
+        "massdatabase"
       ) %>%
       lapply(function(x) {
         y <-

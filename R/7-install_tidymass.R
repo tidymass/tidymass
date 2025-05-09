@@ -80,7 +80,8 @@ install_tidymass <-
         "massprocesser",
         "masscleaner",
         "metpath",
-        "tidymass"
+        "tidymass",
+        "massdatabase"
       )
     
     if (!missing(which_package)) {
@@ -93,8 +94,7 @@ install_tidymass <-
       } else{
         package_list <-
           c(core_package_list,
-            "massconverter",
-            "massdatabase")
+            "massconverter")
       }
     }
     
