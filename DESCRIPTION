@@ -17,7 +17,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends: 
     R (>= 4.1)
 Imports: 
@@ -29,14 +29,15 @@ Imports:
     magrittr,
     rstudioapi,
     dplyr,
-    masstools (>= 1.0.7),
+    ggplot2,
+    masscleaner,
     massdataset,
     massprocesser,
-    masscleaner,
-    massstat,
-    metpath,
-    metid,
     massqc,
+    massstat,
+    masstools,
+    metid,
+    metpath,
     remotes
 Suggests: 
     knitr,

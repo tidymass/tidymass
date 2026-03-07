@@ -2,24 +2,24 @@
 % Please edit documentation in R/1-tidymass_logo.R
 \name{tidymass_logo}
 \alias{tidymass_logo}
-\title{Show the logo tidymass.}
+\title{Show the tidymass logo}
 \usage{
 tidymass_logo(unicode = l10n_info()$`UTF-8`)
 }
 \arguments{
-\item{unicode}{Whether to use Unicode symbols. Default is \code{TRUE}
-on UTF-8 platforms.}
+\item{unicode}{Whether to use Unicode symbols. Defaults to \code{TRUE} on
+UTF-8 platforms.}
 }
 \value{
-A ASCII log of tidymass
+A character vector containing the formatted tidymass logo.
 }
 \description{
-The tidymass logo, using ASCII or Unicode characters
+Display the tidymass logo using ASCII or Unicode characters.
 }
 \examples{
 tidymass_logo()
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

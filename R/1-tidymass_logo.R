@@ -1,21 +1,13 @@
-#' @title Show the logo tidymass.
-#' @description The tidymass logo, using ASCII or Unicode characters
+#' Show the tidymass logo
+#'
+#' Display the tidymass logo using ASCII or Unicode characters.
+#'
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param unicode Whether to use Unicode symbols. Default is `TRUE`
-#' on UTF-8 platforms.
-#' @return A ASCII log of tidymass
+#' \email{xiaotao.shen@outlook.com}
+#' @param unicode Whether to use Unicode symbols. Defaults to `TRUE` on
+#'   UTF-8 platforms.
+#' @returns A character vector containing the formatted tidymass logo.
 #' @export
-#' @importFrom dplyr filter
-#' @import massdataset
-#' @import massprocesser
-#' @import masscleaner
-#' @import massqc
-#' @import metid
-#' @import massstat
-#' @import metpath
-#' @import masstools
-#' @importFrom utils packageVersion install.packages read.table
 #' @examples
 #' tidymass_logo()
 ##https://onlineasciitools.com/convert-text-to-ascii-art

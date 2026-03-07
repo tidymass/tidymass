@@ -2,7 +2,7 @@
 % Please edit documentation in R/8-tidymass_update.R
 \name{update_tidymass}
 \alias{update_tidymass}
-\title{update_tidymass}
+\title{Update tidymass packages}
 \usage{
 update_tidymass(
   packages = c("core", "all"),
@@ -11,18 +11,22 @@ update_tidymass(
 )
 }
 \arguments{
-\item{packages}{core or all packages in tidymass. "core" means all the core
-packages in tidymass and "all" means all the packages in tidymass.}
+\item{packages}{Which package set to update: \code{"core"} or \code{"all"}.}
 
-\item{from}{github, gitlab or gitee.}
+\item{from}{Repository source: \code{"gitlab"}, \code{"github"}, \code{"gitee"}, or
+\code{"tidymass.org"}.}
 
-\item{fastgit}{if install packages using fastgit. see
-https://hub.fastgit.org/}
+\item{fastgit}{Logical; if \code{TRUE}, install packages through the FastGit
+helper when available; otherwise the standard remotes installer is used.}
+}
+\value{
+Invisibly returns \code{NULL}. Packages are updated for their side
+effects.
 }
 \description{
-Update packages in tidymass.
+Install newer versions of tidymass packages from a selected remote source.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

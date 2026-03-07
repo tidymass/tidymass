@@ -2,7 +2,7 @@
 % Please edit documentation in R/8-tidymass_update.R
 \name{check_tidymass_version}
 \alias{check_tidymass_version}
-\title{check_tidymass_version}
+\title{Check for available tidymass updates}
 \usage{
 check_tidymass_version(
   packages = c("core", "all"),
@@ -10,15 +10,20 @@ check_tidymass_version(
 )
 }
 \arguments{
-\item{packages}{core or all packages in tidymass. "core" means all the core
-packages in tidymass and "all" means all the packages in tidymass.}
+\item{packages}{Which package set to check: \code{"core"} or \code{"all"}.}
 
-\item{from}{"gitlab", "github", or "gitee", or "tidymass.org"}
+\item{from}{Repository source to prioritize: \code{"gitlab"}, \code{"github"},
+\code{"gitee"}, or \code{"shen"}.}
+}
+\value{
+A data frame of outdated packages. If all packages are up to date,
+the function prints a message and returns \code{NULL}.
 }
 \description{
-Check if there are packages in tidymass can be updated.
+Query remote repositories and compare installed package versions with the
+latest available versions.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

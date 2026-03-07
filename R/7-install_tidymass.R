@@ -20,7 +20,7 @@ install_tidymass <-
     
     if (from == "gitee") {
       file <-
-        read.table(
+        utils::read.table(
           "https://gitee.com/tidymass/packages_repo/raw/main/packages/file.csv",
           sep = ",",
           header = TRUE
@@ -29,7 +29,7 @@ install_tidymass <-
     
     if (from == "gitlab") {
       file <-
-        read.table(
+        utils::read.table(
           "https://gitlab.com/tidymass/packages_repo/-/raw/main/packages/file.csv",
           sep = ",",
           header = TRUE
@@ -38,7 +38,7 @@ install_tidymass <-
     
     if (from == "github") {
       file <-
-        read.table(
+        utils::read.table(
           "https://raw.githubusercontent.com/tidymass/packages_repo/main/packages/file.csv",
           sep = ",",
           header = TRUE
@@ -52,9 +52,9 @@ install_tidymass <-
         method = method
       )
       file <-
-        read.table(file.path(temp_path, "file.csv"),
-                   sep = ",",
-                   header = TRUE)
+        utils::read.table(file.path(temp_path, "file.csv"),
+                          sep = ",",
+                          header = TRUE)
     }
     
     if (from == "tidymass.org") {
@@ -64,9 +64,9 @@ install_tidymass <-
         method = method
       )
       file <-
-        read.table(file.path(temp_path, "file.csv"),
-                   sep = ",",
-                   header = TRUE)
+        utils::read.table(file.path(temp_path, "file.csv"),
+                          sep = ",",
+                          header = TRUE)
     }
     
     ####package list
@@ -165,13 +165,13 @@ install_tidymass <-
         # install.packages("purrr")
         # install.packages("stringr")
         
-        install.packages(
+        utils::install.packages(
           file.path(temp_path, file$file_name.y[file$package == x]),
           repos = NULL,
           dependencies = TRUE
         )
       } else{
-        install.packages(
+        utils::install.packages(
           file.path(temp_path, file$file_name.y[file$package == x]),
           repos = NULL,
           dependencies = TRUE

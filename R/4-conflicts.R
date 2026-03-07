@@ -8,7 +8,6 @@
 #' make the base equivalents generic, so shouldn't negatively affect any
 #' existing code.
 #'
-#' @importFrom purrr keep imap compact map map2_chr map2
 #' @export
 #' @examples
 #' tidymass_conflicts()
@@ -35,13 +34,13 @@ tidymass_conflict_message <- function(x) {
   header <- cli::rule(left = crayon::bold("Conflicts"),
                       right = "tidymass_conflicts()")
   
-  pkgs <- x %>% purrr::map( ~ gsub("^package:", "", .))
-  others <- pkgs %>% purrr::map(`[`, -1)
+  pkgs <- purrr::map(x, ~ gsub("^package:", "", .x))
+  others <- purrr::map(pkgs, `[`, -1)
   other_calls <- purrr::map2_chr(others,
                                  names(others),
                                  ~ paste0(crayon::blue(.x), "::", .y, "()", collapse = ", "))
   
-  winner <- pkgs %>% purrr::map_chr(1)
+  winner <- purrr::map_chr(pkgs, 1)
   funs <-
     format(paste0(crayon::blue(winner), "::", crayon::green(paste0(names(
       x
@@ -61,12 +60,10 @@ print.tidymass_conflicts <- function(x, ..., startup = FALSE) {
   cli::cat_line(tidymass_conflict_message(x))
 }
 
-#' @importFrom magrittr %>%
 confirm_conflict <- function(packages, name) {
   # Only look at functions
-  objs <- packages %>%
-    purrr::map( ~ get(name, pos = .)) %>%
-    purrr::keep(is.function)
+  objs <- purrr::map(packages, ~ get(name, pos = .x))
+  objs <- purrr::keep(objs, is.function)
   
   if (length(objs) <= 1)
     return()
